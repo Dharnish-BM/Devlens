@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result - {{ result.username }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 60px auto; padding: 0 20px; background: #f5f7fa; }
+        .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .tier { display: inline-block; padding: 5px 15px; border-radius: 20px; color: white; font-weight: bold; }
+        .Beginner { background: #f59e0b; }
+        .Intermediate { background: #3b82f6; }
+        .Advanced { background: #16a34a; }
+        .score-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+        a { color: #2563eb; }
+    </style>
+</head>
+<body>
+    <a href="/">&larr; Back</a>
+    <div class="card">
+        <h2>{{ result.username }} {% if result.name %}({{ result.name }}){% endif %}</h2>
+        <p><span class="tier {{ result.skill_tier }}">{{ result.skill_tier }}</span></p>
+        <h3>Overall Skill Score: {{ result.overall_skill_score }}</h3>
+        
+        <div class="score-row"><span>Consistency</span><b>{{ result.consistency_score }}</b></div>
+        <div class="score-row"><span>Tech Breadth</span><b>{{ result.tech_breadth_score }}</b></div>
+        <div class="score-row"><span>Project Activity</span><b>{{ result.project_activity_score }}</b></div>
+        <div class="score-row"><span>Collaboration</span><b>{{ result.collaboration_score }}</b></div>
+        
+        <p style="margin-top:20px; font-size: 13px; color: #666;">
+            Public Repos: {{ result.public_repos }} | Followers: {{ result.followers }}<br>
+            Languages: {{ result.languages }}
+        </p>
+    </div>
+</body>
+</html>

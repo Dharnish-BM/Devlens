@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Batch Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f5f7fa; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #2563eb; color: white; }
+        .tier { padding: 4px 12px; border-radius: 15px; color: white; font-size: 13px; }
+        .Beginner { background: #f59e0b; }
+        .Intermediate { background: #3b82f6; }
+        .Advanced { background: #16a34a; }
+        a { color: #2563eb; }
+    </style>
+</head>
+<body>
+    <a href="/">&larr; Back</a>
+    <h2>Batch Results ({{ results|length }} profiles)</h2>
+    <table>
+        <tr>
+            <th>Username</th><th>Consistency</th><th>Tech Breadth</th><th>Activity</th><th>Collaboration</th><th>Overall</th><th>Tier</th>
+        </tr>
+        {% for r in results %}
+        <tr>
+            <td>{{ r.username }}</td>
+            <td>{{ r.consistency_score }}</td>
+            <td>{{ r.tech_breadth_score }}</td>
+            <td>{{ r.project_activity_score }}</td>
+            <td>{{ r.collaboration_score }}</td>
+            <td><b>{{ r.overall_skill_score }}</b></td>
+            <td><span class="tier {{ r.skill_tier }}">{{ r.skill_tier }}</span></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

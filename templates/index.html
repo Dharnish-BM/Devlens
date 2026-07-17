@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevLens - GitHub Skill Analyzer</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 60px auto; padding: 0 20px; background: #f5f7fa; }
+        h1 { color: #2563eb; }
+        .card { background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        input[type=text] { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        input[type=submit] { background: #2563eb; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; }
+        input[type=submit]:hover { background: #1d4ed8; }
+        .error { color: #dc2626; background: #fee2e2; padding: 10px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <h1>DevLens</h1>
+    <p>Analyze GitHub developer skill profiles using behavioral data.</p>
+    
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+    
+    <div class="card">
+        <h3>Analyze a Single Profile</h3>
+        <form action="/score-single" method="post">
+            <input type="text" name="username" placeholder="GitHub username" required>
+            <input type="submit" value="Analyze">
+        </form>
+    </div>
+    
+    <div class="card">
+        <h3>Analyze Multiple Profiles (CSV)</h3>
+        <p style="font-size: 13px; color: #666;">CSV must have a column named "username"</p>
+        <form action="/score-batch" method="post" enctype="multipart/form-data">
+            <input type="file" name="csv_file" accept=".csv" required>
+            <br><br>
+            <input type="submit" value="Analyze Batch">
+        </form>
+    </div>
+</body>
+</html>
