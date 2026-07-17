@@ -19,16 +19,30 @@
         <h2>{{ result.username }} {% if result.name %}({{ result.name }}){% endif %}</h2>
         <p><span class="tier {{ result.skill_tier }}">{{ result.skill_tier }}</span></p>
         <h3>Overall Skill Score: {{ result.overall_skill_score }}</h3>
-        
+
         <div class="score-row"><span>Consistency</span><b>{{ result.consistency_score }}</b></div>
         <div class="score-row"><span>Tech Breadth</span><b>{{ result.tech_breadth_score }}</b></div>
         <div class="score-row"><span>Project Activity</span><b>{{ result.project_activity_score }}</b></div>
         <div class="score-row"><span>Collaboration</span><b>{{ result.collaboration_score }}</b></div>
-        
+
         <p style="margin-top:20px; font-size: 13px; color: #666;">
             Public Repos: {{ result.public_repos }} | Followers: {{ result.followers }}<br>
             Languages: {{ result.languages }}
         </p>
+
+        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee;">
+            <h4 style="margin-bottom: 10px;">🔍 Why this tier? (SHAP explanation)</h4>
+            {% for exp in result.explanations %}
+                <div style="padding: 6px 0; font-size: 14px;">
+                    <b>{{ exp.feature }}</b>:
+                    {% if exp.impact > 0 %}
+                        <span style="color: #16a34a;">pushed score UP (+{{ exp.impact }})</span>
+                    {% else %}
+                        <span style="color: #dc2626;">pushed score DOWN ({{ exp.impact }})</span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>
