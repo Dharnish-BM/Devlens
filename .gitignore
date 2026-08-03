@@ -1,0 +1,23 @@
+# Environments
+venv/
+.env
+
+# Python / Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Databases
+*.db
+*.sqlite3
+
+# Data
+/data/raw
+data/raw/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
