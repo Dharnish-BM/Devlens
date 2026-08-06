@@ -137,11 +137,11 @@ assert abs(sum(DOC_WEIGHTS.values()) - 1.0) < 1e-9, "DOC_WEIGHTS must sum to 1.0
 
 # Engineering maturity score weights (must sum to 1.0)
 ENG_WEIGHTS = {
-    "ci":      0.30,
-    "test":    0.25,
-    "commit":  0.20,
-    "pr_disc": 0.15,
-    "branch":  0.10,
+    "ci":                   0.30,
+    "test":                 0.25,
+    "commit_message":       0.20,
+    "pr_disc":              0.15,
+    "review_participation": 0.10,
 }
 assert abs(sum(ENG_WEIGHTS.values()) - 1.0) < 1e-9, "ENG_WEIGHTS must sum to 1.0"
 
@@ -464,8 +464,8 @@ def compute_documentation_score(raw: Dict[str, Any]) -> Dict[str, float]:
     Features
     --------
     doc_score                   : composite Documentation Score ∈ [0, 1]
-    doc_desc_coverage           : proportion of original repos with a description
-    doc_desc_depth_mean         : mean normalised description depth (len / 300)
+    doc_desc_coverage           : proportion of original repos with a non-empty description string
+    doc_desc_depth_mean         : mean normalised README length (min(len, 5000) / 5000)
     doc_has_bio                 : 1.0 if user bio is non-empty
     doc_has_blog                : 1.0 if user blog/website is set
     doc_pinned_ratio            : pinned_count / 6 (max pinnable)
@@ -478,23 +478,29 @@ def compute_documentation_score(raw: Dict[str, Any]) -> Dict[str, float]:
     original  = [r for r in repos if not r.get("is_fork")]
     n_orig    = max(len(original), 1)
 
-    # desc_coverage: approximated via repo description from user_info
-    # (REST repo list doesn't include 'description'; we use name/language as
-    #  a presence proxy — for repos with stars>0 as a documentation-effort signal)
-    # Best available proxy: starred repos with a defined primary language
-    repos_with_lang  = sum(1 for r in original if r.get("language"))
-    desc_coverage    = _safe_div(repos_with_lang, n_orig)
+    # 1. desc_coverage: repos with non-empty description field ONLY
+    has_desc_count = sum(
+        1 for r in original
+        if r.get("description") and len(str(r.get("description")).strip()) > 0
+    )
+    desc_coverage = _safe_div(has_desc_count, n_orig)
 
-    # desc_depth: use GraphQL pinned repo descriptions as the richest source
-    pinned = gql.get("pinned_repositories", []) or []
-    all_descs = [p.get("description") or "" for p in pinned]
-    # Also include description proxy from REST (language fields as tokens)
-    desc_depths = [min(len(d), 300) / 300.0 for d in all_descs]
+    # 2. desc_depth: mean normalised README length across original repos
+    readme_lens = [r.get("readme_length_chars", 0) for r in original]
+    if any(l > 0 for l in readme_lens):
+        desc_depths = [min(l, 5000) / 5000.0 for l in readme_lens]
+    else:
+        # Fall back to pinned repo descriptions if readme_length_chars unavailable
+        pinned = gql.get("pinned_repositories", []) or []
+        all_descs = [p.get("description") or "" for p in pinned]
+        desc_depths = [min(len(d), 300) / 300.0 for d in all_descs] if all_descs else [0.0]
+
     desc_depth_mean = float(np.mean(desc_depths)) if desc_depths else 0.0
 
     has_bio  = 1.0 if user_info.get("bio")  else 0.0
     has_blog = 1.0 if user_info.get("blog") else 0.0
 
+    pinned = gql.get("pinned_repositories", []) or []
     pinned_count = len(pinned)
     pinned_ratio = min(pinned_count / 6.0, 1.0)
 
@@ -529,11 +535,11 @@ def compute_engineering_maturity_score(raw: Dict[str, Any]) -> Dict[str, float]:
     Features
     --------
     eng_maturity_score          : composite Engineering Maturity Score ∈ [0, 1]
-    eng_ci_ratio                : fraction of original repos with CI/CD language signals
-    eng_test_ratio              : fraction of original repos with test-capable languages
-    eng_commit_quality          : PR merge discipline proxy ∈ [0, 1]
+    eng_ci_ratio                : fraction of original repos with .github/workflows CI config
+    eng_test_ratio              : fraction of original repos with root-level test directory/file presence
+    eng_commit_message_quality  : ratio of structured/conventional commit message subjects
     eng_pr_discipline           : PR merge rate (merged / opened)
-    eng_branch_discipline       : 1.0 if review_participation > 0
+    eng_review_participation    : 1.0 if review_participation_count > 0
     """
     features: Dict[str, float] = {}
     repos   = raw.get("repositories", []) or []
@@ -544,43 +550,79 @@ def compute_engineering_maturity_score(raw: Dict[str, Any]) -> Dict[str, float]:
     original = [r for r in repos if not r.get("is_fork")]
     n_orig   = max(len(original), 1)
 
-    ci_count   = 0
+    # 1. CI/CD Ratio: check has_ci_config directly from repo enrichment
+    ci_count = 0
+    for r in original:
+        if "has_ci_config" in r:
+            if r.get("has_ci_config") is True:
+                ci_count += 1
+        else:
+            # Fallback for legacy JSON where field is missing
+            rname = r.get("name", "")
+            langs = {e.get("language", "") for e in lb.get(rname, [])}
+            langs.add(r.get("language") or "")
+            if langs & DEVOPS_LANG_NAMES or "Dockerfile" in langs or "YAML" in langs:
+                ci_count += 1
+
+    ci_ratio = _safe_div(ci_count, n_orig)
+
+    # 2. Test Ratio: check has_test_presence directly from repo enrichment
     test_count = 0
     for r in original:
-        rname = r.get("name", "")
-        langs = {e.get("language", "") for e in lb.get(rname, [])}
-        langs.add(r.get("language") or "")
+        if "has_test_presence" in r:
+            if r.get("has_test_presence") is True:
+                test_count += 1
+        else:
+            # Fallback for legacy JSON where field is missing
+            rname = r.get("name", "")
+            langs = {e.get("language", "") for e in lb.get(rname, [])}
+            langs.add(r.get("language") or "")
+            if langs & TEST_CAPABLE_LANGUAGES and len(langs) >= 2:
+                test_count += 1
 
-        if langs & DEVOPS_LANG_NAMES or "Dockerfile" in langs or "YAML" in langs:
-            ci_count += 1
-        if langs & TEST_CAPABLE_LANGUAGES and len(langs) >= 2:
-            test_count += 1
-
-    ci_ratio   = _safe_div(ci_count,   n_orig)
     test_ratio = _safe_div(test_count, n_orig)
 
-    pr_opened  = prs.get("total_opened",              0) or 0
-    pr_merged  = prs.get("total_merged",              0) or 0
+    # 3. Commit Message Quality: ratio of conventional/structured commit subjects
+    all_commit_msgs = []
+    for r in original:
+        all_commit_msgs.extend(r.get("recent_commit_messages", []))
+
+    if all_commit_msgs:
+        # Regex matching Conventional Commits (feat:, fix:, Merge, tag, etc.)
+        structured_pattern = re.compile(
+            r'^(?:feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert|Merge|Merge tag|\[.*\])',
+            re.IGNORECASE
+        )
+        structured_count = sum(1 for m in all_commit_msgs if structured_pattern.match(m))
+        commit_q = _safe_div(structured_count, len(all_commit_msgs))
+    else:
+        pr_opened = prs.get("total_opened", 0) or 0
+        pr_merged = prs.get("total_merged", 0) or 0
+        pr_disc   = _safe_div(pr_merged, pr_opened)
+        commit_q  = min(_safe_div(pr_disc, 0.7), 1.0)
+
+    # 4. PR & Review participation discipline
+    pr_opened  = prs.get("total_opened", 0) or 0
+    pr_merged  = prs.get("total_merged", 0) or 0
     pr_reviews = prs.get("review_participation_count", 0) or 0
 
-    pr_disc    = _safe_div(pr_merged, pr_opened)
-    commit_q   = min(_safe_div(pr_disc, 0.7), 1.0)   # saturates at 70% merge rate
-    branch_d   = 1.0 if pr_reviews > 0 else 0.0
+    pr_disc  = _safe_div(pr_merged, pr_opened)
+    review_p = 1.0 if pr_reviews > 0 else 0.0
 
     eng_score = (
-        ENG_WEIGHTS["ci"]      * ci_ratio
-      + ENG_WEIGHTS["test"]    * test_ratio
-      + ENG_WEIGHTS["commit"]  * commit_q
-      + ENG_WEIGHTS["pr_disc"] * pr_disc
-      + ENG_WEIGHTS["branch"]  * branch_d
+        ENG_WEIGHTS["ci"]                   * ci_ratio
+      + ENG_WEIGHTS["test"]                 * test_ratio
+      + ENG_WEIGHTS["commit_message"]       * commit_q
+      + ENG_WEIGHTS["pr_disc"]              * pr_disc
+      + ENG_WEIGHTS["review_participation"] * review_p
     )
 
-    features["eng_maturity_score"]    = round(eng_score,    6)
-    features["eng_ci_ratio"]          = round(ci_ratio,     6)
-    features["eng_test_ratio"]        = round(test_ratio,   6)
-    features["eng_commit_quality"]    = round(commit_q,     6)
-    features["eng_pr_discipline"]     = round(pr_disc,      6)
-    features["eng_branch_discipline"] = branch_d
+    features["eng_maturity_score"]        = round(eng_score,    6)
+    features["eng_ci_ratio"]              = round(ci_ratio,     6)
+    features["eng_test_ratio"]            = round(test_ratio,   6)
+    features["eng_commit_message_quality"]= round(commit_q,     6)
+    features["eng_pr_discipline"]         = round(pr_disc,      6)
+    features["eng_review_participation"]  = review_p
 
     return features
 

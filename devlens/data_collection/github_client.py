@@ -29,6 +29,7 @@ class GitHubClient:
         self.api_calls_count = 0
         self.rest_calls_count = 0
         self.graphql_calls_count = 0
+        self.last_rate_limit_remaining: Optional[int] = None
 
         self.session = requests.Session()
         self.session.headers.update({
@@ -47,6 +48,7 @@ class GitHubClient:
 
         if remaining is not None:
             remaining_int = int(remaining)
+            self.last_rate_limit_remaining = remaining_int
             if remaining_int <= 1 and reset_timestamp:
                 reset_time = int(reset_timestamp)
                 sleep_duration = max(reset_time - int(time.time()) + 2, 1)

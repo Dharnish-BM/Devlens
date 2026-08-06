@@ -1,5 +1,6 @@
 import os
 import json
+import base64
 import argparse
 import logging
 from datetime import datetime
@@ -94,6 +95,7 @@ class GitHubProfileCollector:
                     "id": repo.get("id"),
                     "name": repo.get("name"),
                     "full_name": repo.get("full_name"),
+                    "description": repo.get("description"),
                     "language": repo.get("language"),
                     "stars": repo.get("stargazers_count"),
                     "forks": repo.get("forks_count"),
@@ -109,6 +111,73 @@ class GitHubProfileCollector:
             page += 1
 
         return repos
+
+    def enrich_repo_details(
+        self, username: str, repos: List[Dict[str, Any]], skip_commit_messages: bool = False
+    ) -> None:
+        """Enrich original (non-fork) repos in-place with README length, CI config presence, and recent commit messages."""
+        logger.info(f"Enriching repo details for {len(repos)} repositories (skip_commit_messages={skip_commit_messages})...")
+        for repo in repos:
+            if repo.get("is_fork"):
+                repo["readme_length_chars"] = 0
+                repo["has_ci_config"] = False
+                repo["recent_commit_messages"] = []
+                continue
+
+            repo_name = repo["name"]
+
+            # 1. README presence and length
+            readme_res = self.client.rest_request(f"repos/{username}/{repo_name}/readme", max_retries=2)
+            readme_len = 0
+            if isinstance(readme_res, dict) and "content" in readme_res:
+                try:
+                    content_bytes = base64.b64decode(readme_res["content"].encode("ascii"))
+                    readme_len = len(content_bytes.decode("utf-8", errors="ignore"))
+                except Exception as e:
+                    logger.debug(f"Error decoding README for {repo_name}: {e}")
+                    readme_len = readme_res.get("size", 0)
+            repo["readme_length_chars"] = readme_len
+
+            # 2. CI/CD config presence (.github/workflows)
+            wf_res = self.client.rest_request(f"repos/{username}/{repo_name}/contents/.github/workflows", max_retries=2)
+            has_ci = isinstance(wf_res, list) and len(wf_res) > 0
+            repo["has_ci_config"] = has_ci
+
+            # 3. Test directory/file presence (GET /repos/{owner}/{repo}/contents)
+            contents_res = self.client.rest_request(f"repos/{username}/{repo_name}/contents", max_retries=2)
+            has_tests = False
+            if isinstance(contents_res, list):
+                test_dir_names = {"tests", "test", "__tests__", "spec", "testing"}
+                test_file_patterns = ("test_", "_test.", ".test.", ".spec.")
+                for item in contents_res:
+                    if not isinstance(item, dict):
+                        continue
+                    item_name = item.get("name", "").lower()
+                    item_type = item.get("type", "")
+                    if item_type == "dir" and item_name in test_dir_names:
+                        has_tests = True
+                        break
+                    elif item_type == "file" and any(p in item_name for p in test_file_patterns):
+                        has_tests = True
+                        break
+            repo["has_test_presence"] = has_tests
+
+            # 4. Recent commit messages (up to 30)
+            commit_msgs = []
+            if not skip_commit_messages:
+                commits_res = self.client.rest_request(
+                    f"repos/{username}/{repo_name}/commits",
+                    params={"per_page": 30},
+                    max_retries=2
+                )
+                if isinstance(commits_res, list):
+                    for c_item in commits_res:
+                        if isinstance(c_item, dict):
+                            raw_msg = c_item.get("commit", {}).get("message", "")
+                            subject = raw_msg.split("\n")[0].strip() if raw_msg else ""
+                            if subject:
+                                commit_msgs.append(subject)
+            repo["recent_commit_messages"] = commit_msgs
 
     def collect_commit_activity(self, username: str, repos: List[Dict[str, Any]]) -> Dict[str, Any]:
         """Collect 52-week commit activity for non-fork public repositories."""
@@ -211,7 +280,7 @@ class GitHubProfileCollector:
             "languages_breakdown": languages_breakdown,
         }
 
-    def collect_full_profile(self, username: str) -> Dict[str, Any]:
+    def collect_full_profile(self, username: str, skip_commit_messages: bool = False) -> Dict[str, Any]:
         """Orchestrate collection of REST and GraphQL data into a unified profile dictionary."""
         logger.info(f"Starting data collection for GitHub user: '{username}'")
 
@@ -221,6 +290,7 @@ class GitHubProfileCollector:
             raise ValueError(f"Could not retrieve user info for '{username}'.")
 
         repos = self.collect_public_repos(username)
+        self.enrich_repo_details(username, repos, skip_commit_messages=skip_commit_messages)
         commit_activity = self.collect_commit_activity(username, repos)
         pr_history = self.collect_pr_history(username)
         issue_activity = self.collect_issue_activity(username)
@@ -265,34 +335,166 @@ class GitHubProfileCollector:
         logger.info(f"Saved raw profile data to: {file_path}")
         return file_path
 
+    def collect_batch_profiles(
+        self,
+        usernames_file: str,
+        output_dir: str = "data/raw",
+        skip_commit_messages: bool = False,
+        limit: Optional[int] = None
+    ) -> Dict[str, Any]:
+        """Collect profile data sequentially for a batch of usernames."""
+        import time
+        import numpy as np
+
+        start_time = time.time()
+        today_str = datetime.utcnow().strftime("%Y-%m-%d")
+
+        if not os.path.exists(usernames_file):
+            raise FileNotFoundError(f"Batch input file not found: '{usernames_file}'")
+
+        with open(usernames_file, "r", encoding="utf-8") as f:
+            usernames = [line.strip() for line in f if line.strip()]
+
+        total_input_usernames = len(usernames)
+        if limit and limit > 0:
+            usernames = usernames[:limit]
+
+        total_to_process = len(usernames)
+        logger.info(f"Starting batch profile collection for {total_to_process} users (limit={limit}, skip_commit_messages={skip_commit_messages})...")
+
+        succeeded_count = 0
+        failed_count = 0
+        skipped_count = 0
+        failed_users = {}
+        processed_repo_counts = []
+        user_api_call_counts = []
+
+        initial_api_calls = self.client.api_calls_count
+
+        for idx, uname in enumerate(usernames, start=1):
+            file_path = os.path.join(output_dir, f"{uname}.json")
+
+            # Resumable check: skip if collected today
+            if os.path.exists(file_path):
+                try:
+                    with open(file_path, "r", encoding="utf-8") as rf:
+                        existing_data = json.load(rf)
+                    collected_at = existing_data.get("collected_at", "")
+                    if collected_at.startswith(today_str):
+                        skipped_count += 1
+                        logger.info(f"[{idx}/{total_to_process}] {uname} - SKIPPED (already collected today)")
+                        continue
+                except Exception:
+                    pass  # If existing JSON is corrupt, re-fetch
+
+            user_start_calls = self.client.api_calls_count
+            try:
+                profile = self.collect_full_profile(uname, skip_commit_messages=skip_commit_messages)
+                self.save_profile_data(profile, output_dir=output_dir)
+
+                user_calls = self.client.api_calls_count - user_start_calls
+                repo_count = profile["summary_metrics"]["repo_count"]
+                remaining = self.client.last_rate_limit_remaining
+
+                processed_repo_counts.append(repo_count)
+                user_api_call_counts.append(user_calls)
+                succeeded_count += 1
+
+                rem_str = str(remaining) if remaining is not None else "N/A"
+                print(f"[{idx}/{total_to_process}] {uname} - repos: {repo_count}, API calls used: {user_calls}, remaining: {rem_str}")
+
+            except Exception as e:
+                failed_count += 1
+                failed_users[uname] = str(e)
+                logger.error(f"[{idx}/{total_to_process}] {uname} - FAILED: {e}")
+
+        elapsed = round(time.time() - start_time, 2)
+        total_calls_consumed = self.client.api_calls_count - initial_api_calls
+
+        batch_summary = {
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "input_file": usernames_file,
+            "total_input_usernames": total_input_usernames,
+            "processed_count": total_to_process,
+            "skipped_count": skipped_count,
+            "succeeded_count": succeeded_count,
+            "failed_count": failed_count,
+            "failed_users": failed_users,
+            "total_api_calls_consumed": total_calls_consumed,
+            "elapsed_seconds": elapsed,
+            "avg_repos_per_user": round(float(np.mean(processed_repo_counts)), 2) if processed_repo_counts else 0.0,
+            "avg_api_calls_per_user": round(float(np.mean(user_api_call_counts)), 2) if user_api_call_counts else 0.0,
+        }
+
+        summary_path = os.path.join(output_dir, "batch_summary.json")
+        os.makedirs(output_dir, exist_ok=True)
+        with open(summary_path, "w", encoding="utf-8") as f:
+            json.dump(batch_summary, f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Batch execution finished. Summary saved to '{summary_path}'.")
+        return batch_summary
+
 
 def main():
-    parser = argparse.ArgumentParser(description="Collect GitHub profile data for a developer.")
-    parser.add_argument("username", type=str, help="GitHub username to profile")
+    parser = argparse.ArgumentParser(description="Collect GitHub profile data for a developer or batch of developers.")
+    parser.add_argument("username", type=str, nargs="?", default=None, help="GitHub username to profile")
+    parser.add_argument("--batch", type=str, default=None, help="Path to text file containing usernames (one per line)")
+    parser.add_argument("--limit", type=int, default=None, help="Limit number of users to process in batch mode")
     parser.add_argument("--output-dir", type=str, default="data/raw", help="Output directory for raw JSON")
+    parser.add_argument(
+        "--skip-commit-messages",
+        action="store_true",
+        help="Skip fetching recent commit messages to reduce API calls during bulk collection",
+    )
     args = parser.parse_args()
 
     client = GitHubClient()
     collector = GitHubProfileCollector(client=client)
 
-    try:
-        profile = collector.collect_full_profile(args.username)
-        saved_path = collector.save_profile_data(profile, output_dir=args.output_dir)
+    if args.batch:
+        summary = collector.collect_batch_profiles(
+            usernames_file=args.batch,
+            output_dir=args.output_dir,
+            skip_commit_messages=args.skip_commit_messages,
+            limit=args.limit
+        )
+        print("\n" + "=" * 60)
+        print("  DEV LENS - BATCH COLLECTION SUMMARY")
+        print("=" * 60)
+        print(f" Input File             : {summary['input_file']}")
+        print(f" Total Input Usernames  : {summary['total_input_usernames']}")
+        print(f" Processed Count        : {summary['processed_count']}")
+        print(f" Skipped (Today)        : {summary['skipped_count']}")
+        print(f" Succeeded Count        : {summary['succeeded_count']}")
+        print(f" Failed Count           : {summary['failed_count']}")
+        print(f" Total API Calls        : {summary['total_api_calls_consumed']}")
+        print(f" Avg Repos per User     : {summary['avg_repos_per_user']}")
+        print(f" Avg API Calls / User   : {summary['avg_api_calls_per_user']}")
+        print(f" Elapsed Time           : {summary['elapsed_seconds']} seconds")
+        print(f" Summary Output Path    : {os.path.join(args.output_dir, 'batch_summary.json')}")
+        print("=" * 60 + "\n")
 
-        api_summary = profile["summary_metrics"]["api_calls_used"]
-        print("\n" + "=" * 50)
-        print(f"  DEV LENS - PROFILE COLLECTION SUMMARY ({args.username})")
-        print("=" * 50)
-        print(f" Username        : {profile['username']}")
-        print(f" Repositories    : {profile['summary_metrics']['repo_count']}")
-        print(f" Total Commits   : {profile['summary_metrics']['total_commits']}")
-        print(f" API Calls Used  : {api_summary['total_calls']} (REST: {api_summary['rest_calls']}, GraphQL: {api_summary['graphql_calls']})")
-        print(f" Saved Output    : {saved_path}")
-        print("=" * 50 + "\n")
+    elif args.username:
+        try:
+            profile = collector.collect_full_profile(args.username, skip_commit_messages=args.skip_commit_messages)
+            saved_path = collector.save_profile_data(profile, output_dir=args.output_dir)
 
-    except Exception as e:
-        logger.error(f"Collection failed: {e}")
-        raise
+            api_summary = profile["summary_metrics"]["api_calls_used"]
+            print("\n" + "=" * 50)
+            print(f"  DEV LENS - PROFILE COLLECTION SUMMARY ({args.username})")
+            print("=" * 50)
+            print(f" Username        : {profile['username']}")
+            print(f" Repositories    : {profile['summary_metrics']['repo_count']}")
+            print(f" Total Commits   : {profile['summary_metrics']['total_commits']}")
+            print(f" API Calls Used  : {api_summary['total_calls']} (REST: {api_summary['rest_calls']}, GraphQL: {api_summary['graphql_calls']})")
+            print(f" Saved Output    : {saved_path}")
+            print("=" * 50 + "\n")
+
+        except Exception as e:
+            logger.error(f"Collection failed: {e}")
+            raise
+    else:
+        parser.print_help()
 
 
 if __name__ == "__main__":

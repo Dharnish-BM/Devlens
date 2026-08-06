@@ -57,6 +57,10 @@ def test_collect_full_profile(mock_client_cls, tmp_path):
     mock_client.rest_request.side_effect = [
         {"login": "testuser", "public_repos": 1},  # user_info
         [{"id": 1, "name": "testrepo", "language": "Python", "stargazers_count": 10, "forks_count": 2, "size": 100, "created_at": "2025-01-01T00:00:00Z", "pushed_at": "2025-01-02T00:00:00Z", "fork": False, "default_branch": "main"}],  # repos
+        {"content": "I0hlbGxv", "encoding": "base64"},  # readme
+        [{"name": "ci.yml"}],  # workflows
+        [{"name": "tests", "type": "dir"}],  # contents (has_test_presence)
+        [{"commit": {"message": "feat: initial commit"}}],  # commits
         [{"total": 50, "week": 1600000000}],  # commit_activity
         {"total_count": 5},  # pr_opened
         {"total_count": 4},  # pr_merged
