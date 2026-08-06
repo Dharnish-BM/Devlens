@@ -121,6 +121,7 @@ class GitHubProfileCollector:
             if repo.get("is_fork"):
                 repo["readme_length_chars"] = 0
                 repo["has_ci_config"] = False
+                repo["has_test_presence"] = False
                 repo["recent_commit_messages"] = []
                 continue
 

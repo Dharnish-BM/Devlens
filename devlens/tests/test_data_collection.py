@@ -97,3 +97,26 @@ def test_collect_full_profile(mock_client_cls, tmp_path):
     with open(saved_file, "r") as f:
         data = json.load(f)
         assert data["username"] == "testuser"
+
+
+@patch("devlens.data_collection.collect_profile.GitHubClient")
+def test_enrich_repo_details_sets_fork_fields_without_api_calls(mock_client_cls):
+    mock_client = mock_client_cls.return_value
+    collector = GitHubProfileCollector(client=mock_client)
+
+    repos = [
+        {
+            "id": 1,
+            "name": "forkrepo",
+            "full_name": "someone/forkrepo",
+            "is_fork": True,
+        }
+    ]
+
+    collector.enrich_repo_details("someone", repos)
+
+    assert repos[0]["readme_length_chars"] == 0
+    assert repos[0]["has_ci_config"] is False
+    assert repos[0]["has_test_presence"] is False
+    assert repos[0]["recent_commit_messages"] == []
+    mock_client.rest_request.assert_not_called()
