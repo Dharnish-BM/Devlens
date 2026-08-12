@@ -1,0 +1,9991 @@
+{
+  "username": "MegavarshiniM1809",
+  "collected_at": "2026-08-10T13:39:54.151622Z",
+  "user_info": {
+    "login": "MegavarshiniM1809",
+    "id": 227115166,
+    "node_id": "U_kgDODYmAng",
+    "avatar_url": "https://avatars.githubusercontent.com/u/227115166?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/MegavarshiniM1809",
+    "html_url": "https://github.com/MegavarshiniM1809",
+    "followers_url": "https://api.github.com/users/MegavarshiniM1809/followers",
+    "following_url": "https://api.github.com/users/MegavarshiniM1809/following{/other_user}",
+    "gists_url": "https://api.github.com/users/MegavarshiniM1809/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/MegavarshiniM1809/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/MegavarshiniM1809/subscriptions",
+    "organizations_url": "https://api.github.com/users/MegavarshiniM1809/orgs",
+    "repos_url": "https://api.github.com/users/MegavarshiniM1809/repos",
+    "events_url": "https://api.github.com/users/MegavarshiniM1809/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/MegavarshiniM1809/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "name": "Megavarshini",
+    "company": null,
+    "blog": "",
+    "location": null,
+    "email": null,
+    "hireable": null,
+    "bio": null,
+    "twitter_username": null,
+    "public_repos": 12,
+    "public_gists": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2025-08-18T06:40:22Z",
+    "updated_at": "2026-06-06T06:04:46Z"
+  },
+  "repositories": [
+    {
+      "id": 1242035469,
+      "name": "23ITR097",
+      "full_name": "MegavarshiniM1809/23ITR097",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "size": 2,
+      "created_at": "2026-05-18T04:28:16Z",
+      "pushed_at": "2026-05-18T05:59:20Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "top 10 notifications implemented"
+      ]
+    },
+    {
+      "id": 1040047524,
+      "name": "Billing_Software",
+      "full_name": "MegavarshiniM1809/Billing_Software",
+      "description": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "size": 16567,
+      "created_at": "2025-08-18T11:29:56Z",
+      "pushed_at": "2025-08-18T12:06:00Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "User Interface created"
+      ]
+    },
+    {
+      "id": 1329862831,
+      "name": "BusSync",
+      "full_name": "MegavarshiniM1809/BusSync",
+      "description": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "size": 0,
+      "created_at": "2026-08-10T13:35:21Z",
+      "pushed_at": "2026-08-10T13:36:38Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 25,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Update Home page removed one support button",
+        "Update Support.jsx",
+        "Support page",
+        "others",
+        "suma changes",
+        "Updated index.html",
+        "Merge branch 'home-page' of https://github.com/Jeevashre12/Transport_Management into home-page",
+        "Fix merge conflicts and update backend and frontend",
+        "Add student issue and route request styles",
+        "Merge pull request #2 from Jeevashre12/transport-office-module",
+        "Add Transport Office dashboard and route for local testing",
+        "Updated login, signup, and student dashboard UI",
+        "Merge pull request #1 from Jeevashre12/role-based-auth",
+        "Merge branch 'home-page' into role-based-auth",
+        "Remove Downloads directory from tracking",
+        "Add role-based access signup and login functionality",
+        "Remove mistakenly committed Downloads directory",
+        "Merge branch 'auth-feature' into home-page",
+        "Student module UI and routing setup",
+        "feat: add role-based signup/login with MongoDB Atlas",
+        "Initial commit: Home page and project structure"
+      ]
+    },
+    {
+      "id": 1307295660,
+      "name": "CertiChain",
+      "full_name": "MegavarshiniM1809/CertiChain",
+      "description": "Blockchain-Based Food Certificate Authentication System",
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "size": 85,
+      "created_at": "2026-07-21T05:15:37Z",
+      "pushed_at": "2026-07-21T05:26:58Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Complete core backend implementation with JWT authentication, IPFS integration, and certificate approval workflow"
+      ]
+    },
+    {
+      "id": 1274331595,
+      "name": "Cognizant_HandsOn",
+      "full_name": "MegavarshiniM1809/Cognizant_HandsOn",
+      "description": null,
+      "language": "Java",
+      "stars": 0,
+      "forks": 0,
+      "size": 13431,
+      "created_at": "2026-06-19T12:03:27Z",
+      "pushed_at": "2026-07-27T16:22:28Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Completed week 5 and 6 handson",
+        "Completed Microservices handson",
+        "Completed Spring REST using Spring Boot 3 handson",
+        "Completed Spring Data JPA Exercise",
+        "Completed Spring Core and Maven",
+        "Added PL SQL programming exercises",
+        "Completed DSA handson exercises",
+        "Completed design pattern hands-on"
+      ]
+    },
+    {
+      "id": 1223360206,
+      "name": "Devops_Kubernetes",
+      "full_name": "MegavarshiniM1809/Devops_Kubernetes",
+      "description": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "size": 0,
+      "created_at": "2026-04-28T08:47:51Z",
+      "pushed_at": "2026-04-28T08:47:52Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": []
+    },
+    {
+      "id": 1046416696,
+      "name": "E_commerce",
+      "full_name": "MegavarshiniM1809/E_commerce",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "size": 8689,
+      "created_at": "2025-08-28T16:51:25Z",
+      "pushed_at": "2025-09-14T08:31:54Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 856,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Created frontend",
+        "cart,orders,about(partial) are created",
+        "home,collection,cart(partial) file"
+      ]
+    },
+    {
+      "id": 1309492014,
+      "name": "GitDemo",
+      "full_name": "MegavarshiniM1809/GitDemo",
+      "description": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "size": 0,
+      "created_at": "2026-07-23T03:51:49Z",
+      "pushed_at": "2026-07-23T03:52:50Z",
+      "is_fork": false,
+      "default_branch": "master",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Initial commit"
+      ]
+    },
+    {
+      "id": 1263635807,
+      "name": "InventoryManagementSystem",
+      "full_name": "MegavarshiniM1809/InventoryManagementSystem",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "size": 229,
+      "created_at": "2026-06-09T06:11:13Z",
+      "pushed_at": "2026-06-09T06:27:33Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 513,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Initial commit"
+      ]
+    },
+    {
+      "id": 1048407363,
+      "name": "Leetcode",
+      "full_name": "MegavarshiniM1809/Leetcode",
+      "description": null,
+      "language": "Java",
+      "stars": 0,
+      "forks": 0,
+      "size": 270,
+      "created_at": "2025-09-01T11:54:19Z",
+      "pushed_at": "2026-07-20T07:27:53Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 35372,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Updated stats",
+        "Update README - Topic Tags",
+        "Time: 1 ms (99.96%), Space: 77.5 MB (14.17%) - LeetHub",
+        "Create README - LeetHub",
+        "Update README - Topic Tags",
+        "Time: 11 ms (64.05%), Space: 9.3 MB (80.26%) - LeetHub",
+        "Updated stats",
+        "Update README - Topic Tags",
+        "Time: 1615 ms (12.84%), Space: 0B (100%) - LeetHub",
+        "Create README - LeetHub",
+        "Updated stats",
+        "Update README - Topic Tags",
+        "Time: 68 ms (5.95%), Space: 46.4 MB (52.04%) - LeetHub",
+        "Create README - LeetHub",
+        "Updated stats",
+        "Update README - Topic Tags",
+        "Time: 0 ms (100%), Space: 43.8 MB (45.71%) - LeetHub",
+        "Create README - LeetHub",
+        "Updated stats",
+        "Update README - Topic Tags",
+        "Time: 26 ms (92.99%), Space: 70.1 MB (13.68%) - LeetHub",
+        "Create README - LeetHub",
+        "Updated stats",
+        "Update README - Topic Tags",
+        "Time: 1 ms (15.91%), Space: 48.5 MB (13.21%) - LeetHub",
+        "Create README - LeetHub",
+        "Update README - Topic Tags",
+        "Time: 5 ms (86.76%), Space: 45.4 MB (81.32%) - LeetHub",
+        "Updated stats",
+        "Update README - Topic Tags"
+      ]
+    },
+    {
+      "id": 1072037565,
+      "name": "Movie_Screening",
+      "full_name": "MegavarshiniM1809/Movie_Screening",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "size": 53,
+      "created_at": "2025-10-08T07:09:23Z",
+      "pushed_at": "2025-10-08T07:16:35Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 1380,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "movie screening created"
+      ]
+    },
+    {
+      "id": 1056510582,
+      "name": "UID_lab",
+      "full_name": "MegavarshiniM1809/UID_lab",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "size": 1506,
+      "created_at": "2025-09-14T08:46:03Z",
+      "pushed_at": "2025-10-06T09:49:38Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "exp_6-10",
+        "added react-calculator",
+        "added react-calculator_exp3 project",
+        "added react-calculator_exp3 project",
+        "added protofolio_exp2 project",
+        "exp1 created"
+      ]
+    }
+  ],
+  "commit_activity": {
+    "BusSync": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755385200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755990000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756594800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757199600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757804400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758409200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759014000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759618800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760223600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760828400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761433200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762038000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          6,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 16,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "Cognizant_HandsOn": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762650000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763254800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763859600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764464400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765069200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765674000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766278800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766883600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767488400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768093200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768698000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769302800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769907600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770512400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771117200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771722000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772326800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772931600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "total": 3,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 2,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "GitDemo": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762650000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763254800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763859600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764464400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765069200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765674000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766278800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766883600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767488400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768093200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768698000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769302800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769907600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770512400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771117200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771722000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772326800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772931600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "CertiChain": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762650000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763254800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763859600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764464400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765069200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765674000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766278800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766883600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767488400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768093200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768698000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769302800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769907600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770512400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771117200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771722000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772326800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772931600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "Leetcode": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          5,
+          4,
+          0,
+          0,
+          0,
+          4
+        ],
+        "total": 13,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        "total": 4,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          12,
+          8,
+          8,
+          8,
+          8,
+          0
+        ],
+        "total": 44,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          8,
+          8,
+          8,
+          0,
+          9,
+          0
+        ],
+        "total": 33,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          12,
+          0,
+          8,
+          53,
+          20
+        ],
+        "total": 93,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          4,
+          0,
+          4,
+          4,
+          4,
+          0
+        ],
+        "total": 16,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          2,
+          4,
+          0,
+          4,
+          0
+        ],
+        "total": 10,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          16,
+          13,
+          8,
+          4,
+          4
+        ],
+        "total": 45,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          13,
+          0,
+          0,
+          4,
+          9,
+          17,
+          3
+        ],
+        "total": 46,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          4,
+          0,
+          4,
+          0,
+          0,
+          4
+        ],
+        "total": 12,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          3,
+          4,
+          4,
+          4,
+          0,
+          0
+        ],
+        "total": 15,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          4,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 5,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 3,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          6,
+          0,
+          4,
+          4,
+          2,
+          0
+        ],
+        "total": 16,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        "total": 3,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        "total": 4,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        "total": 3,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 4,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          4,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        "total": 8,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        "total": 3,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 5,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          5,
+          4,
+          0,
+          4
+        ],
+        "total": 13,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        "total": 4,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        "total": 8,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 4,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "InventoryManagementSystem": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762650000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763254800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763859600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764464400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765069200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765674000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766278800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766883600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767488400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768093200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768698000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769302800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769907600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770512400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771117200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771722000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772326800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772931600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "23ITR097": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762650000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763254800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763859600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764464400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765069200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765674000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766278800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766883600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767488400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768093200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768698000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769302800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769907600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770512400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771117200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771722000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772326800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772931600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "Movie_Screening": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "UID_lab": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 5,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "E_commerce": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ],
+    "Billing_Software": [
+      {
+        "days": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1786233600
+      }
+    ]
+  },
+  "pull_requests": {
+    "total_opened": 0,
+    "total_merged": 0,
+    "review_participation_count": 0
+  },
+  "issues": {
+    "total_opened": 0,
+    "total_closed": 0,
+    "total_commented": 0
+  },
+  "graphql_data": {
+    "contribution_calendar": {
+      "totalContributions": 466,
+      "weeks": [
+        {
+          "contributionDays": [
+            {
+              "date": "2025-08-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-16",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-08-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-18",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-20",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-21",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-22",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-23",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-08-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-28",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-29",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-30",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-08-31",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-01",
+              "contributionCount": 6,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-02",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-04",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-05",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-06",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-09-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-13",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-09-14",
+              "contributionCount": 7,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-15",
+              "contributionCount": 12,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2025-09-16",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-17",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-18",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-19",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-20",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-09-21",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-22",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-23",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-24",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-26",
+              "contributionCount": 10,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2025-09-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-09-28",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-29",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-30",
+              "contributionCount": 12,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2025-10-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-02",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-10-03",
+              "contributionCount": 53,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-10-04",
+              "contributionCount": 20,
+              "color": "#216e39"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-10-05",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-06",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-08",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-10-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-16",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-18",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-10-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-20",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-21",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-22",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-23",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-24",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-10-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-28",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-29",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-30",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-31",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-02",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-04",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-05",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-16",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-18",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-20",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-21",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-22",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-23",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-25",
+              "contributionCount": 16,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-11-26",
+              "contributionCount": 14,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-11-27",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-11-28",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-29",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-30",
+              "contributionCount": 14,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-12-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-02",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-03",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-04",
+              "contributionCount": 10,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2025-12-05",
+              "contributionCount": 18,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-12-06",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-12-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-08",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-10",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-13",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-12-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-15",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-16",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-17",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-18",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-20",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-12-21",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-22",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-23",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-12-28",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-29",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-30",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-31",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-02",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-01-04",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-05",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-01-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-16",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-01-18",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-20",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-21",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-22",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-23",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-01-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-26",
+              "contributionCount": 6,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-01-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-01-28",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-29",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-30",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-31",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-02-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-02",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-04",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-05",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-02-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-13",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-02-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-16",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-18",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-20",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-21",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-02-22",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-23",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-28",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-01",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-02",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-04",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-05",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-15",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-16",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-18",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-20",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-21",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-22",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-23",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-27",
+              "contributionCount": 6,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-03-28",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-29",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-30",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-31",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-02",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-04",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-04-05",
+              "contributionCount": 6,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-04-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-04-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-16",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-18",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-04-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-20",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-21",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-22",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-23",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-04-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-28",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-29",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-30",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-02",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-04",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-05",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-16",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-18",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-20",
+              "contributionCount": 6,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-05-21",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-22",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-23",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-28",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-29",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-30",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-31",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-02",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-04",
+              "contributionCount": 8,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-05",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-06-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-09",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-12",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-06-14",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-16",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-18",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-19",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-20",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-06-21",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-22",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-23",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-06-28",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-29",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-30",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-02",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-04",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-07-05",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-10",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-11",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-07-12",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-14",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-16",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-17",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-18",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-07-19",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-20",
+              "contributionCount": 5,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-07-21",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-22",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-23",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-25",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-07-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-27",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-28",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-29",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-30",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-07-31",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-08-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-08-02",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-08-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-08-04",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-08-05",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-08-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-08-07",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-08-08",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-08-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-08-10",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            }
+          ]
+        }
+      ]
+    },
+    "pinned_repositories": [],
+    "languages_breakdown": {
+      "BusSync": [
+        {
+          "language": "JavaScript",
+          "size_bytes": 58909
+        },
+        {
+          "language": "CSS",
+          "size_bytes": 43181
+        },
+        {
+          "language": "HTML",
+          "size_bytes": 359
+        }
+      ],
+      "GitDemo": [],
+      "CertiChain": [
+        {
+          "language": "JavaScript",
+          "size_bytes": 24591
+        },
+        {
+          "language": "CSS",
+          "size_bytes": 2913
+        },
+        {
+          "language": "HTML",
+          "size_bytes": 360
+        }
+      ],
+      "Cognizant_HandsOn": [
+        {
+          "language": "Java",
+          "size_bytes": 31501
+        }
+      ],
+      "InventoryManagementSystem": [
+        {
+          "language": "JavaScript",
+          "size_bytes": 214275
+        },
+        {
+          "language": "CSS",
+          "size_bytes": 15869
+        },
+        {
+          "language": "HTML",
+          "size_bytes": 1721
+        }
+      ],
+      "23ITR097": [
+        {
+          "language": "JavaScript",
+          "size_bytes": 1623
+        }
+      ],
+      "Devops_Kubernetes": [],
+      "Movie_Screening": [
+        {
+          "language": "JavaScript",
+          "size_bytes": 64698
+        },
+        {
+          "language": "CSS",
+          "size_bytes": 14658
+        },
+        {
+          "language": "HTML",
+          "size_bytes": 411
+        }
+      ],
+      "UID_lab": [
+        {
+          "language": "JavaScript",
+          "size_bytes": 16896
+        },
+        {
+          "language": "CSS",
+          "size_bytes": 12076
+        },
+        {
+          "language": "HTML",
+          "size_bytes": 4929
+        }
+      ],
+      "Leetcode": [
+        {
+          "language": "Java",
+          "size_bytes": 39896
+        },
+        {
+          "language": "C++",
+          "size_bytes": 16954
+        },
+        {
+          "language": "C",
+          "size_bytes": 412
+        }
+      ],
+      "E_commerce": [
+        {
+          "language": "JavaScript",
+          "size_bytes": 70235
+        },
+        {
+          "language": "CSS",
+          "size_bytes": 432
+        },
+        {
+          "language": "HTML",
+          "size_bytes": 356
+        }
+      ],
+      "Billing_Software": [
+        {
+          "language": "Python",
+          "size_bytes": 9362
+        }
+      ]
+    }
+  },
+  "summary_metrics": {
+    "repo_count": 12,
+    "total_commits": 466,
+    "api_calls_used": {
+      "total_calls": 265,
+      "rest_calls": 262,
+      "graphql_calls": 3
+    }
+  }
+}

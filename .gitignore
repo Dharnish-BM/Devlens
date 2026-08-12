@@ -1,6 +1,7 @@
 # Environments
-venv/
+.venv/
 .env
+venv
 
 # Python / Cache
 __pycache__/
@@ -10,12 +11,10 @@ __pycache__/
 .pytest_cache/
 
 # Databases
-*.db
+*.db 
 *.sqlite3
 
-# Data
-/data/raw
-data/raw/
+
 
 # IDE & OS
 .vscode/

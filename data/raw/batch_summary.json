@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-08-11T09:58:55.649199Z",
+  "input_file": "data/batch_chunks/chunk_13.txt",
+  "total_input_usernames": 9,
+  "processed_count": 9,
+  "skipped_count": 8,
+  "succeeded_count": 0,
+  "failed_count": 1,
+  "failed_users": {
+    "sakthi200703": "Could not retrieve user info for 'sakthi200703'."
+  },
+  "total_api_calls_consumed": 1,
+  "elapsed_seconds": 0.43,
+  "avg_repos_per_user": 0.0,
+  "avg_api_calls_per_user": 0.0
+}
