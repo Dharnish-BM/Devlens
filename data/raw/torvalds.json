@@ -1,0 +1,8908 @@
+{
+  "username": "torvalds",
+  "collected_at": "2026-08-06T08:08:22.175581Z",
+  "user_info": {
+    "login": "torvalds",
+    "id": 1024025,
+    "node_id": "MDQ6VXNlcjEwMjQwMjU=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1024025?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/torvalds",
+    "html_url": "https://github.com/torvalds",
+    "followers_url": "https://api.github.com/users/torvalds/followers",
+    "following_url": "https://api.github.com/users/torvalds/following{/other_user}",
+    "gists_url": "https://api.github.com/users/torvalds/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/torvalds/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/torvalds/subscriptions",
+    "organizations_url": "https://api.github.com/users/torvalds/orgs",
+    "repos_url": "https://api.github.com/users/torvalds/repos",
+    "events_url": "https://api.github.com/users/torvalds/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/torvalds/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "name": "Linus Torvalds",
+    "company": "Linux Foundation",
+    "blog": "",
+    "location": "Portland, OR",
+    "email": null,
+    "hireable": null,
+    "bio": null,
+    "twitter_username": null,
+    "public_repos": 12,
+    "public_gists": 1,
+    "followers": 315162,
+    "following": 0,
+    "created_at": "2011-09-03T15:26:22Z",
+    "updated_at": "2026-07-21T17:42:26Z"
+  },
+  "repositories": [
+    {
+      "id": 940929652,
+      "name": "1590A",
+      "full_name": "torvalds/1590A",
+      "description": "Random odd guitar pedal design in kicad",
+      "language": "OpenSCAD",
+      "stars": 571,
+      "forks": 20,
+      "size": 10882,
+      "created_at": "2025-03-01T04:36:29Z",
+      "pushed_at": "2025-09-19T02:54:14Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 5583,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Merge branch 'archive-note' of https://github.com/GNUfault/1590A",
+        "Update very incomplete STM32 board",
+        "Add archive message",
+        "Add aggressive low-pass filter to the Daisy Seed base board output",
+        "Add very incomplete and broken stm32 board",
+        "Fix pcb layerselection on Daisy Seed board",
+        "Try attaching the Daisy Seed directly on the base board",
+        "Add input signal re-biasing to the Daisy Seed after all",
+        "Finish down-converting a couple of the old boards to KiCad 9.0",
+        "Scripted down-conversion of the rest of the files to kicad 9.0 format",
+        "Downgrade Daisy Seed boards to kicad v9.0",
+        "Create a pedal design based on the Electrosmith Daisy Seed platform",
+        "Try LDO for positive voltage rail cleaning",
+        "Add AP2202-ADJ LDO symbol to my parts library",
+        "Update the buffered base board",
+        "Buffered base: use negative rail for JFET switching",
+        "Add negative power rail to the buffered base design",
+        "Add LT3462A symbol",
+        "Split the buffered base over multiple schematic pages, do PCB layout",
+        "Buffered base: add RF filter after JFET switches",
+        "Wire the soft-switch up to actually switch signal and LED",
+        "Add the beginnings of a dubious buffered base board",
+        "Add a few dual MOSFET symbols",
+        "Update compressor PCB layout too",
+        "Compressor: base the compressor level voltage on matched JFET",
+        "Update compressor for the LS844 dual JFET",
+        "Update the plain base to have a 1k RF resistor",
+        "Add LS844 dual matched JFET symbol",
+        "Compressor: More kicad file noise",
+        "Octaver: file noise due to kicad version update"
+      ]
+    },
+    {
+      "id": 1130786764,
+      "name": "AudioNoise",
+      "full_name": "torvalds/AudioNoise",
+      "description": "Random digital audio effects",
+      "language": "C",
+      "stars": 4448,
+      "forks": 211,
+      "size": 1428,
+      "created_at": "2026-01-09T02:33:29Z",
+      "pushed_at": "2026-05-08T17:20:22Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 2170,
+      "has_ci_config": false,
+      "has_test_presence": true,
+      "recent_commit_messages": [
+        "Effect interface update",
+        "Add \"chasing tone\" effect",
+        "growlingbass: fix abs() confusion, use fabsf()",
+        "warn about implicit floating point to integer conversions",
+        "Add 'growlingbass' effect",
+        "Add random 'tube' model",
+        "convert: add somewhat realtime control interface",
+        "convert: start parsing arguments more flexibly",
+        "Update effect definition interface",
+        "Refactor visualize.py to use native sample units and improve slider",
+        "Optimize visualize.py for large datasets",
+        "tests: clean up naming and update gitignore file",
+        "Get rid of too random \"helper\" functions, tweak pot behavior",
+        "Add verification of fastsincos() results",
+        "Fix the 'cos' part of fastsincos",
+        "Fix bad phaser pot ranges",
+        "Update visualize.py: use raw int32 data, just scale the Y axis",
+        "Clean up integer type system a bit, and prep for extensions",
+        "Add first cut at some noise gate logic",
+        "Abstract out the initial and final integer sample processing",
+        "Add a distortion/overdrive effect with clipping modes and tone control",
+        "Fix flanger debug output printing wrong values",
+        "Don't use the \"canonical\" biquad direct form 2",
+        "Fix final float -> int conversion overflow",
+        "Add LFO sinewave verification test",
+        "Add amplitude-modulation signal generator",
+        "Fix 'discont' effect potentiometer behavior",
+        "Use ffplay instead of aplay, and allow python override",
+        "Fix math library linking causing link errors for 'gensin'",
+        "Add README and LICENSE file"
+      ]
+    },
+    {
+      "id": 1058343058,
+      "name": "GuitarPedal",
+      "full_name": "torvalds/GuitarPedal",
+      "description": "Linus learns analog circuits",
+      "language": "C",
+      "stars": 2218,
+      "forks": 97,
+      "size": 11190,
+      "created_at": "2025-09-17T01:01:29Z",
+      "pushed_at": "2026-08-05T00:35:33Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 10847,
+      "has_ci_config": true,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Various random cleanups with Opus",
+        "Name the two jobs the sequence counter does",
+        "Light the LED before anything else, including the watchdog",
+        "Call the firmware pedal.c",
+        "Stop declaring the USB MIDI writes three times",
+        "Move the SysEx protocol into midi/sysex.h",
+        "Move the board bring-up and the effect state out of blink.c",
+        "Gather the MIDI code into a directory of its own",
+        "Validation: read the volume out of a batched state dump",
+        "Point a comment at the function that replaced the one it names",
+        "Drop three things carried on every effect and read by nothing",
+        "Silence the tuner's notes when the tuner goes away",
+        "Stop a knob and a footswitch waiting on a host that is not reading",
+        "Clamp a pot value on the way in, not just on the way out",
+        "Fix USB audio skipping - for good",
+        "Validation: stop counting the start of a capture as a break",
+        "Say that saving a scene breaks the USB audio stream",
+        "Let the status report yield, and never wait for the wire",
+        "Queue what the pedal says, and hand it to USB a frame at a time",
+        "Remove the pot sender that nothing calls any more",
+        "Validation: score the sysex load per answered reply, and let it be the big one",
+        "Pack a state dump's pot values one message per effect",
+        "Accept several pot values in one message",
+        "Drop a SysEx message that did not fit, rather than acting on part of it",
+        "Say what the identity reply actually costs",
+        "Stop sending pot values for effects that are not running",
+        "Signal path validation day with Opus",
+        "Track the low corner, and what it costs a bass",
+        "Exercise the hardware MIDI jacks",
+        "Send MIDI down the raw device, not the sequencer"
+      ]
+    },
+    {
+      "id": 1137038093,
+      "name": "HunspellColorize",
+      "full_name": "torvalds/HunspellColorize",
+      "description": "Wrapper around 'less' to colorize spelling mistakes using Hunspell",
+      "language": "C",
+      "stars": 359,
+      "forks": 17,
+      "size": 15,
+      "created_at": "2026-01-18T19:57:03Z",
+      "pushed_at": "2026-01-19T20:23:09Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 787,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Add local dictionaries if they exist",
+        "Use pkg-config to find hunspell instead of hardcoding it",
+        "Update README about colorization..",
+        "Stop being quite so lazy about line lengths and UTF-8",
+        "Do a really simple colorizing pager"
+      ]
+    },
+    {
+      "id": 79171906,
+      "name": "libdc-for-dirk",
+      "full_name": "torvalds/libdc-for-dirk",
+      "description": "Only use for syncing with Dirk, don't use for anything else",
+      "language": "C",
+      "stars": 396,
+      "forks": 51,
+      "size": 3743,
+      "created_at": "2017-01-17T00:25:49Z",
+      "pushed_at": "2024-12-26T20:12:43Z",
+      "is_fork": true,
+      "default_branch": "Subsurface-branch",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "recent_commit_messages": []
+    },
+    {
+      "id": 519408694,
+      "name": "libgit2",
+      "full_name": "torvalds/libgit2",
+      "description": "A cross-platform, linkable library implementation of Git that you can use in your application.",
+      "language": "C",
+      "stars": 376,
+      "forks": 30,
+      "size": 62768,
+      "created_at": "2022-07-30T03:30:56Z",
+      "pushed_at": "2023-12-19T11:45:42Z",
+      "is_fork": true,
+      "default_branch": "main",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "recent_commit_messages": []
+    },
+    {
+      "id": 2325298,
+      "name": "linux",
+      "full_name": "torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 241915,
+      "forks": 63770,
+      "size": 6228144,
+      "created_at": "2011-09-04T22:48:12Z",
+      "pushed_at": "2026-08-05T16:03:28Z",
+      "is_fork": false,
+      "default_branch": "master",
+      "readme_length_chars": 6043,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Merge tag 'soc-fixes-7.2-2' of git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc",
+        "mm: fix incorrect flush address in direct page table reclaim",
+        "Merge tag 'for_linus' of git://git.kernel.org/pub/scm/linux/kernel/git/mst/vhost",
+        "Merge tag 'aspeed-7.3-maintainers-0' of https://git.kernel.org/pub/scm/linux/kernel/git/bmc/linux into arm/fixes",
+        "Merge tag 'nuvoton-7.2-arm-fixes-0' of https://git.kernel.org/pub/scm/linux/kernel/git/bmc/linux into arm/fixes",
+        "Merge tag 'locking-urgent-2026-08-04' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip",
+        "Merge tag 'integrity-v7.2-rc7' of git://git.kernel.org/pub/scm/linux/kernel/git/zohar/linux-integrity",
+        "Merge tag 'nfs-for-7.2-3' of git://git.linux-nfs.org/projects/anna/linux-nfs",
+        "ima: Instantiate file_truncate and path_truncate hooks",
+        "ima: fix out-of-bounds read in xattr_verify()",
+        "Merge tag 'aspeed-7.2-driver-fixes-0' of https://git.kernel.org/pub/scm/linux/kernel/git/bmc/linux into arm/fixes",
+        "MAINTAINERS: add Ryan Chen and Billy Tsai as reviewer for ARM/ASPEED",
+        "vhost-scsi: reject feature changes after endpoint",
+        "vhost-scsi: flush backend after device ioctls",
+        "vhost: reset the vring metadata cache on vring reconfiguration",
+        "vhost-scsi: Validate T10 PI scatterlist counts",
+        "Merge tag 'fsverity-for-linus' of git://git.kernel.org/pub/scm/fs/fsverity/linux",
+        "Merge tag 'fscrypt-for-linus' of git://git.kernel.org/pub/scm/fs/fscrypt/linux",
+        "vdpa/mlx5: Fix buffer length in create_direct_keys()",
+        "vhost/vdpa: reject overflowing PA map page counts on 32-bit",
+        "vhost_iotlb: bound map allocation in add_range",
+        "Merge tag 'liveupdate-fixes-2026-08-03' of git://git.kernel.org/pub/scm/linux/kernel/git/liveupdate/linux",
+        "Merge tag 'sched_ext-for-7.2-rc6-fixes' of git://git.kernel.org/pub/scm/linux/kernel/git/tj/sched_ext",
+        "Merge tag 'cgroup-for-7.2-rc6-fixes' of git://git.kernel.org/pub/scm/linux/kernel/git/tj/cgroup",
+        "Merge tag 'arm-soc/for-7.2/devicetree-fixes-v2' of https://github.com/Broadcom/stblinux into arm/fixes",
+        "Linux 7.2-rc6",
+        "Docs/admin-guide/cgroup-v2: document io.latency rotational vs non-rotational behavior",
+        "Merge tag 'riscv-for-linus-7.2-rc6' of git://git.kernel.org/pub/scm/linux/kernel/git/riscv/linux",
+        "Merge tag 's390-7.2-6' of git://git.kernel.org/pub/scm/linux/kernel/git/s390/linux",
+        "Merge tag 'x86-urgent-2026-08-02' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip"
+      ]
+    },
+    {
+      "id": 113099837,
+      "name": "pesconvert",
+      "full_name": "torvalds/pesconvert",
+      "description": "Brother PES file converter",
+      "language": "C",
+      "stars": 567,
+      "forks": 75,
+      "size": 17,
+      "created_at": "2017-12-04T21:58:56Z",
+      "pushed_at": "2022-12-22T10:46:37Z",
+      "is_fork": false,
+      "default_branch": "master",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "cairo, svg: ignore empty blocks",
+        "cairo,svg: convert \"while\" to \"for\" (code simplification)",
+        "pes: check the color index, fail if out of range",
+        "pes: new_block() fails if undefined color is referenced",
+        "pes: add missing new_block() error check",
+        "Mark the \"big y displacement\" case as a jumpstitch too",
+        "Fix jumpstitch output",
+        "Simplify and fix block allocation",
+        "Add thumbnailer entry for gnome3",
+        "pesconvert: Fixed row init range in output_png().",
+        "Add a 'density' argument for thread thickness",
+        "Fix some trivial scaling problems",
+        "Copy pesconvert to the system thumbnailer",
+        "Teach pesconvert a few command line options",
+        "Add thumbnailer gnome gconftool-2 setting",
+        "Add silly rule to teach the system about PES files",
+        "Split out main() into its own file",
+        "Add a 'cairo' backend for output",
+        "Add stupid PNG support",
+        "Initial PES conversion"
+      ]
+    },
+    {
+      "id": 1257356954,
+      "name": "ScrollWheel",
+      "full_name": "torvalds/ScrollWheel",
+      "description": "Minimalist RP2350 magnetic sensor scroll wheel toy project",
+      "language": "C",
+      "stars": 363,
+      "forks": 12,
+      "size": 15,
+      "created_at": "2026-06-02T15:48:56Z",
+      "pushed_at": "2026-06-02T15:52:37Z",
+      "is_fork": false,
+      "default_branch": "main",
+      "readme_length_chars": 1355,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "Minimalistic scroll-wheel / volume knob rp2350 project"
+      ]
+    },
+    {
+      "id": 78665021,
+      "name": "subsurface-for-dirk",
+      "full_name": "torvalds/subsurface-for-dirk",
+      "description": "Do not use - the real upstream is  Subsurface-divelog/subsurface",
+      "language": "C++",
+      "stars": 467,
+      "forks": 66,
+      "size": 155337,
+      "created_at": "2017-01-11T18:03:01Z",
+      "pushed_at": "2024-08-28T08:00:07Z",
+      "is_fork": true,
+      "default_branch": "master",
+      "readme_length_chars": 0,
+      "has_ci_config": false,
+      "recent_commit_messages": []
+    },
+    {
+      "id": 86106493,
+      "name": "test-tlb",
+      "full_name": "torvalds/test-tlb",
+      "description": "Stupid memory latency and TLB tester",
+      "language": "C",
+      "stars": 1040,
+      "forks": 220,
+      "size": 19,
+      "created_at": "2017-03-24T20:06:37Z",
+      "pushed_at": "2024-08-19T21:13:36Z",
+      "is_fork": false,
+      "default_branch": "master",
+      "readme_length_chars": 5041,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "README: minor typos fix",
+        "Improve on the timing logic a bit more",
+        "Improve on map re-allocation strategy",
+        "Try to increase result stability by running multiple rounds",
+        "Add README and LICENSE.txt file",
+        "Allow odd stride values",
+        "Work even in the presense of transparent hugepage  \"always\".",
+        "Use gettimeofday for start/end",
+        "Improve the tester some more, remove the old TLB-only code",
+        "Try to create test of truly random list walker",
+        "Very hacky TLB timing tester"
+      ]
+    },
+    {
+      "id": 117900805,
+      "name": "uemacs",
+      "full_name": "torvalds/uemacs",
+      "description": "Random version of microemacs with my private modificatons",
+      "language": "C",
+      "stars": 2098,
+      "forks": 316,
+      "size": 741,
+      "created_at": "2018-01-17T22:32:21Z",
+      "pushed_at": "2026-08-05T03:56:49Z",
+      "is_fork": false,
+      "default_branch": "master",
+      "readme_length_chars": 6602,
+      "has_ci_config": false,
+      "has_test_presence": false,
+      "recent_commit_messages": [
+        "increase size of lock table",
+        "Allow bigger filenames",
+        "Use _GNU_SOURCE instead of _BSD_SOURCE and _SYSV_SOURCE",
+        "Do some valgrind cleanup",
+        "Merge branch 'experimental'",
+        "Turn NBSP into regular SP on input",
+        "Try updated rule for \"is new paragraph\"",
+        "Make some minor code legibility changes",
+        "Don't use 'char' for number of lines",
+        "Stop using 'short' for line and allocation sizes",
+        "Avoid memory access errors if llength() overflows",
+        "Fix the unicode character limit (0 .. 0x10ffff)",
+        "uemacs: Remove unused 'lflag' variables from file.c",
+        "Fix 'getccol()' and 'getgoal()' functions for multibyte UTF-8 characters",
+        "Fix vtputc() and simplify show_line by using it again",
+        "Start doing character removal properly",
+        "Start actually inserting full utf8 sequences",
+        "Make 'show_line()' do proper TAB handling",
+        "Expand keycode to 'int' from 'short'",
+        "character input: make sure we have enough bytes for a full utf8 character",
+        "utf8: make sure to honor the array length properly",
+        "Make kbd macro save area use 'int' instead of short",
+        "Use utf8 helper functions for keyboard input",
+        "Make cursor movement (largely) understand UTF-8 character boundaries",
+        "Split up the utf8 helper functions into a file of their own",
+        "Remove the old utf8_mode thing.",
+        "Show UTF-8 input as UTF-8 output",
+        "Make the 'struct video' contain an array of unicode characters rather than bytes",
+        "Show lines with a single helper function, not one byte at a time",
+        "Make uemacs build on FreeBSD."
+      ]
+    }
+  ],
+  "commit_activity": {
+    "linux": [
+      {
+        "total": 1440,
+        "week": 1754784000,
+        "days": [
+          61,
+          367,
+          217,
+          308,
+          250,
+          184,
+          53
+        ]
+      },
+      {
+        "total": 1476,
+        "week": 1755388800,
+        "days": [
+          47,
+          241,
+          218,
+          217,
+          325,
+          358,
+          70
+        ]
+      },
+      {
+        "total": 1538,
+        "week": 1755993600,
+        "days": [
+          51,
+          202,
+          246,
+          296,
+          331,
+          337,
+          75
+        ]
+      },
+      {
+        "total": 1241,
+        "week": 1756598400,
+        "days": [
+          50,
+          179,
+          226,
+          266,
+          232,
+          234,
+          54
+        ]
+      },
+      {
+        "total": 1313,
+        "week": 1757203200,
+        "days": [
+          65,
+          309,
+          227,
+          192,
+          171,
+          269,
+          80
+        ]
+      },
+      {
+        "total": 1676,
+        "week": 1757808000,
+        "days": [
+          86,
+          310,
+          259,
+          326,
+          324,
+          297,
+          74
+        ]
+      },
+      {
+        "total": 1116,
+        "week": 1758412800,
+        "days": [
+          66,
+          179,
+          271,
+          225,
+          174,
+          136,
+          65
+        ]
+      },
+      {
+        "total": 902,
+        "week": 1759017600,
+        "days": [
+          53,
+          138,
+          179,
+          205,
+          124,
+          162,
+          41
+        ]
+      },
+      {
+        "total": 841,
+        "week": 1759622400,
+        "days": [
+          89,
+          100,
+          177,
+          147,
+          138,
+          146,
+          44
+        ]
+      },
+      {
+        "total": 1505,
+        "week": 1760227200,
+        "days": [
+          56,
+          265,
+          368,
+          238,
+          260,
+          235,
+          83
+        ]
+      },
+      {
+        "total": 1147,
+        "week": 1760832000,
+        "days": [
+          61,
+          246,
+          228,
+          210,
+          210,
+          146,
+          46
+        ]
+      },
+      {
+        "total": 1529,
+        "week": 1761436800,
+        "days": [
+          61,
+          267,
+          252,
+          274,
+          268,
+          258,
+          149
+        ]
+      },
+      {
+        "total": 1376,
+        "week": 1762041600,
+        "days": [
+          52,
+          269,
+          266,
+          279,
+          228,
+          218,
+          64
+        ]
+      },
+      {
+        "total": 1797,
+        "week": 1762646400,
+        "days": [
+          76,
+          266,
+          549,
+          269,
+          306,
+          275,
+          56
+        ]
+      },
+      {
+        "total": 1486,
+        "week": 1763251200,
+        "days": [
+          44,
+          298,
+          249,
+          302,
+          242,
+          285,
+          66
+        ]
+      },
+      {
+        "total": 1244,
+        "week": 1763856000,
+        "days": [
+          78,
+          182,
+          248,
+          272,
+          189,
+          199,
+          76
+        ]
+      },
+      {
+        "total": 1100,
+        "week": 1764460800,
+        "days": [
+          45,
+          166,
+          212,
+          204,
+          177,
+          229,
+          67
+        ]
+      },
+      {
+        "total": 767,
+        "week": 1765065600,
+        "days": [
+          20,
+          116,
+          170,
+          142,
+          134,
+          131,
+          54
+        ]
+      },
+      {
+        "total": 1295,
+        "week": 1765670400,
+        "days": [
+          64,
+          288,
+          210,
+          204,
+          134,
+          279,
+          116
+        ]
+      },
+      {
+        "total": 667,
+        "week": 1766275200,
+        "days": [
+          45,
+          208,
+          170,
+          113,
+          40,
+          53,
+          38
+        ]
+      },
+      {
+        "total": 525,
+        "week": 1766880000,
+        "days": [
+          39,
+          116,
+          114,
+          96,
+          26,
+          99,
+          35
+        ]
+      },
+      {
+        "total": 1399,
+        "week": 1767484800,
+        "days": [
+          73,
+          253,
+          233,
+          202,
+          292,
+          266,
+          80
+        ]
+      },
+      {
+        "total": 1414,
+        "week": 1768089600,
+        "days": [
+          129,
+          236,
+          307,
+          228,
+          208,
+          239,
+          67
+        ]
+      },
+      {
+        "total": 1417,
+        "week": 1768694400,
+        "days": [
+          96,
+          182,
+          285,
+          264,
+          303,
+          215,
+          72
+        ]
+      },
+      {
+        "total": 1131,
+        "week": 1769299200,
+        "days": [
+          103,
+          118,
+          224,
+          187,
+          178,
+          241,
+          80
+        ]
+      },
+      {
+        "total": 996,
+        "week": 1769904000,
+        "days": [
+          51,
+          165,
+          193,
+          146,
+          185,
+          196,
+          60
+        ]
+      },
+      {
+        "total": 818,
+        "week": 1770508800,
+        "days": [
+          45,
+          168,
+          203,
+          115,
+          121,
+          120,
+          46
+        ]
+      },
+      {
+        "total": 740,
+        "week": 1771113600,
+        "days": [
+          39,
+          158,
+          156,
+          135,
+          88,
+          105,
+          59
+        ]
+      },
+      {
+        "total": 1210,
+        "week": 1771718400,
+        "days": [
+          52,
+          280,
+          167,
+          180,
+          226,
+          218,
+          87
+        ]
+      },
+      {
+        "total": 1437,
+        "week": 1772323200,
+        "days": [
+          63,
+          222,
+          232,
+          229,
+          298,
+          269,
+          124
+        ]
+      },
+      {
+        "total": 1172,
+        "week": 1772928000,
+        "days": [
+          44,
+          235,
+          203,
+          180,
+          212,
+          208,
+          90
+        ]
+      },
+      {
+        "total": 1270,
+        "week": 1773532800,
+        "days": [
+          69,
+          209,
+          220,
+          211,
+          258,
+          217,
+          86
+        ]
+      },
+      {
+        "total": 1543,
+        "week": 1774137600,
+        "days": [
+          50,
+          242,
+          312,
+          298,
+          323,
+          264,
+          54
+        ]
+      },
+      {
+        "total": 1402,
+        "week": 1774742400,
+        "days": [
+          91,
+          256,
+          198,
+          273,
+          269,
+          234,
+          81
+        ]
+      },
+      {
+        "total": 1317,
+        "week": 1775347200,
+        "days": [
+          69,
+          163,
+          267,
+          249,
+          226,
+          240,
+          103
+        ]
+      },
+      {
+        "total": 976,
+        "week": 1775952000,
+        "days": [
+          98,
+          200,
+          169,
+          153,
+          151,
+          142,
+          63
+        ]
+      },
+      {
+        "total": 943,
+        "week": 1776556800,
+        "days": [
+          73,
+          190,
+          144,
+          136,
+          159,
+          168,
+          73
+        ]
+      },
+      {
+        "total": 1316,
+        "week": 1777161600,
+        "days": [
+          58,
+          330,
+          251,
+          248,
+          216,
+          128,
+          85
+        ]
+      },
+      {
+        "total": 1342,
+        "week": 1777766400,
+        "days": [
+          61,
+          203,
+          310,
+          190,
+          223,
+          260,
+          95
+        ]
+      },
+      {
+        "total": 1489,
+        "week": 1778371200,
+        "days": [
+          105,
+          340,
+          293,
+          268,
+          186,
+          243,
+          54
+        ]
+      },
+      {
+        "total": 1539,
+        "week": 1778976000,
+        "days": [
+          137,
+          243,
+          240,
+          317,
+          246,
+          268,
+          88
+        ]
+      },
+      {
+        "total": 1119,
+        "week": 1779580800,
+        "days": [
+          74,
+          134,
+          261,
+          231,
+          142,
+          208,
+          69
+        ]
+      },
+      {
+        "total": 1319,
+        "week": 1780185600,
+        "days": [
+          82,
+          166,
+          247,
+          265,
+          240,
+          188,
+          131
+        ]
+      },
+      {
+        "total": 1277,
+        "week": 1780790400,
+        "days": [
+          85,
+          207,
+          280,
+          216,
+          195,
+          216,
+          78
+        ]
+      },
+      {
+        "total": 604,
+        "week": 1781395200,
+        "days": [
+          47,
+          189,
+          117,
+          80,
+          95,
+          48,
+          28
+        ]
+      },
+      {
+        "total": 556,
+        "week": 1782000000,
+        "days": [
+          63,
+          88,
+          110,
+          68,
+          134,
+          60,
+          33
+        ]
+      },
+      {
+        "total": 344,
+        "week": 1782604800,
+        "days": [
+          27,
+          49,
+          63,
+          57,
+          65,
+          62,
+          21
+        ]
+      },
+      {
+        "total": 322,
+        "week": 1783209600,
+        "days": [
+          31,
+          57,
+          52,
+          50,
+          49,
+          65,
+          18
+        ]
+      },
+      {
+        "total": 371,
+        "week": 1783814400,
+        "days": [
+          35,
+          65,
+          81,
+          70,
+          50,
+          49,
+          21
+        ]
+      },
+      {
+        "total": 299,
+        "week": 1784419200,
+        "days": [
+          28,
+          40,
+          52,
+          53,
+          50,
+          55,
+          21
+        ]
+      },
+      {
+        "total": 185,
+        "week": 1785024000,
+        "days": [
+          30,
+          53,
+          39,
+          23,
+          14,
+          25,
+          1
+        ]
+      },
+      {
+        "total": 26,
+        "week": 1785628800,
+        "days": [
+          10,
+          8,
+          7,
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "uemacs": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1754784000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      }
+    ],
+    "GuitarPedal": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1754784000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762650000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763254800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763859600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764464400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765069200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765674000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766278800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766883600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767488400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768093200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768698000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769302800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769907600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770512400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771117200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771722000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772326800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772931600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          10,
+          0,
+          4,
+          0
+        ],
+        "total": 14,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          1
+        ],
+        "total": 4,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          3,
+          0,
+          0,
+          5,
+          5,
+          5,
+          4
+        ],
+        "total": 22,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          10,
+          10,
+          3,
+          0,
+          1,
+          3,
+          11
+        ],
+        "total": 38,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          2,
+          4,
+          9,
+          5,
+          7,
+          3,
+          0
+        ],
+        "total": 30,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        "total": 4,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          3,
+          3,
+          2,
+          1,
+          0
+        ],
+        "total": 9,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 3,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          1,
+          0,
+          5,
+          3,
+          8,
+          3
+        ],
+        "total": 20,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          1,
+          21,
+          17,
+          26,
+          29,
+          0,
+          6
+        ],
+        "total": 100,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          22,
+          19,
+          24,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 65,
+        "week": 1785628800
+      }
+    ],
+    "ScrollWheel": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1754784000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762650000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763254800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763859600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764464400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765069200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765674000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766278800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766883600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767488400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768093200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768698000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769302800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769907600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770512400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771117200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771722000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772326800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772931600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      }
+    ],
+    "AudioNoise": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1754780400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755385200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755990000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756594800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757199600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757804400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758409200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759014000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759618800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760223600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760828400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761433200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762038000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          1,
+          10,
+          6,
+          0,
+          0
+        ],
+        "total": 17,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          3,
+          6,
+          2,
+          2,
+          3,
+          7
+        ],
+        "total": 23,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "total": 2,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 2,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "total": 1,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      }
+    ],
+    "HunspellColorize": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1754780400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755385200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755990000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756594800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757199600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757804400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758409200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759014000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759618800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760223600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760828400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761433200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762038000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 5,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      }
+    ],
+    "1590A": [
+      {
+        "days": [
+          0,
+          0,
+          3,
+          1,
+          4,
+          2,
+          0
+        ],
+        "total": 10,
+        "week": 1754784000
+      },
+      {
+        "days": [
+          3,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "total": 7,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0
+        ],
+        "total": 3,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          2,
+          3,
+          0,
+          0
+        ],
+        "total": 5,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          1,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 4,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "total": 2,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      }
+    ],
+    "test-tlb": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1754784000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      }
+    ],
+    "pesconvert": [
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1754784000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755388800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1755993600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1756598400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757203200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1757808000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1758412800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759017600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1759622400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760227200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1760832000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1761436800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762041600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1762646400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763251200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1763856000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1764460800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765065600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1765670400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766275200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1766880000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1767484800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768089600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1768694400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769299200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1769904000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1770508800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771113600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1771718400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772323200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1772928000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1773532800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774137600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1774742400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775347200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1775952000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1776556800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777161600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1777766400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778371200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1778976000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1779580800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780185600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1780790400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1781395200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782000000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1782604800
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783209600
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1783814400
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1784419200
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785024000
+      },
+      {
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0,
+        "week": 1785628800
+      }
+    ]
+  },
+  "pull_requests": {
+    "total_opened": 85,
+    "total_merged": 72,
+    "review_participation_count": 34
+  },
+  "issues": {
+    "total_opened": 10,
+    "total_closed": 9,
+    "total_commented": 43
+  },
+  "graphql_data": {
+    "contribution_calendar": {
+      "totalContributions": 3275,
+      "weeks": [
+        {
+          "contributionDays": [
+            {
+              "date": "2025-08-03",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-04",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-05",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-06",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-07",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-08",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-09",
+              "contributionCount": 18,
+              "color": "#40c463"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-08-10",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-11",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-12",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-13",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-14",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-15",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-16",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-08-17",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-18",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-19",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-20",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-21",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-22",
+              "contributionCount": 15,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-08-23",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-08-24",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-25",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-26",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-08-27",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-28",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-08-29",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-08-30",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-08-31",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-09-02",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-03",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-04",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-05",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-06",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-09-07",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-08",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-09",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-10",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-11",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-12",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-13",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-09-14",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-15",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-16",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-17",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-18",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-19",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-20",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-09-21",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-22",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-23",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-24",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-25",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-26",
+              "contributionCount": 16,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-09-27",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-09-28",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-09-29",
+              "contributionCount": 38,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-09-30",
+              "contributionCount": 33,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-10-01",
+              "contributionCount": 35,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-10-02",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-10-03",
+              "contributionCount": 31,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-10-04",
+              "contributionCount": 26,
+              "color": "#30a14e"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-10-05",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-06",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-10-07",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-10-08",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-09",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-10",
+              "contributionCount": 19,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-10-11",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-10-12",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-13",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-14",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-15",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-16",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-17",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-18",
+              "contributionCount": 12,
+              "color": "#40c463"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-10-19",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-20",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-21",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-22",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-23",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-24",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-10-25",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-10-26",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-27",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-28",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-29",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-10-30",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-10-31",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-01",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-02",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-03",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-11-04",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-05",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-06",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-07",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-08",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-09",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-10",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-11",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-12",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-13",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-14",
+              "contributionCount": 15,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-11-15",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-16",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-17",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-18",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-19",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-20",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-21",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-22",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-23",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-24",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-25",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-26",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-27",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-11-28",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2025-11-29",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-11-30",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-01",
+              "contributionCount": 24,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2025-12-02",
+              "contributionCount": 33,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-12-03",
+              "contributionCount": 36,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-12-04",
+              "contributionCount": 34,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-12-05",
+              "contributionCount": 33,
+              "color": "#216e39"
+            },
+            {
+              "date": "2025-12-06",
+              "contributionCount": 28,
+              "color": "#30a14e"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-12-07",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-08",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-09",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-10",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-11",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-12",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-13",
+              "contributionCount": 13,
+              "color": "#40c463"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-12-14",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-15",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-16",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-17",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-18",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2025-12-19",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-20",
+              "contributionCount": 16,
+              "color": "#40c463"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-12-21",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-22",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-23",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-24",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-25",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-26",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-27",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2025-12-28",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-29",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-30",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2025-12-31",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-01",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-02",
+              "contributionCount": 16,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-01-03",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-01-04",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-05",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-06",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-07",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-01-08",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-01-09",
+              "contributionCount": 15,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-01-10",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-01-11",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-12",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-13",
+              "contributionCount": 12,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-01-14",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-15",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-16",
+              "contributionCount": 14,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-01-17",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-01-18",
+              "contributionCount": 18,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-01-19",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-20",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-21",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-22",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-23",
+              "contributionCount": 17,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-01-24",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-01-25",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-26",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-27",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-28",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-29",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-30",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-01-31",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-02-01",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-02",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-03",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-04",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-05",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-06",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-07",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-02-08",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-09",
+              "contributionCount": 47,
+              "color": "#216e39"
+            },
+            {
+              "date": "2026-02-10",
+              "contributionCount": 45,
+              "color": "#216e39"
+            },
+            {
+              "date": "2026-02-11",
+              "contributionCount": 28,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-02-12",
+              "contributionCount": 25,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-02-13",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-14",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-02-15",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-16",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-17",
+              "contributionCount": 15,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-02-18",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-19",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-20",
+              "contributionCount": 21,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-02-21",
+              "contributionCount": 13,
+              "color": "#40c463"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-02-22",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-23",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-24",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-02-25",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-26",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-02-27",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-02-28",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-01",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-02",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-03",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-04",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-05",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-06",
+              "contributionCount": 19,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-03-07",
+              "contributionCount": 12,
+              "color": "#40c463"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-08",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-09",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-03-10",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-11",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-12",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-13",
+              "contributionCount": 16,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-03-14",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-15",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-03-16",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-17",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-18",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-19",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-20",
+              "contributionCount": 15,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-03-21",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-22",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-23",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-24",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-25",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-26",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-27",
+              "contributionCount": 18,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-03-28",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-03-29",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-03-30",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-03-31",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-01",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-04-02",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-03",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-04-04",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-04-05",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-04-06",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-07",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-08",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-09",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-10",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-11",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-04-12",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-13",
+              "contributionCount": 41,
+              "color": "#216e39"
+            },
+            {
+              "date": "2026-04-14",
+              "contributionCount": 41,
+              "color": "#216e39"
+            },
+            {
+              "date": "2026-04-15",
+              "contributionCount": 37,
+              "color": "#216e39"
+            },
+            {
+              "date": "2026-04-16",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-04-17",
+              "contributionCount": 27,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-04-18",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-04-19",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-20",
+              "contributionCount": 16,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-04-21",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-04-22",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-23",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-24",
+              "contributionCount": 24,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-04-25",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-04-26",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-27",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-28",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-29",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-04-30",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-01",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-05-02",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-03",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-04",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-05",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-06",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-07",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-08",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-05-09",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-10",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-11",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-12",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-13",
+              "contributionCount": 16,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-05-14",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-15",
+              "contributionCount": 22,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-05-16",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-17",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-18",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-19",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-20",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-21",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-22",
+              "contributionCount": 26,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-05-23",
+              "contributionCount": 11,
+              "color": "#40c463"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-24",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-25",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-26",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-27",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-05-28",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-05-29",
+              "contributionCount": 16,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-05-30",
+              "contributionCount": 10,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-05-31",
+              "contributionCount": 20,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-01",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-02",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-03",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-04",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-05",
+              "contributionCount": 12,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-06",
+              "contributionCount": 13,
+              "color": "#40c463"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-06-07",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-08",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-09",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-10",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-11",
+              "contributionCount": 12,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-12",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-13",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-06-14",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-15",
+              "contributionCount": 46,
+              "color": "#216e39"
+            },
+            {
+              "date": "2026-06-16",
+              "contributionCount": 46,
+              "color": "#216e39"
+            },
+            {
+              "date": "2026-06-17",
+              "contributionCount": 26,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-06-18",
+              "contributionCount": 20,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-19",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-20",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-06-21",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-22",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-23",
+              "contributionCount": 22,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-06-24",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-25",
+              "contributionCount": 16,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-26",
+              "contributionCount": 16,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-06-27",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-06-28",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-06-29",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-06-30",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-01",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-02",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-03",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-04",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-07-05",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-06",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-07",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-08",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-09",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-10",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-07-11",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-07-12",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-13",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-14",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-15",
+              "contributionCount": 2,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-16",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-17",
+              "contributionCount": 11,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-07-18",
+              "contributionCount": 4,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-07-19",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-20",
+              "contributionCount": 3,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-21",
+              "contributionCount": 7,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-22",
+              "contributionCount": 9,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-23",
+              "contributionCount": 5,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-07-24",
+              "contributionCount": 19,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-07-25",
+              "contributionCount": 6,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-07-26",
+              "contributionCount": 13,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-07-27",
+              "contributionCount": 26,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-07-28",
+              "contributionCount": 20,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-07-29",
+              "contributionCount": 29,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-07-30",
+              "contributionCount": 40,
+              "color": "#216e39"
+            },
+            {
+              "date": "2026-07-31",
+              "contributionCount": 17,
+              "color": "#40c463"
+            },
+            {
+              "date": "2026-08-01",
+              "contributionCount": 8,
+              "color": "#9be9a8"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-08-02",
+              "contributionCount": 35,
+              "color": "#216e39"
+            },
+            {
+              "date": "2026-08-03",
+              "contributionCount": 25,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-08-04",
+              "contributionCount": 30,
+              "color": "#30a14e"
+            },
+            {
+              "date": "2026-08-05",
+              "contributionCount": 1,
+              "color": "#9be9a8"
+            },
+            {
+              "date": "2026-08-06",
+              "contributionCount": 0,
+              "color": "#ebedf0"
+            }
+          ]
+        }
+      ]
+    },
+    "pinned_repositories": [
+      {
+        "name": "linux",
+        "description": "Linux kernel source tree",
+        "stars": 241915,
+        "forks": 63770,
+        "primary_language": "C"
+      },
+      {
+        "name": "GuitarPedal",
+        "description": "Linus learns analog circuits",
+        "stars": 2218,
+        "forks": 97,
+        "primary_language": "C"
+      },
+      {
+        "name": "uemacs",
+        "description": "Random version of microemacs with my private modificatons",
+        "stars": 2098,
+        "forks": 316,
+        "primary_language": "C"
+      },
+      {
+        "name": "AudioNoise",
+        "description": "Random digital audio effects",
+        "stars": 4448,
+        "forks": 211,
+        "primary_language": "C"
+      },
+      {
+        "name": "HunspellColorize",
+        "description": "Wrapper around 'less' to colorize spelling mistakes using Hunspell",
+        "stars": 359,
+        "forks": 17,
+        "primary_language": "C"
+      }
+    ],
+    "languages_breakdown": {
+      "linux": [
+        {
+          "language": "C",
+          "size_bytes": 1430098143
+        },
+        {
+          "language": "Assembly",
+          "size_bytes": 9610327
+        },
+        {
+          "language": "Rust",
+          "size_bytes": 6278080
+        },
+        {
+          "language": "Shell",
+          "size_bytes": 6099472
+        },
+        {
+          "language": "Python",
+          "size_bytes": 4597544
+        },
+        {
+          "language": "Makefile",
+          "size_bytes": 2950606
+        },
+        {
+          "language": "Perl",
+          "size_bytes": 1143615
+        },
+        {
+          "language": "C++",
+          "size_bytes": 187043
+        },
+        {
+          "language": "SmPL",
+          "size_bytes": 172553
+        },
+        {
+          "language": "Yacc",
+          "size_bytes": 127696
+        }
+      ],
+      "AudioNoise": [
+        {
+          "language": "C",
+          "size_bytes": 38250
+        },
+        {
+          "language": "Python",
+          "size_bytes": 25134
+        },
+        {
+          "language": "Makefile",
+          "size_bytes": 2456
+        }
+      ],
+      "GuitarPedal": [
+        {
+          "language": "C",
+          "size_bytes": 342475
+        },
+        {
+          "language": "JavaScript",
+          "size_bytes": 187621
+        },
+        {
+          "language": "Python",
+          "size_bytes": 177060
+        },
+        {
+          "language": "CSS",
+          "size_bytes": 31355
+        },
+        {
+          "language": "HTML",
+          "size_bytes": 9803
+        },
+        {
+          "language": "CMake",
+          "size_bytes": 9242
+        },
+        {
+          "language": "OpenSCAD",
+          "size_bytes": 4531
+        },
+        {
+          "language": "Makefile",
+          "size_bytes": 3170
+        }
+      ],
+      "uemacs": [
+        {
+          "language": "C",
+          "size_bytes": 456679
+        },
+        {
+          "language": "Makefile",
+          "size_bytes": 4592
+        },
+        {
+          "language": "Batchfile",
+          "size_bytes": 944
+        }
+      ],
+      "test-tlb": [
+        {
+          "language": "C",
+          "size_bytes": 5816
+        },
+        {
+          "language": "Makefile",
+          "size_bytes": 422
+        }
+      ],
+      "1590A": [
+        {
+          "language": "OpenSCAD",
+          "size_bytes": 10019
+        }
+      ],
+      "pesconvert": [
+        {
+          "language": "C",
+          "size_bytes": 12452
+        },
+        {
+          "language": "Makefile",
+          "size_bytes": 555
+        }
+      ],
+      "subsurface-for-dirk": [
+        {
+          "language": "C++",
+          "size_bytes": 2736799
+        },
+        {
+          "language": "C",
+          "size_bytes": 1205956
+        },
+        {
+          "language": "XSLT",
+          "size_bytes": 291922
+        },
+        {
+          "language": "QML",
+          "size_bytes": 270918
+        },
+        {
+          "language": "Shell",
+          "size_bytes": 152678
+        },
+        {
+          "language": "CMake",
+          "size_bytes": 77145
+        },
+        {
+          "language": "JavaScript",
+          "size_bytes": 41191
+        },
+        {
+          "language": "HTML",
+          "size_bytes": 36487
+        },
+        {
+          "language": "Java",
+          "size_bytes": 19782
+        },
+        {
+          "language": "Perl",
+          "size_bytes": 19749
+        }
+      ],
+      "libdc-for-dirk": [
+        {
+          "language": "C",
+          "size_bytes": 1374766
+        },
+        {
+          "language": "M4",
+          "size_bytes": 21951
+        },
+        {
+          "language": "Makefile",
+          "size_bytes": 5041
+        },
+        {
+          "language": "C++",
+          "size_bytes": 1100
+        }
+      ],
+      "libgit2": [
+        {
+          "language": "C",
+          "size_bytes": 7731824
+        },
+        {
+          "language": "CMake",
+          "size_bytes": 74521
+        },
+        {
+          "language": "Shell",
+          "size_bytes": 37678
+        },
+        {
+          "language": "Python",
+          "size_bytes": 16847
+        }
+      ],
+      "ScrollWheel": [
+        {
+          "language": "C",
+          "size_bytes": 11530
+        },
+        {
+          "language": "CMake",
+          "size_bytes": 1624
+        },
+        {
+          "language": "Makefile",
+          "size_bytes": 368
+        }
+      ],
+      "HunspellColorize": [
+        {
+          "language": "C",
+          "size_bytes": 4525
+        },
+        {
+          "language": "Makefile",
+          "size_bytes": 217
+        }
+      ]
+    }
+  },
+  "summary_metrics": {
+    "repo_count": 12,
+    "total_commits": 3275,
+    "api_calls_used": {
+      "total_calls": 54,
+      "rest_calls": 53,
+      "graphql_calls": 1
+    }
+  }
+}
