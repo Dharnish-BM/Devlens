@@ -10,12 +10,15 @@ import logging
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+import pandas as pd
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 
 from devlens.db.models import (
     Developer, Snapshot, Feature,
     ClusterAssignment, ArchetypePrediction,
+    DocScore, EngMaturityScore, CollectionExclusion,
     DocumentationScore, EngineeringMaturityScore,
 )
 
@@ -220,41 +223,124 @@ def insert_archetype_prediction(
     return obj
 
 
-def upsert_documentation_score(
+def upsert_doc_score(
     session: Session,
     snapshot_id: int,
     score: float,
     components: Optional[Dict[str, Any]] = None,
-) -> DocumentationScore:
-    """Insert or update documentation score for a snapshot."""
-    existing = session.query(DocumentationScore).filter_by(snapshot_id=snapshot_id).first()
+) -> DocScore:
+    """Insert or update documentation score for a snapshot.
+    
+    components JSON stores weight breakdown: desc_coverage, desc_depth, bio, blog, pinned.
+    """
+    existing = session.query(DocScore).filter_by(snapshot_id=snapshot_id).first()
     if existing:
         existing.score = score
         existing.components = components
         session.flush()
         return existing
 
-    obj = DocumentationScore(snapshot_id=snapshot_id, score=score, components=components)
+    obj = DocScore(snapshot_id=snapshot_id, score=score, components=components)
     session.add(obj)
     session.flush()
     return obj
 
 
-def upsert_engineering_maturity_score(
+# Alias for backward compatibility
+upsert_documentation_score = upsert_doc_score
+
+
+def upsert_eng_maturity_score(
     session: Session,
     snapshot_id: int,
     score: float,
     components: Optional[Dict[str, Any]] = None,
-) -> EngineeringMaturityScore:
-    """Insert or update engineering maturity score for a snapshot."""
-    existing = session.query(EngineeringMaturityScore).filter_by(snapshot_id=snapshot_id).first()
+) -> EngMaturityScore:
+    """Insert or update engineering maturity score for a snapshot.
+    
+    components JSON stores weight breakdown: eng_ci_ratio, eng_test_ratio, eng_commit_message_quality, eng_pr_discipline, eng_review_participation.
+    """
+    existing = session.query(EngMaturityScore).filter_by(snapshot_id=snapshot_id).first()
     if existing:
         existing.score = score
         existing.components = components
         session.flush()
         return existing
 
-    obj = EngineeringMaturityScore(snapshot_id=snapshot_id, score=score, components=components)
+    obj = EngMaturityScore(snapshot_id=snapshot_id, score=score, components=components)
     session.add(obj)
     session.flush()
     return obj
+
+
+# Alias for backward compatibility
+upsert_engineering_maturity_score = upsert_eng_maturity_score
+
+
+# ---------------------------------------------------------------------------
+# Collection Exclusion CRUD
+# ---------------------------------------------------------------------------
+
+def insert_exclusion(
+    session: Session,
+    username: str,
+    reason: str,
+    excluded_at: Optional[datetime] = None,
+) -> CollectionExclusion:
+    """Record a classmate/username dropped during collection (404, unparseable entry, etc.)."""
+    exclusion = CollectionExclusion(
+        username=username,
+        reason=reason,
+        excluded_at=excluded_at or datetime.utcnow(),
+    )
+    session.add(exclusion)
+    session.flush()
+    logger.info(f"Inserted collection exclusion for '{username}': {reason}")
+    return exclusion
+
+
+def get_all_exclusions(session: Session) -> List[CollectionExclusion]:
+    """Retrieve all recorded collection exclusions."""
+    return session.query(CollectionExclusion).order_by(CollectionExclusion.excluded_at.asc()).all()
+
+
+# ---------------------------------------------------------------------------
+# Current Features DataFrame Query for ML / Clustering
+# ---------------------------------------------------------------------------
+
+def get_all_current_features(session: Session) -> pd.DataFrame:
+    """Retrieve all current features across developers for Phase 5 clustering.
+    
+    Identifies the latest snapshot per developer and pulls its features,
+    returning a pandas DataFrame with one row per developer (indexed by username)
+    and one column per feature.
+    """
+    subq = (
+        session.query(
+            Snapshot.developer_id,
+            func.max(Snapshot.id).label("max_snapshot_id")
+        )
+        .group_by(Snapshot.developer_id)
+        .subquery()
+    )
+
+    rows = (
+        session.query(Developer.username, Feature.feature_name, Feature.feature_value)
+        .select_from(Developer)
+        .join(Snapshot, Developer.id == Snapshot.developer_id)
+        .join(subq, Snapshot.id == subq.c.max_snapshot_id)
+        .join(Feature, Feature.snapshot_id == Snapshot.id)
+        .all()
+    )
+
+    if not rows:
+        df = pd.DataFrame()
+        df.index.name = "username"
+        return df
+
+    df = pd.DataFrame(rows, columns=["username", "feature_name", "feature_value"])
+    pivoted = df.pivot(index="username", columns="feature_name", values="feature_value")
+    pivoted.index.name = "username"
+    pivoted.columns.name = None
+    return pivoted
+

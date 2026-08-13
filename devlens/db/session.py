@@ -9,7 +9,7 @@ import os
 from contextlib import contextmanager
 from typing import Generator
 
-from sqlalchemy import create_engine, Engine
+from sqlalchemy import create_engine, Engine, event
 from sqlalchemy.orm import sessionmaker, Session
 from dotenv import load_dotenv
 
@@ -20,6 +20,15 @@ load_dotenv()
 # DB path resolution — use env override or default to project root devlens.db
 _DB_PATH = os.getenv("DEVLENS_DB_PATH", "devlens.db")
 _DATABASE_URL = f"sqlite:///{_DB_PATH}"
+
+
+@event.listens_for(Engine, "connect")
+def _set_sqlite_pragma(dbapi_connection, connection_record):
+    """Enable foreign key constraints for SQLite connections."""
+    if type(dbapi_connection).__module__.startswith("sqlite"):
+        cursor = dbapi_connection.cursor()
+        cursor.execute("PRAGMA foreign_keys=ON")
+        cursor.close()
 
 
 def get_engine(db_url: str = _DATABASE_URL, echo: bool = False) -> Engine:

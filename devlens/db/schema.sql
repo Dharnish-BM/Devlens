@@ -63,18 +63,30 @@ CREATE INDEX IF NOT EXISTS ix_archetype_snapshot_id ON archetype_predictions (sn
 
 -- ---------------------------------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS documentation_scores (
+CREATE TABLE IF NOT EXISTS doc_scores (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     snapshot_id INTEGER NOT NULL UNIQUE REFERENCES snapshots(id) ON DELETE CASCADE,
     score       REAL    NOT NULL,
-    components  TEXT    -- stored as JSON blob
+    components  TEXT    -- stored as JSON blob: desc_coverage, desc_depth, bio, blog, pinned
 );
 
 -- ---------------------------------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS engineering_maturity_scores (
+CREATE TABLE IF NOT EXISTS eng_maturity_scores (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     snapshot_id INTEGER NOT NULL UNIQUE REFERENCES snapshots(id) ON DELETE CASCADE,
     score       REAL    NOT NULL,
-    components  TEXT    -- stored as JSON blob
+    components  TEXT    -- stored as JSON blob: eng_ci_ratio, eng_test_ratio, eng_commit_message_quality, eng_pr_discipline, eng_review_participation
 );
+
+-- ---------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS collection_exclusions (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    username    TEXT    NOT NULL,
+    reason      TEXT    NOT NULL,
+    excluded_at DATETIME NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS ix_collection_exclusions_username ON collection_exclusions (username);
+

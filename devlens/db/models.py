@@ -48,8 +48,16 @@ class Snapshot(Base):
     features = relationship("Feature", back_populates="snapshot", cascade="all, delete-orphan")
     cluster_assignment = relationship("ClusterAssignment", back_populates="snapshot", uselist=False, cascade="all, delete-orphan")
     archetype_predictions = relationship("ArchetypePrediction", back_populates="snapshot", cascade="all, delete-orphan")
-    documentation_score = relationship("DocumentationScore", back_populates="snapshot", uselist=False, cascade="all, delete-orphan")
-    engineering_maturity_score = relationship("EngineeringMaturityScore", back_populates="snapshot", uselist=False, cascade="all, delete-orphan")
+    doc_score = relationship("DocScore", back_populates="snapshot", uselist=False, cascade="all, delete-orphan")
+    eng_maturity_score = relationship("EngMaturityScore", back_populates="snapshot", uselist=False, cascade="all, delete-orphan")
+
+    @property
+    def documentation_score(self):
+        return self.doc_score
+
+    @property
+    def engineering_maturity_score(self):
+        return self.eng_maturity_score
 
     __table_args__ = (
         Index("ix_snapshots_developer_collected", "developer_id", "collected_at"),
@@ -119,31 +127,50 @@ class ArchetypePrediction(Base):
         return f"<ArchetypePrediction(snapshot_id={self.snapshot_id}, label='{self.archetype_label}', confidence={self.confidence})>"
 
 
-class DocumentationScore(Base):
+class DocScore(Base):
     """Computed documentation quality score for a snapshot."""
-    __tablename__ = "documentation_scores"
+    __tablename__ = "doc_scores"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     snapshot_id = Column(Integer, ForeignKey("snapshots.id", ondelete="CASCADE"), nullable=False, unique=True)
     score = Column(Float, nullable=False)
-    components = Column(JSON, nullable=True)  # e.g. {"readme_ratio": 0.8, "wiki_count": 2}
+    components = Column(JSON, nullable=True)  # stores breakdown: desc_coverage, desc_depth, bio, blog, pinned
 
-    snapshot = relationship("Snapshot", back_populates="documentation_score")
+    snapshot = relationship("Snapshot", back_populates="doc_score")
 
     def __repr__(self) -> str:
-        return f"<DocumentationScore(snapshot_id={self.snapshot_id}, score={self.score})>"
+        return f"<DocScore(snapshot_id={self.snapshot_id}, score={self.score})>"
 
 
-class EngineeringMaturityScore(Base):
+class EngMaturityScore(Base):
     """Computed engineering maturity score for a snapshot."""
-    __tablename__ = "engineering_maturity_scores"
+    __tablename__ = "eng_maturity_scores"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     snapshot_id = Column(Integer, ForeignKey("snapshots.id", ondelete="CASCADE"), nullable=False, unique=True)
     score = Column(Float, nullable=False)
-    components = Column(JSON, nullable=True)  # e.g. {"ci_usage": 0.9, "test_coverage_proxy": 0.6}
+    components = Column(JSON, nullable=True)  # stores breakdown: eng_ci_ratio, eng_test_ratio, eng_commit_message_quality, eng_pr_discipline, eng_review_participation
 
-    snapshot = relationship("Snapshot", back_populates="engineering_maturity_score")
+    snapshot = relationship("Snapshot", back_populates="eng_maturity_score")
 
     def __repr__(self) -> str:
-        return f"<EngineeringMaturityScore(snapshot_id={self.snapshot_id}, score={self.score})>"
+        return f"<EngMaturityScore(snapshot_id={self.snapshot_id}, score={self.score})>"
+
+
+class CollectionExclusion(Base):
+    """Records classmates/usernames dropped during collection (404s, unparseable entries, etc.)."""
+    __tablename__ = "collection_exclusions"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    username = Column(String(255), nullable=False, index=True)
+    reason = Column(Text, nullable=False)
+    excluded_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+    def __repr__(self) -> str:
+        return f"<CollectionExclusion(username='{self.username}', reason='{self.reason}')>"
+
+
+# Backwards compatibility aliases
+DocumentationScore = DocScore
+EngineeringMaturityScore = EngMaturityScore
+
