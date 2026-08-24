@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+
+{% block title %}DevLens Profile | {{ dev.username }}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb / Back Link -->
+<div style="margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.85rem;">
+  <a href="{{ url_for('index') }}" style="color: var(--color-text-muted);">&larr; Back to Directory</a>
+  <span style="color: var(--color-border); margin: 0 8px;">/</span>
+  <span style="color: #ffffff;">{{ dev.username }}</span>
+</div>
+
+<!-- Header Card: Commit-Log Identity -->
+<div class="card">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+    <div style="display: flex; gap: 16px; align-items: center;">
+      <div style="width: 52px; height: 52px; border-radius: 50%; background: #21262d; border: 2px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.4rem; color: #ffffff;">
+        {{ dev.username[0]|upper }}
+      </div>
+      <div>
+        <h1 style="font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">
+          <span>{{ dev.username }}</span>
+          {% if dev.user_info.name %}
+            <span style="font-size: 1rem; color: var(--color-text-muted); font-weight: normal;">({{ dev.user_info.name }})</span>
+          {% endif %}
+        </h1>
+        <div style="display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-text-dim); margin-top: 4px;">
+          <span>SNAPSHOT-ID: #{{ dev.snapshot_id }}</span>
+          <span>&bull;</span>
+          <span>COLLECTED: {{ dev.collected_at }}</span>
+          <span>&bull;</span>
+          <a href="https://github.com/{{ dev.username }}" target="_blank" style="color: var(--color-blue);">github.com/{{ dev.username }} &nearr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Action / Match Button -->
+    <a href="{{ url_for('match') }}?search={{ dev.username }}" class="btn btn-secondary" style="font-size: 0.82rem;">
+      Find Matching Projects &rarr;
+    </a>
+  </div>
+
+  {% if dev.user_info.bio %}
+    <p style="margin-top: 14px; padding: 10px 14px; background: #0d1117; border-left: 3px solid var(--color-blue); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.88rem; color: var(--color-text-main);">
+      "{{ dev.user_info.bio }}"
+    </p>
+  {% endif %}
+</div>
+
+<!-- Primary Classification Metrics Grid -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+  
+  <!-- Dimension 1: Functional Archetype -->
+  <div class="card" style="margin-bottom: 0;">
+    <div class="card-header">
+      <div class="card-title">
+        <span style="color: var(--color-blue);">●</span>
+        <span>Functional Archetype</span>
+      </div>
+      <span class="badge badge-slate">Phase 6 Classification</span>
+    </div>
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+      <div style="font-family: var(--font-heading); font-size: 1.35rem; color: #ffffff; font-weight: 700;">
+        {{ dev.archetype }}
+      </div>
+      <span class="badge {% if dev.confidence >= 0.90 %}badge-green{% else %}badge-amber{% endif %}">
+        {{ "%.1f"|format(dev.confidence * 100) }}% Confidence
+      </span>
+    </div>
+    <p style="font-size: 0.82rem; color: var(--color-text-muted);">
+      <em>Methodology Note:</em> Assigned via 5-class XGBoost classifier trained on domain thresholds (86.4% labeling SHAP share) or ground-truth heuristic rules.
+    </p>
+  </div>
+
+  <!-- Dimension 2: Empirically-Clustered Engagement Tier -->
+  <div class="card" style="margin-bottom: 0;">
+    <div class="card-header">
+      <div class="card-title">
+        <span style="color: var(--color-signal-green);">⚡</span>
+        <span>Engagement Tier</span>
+      </div>
+      <span class="badge badge-slate">Phase 5 K-Means (k=2)</span>
+    </div>
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+      <div style="font-family: var(--font-heading); font-size: 1.35rem; color: #ffffff; font-weight: 700;">
+        {{ dev.cluster_name }}
+      </div>
+      <span class="mono" style="font-size: 0.82rem; color: var(--color-text-muted);">
+        Centroid Dist: {{ "%.2f"|format(dev.distance_to_centroid or 0.0) }}
+      </span>
+    </div>
+    <p style="font-size: 0.82rem; color: var(--color-text-muted);">
+      <em>Empirical Cluster:</em> Unsupervised separation on activity volume, commit streaks, active days, and pinned repo depth.
+    </p>
+  </div>
+
+</div>
+
+<!-- Quality Scores & SHAP Explainability Grid -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+
+  <!-- Doc & Eng Maturity Breakdown -->
+  <div class="card" style="margin-bottom: 0;">
+    <div class="card-header">
+      <div class="card-title">Engineering & Doc Quality</div>
+      <span class="badge badge-slate">Deterministic Weights</span>
+    </div>
+
+    <!-- Documentation Score -->
+    <div style="margin-bottom: 16px;">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 4px; font-family: var(--font-mono); font-size: 0.85rem;">
+        <span>Documentation Score (DocScore)</span>
+        <strong style="color: var(--color-signal-green);">{{ "%.3f"|format(dev.doc_score) }} / 1.000</strong>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill green" style="width: {{ (dev.doc_score * 100)|round }}%;"></div>
+      </div>
+      <div style="display: flex; gap: 10px; font-size: 0.75rem; color: var(--color-text-dim); margin-top: 6px; font-family: var(--font-mono); flex-wrap: wrap;">
+        <span>Desc Cov: {{ "%.2f"|format(dev.doc_components.doc_desc_coverage or 0) }}</span>
+        <span>Depth: {{ "%.2f"|format(dev.doc_components.doc_desc_depth_mean or 0) }}</span>
+        <span>Pinned: {{ "%.2f"|format(dev.doc_components.doc_pinned_ratio or 0) }}</span>
+      </div>
+    </div>
+
+    <!-- Engineering Maturity Score -->
+    <div>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 4px; font-family: var(--font-mono); font-size: 0.85rem;">
+        <span>Engineering Maturity Score (EngScore)</span>
+        <strong style="color: var(--color-blue);">{{ "%.3f"|format(dev.eng_score) }} / 1.000</strong>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="width: {{ (dev.eng_score * 100)|round }}%;"></div>
+      </div>
+      <div style="display: flex; gap: 10px; font-size: 0.75rem; color: var(--color-text-dim); margin-top: 6px; font-family: var(--font-mono); flex-wrap: wrap;">
+        <span>CI: {{ "%.2f"|format(dev.eng_components.eng_ci_ratio or 0) }}</span>
+        <span>Test: {{ "%.2f"|format(dev.eng_components.eng_test_ratio or 0) }}</span>
+        <span>Commit Msg: {{ "%.2f"|format(dev.eng_components.eng_commit_message_quality or 0) }}</span>
+        <span>PR Discipline: {{ "%.2f"|format(dev.eng_components.eng_pr_discipline or 0) }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top 5 SHAP Feature Contributions (Diff-Style) -->
+  <div class="card" style="margin-bottom: 0;">
+    <div class="card-header">
+      <div class="card-title">Top-5 SHAP Interpretability</div>
+      <span class="badge badge-slate">TreeExplainer Attribution</span>
+    </div>
+
+    {% if dev.shap_top_features %}
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        {% for feat, val in dev.shap_top_features.items() %}
+          <div class="shap-row">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              {% if val >= 0 %}
+                <span class="diff-indicator-plus">+</span>
+              {% else %}
+                <span class="diff-indicator-minus">-</span>
+              {% endif %}
+              <span style="color: #ffffff;">{{ feat }}</span>
+            </div>
+            
+            <div class="shap-bar-container">
+              <div class="shap-bar {% if val >= 0 %}shap-bar-positive{% else %}shap-bar-negative{% endif %}" style="width: {{ [((val|abs / 4.0) * 100)|round, 100]|min }}%;"></div>
+              <span style="width: 55px; text-align: right; color: {% if val >= 0 %}var(--color-signal-green){% else %}var(--color-diff-red){% endif %};">
+                {{ "%+.3f"|format(val) }}
+              </span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div style="padding: 18px; text-align: center; color: var(--color-text-muted); font-size: 0.85rem;">
+        Exact Ground-Truth Heuristic Assignment (Deterministic rule match, 100% confidence).
+      </div>
+    {% endif %}
+  </div>
+
+</div>
+
+<!-- Language Codebase Breakdown & Growth Section Grid -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+  
+  <!-- Language Codebase Byte Breakdown -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Repository Language Byte Distribution</div>
+      <span class="mono" style="font-size: 0.78rem; color: var(--color-text-muted);">{{ dev.total_repos }} Original Repos</span>
+    </div>
+
+    {% if dev.language_distribution %}
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        {% for lang in dev.language_distribution %}
+          <div>
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.82rem; margin-bottom: 2px;">
+              <span style="color: #ffffff;">{{ lang.name }}</span>
+              <span style="color: var(--color-text-muted);">{{ "{:,}".format(lang.bytes) }} bytes ({{ "%.1f"|format(lang.percentage) }}%)</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: {{ lang.percentage }}%;"></div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p style="color: var(--color-text-muted); font-size: 0.85rem;">No language breakdown available in raw JSON.</p>
+    {% endif %}
+  </div>
+
+  <!-- Growth Trajectory Section -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Longitudinal Growth Trajectory</div>
+      <span class="badge badge-amber">Tracking Initialized</span>
+    </div>
+
+    <div style="padding: 12px 14px; background: #0d1117; border: 1px dashed var(--color-border); border-radius: var(--radius-sm);">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+        <span style="width: 8px; height: 8px; background: var(--color-amber); border-radius: 50%;"></span>
+        <strong style="color: #ffffff; font-size: 0.9rem;">Tracking started &mdash; check back after future collections</strong>
+      </div>
+      <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5;">
+        Current profile represents <strong>1 collection snapshot</strong> ({{ dev.collected_at }}). DevLens's longitudinal trend and linear velocity analysis activate automatically when repeat periodic collections are recorded over time.
+      </p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
