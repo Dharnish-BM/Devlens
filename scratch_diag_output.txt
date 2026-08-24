@@ -1,0 +1,78 @@
+Scaled feature matrix shape: (188, 40)
+Non-activity feature matrix shape: (188, 32)
+
+================================================================================
+  CORRECTED NON-ACTIVITY MATRIX DIAGNOSTIC (k=2..10)
+================================================================================
+
+--- k=2 | Silhouette: 0.3125 | Min Cluster Size: 28 (14.9%) | [VALID (>=5%)] ---
+  Cluster 0 (N=28, 14.9%): doc_pinned_count (+2.04 std), doc_pinned_ratio (+2.04 std), lang_unique_count[LANG] (+1.36 std), repo_std_size_kb (+0.91 std), repo_total_count (+0.88 std) *LANG DRIVEN*
+  Cluster 1 (N=160, 85.1%): doc_pinned_count (-0.36 std), doc_pinned_ratio (-0.36 std), lang_unique_count[LANG] (-0.24 std), repo_std_size_kb (-0.16 std), repo_total_count (-0.15 std) *LANG DRIVEN*
+
+--- k=3 | Silhouette: 0.0734 | Min Cluster Size: 8 (4.3%) | [INVALID (<5% cluster exists)] ---
+  Cluster 0 (N=89, 47.3%): repo_original_count (-0.64 std), repo_total_count (-0.63 std), lang_unique_count[LANG] (-0.58 std), doc_desc_depth_mean (-0.45 std), eng_ci_ratio (-0.41 std) *LANG DRIVEN*
+  Cluster 1 (N=8, 4.3%): collab_issues_commented (+3.10 std), collab_pr_opened (+2.75 std), collab_pr_merged (+2.38 std), lang_ml_signal[LANG] (+2.24 std), doc_pinned_count (+2.23 std) *LANG DRIVEN*
+  Cluster 2 (N=91, 48.4%): repo_original_count (+0.48 std), repo_total_count (+0.45 std), lang_unique_count[LANG] (+0.39 std), doc_desc_depth_mean (+0.36 std), repo_years_active (+0.34 std) *LANG DRIVEN*
+
+--- k=4 | Silhouette: 0.0661 | Min Cluster Size: 6 (3.2%) | [INVALID (<5% cluster exists)] ---
+  Cluster 0 (N=85, 45.2%): doc_pinned_ratio (-0.40 std), doc_pinned_count (-0.40 std), repo_original_count (+0.37 std), repo_total_count (+0.34 std), doc_desc_depth_mean (+0.34 std)
+  Cluster 1 (N=6, 3.2%): collab_issues_commented (+4.20 std), lang_unique_count[LANG] (+2.91 std), doc_pinned_ratio (+2.59 std), doc_pinned_count (+2.59 std), repo_total_count (+2.28 std) *LANG DRIVEN*
+  Cluster 2 (N=76, 40.4%): repo_original_count (-0.70 std), repo_total_count (-0.69 std), lang_unique_count[LANG] (-0.62 std), doc_desc_depth_mean (-0.59 std), eng_pr_discipline (-0.43 std) *LANG DRIVEN*
+  Cluster 3 (N=21, 11.2%): doc_pinned_ratio (+2.26 std), doc_pinned_count (+2.26 std), lang_primary_is_c[LANG] (+0.72 std), lang_unique_count[LANG] (+0.72 std), lang_ml_signal[LANG] (+0.60 std) *LANG DRIVEN*
+
+--- k=5 | Silhouette: 0.0734 | Min Cluster Size: 4 (2.1%) | [INVALID (<5% cluster exists)] ---
+  Cluster 0 (N=4, 2.1%): repo_std_size_kb (+5.58 std), repo_mean_size_kb (+4.53 std), eng_commit_message_quality (+1.86 std), doc_desc_depth_mean (+1.24 std), doc_has_blog (+1.03 std)
+  Cluster 1 (N=91, 48.4%): lang_unique_count[LANG] (-0.55 std), doc_desc_depth_mean (-0.54 std), repo_original_count (-0.51 std), repo_total_count (-0.51 std), eng_pr_discipline (-0.46 std) *LANG DRIVEN*
+  Cluster 2 (N=65, 34.6%): eng_pr_discipline (+0.48 std), doc_desc_depth_mean (+0.46 std), lang_primary_is_javascript[LANG] (+0.44 std), doc_pinned_ratio (-0.41 std), doc_pinned_count (-0.41 std) *LANG DRIVEN*
+  Cluster 3 (N=22, 11.7%): doc_pinned_ratio (+2.06 std), doc_pinned_count (+2.06 std), lang_primary_is_c[LANG] (+0.96 std), lang_unique_count[LANG] (+0.82 std), lang_ml_signal[LANG] (+0.59 std) *LANG DRIVEN*
+  Cluster 4 (N=6, 3.2%): collab_issues_commented (+4.20 std), lang_unique_count[LANG] (+2.91 std), doc_pinned_ratio (+2.59 std), doc_pinned_count (+2.59 std), repo_total_count (+2.28 std) *LANG DRIVEN*
+
+--- k=6 | Silhouette: 0.0701 | Min Cluster Size: 1 (0.5%) | [INVALID (<5% cluster exists)] ---
+  Cluster 0 (N=12, 6.4%): lang_primary_is_python[LANG] (+3.53 std), lang_primary_is_javascript[LANG] (-1.56 std), doc_desc_coverage (-0.45 std), eng_pr_discipline (-0.40 std), eng_commit_message_quality (-0.35 std) *LANG DRIVEN*
+  Cluster 1 (N=12, 6.4%): repo_mean_size_kb (+2.84 std), repo_std_size_kb (+2.23 std), lang_devops_signal[LANG] (+1.31 std), doc_desc_depth_mean (+1.23 std), repo_years_active (-1.10 std) *LANG DRIVEN*
+  Cluster 2 (N=67, 35.6%): repo_original_count (-0.70 std), repo_total_count (-0.69 std), lang_unique_count[LANG] (-0.63 std), doc_desc_depth_mean (-0.56 std), eng_pr_discipline (-0.45 std) *LANG DRIVEN*
+  Cluster 3 (N=1, 0.5%): collab_pr_opened (+6.24 std), eng_review_participation (+6.05 std), repo_total_forks_received (+5.63 std), collab_pr_merged (+5.59 std), repo_total_count (+5.40 std)
+  Cluster 4 (N=75, 39.9%): repo_original_count (+0.47 std), repo_total_count (+0.43 std), repo_years_active (+0.39 std), eng_pr_discipline (+0.39 std), lang_primary_is_javascript[LANG] (+0.38 std) *LANG DRIVEN*
+  Cluster 5 (N=21, 11.2%): doc_pinned_count (+2.44 std), doc_pinned_ratio (+2.44 std), lang_unique_count[LANG] (+1.31 std), lang_ml_signal[LANG] (+1.19 std), lang_primary_is_c[LANG] (+1.02 std) *LANG DRIVEN*
+
+--- k=7 | Silhouette: 0.0751 | Min Cluster Size: 1 (0.5%) | [INVALID (<5% cluster exists)] ---
+  Cluster 0 (N=4, 2.1%): eng_review_participation (+6.05 std), repo_has_stars (+1.82 std), collab_issues_opened (+1.62 std), eng_pr_discipline (+1.03 std), doc_desc_depth_mean (-0.60 std)
+  Cluster 1 (N=86, 45.7%): repo_original_count (+0.44 std), repo_total_count (+0.41 std), doc_desc_depth_mean (+0.34 std), repo_years_active (+0.33 std), lang_frontend_signal[LANG] (+0.29 std) *LANG DRIVEN*
+  Cluster 2 (N=77, 41.0%): repo_original_count (-0.71 std), repo_total_count (-0.70 std), lang_unique_count[LANG] (-0.62 std), doc_desc_depth_mean (-0.57 std), repo_years_active (-0.45 std) *LANG DRIVEN*
+  Cluster 3 (N=1, 0.5%): collab_pr_merged (+11.07 std), collab_pr_opened (+10.36 std), eng_pr_discipline (+1.90 std), eng_commit_message_quality (+1.60 std), lang_primary_is_javascript[LANG] (-1.56 std) *LANG DRIVEN*
+  Cluster 4 (N=2, 1.1%): lang_unique_count[LANG] (+5.89 std), collab_issues_commented (+5.08 std), collab_pr_opened (+4.36 std), repo_total_count (+3.70 std), repo_fork_ratio (+3.63 std) *LANG DRIVEN*
+  Cluster 5 (N=13, 6.9%): doc_pinned_ratio (+2.48 std), doc_pinned_count (+2.48 std), lang_primary_is_c[LANG] (+1.75 std), lang_ml_signal[LANG] (+1.63 std), lang_unique_count[LANG] (+1.23 std) *LANG DRIVEN*
+  Cluster 6 (N=5, 2.7%): repo_std_size_kb (+4.59 std), repo_mean_size_kb (+3.97 std), eng_commit_message_quality (+2.29 std), eng_ci_ratio (+1.43 std), doc_desc_depth_mean (+1.08 std)
+
+--- k=8 | Silhouette: 0.0575 | Min Cluster Size: 1 (0.5%) | [INVALID (<5% cluster exists)] ---
+  Cluster 0 (N=78, 41.5%): repo_original_count (+0.41 std), repo_total_count (+0.37 std), lang_frontend_signal[LANG] (+0.36 std), lang_diversity_entropy[LANG] (+0.35 std), eng_pr_discipline (-0.33 std) *LANG DRIVEN*
+  Cluster 1 (N=3, 1.6%): collab_issues_commented (+5.08 std), lang_unique_count[LANG] (+4.64 std), repo_total_forks_received (+3.65 std), repo_total_count (+3.59 std), collab_pr_opened (+3.38 std) *LANG DRIVEN*
+  Cluster 2 (N=33, 17.6%): eng_pr_discipline (+1.32 std), repo_has_stars (+0.95 std), collab_issues_opened (+0.64 std), lang_ml_signal[LANG] (+0.61 std), eng_ci_ratio (+0.58 std) *LANG DRIVEN*
+  Cluster 3 (N=50, 26.6%): repo_original_count (-0.84 std), repo_total_count (-0.83 std), doc_desc_depth_mean (-0.69 std), lang_unique_count[LANG] (-0.69 std), repo_years_active (-0.56 std) *LANG DRIVEN*
+  Cluster 4 (N=3, 1.6%): lang_primary_is_java_kotlin[LANG] (+7.85 std), repo_fork_ratio (+3.07 std), lang_diversity_entropy[LANG] (-1.79 std), lang_primary_is_javascript[LANG] (-1.56 std), doc_desc_depth_mean (-1.28 std) *LANG DRIVEN*
+  Cluster 5 (N=5, 2.7%): lang_primary_is_c[LANG] (+6.05 std), doc_pinned_count (+1.80 std), doc_pinned_ratio (+1.80 std), lang_primary_is_javascript[LANG] (-1.56 std), lang_unique_count[LANG] (+1.22 std) *LANG DRIVEN*
+  Cluster 6 (N=15, 8.0%): repo_mean_size_kb (+2.08 std), lang_devops_signal[LANG] (+1.79 std), repo_std_size_kb (+1.65 std), eng_commit_message_quality (+1.41 std), doc_desc_depth_mean (+1.26 std) *LANG DRIVEN*
+  Cluster 7 (N=1, 0.5%): collab_pr_merged (+11.07 std), collab_pr_opened (+10.36 std), eng_pr_discipline (+1.90 std), eng_commit_message_quality (+1.60 std), lang_primary_is_javascript[LANG] (-1.56 std) *LANG DRIVEN*
+
+--- k=9 | Silhouette: 0.0898 | Min Cluster Size: 2 (1.1%) | [INVALID (<5% cluster exists)] ---
+  Cluster 0 (N=37, 19.7%): repo_original_count (-0.94 std), repo_total_count (-0.93 std), repo_years_active (-0.92 std), lang_unique_count[LANG] (-0.72 std), doc_desc_depth_mean (-0.58 std) *LANG DRIVEN*
+  Cluster 1 (N=21, 11.2%): doc_pinned_ratio (+1.80 std), doc_pinned_count (+1.80 std), repo_total_forks_received (+0.92 std), repo_original_count (+0.83 std), repo_total_count (+0.82 std)
+  Cluster 2 (N=12, 6.4%): repo_mean_size_kb (+2.43 std), repo_std_size_kb (+2.31 std), lang_devops_signal[LANG] (+1.46 std), doc_desc_depth_mean (+1.38 std), eng_commit_message_quality (+1.22 std) *LANG DRIVEN*
+  Cluster 3 (N=20, 10.6%): doc_has_bio (+2.39 std), eng_commit_message_quality (-0.39 std), repo_fork_ratio (+0.38 std), lang_ml_signal[LANG] (-0.37 std), lang_devops_signal[LANG] (-0.32 std) *LANG DRIVEN*
+  Cluster 4 (N=76, 40.4%): lang_primary_is_javascript[LANG] (+0.47 std), doc_has_bio (-0.42 std), repo_years_active (+0.41 std), doc_pinned_ratio (-0.37 std), doc_pinned_count (-0.37 std) *LANG DRIVEN*
+  Cluster 5 (N=2, 1.1%): lang_unique_count[LANG] (+5.89 std), collab_issues_commented (+5.08 std), collab_pr_opened (+4.36 std), repo_total_count (+3.70 std), repo_fork_ratio (+3.63 std) *LANG DRIVEN*
+  Cluster 6 (N=12, 6.4%): lang_primary_is_python[LANG] (+3.53 std), lang_primary_is_javascript[LANG] (-1.56 std), lang_unique_count[LANG] (+0.44 std), repo_years_active (+0.35 std), eng_pr_discipline (-0.35 std) *LANG DRIVEN*
+  Cluster 7 (N=5, 2.7%): lang_primary_is_c[LANG] (+6.05 std), doc_pinned_count (+1.80 std), doc_pinned_ratio (+1.80 std), lang_primary_is_javascript[LANG] (-1.56 std), lang_unique_count[LANG] (+1.22 std) *LANG DRIVEN*
+  Cluster 8 (N=3, 1.6%): lang_primary_is_java_kotlin[LANG] (+7.85 std), repo_fork_ratio (+3.07 std), lang_diversity_entropy[LANG] (-1.79 std), lang_primary_is_javascript[LANG] (-1.56 std), doc_desc_depth_mean (-1.28 std) *LANG DRIVEN*
+
+--- k=10 | Silhouette: 0.1078 | Min Cluster Size: 1 (0.5%) | [INVALID (<5% cluster exists)] ---
+  Cluster 0 (N=100, 53.2%): lang_primary_is_javascript[LANG] (+0.45 std), doc_pinned_count (-0.34 std), doc_pinned_ratio (-0.34 std), repo_years_active (+0.32 std), lang_primary_is_python[LANG] (-0.28 std) *LANG DRIVEN*
+  Cluster 1 (N=1, 0.5%): collab_pr_opened (+6.24 std), eng_review_participation (+6.05 std), repo_total_forks_received (+5.63 std), collab_pr_merged (+5.59 std), repo_total_count (+5.40 std)
+  Cluster 2 (N=43, 22.9%): repo_original_count (-1.00 std), repo_total_count (-0.98 std), repo_years_active (-0.93 std), lang_unique_count[LANG] (-0.75 std), lang_diversity_entropy[LANG] (-0.60 std) *LANG DRIVEN*
+  Cluster 3 (N=5, 2.7%): repo_std_size_kb (+4.59 std), repo_mean_size_kb (+3.97 std), eng_commit_message_quality (+2.29 std), eng_ci_ratio (+1.43 std), doc_desc_depth_mean (+1.08 std)
+  Cluster 4 (N=5, 2.7%): collab_issues_commented (+4.03 std), lang_ml_signal[LANG] (+2.59 std), repo_total_forks_received (+2.07 std), collab_issues_opened (+2.00 std), doc_pinned_ratio (+1.91 std) *LANG DRIVEN*
+  Cluster 5 (N=11, 5.9%): lang_primary_is_python[LANG] (+3.53 std), lang_primary_is_javascript[LANG] (-1.56 std), doc_desc_coverage (-0.44 std), lang_unique_count[LANG] (+0.40 std), eng_pr_discipline (-0.39 std) *LANG DRIVEN*
+  Cluster 6 (N=14, 7.4%): doc_pinned_ratio (+2.38 std), doc_pinned_count (+2.38 std), lang_diversity_entropy[LANG] (+1.01 std), lang_unique_count[LANG] (+0.85 std), repo_original_count (+0.81 std) *LANG DRIVEN*
+  Cluster 7 (N=3, 1.6%): lang_primary_is_java_kotlin[LANG] (+7.85 std), repo_fork_ratio (+3.07 std), lang_diversity_entropy[LANG] (-1.79 std), lang_primary_is_javascript[LANG] (-1.56 std), doc_desc_depth_mean (-1.28 std) *LANG DRIVEN*
+  Cluster 8 (N=5, 2.7%): lang_primary_is_c[LANG] (+6.05 std), doc_pinned_count (+1.80 std), doc_pinned_ratio (+1.80 std), lang_primary_is_javascript[LANG] (-1.56 std), lang_unique_count[LANG] (+1.22 std) *LANG DRIVEN*
+  Cluster 9 (N=1, 0.5%): collab_pr_merged (+11.07 std), collab_pr_opened (+10.36 std), eng_pr_discipline (+1.90 std), eng_commit_message_quality (+1.60 std), lang_primary_is_javascript[LANG] (-1.56 std) *LANG DRIVEN*

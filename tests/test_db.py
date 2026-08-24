@@ -142,10 +142,33 @@ class TestCurrentFeaturesDataFrame:
 
         assert df.shape == (2, 2)
         assert set(df.index) == {"octocat", "torvalds"}
-        assert set(df.columns) == {"commits", "stars"}
         assert df.loc["octocat", "commits"] == 50.0
         assert df.loc["octocat", "stars"] == 20.0
         assert df.loc["torvalds", "commits"] == 3000.0
+
+    def test_prepare_scaled_feature_matrix_drops_zero_variance(self, session):
+        dev1 = repo.upsert_developer(session, username="user1")
+        dev2 = repo.upsert_developer(session, username="user2")
+        session.commit()
+        snap1 = repo.insert_snapshot(session, developer_id=dev1.id)
+        snap2 = repo.insert_snapshot(session, developer_id=dev2.id)
+        session.commit()
+
+        # "go_lang" has zero variance (0.0 for both users), "commits" varies
+        repo.insert_features(session, snap1.id, {"commits": 10.0, "go_lang": 0.0})
+        repo.insert_features(session, snap2.id, {"commits": 50.0, "go_lang": 0.0})
+        session.commit()
+
+        from devlens.features.feature_engineering import prepare_scaled_feature_matrix
+        df = repo.get_all_current_features(session)
+
+        scaled_df, scaler, dropped = prepare_scaled_feature_matrix(df, drop_zero_variance=True)
+
+        assert dropped == ["go_lang"]
+        assert "go_lang" not in scaled_df.columns
+        assert "commits" in scaled_df.columns
+        assert scaled_df.isna().sum().sum() == 0
+        assert (scaled_df.values != scaled_df.values).sum() == 0  # no NaNs
 
 
 class TestFullIntegration:
