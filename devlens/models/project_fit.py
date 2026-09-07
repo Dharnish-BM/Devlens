@@ -303,14 +303,14 @@ def rule_based_match(req: ProjectRequirement, developer_pool: List[DeveloperProf
     return matches
 
 
-def load_developer_pool(data_raw_dir: str = "data/raw") -> List[DeveloperProfile]:
+def load_developer_pool(data_raw_dir: str = "data/raw", source: Optional[str] = "consented_cohort") -> List[DeveloperProfile]:
     """Load full developer pool from database and raw JSON profiles."""
     raw_dir = Path(data_raw_dir)
     pool: List[DeveloperProfile] = []
 
     with get_session() as session:
         # Load developers, snapshots, doc scores, eng maturity scores, archetype predictions
-        rows = (
+        query = (
             session.query(
                 Developer.username,
                 Snapshot.id.label("snapshot_id"),
@@ -322,8 +322,10 @@ def load_developer_pool(data_raw_dir: str = "data/raw") -> List[DeveloperProfile
             .outerjoin(DocScore, Snapshot.id == DocScore.snapshot_id)
             .outerjoin(EngMaturityScore, Snapshot.id == EngMaturityScore.snapshot_id)
             .outerjoin(ArchetypePrediction, Snapshot.id == ArchetypePrediction.snapshot_id)
-            .all()
         )
+        if source is not None:
+            query = query.filter(Developer.source == source)
+        rows = query.all()
 
     # Deduplicate to latest snapshot per developer
     dev_data: Dict[str, Dict[str, Any]] = {}

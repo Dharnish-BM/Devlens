@@ -129,7 +129,8 @@ def explain_prediction(
     model: Any,
     explainer: shap.TreeExplainer,
     le: Any,
-    top_n: int = 5
+    top_n: int = 5,
+    target_class: Optional[str] = None
 ) -> Dict[str, Any]:
     """Explain a single developer feature vector.
     
@@ -138,9 +139,15 @@ def explain_prediction(
     """
     df_single = pd.DataFrame([feature_vector])
     probs = model.predict_proba(df_single)[0]
-    pred_idx = int(np.argmax(probs))
-    pred_label = le.inverse_transform([pred_idx])[0]
-    confidence = float(probs[pred_idx])
+    
+    if target_class and target_class in le.classes_:
+        pred_label = target_class
+        pred_idx = int(np.where(le.classes_ == target_class)[0][0])
+        confidence = float(probs[pred_idx])
+    else:
+        pred_idx = int(np.argmax(probs))
+        pred_label = le.inverse_transform([pred_idx])[0]
+        confidence = float(probs[pred_idx])
 
     shap_single = explainer.shap_values(df_single)
     if isinstance(shap_single, list):

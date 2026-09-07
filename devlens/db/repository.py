@@ -33,6 +33,7 @@ def upsert_developer(
     session: Session,
     username: str,
     resume_source: Optional[str] = None,
+    source: str = "consented_cohort",
 ) -> Developer:
     """Insert a new developer or update last_updated_at if they already exist.
     
@@ -44,13 +45,14 @@ def upsert_developer(
     if developer is None:
         developer = Developer(
             username=username,
+            source=source,
             resume_source=resume_source,
             first_collected_at=now,
             last_updated_at=now,
         )
         session.add(developer)
         session.flush()  # flush to get the assigned id
-        logger.info(f"Inserted new developer: '{username}' (id={developer.id})")
+        logger.info(f"Inserted new developer: '{username}' (id={developer.id}, source='{source}')")
     else:
         developer.last_updated_at = now
         if resume_source is not None:
@@ -308,12 +310,16 @@ def get_all_exclusions(session: Session) -> List[CollectionExclusion]:
 # Current Features DataFrame Query for ML / Clustering
 # ---------------------------------------------------------------------------
 
-def get_all_current_features(session: Session) -> pd.DataFrame:
-    """Retrieve all current features across developers for Phase 5 clustering.
+def get_all_current_features(session: Session, source: Optional[str] = "consented_cohort") -> pd.DataFrame:
+    """Retrieve all current features across developers for Phase 5 clustering & modeling.
     
     Identifies the latest snapshot per developer and pulls its features,
     returning a pandas DataFrame with one row per developer (indexed by username)
     and one column per feature.
+    
+    Args:
+        session: Active SQLAlchemy session.
+        source: Optional filter on developer source ('consented_cohort', 'live_upload', or None for all).
     """
     subq = (
         session.query(
@@ -324,14 +330,18 @@ def get_all_current_features(session: Session) -> pd.DataFrame:
         .subquery()
     )
 
-    rows = (
+    query = (
         session.query(Developer.username, Feature.feature_name, Feature.feature_value)
         .select_from(Developer)
         .join(Snapshot, Developer.id == Snapshot.developer_id)
         .join(subq, Snapshot.id == subq.c.max_snapshot_id)
         .join(Feature, Feature.snapshot_id == Snapshot.id)
-        .all()
     )
+
+    if source is not None:
+        query = query.filter(Developer.source == source)
+
+    rows = query.all()
 
     if not rows:
         df = pd.DataFrame()

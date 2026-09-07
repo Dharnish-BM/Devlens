@@ -112,73 +112,94 @@ class GitHubProfileCollector:
 
         return repos
 
+    def _enrich_single_repo(self, username: str, repo: Dict[str, Any], skip_commit_messages: bool = False) -> None:
+        """Enrich a single original repo with README, CI, test presence, and recent commit messages."""
+        if repo.get("is_fork"):
+            repo["readme_length_chars"] = 0
+            repo["has_ci_config"] = False
+            repo["has_test_presence"] = False
+            repo["recent_commit_messages"] = []
+            return
+
+        repo_name = repo["name"]
+
+        # 1. README presence and length
+        readme_res = self.client.rest_request(f"repos/{username}/{repo_name}/readme", max_retries=2)
+        readme_len = 0
+        if isinstance(readme_res, dict) and "content" in readme_res:
+            try:
+                content_bytes = base64.b64decode(readme_res["content"].encode("ascii"))
+                readme_len = len(content_bytes.decode("utf-8", errors="ignore"))
+            except Exception as e:
+                logger.debug(f"Error decoding README for {repo_name}: {e}")
+                readme_len = readme_res.get("size", 0)
+        repo["readme_length_chars"] = readme_len
+
+        # 2. CI/CD config presence (.github/workflows)
+        wf_res = self.client.rest_request(f"repos/{username}/{repo_name}/contents/.github/workflows", max_retries=2)
+        has_ci = isinstance(wf_res, list) and len(wf_res) > 0
+        if not has_ci:
+            for ci_file in (".travis.yml", "circle.yml", "Jenkinsfile", ".gitlab-ci.yml", "azure-pipelines.yml"):
+                if self.client.rest_request(f"repos/{username}/{repo_name}/contents/{ci_file}", max_retries=1):
+                    has_ci = True
+                    break
+        repo["has_ci_config"] = has_ci
+
+        # 3. Test directory/file presence (GET /repos/{owner}/{repo}/contents)
+        contents_res = self.client.rest_request(f"repos/{username}/{repo_name}/contents", max_retries=2)
+        has_tests = False
+        if isinstance(contents_res, list):
+            test_dir_names = {"tests", "test", "__tests__", "spec", "testing"}
+            test_file_patterns = ("test_", "_test.", ".test.", ".spec.")
+            for item in contents_res:
+                if not isinstance(item, dict):
+                    continue
+                item_name = item.get("name", "").lower()
+                item_type = item.get("type", "")
+                if item_type == "dir" and item_name in test_dir_names:
+                    has_tests = True
+                    break
+                elif item_type == "file" and any(p in item_name for p in test_file_patterns):
+                    has_tests = True
+                    break
+        repo["has_test_presence"] = has_tests
+
+        # 4. Recent commit messages (up to 30)
+        commit_msgs = []
+        if not skip_commit_messages:
+            commits_res = self.client.rest_request(
+                f"repos/{username}/{repo_name}/commits",
+                params={"per_page": 30},
+                max_retries=2
+            )
+            if isinstance(commits_res, list):
+                for c_item in commits_res:
+                    if isinstance(c_item, dict):
+                        raw_msg = c_item.get("commit", {}).get("message", "")
+                        subject = raw_msg.split("\n")[0].strip() if raw_msg else ""
+                        if subject:
+                            commit_msgs.append(subject)
+        repo["recent_commit_messages"] = commit_msgs
+
     def enrich_repo_details(
-        self, username: str, repos: List[Dict[str, Any]], skip_commit_messages: bool = False
+        self, username: str, repos: List[Dict[str, Any]], skip_commit_messages: bool = False, max_workers: int = 6
     ) -> None:
-        """Enrich original (non-fork) repos in-place with README length, CI config presence, and recent commit messages."""
-        logger.info(f"Enriching repo details for {len(repos)} repositories (skip_commit_messages={skip_commit_messages})...")
-        for repo in repos:
-            if repo.get("is_fork"):
-                repo["readme_length_chars"] = 0
-                repo["has_ci_config"] = False
-                repo["has_test_presence"] = False
-                repo["recent_commit_messages"] = []
-                continue
-
-            repo_name = repo["name"]
-
-            # 1. README presence and length
-            readme_res = self.client.rest_request(f"repos/{username}/{repo_name}/readme", max_retries=2)
-            readme_len = 0
-            if isinstance(readme_res, dict) and "content" in readme_res:
+        """Enrich original (non-fork) repos concurrently using a bounded thread pool."""
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        non_fork_repos = [r for r in repos if not r.get("is_fork")]
+        logger.info(f"Enriching {len(non_fork_repos)} original repositories concurrently (max_workers={max_workers})...")
+        
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            future_to_repo = {
+                executor.submit(self._enrich_single_repo, username, repo, skip_commit_messages): repo
+                for repo in non_fork_repos
+            }
+            for future in as_completed(future_to_repo):
                 try:
-                    content_bytes = base64.b64decode(readme_res["content"].encode("ascii"))
-                    readme_len = len(content_bytes.decode("utf-8", errors="ignore"))
+                    future.result()
                 except Exception as e:
-                    logger.debug(f"Error decoding README for {repo_name}: {e}")
-                    readme_len = readme_res.get("size", 0)
-            repo["readme_length_chars"] = readme_len
-
-            # 2. CI/CD config presence (.github/workflows)
-            wf_res = self.client.rest_request(f"repos/{username}/{repo_name}/contents/.github/workflows", max_retries=2)
-            has_ci = isinstance(wf_res, list) and len(wf_res) > 0
-            repo["has_ci_config"] = has_ci
-
-            # 3. Test directory/file presence (GET /repos/{owner}/{repo}/contents)
-            contents_res = self.client.rest_request(f"repos/{username}/{repo_name}/contents", max_retries=2)
-            has_tests = False
-            if isinstance(contents_res, list):
-                test_dir_names = {"tests", "test", "__tests__", "spec", "testing"}
-                test_file_patterns = ("test_", "_test.", ".test.", ".spec.")
-                for item in contents_res:
-                    if not isinstance(item, dict):
-                        continue
-                    item_name = item.get("name", "").lower()
-                    item_type = item.get("type", "")
-                    if item_type == "dir" and item_name in test_dir_names:
-                        has_tests = True
-                        break
-                    elif item_type == "file" and any(p in item_name for p in test_file_patterns):
-                        has_tests = True
-                        break
-            repo["has_test_presence"] = has_tests
-
-            # 4. Recent commit messages (up to 30)
-            commit_msgs = []
-            if not skip_commit_messages:
-                commits_res = self.client.rest_request(
-                    f"repos/{username}/{repo_name}/commits",
-                    params={"per_page": 30},
-                    max_retries=2
-                )
-                if isinstance(commits_res, list):
-                    for c_item in commits_res:
-                        if isinstance(c_item, dict):
-                            raw_msg = c_item.get("commit", {}).get("message", "")
-                            subject = raw_msg.split("\n")[0].strip() if raw_msg else ""
-                            if subject:
-                                commit_msgs.append(subject)
-            repo["recent_commit_messages"] = commit_msgs
+                    repo_obj = future_to_repo[future]
+                    logger.warning(f"Error enriching repo {repo_obj.get('name')}: {e}")
 
     def collect_commit_activity(self, username: str, repos: List[Dict[str, Any]]) -> Dict[str, Any]:
         """Collect 52-week commit activity for non-fork public repositories."""

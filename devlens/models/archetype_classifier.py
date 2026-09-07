@@ -66,18 +66,45 @@ def save_artifact(obj: Any, filename: str):
         logger.info(f"Saved artifact: {path}")
 
 
+def is_valid_specialized_signal(
+    signal: float,
+    base_threshold: float,
+    top_competing_share: float,
+    dominance_threshold: float = 0.55,
+    ceiling_multiplier: float = 1.20,
+    min_ceiling: float = 0.10
+) -> bool:
+    """Validate specialized signal against competing language dominance.
+    
+    A specialized signal cannot short-circuit the classifier if it is weak 
+    (< dynamic ceiling) AND a single competing language holds > 55% of original repos.
+    """
+    if signal <= base_threshold:
+        return False
+    ceiling = max(min_ceiling, base_threshold * ceiling_multiplier)
+    if signal >= ceiling:
+        return True
+    if top_competing_share > dominance_threshold:
+        return False
+    return True
+
+
 def generate_pseudo_labels(df: pd.DataFrame) -> pd.Series:
     """Generate 7-tier hierarchical pseudo-labels for developer cohort.
     
-    Precedence:
-    1. ML Specialist: lang_ml_signal > 0.05
-    2. Mobile Developer: lang_mobile_signal > 0.02
-    3. DevOps Engineer: lang_devops_signal > 0.10
+    Precedence (with Dominance Guard D=0.55):
+    1. ML Specialist: lang_ml_signal > 0.05 (guarded against dominant competing stack)
+    2. Mobile Developer: lang_mobile_signal > 0.02 (guarded against dominant competing stack)
+    3. DevOps Engineer: lang_devops_signal > 0.10 (guarded against dominant competing stack)
     4. Frontend Developer: lang_frontend_signal > 0.50 or lang_primary_is_javascript == 1.0
     5. Backend Developer: lang_primary_is_c == 1.0 or (lang_primary_is_java_kotlin == 1.0 and lang_mobile_signal <= 0.02)
     6. Full-Stack Developer: lang_diversity_entropy >= 1.8
     7. Unclassified / Low Signal: lang_diversity_entropy < 1.8
     """
+    MOBILE_LANGS = {"Swift", "Dart", "Kotlin", "Objective-C"}
+    ML_LANGS = {"Jupyter Notebook", "R", "Julia"}
+    DEVOPS_LANGS = {"Shell", "HCL", "Dockerfile", "Makefile"}
+
     labels = []
     for username, row in df.iterrows():
         ml_sig = row.get("lang_ml_signal", 0.0)
@@ -89,11 +116,44 @@ def generate_pseudo_labels(df: pd.DataFrame) -> pd.Series:
         primary_java_kotlin = row.get("lang_primary_is_java_kotlin", 0.0) == 1.0
         entropy = row.get("lang_diversity_entropy", 0.0)
 
-        if ml_sig > 0.05:
+        # Compute competing language share if raw JSON data is available or derive from row
+        # In feature matrix, check if raw JSON exists in data/raw/<username>.json
+        top_competing_ml = 0.0
+        top_competing_mob = 0.0
+        top_competing_devops = 0.0
+
+        raw_path = Path("data/raw") / f"{username}.json"
+        if raw_path.exists():
+            try:
+                with open(raw_path, "r", encoding="utf-8") as f:
+                    raw_d = json.load(f)
+                repos = [r for r in raw_d.get("repositories", []) if not r.get("is_fork", False)]
+                n_orig = len(repos)
+                if n_orig > 0:
+                    counts: Dict[str, int] = {}
+                    for r in repos:
+                        l = r.get("language") or "None"
+                        counts[l] = counts.get(l, 0) + 1
+                    l_shares = {k: v / n_orig for k, v in counts.items()}
+                    non_mob = {k: v for k, v in l_shares.items() if k not in MOBILE_LANGS}
+                    top_competing_mob = max(non_mob.values()) if non_mob else 0.0
+                    non_ml = {k: v for k, v in l_shares.items() if k not in ML_LANGS}
+                    top_competing_ml = max(non_ml.values()) if non_ml else 0.0
+                    non_devops = {k: v for k, v in l_shares.items() if k not in DEVOPS_LANGS}
+                    top_competing_devops = max(non_devops.values()) if non_devops else 0.0
+            except Exception as e:
+                logger.warning(f"Could not parse competing shares for {username}: {e}")
+
+        # Uniform evaluation across ML, Mobile, DevOps
+        is_ml = is_valid_specialized_signal(ml_sig, base_threshold=0.05, top_competing_share=top_competing_ml, dominance_threshold=0.55)
+        is_mobile = is_valid_specialized_signal(mobile_sig, base_threshold=0.02, top_competing_share=top_competing_mob, dominance_threshold=0.55)
+        is_devops = is_valid_specialized_signal(devops_sig, base_threshold=0.10, top_competing_share=top_competing_devops, dominance_threshold=0.55)
+
+        if is_ml:
             lbl = "ML Specialist"
-        elif mobile_sig > 0.02:
+        elif is_mobile:
             lbl = "Mobile Developer"
-        elif devops_sig > 0.10:
+        elif is_devops:
             lbl = "DevOps Engineer"
         elif frontend_sig > 0.50 or primary_js:
             lbl = "Frontend Developer"

@@ -1,151 +1,183 @@
 {% extends "base.html" %}
 
-{% block title %}DevLens | Developer Directory & Analytics Showcase{% endblock %}
+{% block title %}DevLens | Developer Intelligence & Hiring Platform{% endblock %}
 
 {% block content %}
-<!-- Showcase Notice Banner -->
-<div class="disclaimer-banner">
-  <span class="icon">[NOTE]</span>
-  <div>
-    <strong>Academic Showcase Environment:</strong> This interface provides interactive analysis, SHAP interpretability, and project-fit matchmaking across the <strong>188 pre-collected developer profiles</strong> evaluated in our study. On-demand GitHub API collection is disabled in this demo build to preserve rate limits and reproducibility.
+<!-- Hero Section -->
+<div class="hero-section">
+  <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+    <span class="badge badge-green">Live Analysis Ready</span>
+    <span class="badge badge-slate">Universal GitHub Coverage</span>
   </div>
+  
+  <h1 class="hero-title">Real Coding Activity. Hiring-Ready Skill Profiles.</h1>
+  <p class="hero-subtitle">
+    Enter a GitHub profile or upload a resume &mdash; we analyze their real coding activity and give you a hiring-ready skill profile in minutes.
+  </p>
+  <p class="hero-subtext">
+    ⚡ <strong>Works for ANY public GitHub user</strong> &bull; Full-depth repository AST & workflow analysis, not superficial profile metrics.
+  </p>
 </div>
 
-<!-- Search and Directory Header -->
-<div class="card" style="margin-bottom: 24px;">
-  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+<!-- Unified Entry Points Grid -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1040px; margin: 0 auto 36px auto;">
+  
+  <!-- Entry Point A: Analyze a GitHub Profile -->
+  <div class="entry-card">
+    <div class="entry-card-header">
+      <div class="entry-icon" style="color: var(--color-blue); border-color: var(--color-blue-border);">
+        λ
+      </div>
+      <div>
+        <h2 style="font-size: 1.25rem;">Analyze a GitHub Profile</h2>
+        <div style="font-size: 0.8rem; color: var(--color-text-muted);">Direct username or profile URL analysis</div>
+      </div>
+    </div>
+
+    <p style="font-size: 0.88rem; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.5; flex-grow: 1;">
+      Instantly evaluate any developer's commit patterns, language specialization, documentation quality, and engineering maturity scores.
+    </p>
+
+    <form method="POST" action="{{ url_for('analyze') }}">
+      <input type="hidden" name="entry_mode" value="github_handle">
+      <div class="form-group">
+        <label class="form-label" for="github_input">GitHub Username or URL:</label>
+        <input 
+          type="text" 
+          name="github_input" 
+          id="github_input" 
+          class="form-control" 
+          placeholder="e.g. torvalds or https://github.com/octocat" 
+          required
+        >
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+        <span style="font-size: 0.78rem; color: var(--color-text-dim); font-family: var(--font-mono);">
+          Fast pre-check & ETA calculated before collection
+        </span>
+        <button type="submit" class="btn btn-primary" style="padding: 9px 20px;">
+          Analyze Profile &rarr;
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Entry Point B: Upload a Resume -->
+  <div class="entry-card">
+    <div class="entry-card-header">
+      <div class="entry-icon" style="color: var(--color-signal-green); border-color: var(--color-signal-green-border);">
+        📄
+      </div>
+      <div>
+        <h2 style="font-size: 1.25rem;">Upload Resume(s)</h2>
+        <div style="font-size: 0.8rem; color: var(--color-text-muted);">Single candidate or bulk folder ingestion</div>
+      </div>
+    </div>
+
+    <p style="font-size: 0.88rem; color: var(--color-text-main); margin-bottom: 20px; line-height: 1.5; flex-grow: 1;">
+      Extract GitHub handles from candidate PDF/DOCX resumes or batch-process candidate folders with automated confidence verification.
+    </p>
+
+    <form method="POST" action="{{ url_for('analyze') }}" enctype="multipart/form-data">
+      <input type="hidden" name="entry_mode" value="resume_upload">
+      
+      <!-- Upload Mode Switcher -->
+      <div style="display: flex; gap: 16px; margin-bottom: 14px; font-family: var(--font-mono); font-size: 0.82rem;">
+        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+          <input type="radio" name="upload_type" value="files" checked onchange="toggleUploadType('files')">
+          <span>File(s) (.pdf, .docx)</span>
+        </label>
+        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+          <input type="radio" name="upload_type" value="drive" onchange="toggleUploadType('drive')">
+          <span>Drive Folder Link</span>
+        </label>
+      </div>
+
+      <!-- File input -->
+      <div id="fileInputContainer" class="form-group">
+        <input 
+          type="file" 
+          name="resume_files" 
+          id="resume_files" 
+          class="form-control" 
+          accept=".pdf,.docx,.doc" 
+          multiple
+        >
+        <div style="font-size: 0.75rem; color: var(--color-text-dim); margin-top: 4px; font-family: var(--font-mono);">
+          Select one or multiple candidate files
+        </div>
+      </div>
+
+      <!-- Drive link input -->
+      <div id="driveInputContainer" class="form-group" style="display: none;">
+        <input 
+          type="url" 
+          name="drive_url" 
+          id="drive_url" 
+          class="form-control" 
+          placeholder="https://drive.google.com/drive/folders/..."
+        >
+        <div style="font-size: 0.75rem; color: var(--color-text-dim); margin-top: 4px; font-family: var(--font-mono);">
+          Shared public Google Drive folder URL
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+        <span style="font-size: 0.78rem; color: var(--color-text-dim); font-family: var(--font-mono);">
+          Multi-strategy username extraction
+        </span>
+        <button type="submit" class="btn btn-primary" style="padding: 9px 20px;">
+          Extract & Verify &rarr;
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<!-- Quick Demonstrator / Sample Profile Bar -->
+<div class="card" style="max-width: 1040px; margin: 0 auto;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
     <div>
-      <h1 style="font-size: 1.6rem; margin-bottom: 4px;">Developer Portfolio Directory</h1>
-      <p style="color: var(--color-text-muted); font-size: 0.9rem;">
-        Explore empirical K-Means activity clusters, XGBoost archetypes, documentation scores, and engineering maturity.
-      </p>
+      <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
+        Instant Demo Profiles
+      </div>
+      <div style="font-size: 0.9rem; color: var(--color-text-main);">
+        Explore pre-computed flagship dashboards from our benchmark cohort:
+      </div>
     </div>
-    
-    <div style="display: flex; gap: 10px; align-items: center;">
-      <a href="{{ url_for('profile', username='RBROHANTH') }}" class="btn btn-secondary" style="font-size: 0.82rem;">
-        Sample: RBROHANTH (Backend)
+
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+      <a href="{{ url_for('dashboard', username='RBROHANTH') }}" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 12px;">
+        RBROHANTH (Backend Developer)
       </a>
-      <a href="{{ url_for('profile', username='ggomathi2007') }}" class="btn btn-secondary" style="font-size: 0.82rem;">
-        Sample: ggomathi2007 (Full-Stack)
+      <a href="{{ url_for('dashboard', username='ggomathi2007') }}" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 12px;">
+        ggomathi2007 (Full-Stack)
       </a>
-      <a href="{{ url_for('profile', username='vijeth06') }}" class="btn btn-secondary" style="font-size: 0.82rem;">
-        Sample: vijeth06 (DevOps)
+      <a href="{{ url_for('dashboard', username='vijeth06') }}" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 12px;">
+        vijeth06 (DevOps Engineer)
+      </a>
+      <a href="{{ url_for('research') }}" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 12px; color: var(--color-blue);">
+        View All 188 &rarr;
       </a>
     </div>
   </div>
-
-  <div style="margin-top: 18px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px;">
-    <input type="text" id="searchInput" class="form-control" placeholder="Search by username (e.g. RBROHANTH, dinesh, vijeth)..." onkeyup="filterTable()">
-    
-    <select id="archetypeFilter" class="form-select" onchange="filterTable()">
-      <option value="">All Archetypes</option>
-      <option value="Frontend Developer">Frontend Developer (109)</option>
-      <option value="DevOps Engineer">DevOps Engineer (41)</option>
-      <option value="Mobile Developer">Mobile Developer (13)</option>
-      <option value="ML Specialist">ML Specialist (13)</option>
-      <option value="Unclassified / Low Signal">Unclassified / Low Signal (9)</option>
-      <option value="Backend Developer">Backend Developer (2)</option>
-      <option value="Full-Stack Developer">Full-Stack Developer (1)</option>
-    </select>
-
-    <select id="clusterFilter" class="form-select" onchange="filterTable()">
-      <option value="">All Engagement Tiers</option>
-      <option value="Power-User">Cluster 0: Power-User (17)</option>
-      <option value="Baseline">Cluster 1: Baseline (171)</option>
-    </select>
-  </div>
-</div>
-
-<!-- Developers Directory Table -->
-<div class="table-wrapper">
-  <table class="git-table" id="devTable">
-    <thead>
-      <tr>
-        <th style="width: 50px;">#</th>
-        <th>Developer Username</th>
-        <th>Functional Archetype</th>
-        <th>Engagement Tier</th>
-        <th>Primary Language</th>
-        <th style="text-align: right;">Doc Score</th>
-        <th style="text-align: right;">Eng Maturity</th>
-        <th style="text-align: center; width: 100px;">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for dev in developers %}
-      <tr class="dev-row" data-username="{{ dev.username|lower }}" data-archetype="{{ dev.archetype }}" data-cluster="{{ dev.cluster_name }}">
-        <td class="mono" style="color: var(--color-text-dim);">{{ loop.index }}</td>
-        <td>
-          <a href="{{ url_for('profile', username=dev.username) }}" style="font-weight: 600; font-family: var(--font-mono);">
-            {{ dev.username }}
-          </a>
-        </td>
-        <td>
-          {% if dev.archetype == 'Frontend Developer' %}
-            <span class="badge badge-blue">{{ dev.archetype }}</span>
-          {% elif dev.archetype == 'DevOps Engineer' %}
-            <span class="badge badge-amber">{{ dev.archetype }}</span>
-          {% elif dev.archetype == 'Mobile Developer' %}
-            <span class="badge badge-purple">{{ dev.archetype }}</span>
-          {% elif dev.archetype == 'ML Specialist' %}
-            <span class="badge badge-green">{{ dev.archetype }}</span>
-          {% elif dev.archetype == 'Backend Developer' %}
-            <span class="badge badge-amber">{{ dev.archetype }}</span>
-          {% elif dev.archetype == 'Full-Stack Developer' %}
-            <span class="badge badge-green">{{ dev.archetype }}</span>
-          {% else %}
-            <span class="badge badge-slate">{{ dev.archetype }}</span>
-          {% endif %}
-        </td>
-        <td>
-          {% if 'Power-User' in dev.cluster_name %}
-            <span class="badge badge-green">⚡ {{ dev.cluster_name }}</span>
-          {% else %}
-            <span class="badge badge-slate">{{ dev.cluster_name }}</span>
-          {% endif %}
-        </td>
-        <td class="mono" style="color: var(--color-text-muted);">{{ dev.primary_language }}</td>
-        <td class="mono" style="text-align: right; color: {% if dev.doc_score >= 0.3 %}var(--color-signal-green){% else %}var(--color-text-muted){% endif %};">
-          {{ "%.3f"|format(dev.doc_score) }}
-        </td>
-        <td class="mono" style="text-align: right; color: {% if dev.eng_score >= 0.3 %}var(--color-signal-green){% else %}var(--color-text-muted){% endif %};">
-          {{ "%.3f"|format(dev.eng_score) }}
-        </td>
-        <td style="text-align: center;">
-          <a href="{{ url_for('profile', username=dev.username) }}" class="btn btn-secondary" style="padding: 3px 8px; font-size: 0.75rem;">
-            Inspect &rarr;
-          </a>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
 </div>
 {% endblock %}
 
 {% block scripts %}
 <script>
-function filterTable() {
-  const search = document.getElementById('searchInput').value.toLowerCase();
-  const archetype = document.getElementById('archetypeFilter').value;
-  const cluster = document.getElementById('clusterFilter').value;
-  const rows = document.querySelectorAll('.dev-row');
-
-  rows.forEach(row => {
-    const uname = row.getAttribute('data-username');
-    const arch = row.getAttribute('data-archetype');
-    const clust = row.getAttribute('data-cluster');
-
-    const matchSearch = !search || uname.includes(search);
-    const matchArch = !archetype || arch === archetype;
-    const matchCluster = !cluster || clust.includes(cluster);
-
-    if (matchSearch && matchArch && matchCluster) {
-      row.style.display = '';
-    } else {
-      row.style.display = 'none';
-    }
-  });
+function toggleUploadType(type) {
+  const fileContainer = document.getElementById('fileInputContainer');
+  const driveContainer = document.getElementById('driveInputContainer');
+  if (type === 'files') {
+    fileContainer.style.display = 'block';
+    driveContainer.style.display = 'none';
+  } else {
+    fileContainer.style.display = 'none';
+    driveContainer.style.display = 'block';
+  }
 }
 </script>
 {% endblock %}

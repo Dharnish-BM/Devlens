@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}DevLens | Ingestion Pipeline Progress{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width: 820px; margin: 30px auto; text-align: center; padding: 36px 32px;">
+  
+  <div style="font-size: 2.4rem; margin-bottom: 10px;" id="statusIcon">⚡</div>
+  
+  <h1 style="font-size: 1.6rem; margin-bottom: 6px;">
+    Ingesting Candidate: <span class="mono" style="color: var(--color-blue);">{{ username }}</span>
+  </h1>
+  
+  <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 20px;">
+    {% if eta_str %}
+      <span class="eta-pill" id="etaBadge">
+        ⏱️ Estimated Time: ~{{ eta_str }}
+      </span>
+    {% endif %}
+    <span class="badge badge-slate" id="jobBadge">
+      Job: <span class="mono">{{ job_id }}</span>
+    </span>
+  </div>
+
+  <p id="stageLabel" style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 20px;">
+    Initializing collection pipeline...
+  </p>
+
+  <!-- Progress Bar -->
+  <div style="background: #21262d; height: 14px; border-radius: 7px; overflow: hidden; margin-bottom: 14px; position: relative; border: 1px solid var(--color-border);">
+    <div id="progressBarFill" style="background: var(--color-blue); width: 10%; height: 100%; transition: width 0.3s ease; border-radius: 6px;"></div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-text-dim); margin-bottom: 24px;">
+    <span id="progressText">Connecting to GitHub REST/GraphQL API...</span>
+    <span id="percentText" style="font-weight: 700; color: var(--color-blue);">10%</span>
+  </div>
+
+  <!-- Real-Time Pipeline Stages Checklist -->
+  <div style="text-align: left; background: #0d1117; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 24px; line-height: 1.7;">
+    <div id="step-collect" style="color: var(--color-text-dim);">
+      [ ] 1. REST/GraphQL Profile & Repository Ingestion (Phase 1)
+    </div>
+    <div id="step-enrich" style="color: var(--color-text-dim);">
+      [ ] 2. Multi-threaded Repo Enrichment (CI, Tests, READMEs, Commits - Phase 1B)
+    </div>
+    <div id="step-features" style="color: var(--color-text-dim);">
+      [ ] 3. 52-Metric Feature Engineering & Quality Scoring (Phase 4)
+    </div>
+    <div id="step-scoring" style="color: var(--color-text-dim);">
+      [ ] 4. K-Means Tier, Heuristic Archetype Rules & TreeExplainer SHAP (Phase 5-7)
+    </div>
+    <div id="step-db" style="color: var(--color-text-dim);">
+      [ ] 5. Database Persistence (Tagged <code>source="live_upload"</code>)
+    </div>
+  </div>
+
+  <div id="errorBox" style="display: none; padding: 14px; background: var(--color-diff-red-bg); border: 1px solid var(--color-diff-red-border); border-radius: var(--radius-sm); color: var(--color-diff-red); font-size: 0.85rem; margin-bottom: 20px; text-align: left;">
+    <strong>Pipeline Error:</strong> <span id="errorMsg"></span>
+  </div>
+
+  <div id="actionArea">
+    <span style="font-size: 0.78rem; color: var(--color-text-dim); font-family: var(--font-mono);">
+      Live progress streaming from background pipeline thread
+    </span>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const jobId = "{{ job_id }}";
+const username = "{{ username }}";
+
+function pollStatus() {
+  fetch(`/collect/status/${jobId}`)
+    .then(res => res.json())
+    .then(data => {
+      if (!data) return;
+
+      const stage = data.stage;
+      const percent = data.percent || 10;
+      const progress = data.progress || "";
+
+      document.getElementById('progressBarFill').style.width = percent + "%";
+      document.getElementById('percentText').innerText = percent + "%";
+      document.getElementById('progressText').innerText = progress;
+
+      // Update Checklist Highlights
+      if (stage === 'collecting_profile') {
+        document.getElementById('step-collect').style.color = "var(--color-blue)";
+        document.getElementById('step-collect').innerText = "[►] 1. REST/GraphQL Profile & Repository Ingestion (Phase 1)";
+        document.getElementById('stageLabel').innerText = "Phase 1: Fetching repositories and profile...";
+      } else if (stage === 'enriching_repos') {
+        document.getElementById('step-collect').style.color = "var(--color-signal-green)";
+        document.getElementById('step-collect').innerText = "[✓] 1. REST/GraphQL Profile & Repository Ingestion (Phase 1)";
+        document.getElementById('step-enrich').style.color = "var(--color-blue)";
+        document.getElementById('step-enrich').innerText = `[►] 2. Deep Enrichment: ${progress}`;
+        document.getElementById('stageLabel').innerText = "Phase 1B: Inspecting CI workflows, tests, READMEs, commit hygiene...";
+      } else if (stage === 'computing_features') {
+        document.getElementById('step-collect').style.color = "var(--color-signal-green)";
+        document.getElementById('step-collect').innerText = "[✓] 1. REST/GraphQL Profile & Repository Ingestion (Phase 1)";
+        document.getElementById('step-enrich').style.color = "var(--color-signal-green)";
+        document.getElementById('step-enrich').innerText = "[✓] 2. Multi-threaded Repo Enrichment (Phase 1B)";
+        document.getElementById('step-features').style.color = "var(--color-blue)";
+        document.getElementById('step-features').innerText = "[►] 3. Computing 52-Metric Feature Vector & Quality Scores...";
+        document.getElementById('stageLabel').innerText = "Phase 4: Calculating documentation & maturity scores...";
+      } else if (stage === 'scoring') {
+        document.getElementById('step-collect').style.color = "var(--color-signal-green)";
+        document.getElementById('step-enrich').style.color = "var(--color-signal-green)";
+        document.getElementById('step-features').style.color = "var(--color-signal-green)";
+        document.getElementById('step-features').innerText = "[✓] 3. 52-Metric Feature Engineering (Phase 4)";
+        document.getElementById('step-scoring').style.color = "var(--color-blue)";
+        document.getElementById('step-scoring').innerText = "[►] 4. K-Means Tier, Heuristic Archetype Rules & TreeExplainer SHAP...";
+        document.getElementById('stageLabel').innerText = "Phase 5-7: Running inference & SHAP explainability...";
+      } else if (stage === 'done') {
+        document.getElementById('step-collect').style.color = "var(--color-signal-green)";
+        document.getElementById('step-enrich').style.color = "var(--color-signal-green)";
+        document.getElementById('step-features').style.color = "var(--color-signal-green)";
+        document.getElementById('step-scoring').style.color = "var(--color-signal-green)";
+        document.getElementById('step-scoring').innerText = "[✓] 4. K-Means Tier, Heuristic Archetype Rules & TreeExplainer SHAP";
+        document.getElementById('step-db').style.color = "var(--color-signal-green)";
+        document.getElementById('step-db').innerText = "[✓] 5. Database Persistence (Tagged source='live_upload')";
+        
+        document.getElementById('progressBarFill').style.background = "var(--color-signal-green)";
+        document.getElementById('percentText').style.color = "var(--color-signal-green)";
+        document.getElementById('statusIcon').innerText = "🎉";
+        document.getElementById('stageLabel').innerText = "Analysis Complete! Redirecting to Dashboard...";
+        document.getElementById('progressText').innerText = "Loading developer intelligence report...";
+
+        setTimeout(() => {
+          window.location.href = `/dashboard/${username}`;
+        }, 1000);
+        return;
+      } else if (stage === 'failed') {
+        document.getElementById('progressBarFill').style.background = "var(--color-diff-red)";
+        document.getElementById('statusIcon').innerText = "❌";
+        document.getElementById('stageLabel').innerText = "Pipeline Ingestion Failed";
+        document.getElementById('errorBox').style.display = "block";
+        document.getElementById('errorMsg').innerText = data.error || "Unknown collection error.";
+        document.getElementById('actionArea').innerHTML = `
+          <a href="/" class="btn btn-secondary">&larr; Return to Candidate Analyzer</a>
+        `;
+        return;
+      }
+
+      // Continue polling every 1.2s
+      setTimeout(pollStatus, 1200);
+    })
+    .catch(err => {
+      console.error("Polling error:", err);
+      setTimeout(pollStatus, 2000);
+    });
+}
+
+// Start polling on load
+pollStatus();
+</script>
+{% endblock %}

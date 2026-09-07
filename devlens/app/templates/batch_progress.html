@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}DevLens | Batch Collection Progress{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div style="margin-bottom: 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+    <div>
+      <h1 style="font-size: 1.5rem; margin-bottom: 4px;">Batch Processing Candidates</h1>
+      <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+        Monitoring real-time ingestion across all extracted resume candidates.
+      </p>
+    </div>
+    <div id="batchSummaryBadge">
+      <span class="badge badge-amber" style="padding: 6px 12px; font-size: 0.85rem;">
+        ⏳ Processing Queue...
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- Progress Table -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Candidate Pipeline Execution</div>
+    <span class="badge badge-slate" id="completedCountBadge">0 / {{ candidates|length }} Complete</span>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="git-table">
+      <thead>
+        <tr>
+          <th style="width: 50px;">#</th>
+          <th>Candidate Handle</th>
+          <th>Job ID</th>
+          <th>Current Stage</th>
+          <th style="width: 200px;">Progress</th>
+          <th style="text-align: center; width: 140px;">Report Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for uname in candidates %}
+        <tr id="batch_row_{{ uname }}" data-uname="{{ uname }}">
+          <td class="mono" style="color: var(--color-text-dim);">{{ loop.index }}</td>
+          <td>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="brand-git-icon" style="width: 22px; height: 22px; font-size: 0.75rem;">λ</span>
+              <strong class="mono" style="font-size: 0.95rem; color: #ffffff;">{{ uname }}</strong>
+            </div>
+          </td>
+          <td class="mono" style="font-size: 0.78rem; color: var(--color-text-dim);" id="job_id_{{ uname }}">
+            Initializing...
+          </td>
+          <td style="font-size: 0.82rem; color: var(--color-text-muted);" id="stage_{{ uname }}">
+            Queued
+          </td>
+          <td>
+            <div class="progress-bar-bg" style="margin-bottom: 4px;">
+              <div class="progress-bar-fill" id="bar_{{ uname }}" style="width: 5%;"></div>
+            </div>
+            <div style="font-size: 0.72rem; color: var(--color-text-dim); font-family: var(--font-mono);" id="pct_{{ uname }}">
+              5%
+            </div>
+          </td>
+          <td style="text-align: center;" id="action_{{ uname }}">
+            <span class="badge badge-slate">Pending</span>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-text-dim);">
+      * All candidates are processed sequentially/concurrently and saved to SQLite with <code>source="live_upload"</code>.
+    </div>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary" style="font-size: 0.82rem;">
+      &larr; Candidate Analyzer
+    </a>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const candidates = {{ candidates|tojson }};
+const jobs = {};
+let completedCount = 0;
+
+function startCandidate(uname) {
+  return fetch(`/collect/start/${uname}`, { method: 'POST' })
+    .then(r => r.json())
+    .then(data => {
+      if (data && data.job_id) {
+        jobs[uname] = { job_id: data.job_id, done: false };
+        document.getElementById(`job_id_${uname}`).innerText = data.job_id;
+        document.getElementById(`stage_${uname}`).innerText = "Pipeline Started";
+        pollJob(uname, data.job_id);
+      }
+    })
+    .catch(err => {
+      document.getElementById(`stage_${uname}`).innerText = "Start Failed: " + err;
+    });
+}
+
+function pollJob(uname, jobId) {
+  fetch(`/collect/status/${jobId}`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data) return;
+
+      const stage = data.stage;
+      const pct = data.percent || 10;
+      const prog = data.progress || "";
+
+      document.getElementById(`bar_${uname}`).style.width = pct + "%";
+      document.getElementById(`pct_${uname}`).innerText = `${pct}% - ${prog}`;
+      document.getElementById(`stage_${uname}`).innerText = stage;
+
+      if (stage === 'done') {
+        document.getElementById(`bar_${uname}`).style.background = "var(--color-signal-green)";
+        document.getElementById(`action_${uname}`).innerHTML = `
+          <a href="/dashboard/${uname}" class="btn btn-primary" style="padding: 3px 10px; font-size: 0.75rem;">
+            Dashboard &rarr;
+          </a>
+        `;
+        if (!jobs[uname].done) {
+          jobs[uname].done = true;
+          completedCount++;
+          document.getElementById('completedCountBadge').innerText = `${completedCount} / ${candidates.length} Complete`;
+        }
+        if (completedCount === candidates.length) {
+          document.getElementById('batchSummaryBadge').innerHTML = `
+            <span class="badge badge-green" style="padding: 6px 12px; font-size: 0.85rem;">
+              🎉 All Candidates Processed!
+            </span>
+          `;
+        }
+        return;
+      } else if (stage === 'failed') {
+        document.getElementById(`bar_${uname}`).style.background = "var(--color-diff-red)";
+        document.getElementById(`action_${uname}`).innerHTML = `
+          <span class="badge badge-red">Failed</span>
+        `;
+        return;
+      }
+
+      setTimeout(() => pollJob(uname, jobId), 1500);
+    })
+    .catch(e => {
+      setTimeout(() => pollJob(uname, jobId), 2500);
+    });
+}
+
+// Start all candidates
+candidates.forEach((uname, idx) => {
+  setTimeout(() => startCandidate(uname), idx * 600);
+});
+</script>
+{% endblock %}

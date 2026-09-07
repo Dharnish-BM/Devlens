@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+
+{% block title %}DevLens | Candidate Pre-Check & Extraction Staging{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div style="margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.85rem;">
+  <a href="{{ url_for('index') }}" style="color: var(--color-text-muted);">&larr; Back to Candidate Analyzer</a>
+  <span style="color: var(--color-border); margin: 0 8px;">/</span>
+  <span style="color: #ffffff;">Pre-Collection Assessment & Staging</span>
+</div>
+
+<!-- Header / ETA Summary Box -->
+<div class="card" style="margin-bottom: 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <div>
+      <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: #ffffff;">
+        {% if is_batch %}
+          Bulk Ingestion Staging ({{ candidates|length }} Candidates)
+        {% else %}
+          Candidate Verification: <span class="mono" style="color: var(--color-blue);">{{ candidates[0].username or 'Input Candidate' }}</span>
+        {% endif %}
+      </div>
+      <div style="font-size: 0.88rem; color: var(--color-text-muted); margin-top: 4px;">
+        Fast pre-check verified against GitHub API before running full 52-metric collection pipeline.
+      </div>
+    </div>
+
+    <!-- Batch ETA summary badge -->
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="eta-pill" style="font-size: 0.9rem; padding: 6px 14px;">
+        ⏱️ Total Estimated Time: ~{{ total_eta_str }}
+      </span>
+      {% if is_batch %}
+        <button onclick="startBatchCollection()" class="btn btn-primary" id="startBatchBtn" style="padding: 8px 18px;">
+          Start Batch Processing ({{ candidates|length }}) &rarr;
+        </button>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- Candidates Staging Table -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span>Candidate Verification Queue</span>
+    </div>
+    <span class="badge badge-slate">Pipeline Pre-Check (Phase 1-7)</span>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="git-table">
+      <thead>
+        <tr>
+          <th>Source / Context</th>
+          <th>GitHub Username</th>
+          <th>Extraction Confidence</th>
+          <th style="text-align: right;">Public Repos</th>
+          <th style="text-align: right;">Estimated Time (ETA)</th>
+          <th style="text-align: center; width: 140px;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in candidates %}
+        <tr id="row_{{ loop.index }}" data-username="{{ c.username or '' }}">
+          <!-- Source / Context -->
+          <td class="mono" style="font-size: 0.82rem; color: var(--color-text-main);">
+            <strong>{{ c.source_label }}</strong>
+            {% if c.file_format %}
+              <div style="color: var(--color-text-dim); font-size: 0.75rem;">{{ c.file_format }} document</div>
+            {% endif %}
+          </td>
+
+          <!-- Extracted/Verified Username -->
+          <td>
+            {% if c.username %}
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="brand-git-icon" style="width: 22px; height: 22px; font-size: 0.75rem;">λ</span>
+                <span class="mono" style="font-weight: 700; font-size: 0.95rem; color: #ffffff;">{{ c.username }}</span>
+                <a href="https://github.com/{{ c.username }}" target="_blank" style="font-size: 0.78rem; color: var(--color-blue);">&nearr;</a>
+              </div>
+              {% if c.user_name %}
+                <div style="font-size: 0.75rem; color: var(--color-text-dim); margin-top: 2px;">{{ c.user_name }}</div>
+              {% endif %}
+            {% else %}
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <span style="color: var(--color-diff-red); font-weight: 600; font-size: 0.82rem;">No Handle Detected</span>
+                <input 
+                  type="text" 
+                  id="manual_input_{{ loop.index }}" 
+                  class="form-control" 
+                  style="font-size: 0.78rem; padding: 4px 8px; width: 170px;" 
+                  placeholder="Enter manual handle..."
+                >
+              </div>
+            {% endif %}
+          </td>
+
+          <!-- Confidence Badge -->
+          <td>
+            {% if c.confidence == 'direct_input' %}
+              <span class="badge badge-green">⚡ direct_input</span>
+            {% elif c.confidence == 'direct_url' %}
+              <span class="badge badge-green">⚡ direct_url</span>
+            {% elif c.confidence == 'labeled_field' %}
+              <span class="badge badge-blue">✓ labeled_field</span>
+            {% elif c.confidence == 'inferred_verified' %}
+              <span class="badge badge-amber">⚠ inferred_verified</span>
+              <div style="font-size: 0.72rem; color: var(--color-amber); margin-top: 2px;">Requires confirmation</div>
+            {% else %}
+              <span class="badge badge-red">✗ none</span>
+            {% endif %}
+          </td>
+
+          <!-- Public Repos Count -->
+          <td class="mono" style="text-align: right; color: #ffffff; font-weight: 600;">
+            {% if c.public_repos is not none %}
+              {{ c.public_repos }} repos
+            {% else %}
+              <span style="color: var(--color-text-dim);">&mdash;</span>
+            {% endif %}
+          </td>
+
+          <!-- Estimated Time -->
+          <td class="mono" style="text-align: right; color: var(--color-amber); font-weight: 600;">
+            {% if c.eta_str %}
+              ~{{ c.eta_str }}
+            {% else %}
+              <span style="color: var(--color-text-dim);">&mdash;</span>
+            {% endif %}
+          </td>
+
+          <!-- Action Column -->
+          <td style="text-align: center;">
+            {% if c.confidence in ('direct_input', 'direct_url', 'labeled_field') and c.username %}
+              <button onclick="startSingleCollection('{{ c.username }}')" class="btn btn-primary" style="padding: 5px 12px; font-size: 0.8rem;">
+                Start Analysis &rarr;
+              </button>
+            {% elif c.confidence == 'inferred_verified' and c.username %}
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                <label style="display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--color-amber); cursor: pointer;">
+                  <input type="checkbox" id="chk_{{ loop.index }}" onchange="toggleConfirm('{{ loop.index }}')"> <span>Confirm</span>
+                </label>
+                <button id="btn_{{ loop.index }}" onclick="startSingleCollection('{{ c.username }}')" class="btn btn-primary" style="padding: 4px 10px; font-size: 0.75rem; display: none;">
+                  Start &rarr;
+                </button>
+              </div>
+            {% else %}
+              <button onclick="startManualCollection('manual_input_{{ loop.index }}')" class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.75rem;">
+                Submit Handle &rarr;
+              </button>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+    <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-text-dim);">
+      * Benchmark based on ~3.5s per original repository (includes README length, AST test detection, CI toolchain inspection, and SHAP TreeExplainer).
+    </div>
+    
+    <div style="display: flex; gap: 10px;">
+      <a href="{{ url_for('index') }}" class="btn btn-secondary" style="font-size: 0.82rem;">
+        &larr; Analyze Another
+      </a>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function toggleConfirm(idx) {
+  const chk = document.getElementById('chk_' + idx);
+  const btn = document.getElementById('btn_' + idx);
+  if (chk && btn) {
+    btn.style.display = chk.checked ? 'inline-flex' : 'none';
+  }
+}
+
+function startSingleCollection(username) {
+  if (!username) return;
+  fetch(`/collect/start/${username}`, { method: 'POST' })
+    .then(res => res.json())
+    .then(data => {
+      if (data && data.job_id) {
+        window.location.href = `/collect/progress/${data.job_id}`;
+      } else {
+        alert("Failed to start collection: " + (data.error || "Unknown"));
+      }
+    })
+    .catch(err => {
+      alert("Error starting collection pipeline: " + err);
+    });
+}
+
+function startManualCollection(inputId) {
+  const input = document.getElementById(inputId);
+  if (input && input.value.trim()) {
+    const rawVal = input.value.trim();
+    const cleanUser = rawVal.replace(/https?:\/\/github\.com\//, '').replace(/\/.*$/, '').trim();
+    startSingleCollection(cleanUser);
+  } else {
+    alert("Please enter a valid GitHub username.");
+  }
+}
+
+function startBatchCollection() {
+  const candidateRows = document.querySelectorAll('tr[data-username]');
+  const usernames = [];
+  candidateRows.forEach(row => {
+    const uname = row.getAttribute('data-username');
+    if (uname) {
+      usernames.push(uname);
+    }
+  });
+
+  if (usernames.length === 0) {
+    alert("No valid candidate usernames to process.");
+    return;
+  }
+
+  // Redirect to batch progress manager with candidate usernames list
+  const queryParam = encodeURIComponent(usernames.join(','));
+  window.location.href = `/collect/batch_progress?candidates=${queryParam}`;
+}
+</script>
+{% endblock %}

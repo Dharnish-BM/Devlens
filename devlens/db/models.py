@@ -25,6 +25,7 @@ class Developer(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(255), unique=True, nullable=False, index=True)
+    source = Column(String(50), nullable=False, default="consented_cohort", index=True)  # 'consented_cohort' or 'live_upload'
     resume_source = Column(String(512), nullable=True)  # path/filename of resume if discovered via file
     first_collected_at = Column(DateTime, nullable=False, default=datetime.utcnow)
     last_updated_at = Column(DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}DevLens | Resume Ingestion & GitHub Discovery{% endblock %}
+
+{% block content %}
+<!-- Header Notice -->
+<div class="disclaimer-banner">
+  <span class="icon">[STAGE 1]</span>
+  <div>
+    <strong>Resume Ingestion & Candidate Staging:</strong> Upload PDF or DOCX resumes or provide a shared Google Drive folder link. DevLens extracts candidate GitHub usernames via prioritized regex and API verification. <em>Note: Collection pipeline execution is decoupled and staged separately.</em>
+  </div>
+</div>
+
+<div class="card" style="max-width: 860px; margin: 0 auto 30px auto;">
+  <div class="card-header">
+    <div class="card-title">
+      <span style="color: var(--color-blue);">📄</span>
+      <span>Candidate Resume Ingestion</span>
+    </div>
+    <span class="badge badge-slate">Phase 2 Ingestion Pipeline</span>
+  </div>
+
+  <form method="POST" action="{{ url_for('upload_process') }}" enctype="multipart/form-data">
+    
+    <!-- Mode Selection -->
+    <div style="margin-bottom: 22px;">
+      <label class="form-label" style="font-size: 0.9rem; margin-bottom: 10px; font-weight: 600;">Select Ingestion Mode:</label>
+      <div style="display: flex; gap: 20px;">
+        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: var(--font-mono); font-size: 0.88rem;">
+          <input type="radio" name="upload_mode" value="single_file" checked onchange="toggleMode('file')">
+          <span>Local File Upload (.pdf / .docx)</span>
+        </label>
+        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: var(--font-mono); font-size: 0.88rem;">
+          <input type="radio" name="upload_mode" value="drive_folder" onchange="toggleMode('drive')">
+          <span>Google Drive Shared Folder (Bulk Mode)</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Mode A: File Upload Section -->
+    <div id="fileUploadSection" class="form-group" style="padding: 20px; background: #0d1117; border: 2px dashed var(--color-border); border-radius: var(--radius-md); text-align: center;">
+      <div style="font-size: 2rem; margin-bottom: 8px;">📂</div>
+      <div style="margin-bottom: 12px; font-family: var(--font-mono); font-size: 0.9rem; color: var(--color-text-main);">
+        Select resume document (PDF or DOCX)
+      </div>
+      <input type="file" name="resume_file" id="resumeFileInput" class="form-control" accept=".pdf,.docx,.doc" style="max-width: 400px; margin: 0 auto;">
+      <div style="font-size: 0.78rem; color: var(--color-text-dim); margin-top: 8px; font-family: var(--font-mono);">
+        Supports single or batch candidate PDF/DOCX formats
+      </div>
+    </div>
+
+    <!-- Mode B: Google Drive Folder Section -->
+    <div id="driveUploadSection" class="form-group" style="display: none; padding: 20px; background: #0d1117; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+      <label class="form-label" for="driveUrl">Google Drive Shared Folder URL:</label>
+      <input type="url" name="drive_url" id="driveUrl" class="form-control" placeholder="https://drive.google.com/drive/folders/1aBcDeFgHiJkLmNoPqRsTuVwXyZ...">
+      <div style="font-size: 0.78rem; color: var(--color-text-dim); margin-top: 6px; font-family: var(--font-mono);">
+        Folder must be accessible via public link or Google Drive API credentials.
+      </div>
+    </div>
+
+    <!-- Extraction Strategies Preview Card -->
+    <div style="margin-top: 20px; padding: 14px; background: #161b22; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-text-muted);">
+      <strong style="color: #ffffff; display: block; margin-bottom: 6px;">Prioritized Extraction Strategy Order:</strong>
+      <ol style="margin-left: 20px; line-height: 1.6; font-family: var(--font-mono);">
+        <li><strong style="color: var(--color-signal-green);">direct_url</strong> &mdash; Exact <code>github.com/&lt;username&gt;</code> regex match (High Confidence).</li>
+        <li><strong style="color: var(--color-blue);">labeled_field</strong> &mdash; Explicit <code>GitHub: @&lt;username&gt;</code> label match (Medium-High Confidence).</li>
+        <li><strong style="color: var(--color-amber);">inferred_verified</strong> &mdash; Inferred from candidate email/name prefix + GitHub REST API validation (Requires User Confirmation).</li>
+      </ol>
+    </div>
+
+    <!-- Submit Button -->
+    <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
+      <button type="submit" class="btn btn-primary" style="padding: 10px 24px;">
+        Extract GitHub Username &rarr;
+      </button>
+    </div>
+
+  </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function toggleMode(mode) {
+  const fileSec = document.getElementById('fileUploadSection');
+  const driveSec = document.getElementById('driveUploadSection');
+  if (mode === 'file') {
+    fileSec.style.display = 'block';
+    driveSec.style.display = 'none';
+  } else {
+    fileSec.style.display = 'none';
+    driveSec.style.display = 'block';
+  }
+}
+</script>
+{% endblock %}

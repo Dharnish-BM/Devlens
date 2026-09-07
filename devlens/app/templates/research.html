@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}DevLens | Research Cohort Directory{% endblock %}
+
+{% block content %}
+<!-- Notice Banner -->
+<div class="disclaimer-banner">
+  <span class="icon">[RESEARCH COHORT]</span>
+  <div>
+    <strong>Academic Benchmark Cohort:</strong> This directory contains the <strong>188 developer profiles</strong> indexed and evaluated in the DevLens empirical study. For live candidate assessment, use the <a href="{{ url_for('index') }}" style="color: var(--color-blue); font-weight: 600;">Candidate Analyzer</a>.
+  </div>
+</div>
+
+<!-- Search and Directory Header -->
+<div class="card" style="margin-bottom: 24px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <div>
+      <h1 style="font-size: 1.5rem; margin-bottom: 4px;">Evaluated Research Cohort</h1>
+      <p style="color: var(--color-text-muted); font-size: 0.9rem;">
+        Explore empirical K-Means activity clusters, XGBoost archetypes, documentation scores, and engineering maturity.
+      </p>
+    </div>
+    
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <a href="{{ url_for('dashboard', username='RBROHANTH') }}" class="btn btn-secondary" style="font-size: 0.82rem;">
+        Sample: RBROHANTH (Backend)
+      </a>
+      <a href="{{ url_for('dashboard', username='ggomathi2007') }}" class="btn btn-secondary" style="font-size: 0.82rem;">
+        Sample: ggomathi2007 (Full-Stack)
+      </a>
+      <a href="{{ url_for('dashboard', username='vijeth06') }}" class="btn btn-secondary" style="font-size: 0.82rem;">
+        Sample: vijeth06 (DevOps)
+      </a>
+    </div>
+  </div>
+
+  <div style="margin-top: 18px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px;">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search by username (e.g. RBROHANTH, dinesh, vijeth)..." onkeyup="filterTable()">
+    
+    <select id="archetypeFilter" class="form-select" onchange="filterTable()">
+      <option value="">All Archetypes</option>
+      <option value="Frontend Developer">Frontend Developer (109)</option>
+      <option value="DevOps Engineer">DevOps Engineer (41)</option>
+      <option value="Mobile Developer">Mobile Developer (13)</option>
+      <option value="ML Specialist">ML Specialist (13)</option>
+      <option value="Unclassified / Low Signal">Unclassified / Low Signal (9)</option>
+      <option value="Backend Developer">Backend Developer (2)</option>
+      <option value="Full-Stack Developer">Full-Stack Developer (1)</option>
+    </select>
+
+    <select id="clusterFilter" class="form-select" onchange="filterTable()">
+      <option value="">All Engagement Tiers</option>
+      <option value="Power-User">Cluster 0: Power-User (17)</option>
+      <option value="Baseline">Cluster 1: Baseline (171)</option>
+    </select>
+  </div>
+</div>
+
+<!-- Developers Directory Table -->
+<div class="table-wrapper">
+  <table class="git-table" id="devTable">
+    <thead>
+      <tr>
+        <th style="width: 50px;">#</th>
+        <th>Developer Username</th>
+        <th>Functional Archetype</th>
+        <th>Engagement Tier</th>
+        <th>Primary Language</th>
+        <th style="text-align: right;">Doc Score</th>
+        <th style="text-align: right;">Eng Maturity</th>
+        <th style="text-align: center; width: 110px;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dev in developers %}
+      <tr class="dev-row" data-username="{{ dev.username|lower }}" data-archetype="{{ dev.archetype }}" data-cluster="{{ dev.cluster_name }}">
+        <td class="mono" style="color: var(--color-text-dim);">{{ loop.index }}</td>
+        <td>
+          <a href="{{ url_for('dashboard', username=dev.username) }}" style="font-weight: 600; font-family: var(--font-mono);">
+            {{ dev.username }}
+          </a>
+        </td>
+        <td>
+          {% if dev.archetype == 'Frontend Developer' %}
+            <span class="badge badge-blue">{{ dev.archetype }}</span>
+          {% elif dev.archetype == 'DevOps Engineer' %}
+            <span class="badge badge-amber">{{ dev.archetype }}</span>
+          {% elif dev.archetype == 'Mobile Developer' %}
+            <span class="badge badge-purple">{{ dev.archetype }}</span>
+          {% elif dev.archetype == 'ML Specialist' %}
+            <span class="badge badge-green">{{ dev.archetype }}</span>
+          {% elif dev.archetype == 'Backend Developer' %}
+            <span class="badge badge-amber">{{ dev.archetype }}</span>
+          {% elif dev.archetype == 'Full-Stack Developer' %}
+            <span class="badge badge-green">{{ dev.archetype }}</span>
+          {% else %}
+            <span class="badge badge-slate">{{ dev.archetype }}</span>
+          {% endif %}
+        </td>
+        <td>
+          {% if 'Power-User' in dev.cluster_name %}
+            <span class="badge badge-green">⚡ {{ dev.cluster_name }}</span>
+          {% else %}
+            <span class="badge badge-slate">{{ dev.cluster_name }}</span>
+          {% endif %}
+        </td>
+        <td class="mono" style="color: var(--color-text-muted);">{{ dev.primary_language }}</td>
+        <td class="mono" style="text-align: right; color: {% if dev.doc_score >= 0.3 %}var(--color-signal-green){% else %}var(--color-text-muted){% endif %};">
+          {{ "%.3f"|format(dev.doc_score) }}
+        </td>
+        <td class="mono" style="text-align: right; color: {% if dev.eng_score >= 0.3 %}var(--color-signal-green){% else %}var(--color-text-muted){% endif %};">
+          {{ "%.3f"|format(dev.eng_score) }}
+        </td>
+        <td style="text-align: center;">
+          <a href="{{ url_for('dashboard', username=dev.username) }}" class="btn btn-secondary" style="padding: 3px 8px; font-size: 0.75rem;">
+            Dashboard &rarr;
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function filterTable() {
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  const archetype = document.getElementById('archetypeFilter').value;
+  const cluster = document.getElementById('clusterFilter').value;
+  const rows = document.querySelectorAll('.dev-row');
+
+  rows.forEach(row => {
+    const uname = row.getAttribute('data-username');
+    const arch = row.getAttribute('data-archetype');
+    const clust = row.getAttribute('data-cluster');
+
+    const matchSearch = !search || uname.includes(search);
+    const matchArch = !archetype || arch === archetype;
+    const matchCluster = !cluster || clust.includes(cluster);
+
+    if (matchSearch && matchArch && matchCluster) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+}
+</script>
+{% endblock %}
