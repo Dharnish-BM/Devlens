@@ -1,0 +1,84 @@
+{
+  "dataset_name": "GDERS-10-Processed-Corpus",
+  "version": "1.0.0",
+  "phase": "Phase 4 - Preprocessed",
+  "generated_at": "2026-09-24T08:46:11Z",
+  "source_manifest": "data\\gders\\processed\\dataset_manifest.json",
+  "collection_window": {
+    "collection_start_date": "2025-09-24T08:30:53Z",
+    "collection_end_date": "2026-09-24T08:30:53Z",
+    "lookback_days": 365
+  },
+  "summary_statistics": {
+    "total_repositories": 10,
+    "raw_comments_count": 1225,
+    "processed_comments_count": 1225,
+    "unique_reviewers": 151,
+    "unique_vocabulary_size": 4525,
+    "total_tokens": 25229
+  },
+  "nlp_pipeline_configuration": {
+    "url_normalization": "stripped",
+    "fenced_code_blocks": "stripped",
+    "inline_code": "extracted_unquoted",
+    "mentions_and_issues": "stripped",
+    "special_characters": "stripped_with_hyphen_preservation",
+    "lowercasing": true,
+    "stopword_list": "NLTK English",
+    "lemmatizer": "WordNetLemmatizer"
+  },
+  "processed_files": {
+    "apache/spark": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\apache__spark.jsonl",
+    "elastic/elasticsearch": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\elastic__elasticsearch.jsonl",
+    "scikit-learn/scikit-learn": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\scikit-learn__scikit-learn.jsonl",
+    "kubernetes/kubernetes": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\kubernetes__kubernetes.jsonl",
+    "flutter/flutter": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\flutter__flutter.jsonl",
+    "rails/rails": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\rails__rails.jsonl",
+    "microsoft/vscode": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\microsoft__vscode.jsonl",
+    "nodejs/node": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\nodejs__node.jsonl",
+    "facebook/react": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\facebook__react.jsonl",
+    "tensorflow/tensorflow": "D:\\GIT\\Devlens\\data\\gders\\processed\\comments\\tensorflow__tensorflow.jsonl"
+  },
+  "raw_checksums": {
+    "apache/spark": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\apache__spark.jsonl",
+      "sha256": "14ab701f427f294d76fc06ea779f02f34b4c9dd5e19976c3b7a39ae4a3533c66"
+    },
+    "elastic/elasticsearch": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\elastic__elasticsearch.jsonl",
+      "sha256": "afe662f4e7425ce6a63ec36681723b2cf3f0702f387e82c619001a131fa3844a"
+    },
+    "scikit-learn/scikit-learn": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\scikit-learn__scikit-learn.jsonl",
+      "sha256": "6f4b674b12b3ea4465d258b14ddc89a76df63a656ade3296e8201f5b3822e474"
+    },
+    "kubernetes/kubernetes": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\kubernetes__kubernetes.jsonl",
+      "sha256": "0aa2b0e851ae97f8c5928227f7589e8e2960f3eceef3ab4e123dad1b6694ab61"
+    },
+    "flutter/flutter": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\flutter__flutter.jsonl",
+      "sha256": "aece30f609f0acbb2069da3c835835c12e4235d372ce8e75548e0706545a164b"
+    },
+    "rails/rails": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\rails__rails.jsonl",
+      "sha256": "0fa761658f2b0ee968d4f7b12e6880b7c06a83727b7b72523b3faf4ad3abd135"
+    },
+    "microsoft/vscode": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\microsoft__vscode.jsonl",
+      "sha256": "5d4ca3e7066e9d62a79ad6115db63b5cfb0f42f522cf8adea2c5dd5baf77bc9d"
+    },
+    "nodejs/node": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\nodejs__node.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "facebook/react": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\facebook__react.jsonl",
+      "sha256": "7941e031b1816a704fa3a2a28be9ae2bb43c6c5943ae9de50e864930c17e63e9"
+    },
+    "tensorflow/tensorflow": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\tensorflow__tensorflow.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

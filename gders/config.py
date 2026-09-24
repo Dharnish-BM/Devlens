@@ -1,0 +1,152 @@
+"""
+GDERS Configuration Module.
+
+Holds provisional target repositories, storage paths, GitHub API parameters,
+NLP preprocessing settings, and expertise taxonomy configuration placeholders.
+"""
+
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Dict, List, Optional
+
+
+@dataclass
+class TargetRepository:
+    """Specification for a target repository candidate in GDERS."""
+    owner: str
+    name: str
+    description: Optional[str] = None
+    primary_language: Optional[str] = None
+    enabled: bool = True
+
+    @property
+    def full_name(self) -> str:
+        return f"{self.owner}/{self.name}"
+
+
+# ---------------------------------------------------------------------------
+# 1. Selected GDERS Research Repositories (Final 10 Corpus)
+# ---------------------------------------------------------------------------
+FINAL_TARGET_REPOSITORIES: List[TargetRepository] = [
+    TargetRepository(owner="apache", name="spark", primary_language="Scala/Java"),
+    TargetRepository(owner="elastic", name="elasticsearch", primary_language="Java"),
+    TargetRepository(owner="scikit-learn", name="scikit-learn", primary_language="Python"),
+    TargetRepository(owner="kubernetes", name="kubernetes", primary_language="Go"),
+    TargetRepository(owner="flutter", name="flutter", primary_language="Dart"),
+    TargetRepository(owner="rails", name="rails", primary_language="Ruby"),
+    TargetRepository(owner="microsoft", name="vscode", primary_language="TypeScript"),
+    TargetRepository(owner="nodejs", name="node", primary_language="C++/JavaScript"),
+    TargetRepository(owner="facebook", name="react", primary_language="JavaScript"),
+    TargetRepository(owner="tensorflow", name="tensorflow", primary_language="C++/Python"),
+]
+
+PROVISIONAL_TARGET_REPOSITORIES = FINAL_TARGET_REPOSITORIES
+
+
+@dataclass
+class GDERSConfig:
+    """Central configuration for the GDERS subsystem."""
+
+    # Storage paths (Isolated under data/gders/)
+    base_data_dir: Path = Path("data/gders")
+    raw_comments_dir: Optional[Path] = None
+    processed_dir: Optional[Path] = None
+    expertise_profiles_dir: Optional[Path] = None
+    models_dir: Optional[Path] = None
+
+    # Dedicated Pilot Storage Paths (Phase 2 & 3A)
+    pilot_raw_dir: Optional[Path] = None
+    pilot_processed_dir: Optional[Path] = None
+
+    # State & Manifest Paths
+    collection_state_file: Optional[Path] = None
+    dataset_manifest_file: Optional[Path] = None
+    collection_log_file: Optional[Path] = None
+
+    # Phase 4 Preprocessed Paths
+    processed_comments_dir: Optional[Path] = None
+    preprocessing_manifest_file: Optional[Path] = None
+    preprocessing_report_file: Optional[Path] = None
+    preprocessing_log_file: Optional[Path] = None
+
+    def __post_init__(self):
+        if self.raw_comments_dir is None:
+            self.raw_comments_dir = self.base_data_dir / "raw_comments"
+        if self.processed_dir is None:
+            self.processed_dir = self.base_data_dir / "processed"
+        if self.expertise_profiles_dir is None:
+            self.expertise_profiles_dir = self.base_data_dir / "expertise_profiles"
+        if self.models_dir is None:
+            self.models_dir = self.base_data_dir / "models"
+        if self.pilot_raw_dir is None:
+            self.pilot_raw_dir = self.base_data_dir / "raw_comments" / "pilot"
+        if self.pilot_processed_dir is None:
+            self.pilot_processed_dir = self.base_data_dir / "processed" / "pilot"
+        if self.collection_state_file is None:
+            self.collection_state_file = self.raw_comments_dir / "collection_state.json"
+        if self.dataset_manifest_file is None:
+            self.dataset_manifest_file = self.processed_dir / "dataset_manifest.json"
+        if self.collection_log_file is None:
+            self.collection_log_file = self.processed_dir / "collection.log"
+        if self.processed_comments_dir is None:
+            self.processed_comments_dir = self.processed_dir / "comments"
+        if self.preprocessing_manifest_file is None:
+            self.preprocessing_manifest_file = self.processed_dir / "preprocessing_manifest.json"
+        if self.preprocessing_report_file is None:
+            self.preprocessing_report_file = self.processed_dir / "preprocessing_report.json"
+        if self.preprocessing_log_file is None:
+            self.preprocessing_log_file = self.processed_dir / "preprocessing.log"
+
+    # Target repository list
+    target_repositories: List[TargetRepository] = field(
+        default_factory=lambda: list(FINAL_TARGET_REPOSITORIES)
+    )
+
+    # Collection limits and windowing (Configurable dates)
+    collection_start_date: Optional[str] = None  # e.g. "2025-09-24T00:00:00Z"
+    collection_end_date: Optional[str] = None    # e.g. "2026-09-24T23:59:59Z"
+    lookback_days: int = 365
+    
+    # Conservative Phase 3B Collection Safety Limits
+    max_prs_per_repo: int = 50
+    max_comments_per_pr: int = 50
+    max_comments_per_repo: int = 1500
+    max_api_requests_per_repo: int = 250
+    per_page_pagination: int = 100
+
+    # Pilot Suitability Sampling parameters (Low-cost Phase 2)
+    pilot_max_prs_per_repo: int = 25
+    pilot_max_comments_per_pr: int = 30
+
+    # Throttling & resilience
+    request_timeout_sec: float = 20.0
+    backoff_factor: float = 1.0
+    max_retries: int = 5
+
+    # Taxonomy & Expertise Categories placeholder
+    expertise_categories: List[str] = field(
+        default_factory=lambda: [
+            "Architecture & Design",
+            "Bug Fixing & Logic",
+            "Code Style & Formatting",
+            "Testing & CI/CD",
+            "Performance & Optimization",
+            "Documentation & Readability",
+            "Security & Concurrency",
+        ]
+    )
+
+    def ensure_directories(self) -> None:
+        """Ensure all required GDERS storage directories exist."""
+        self.base_data_dir.mkdir(parents=True, exist_ok=True)
+        self.raw_comments_dir.mkdir(parents=True, exist_ok=True)
+        self.processed_dir.mkdir(parents=True, exist_ok=True)
+        self.processed_comments_dir.mkdir(parents=True, exist_ok=True)
+        self.expertise_profiles_dir.mkdir(parents=True, exist_ok=True)
+        self.models_dir.mkdir(parents=True, exist_ok=True)
+        self.pilot_raw_dir.mkdir(parents=True, exist_ok=True)
+        self.pilot_processed_dir.mkdir(parents=True, exist_ok=True)
+
+
+# Default singleton config instance
+DEFAULT_CONFIG = GDERSConfig()

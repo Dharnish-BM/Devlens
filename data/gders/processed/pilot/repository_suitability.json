@@ -1,0 +1,46 @@
+{
+  "evaluation_timestamp": "2026-09-24T08:09:33.132802Z",
+  "pilot_window": {
+    "start": "2025-09-24T08:09:33.132802Z",
+    "end": "2026-09-24T08:09:33.132802Z",
+    "lookback_days": 365
+  },
+  "aggregate_statistics": {
+    "repositories_evaluated": 1,
+    "total_prs_sampled": 0,
+    "total_review_comments_collected": 0,
+    "total_unique_reviewers_observed": 0,
+    "total_technical_comments": 0,
+    "overall_technical_signal_ratio": 0.0
+  },
+  "repositories": [
+    {
+      "repository_name": "django/django",
+      "owner": "django",
+      "repo": "django",
+      "primary_language": "Python",
+      "description": "Django web framework",
+      "stars": 80000,
+      "forks": 32000,
+      "open_issues": null,
+      "collection_window_start": "2025-09-24T08:09:33.132274Z",
+      "collection_window_end": "2026-09-24T08:09:33.132274Z",
+      "sampled_prs": 0,
+      "sampled_prs_with_review_comments": 0,
+      "sampled_review_comments": 0,
+      "sampled_unique_reviewers": 0,
+      "sampled_technical_comments": 0,
+      "avg_comment_length": 0.0,
+      "median_comment_length": 0.0,
+      "short_comment_ratio": 0.0,
+      "technical_signal_ratio": 0.0,
+      "api_errors": 0,
+      "rate_limit_events": 0,
+      "api_status": "OK",
+      "last_activity_date": null,
+      "suitability_category": "Infeasible",
+      "suitability_rationale": "API connectivity failed or zero pull requests accessible in collection window.",
+      "domain_classification": "Backend Web Framework"
+    }
+  ]
+}

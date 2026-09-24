@@ -1,0 +1,23 @@
+2026-09-24 13:56:03,852 [INFO] [GDERS_COLLECTOR] === Starting GDERS Full Dataset Collection for 10 repositories ===
+2026-09-24 13:56:03,852 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for apache/spark
+2026-09-24 13:56:08,465 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for apache/spark: status=completed, prs=5, comments=27, reviewers=4
+2026-09-24 13:56:08,466 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for elastic/elasticsearch
+2026-09-24 13:56:34,581 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for elastic/elasticsearch: status=completed, prs=50, comments=218, reviewers=27
+2026-09-24 13:56:34,582 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for scikit-learn/scikit-learn
+2026-09-24 13:56:46,769 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for scikit-learn/scikit-learn: status=completed, prs=24, comments=157, reviewers=16
+2026-09-24 13:56:46,781 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for kubernetes/kubernetes
+2026-09-24 13:57:04,179 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for kubernetes/kubernetes: status=completed, prs=30, comments=281, reviewers=44
+2026-09-24 13:57:04,179 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for flutter/flutter
+2026-09-24 13:57:31,665 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for flutter/flutter: status=completed, prs=50, comments=340, reviewers=30
+2026-09-24 13:57:31,665 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for rails/rails
+2026-09-24 13:57:54,183 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for rails/rails: status=completed, prs=47, comments=75, reviewers=16
+2026-09-24 13:57:54,183 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for microsoft/vscode
+2026-09-24 13:58:23,241 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for microsoft/vscode: status=completed, prs=50, comments=117, reviewers=11
+2026-09-24 13:58:23,242 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for nodejs/node
+2026-09-24 13:58:25,582 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for nodejs/node: status=completed, prs=2, comments=0, reviewers=0
+2026-09-24 13:58:25,583 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for facebook/react
+2026-09-24 13:58:50,626 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for facebook/react: status=completed, prs=25, comments=10, reviewers=5
+2026-09-24 13:58:50,627 [INFO] [GDERS_COLLECTOR] Starting GDERS collection for tensorflow/tensorflow
+2026-09-24 13:59:14,639 [INFO] [GDERS_COLLECTOR] Finished GDERS collection for tensorflow/tensorflow: status=completed, prs=50, comments=0, reviewers=0
+2026-09-24 13:59:14,727 [INFO] [GDERS_COLLECTOR] Dataset manifest saved to data\gders\processed\dataset_manifest.json
+2026-09-24 14:00:53,253 [INFO] [GDERS_COLLECTOR] Dataset manifest saved to data\gders\processed\dataset_manifest.json

@@ -1,0 +1,1373 @@
+{
+  "phase": "Phase 4 - NLP Preprocessing & Dataset Preparation",
+  "timestamp": "2026-09-24T08:46:11Z",
+  "system_environment": {
+    "python_version": "3.11.4",
+    "os": "Windows",
+    "nltk_version": "3.10.3",
+    "lemmatizer": "WordNetLemmatizer",
+    "stopwords_source": "NLTK English"
+  },
+  "global_summary": {
+    "total_repositories": 10,
+    "total_raw_comments": 1225,
+    "total_processed_records": 1225,
+    "empty_after_preprocessing": 65,
+    "empty_ratio": 0.0531,
+    "total_comments_with_code": 671,
+    "total_comments_with_url": 153,
+    "total_comments_with_mention": 59,
+    "total_comments_with_issue_ref": 22,
+    "total_unique_reviewers": 151,
+    "mean_tokens_per_comment": 20.6,
+    "median_tokens_per_comment": 13.0,
+    "mean_raw_char_length": 286.07,
+    "median_raw_char_length": 185.0,
+    "mean_proc_char_length": 158.5,
+    "median_proc_char_length": 98.0
+  },
+  "vocabulary_analysis": {
+    "total_token_occurrences": 25229,
+    "unique_token_count": 4525,
+    "hapax_legomena_count": 2071,
+    "hapax_legomena_ratio": 0.4577,
+    "top_50_tokens": [
+      {
+        "token": "test",
+        "frequency": 264
+      },
+      {
+        "token": "use",
+        "frequency": 207
+      },
+      {
+        "token": "add",
+        "frequency": 206
+      },
+      {
+        "token": "change",
+        "frequency": 154
+      },
+      {
+        "token": "check",
+        "frequency": 139
+      },
+      {
+        "token": "would",
+        "frequency": 135
+      },
+      {
+        "token": "call",
+        "frequency": 129
+      },
+      {
+        "token": "think",
+        "frequency": 120
+      },
+      {
+        "token": "case",
+        "frequency": 117
+      },
+      {
+        "token": "also",
+        "frequency": 112
+      },
+      {
+        "token": "remove",
+        "frequency": 112
+      },
+      {
+        "token": "make",
+        "frequency": 103
+      },
+      {
+        "token": "path",
+        "frequency": 103
+      },
+      {
+        "token": "one",
+        "frequency": 102
+      },
+      {
+        "token": "return",
+        "frequency": 102
+      },
+      {
+        "token": "need",
+        "frequency": 101
+      },
+      {
+        "token": "keep",
+        "frequency": 96
+      },
+      {
+        "token": "do",
+        "frequency": 95
+      },
+      {
+        "token": "new",
+        "frequency": 93
+      },
+      {
+        "token": "run",
+        "frequency": 93
+      },
+      {
+        "token": "still",
+        "frequency": 87
+      },
+      {
+        "token": "set",
+        "frequency": 86
+      },
+      {
+        "token": "pr",
+        "frequency": 85
+      },
+      {
+        "token": "update",
+        "frequency": 85
+      },
+      {
+        "token": "could",
+        "frequency": 84
+      },
+      {
+        "token": "error",
+        "frequency": 84
+      },
+      {
+        "token": "key",
+        "frequency": 78
+      },
+      {
+        "token": "comment",
+        "frequency": 77
+      },
+      {
+        "token": "fix",
+        "frequency": 75
+      },
+      {
+        "token": "name",
+        "frequency": 71
+      },
+      {
+        "token": "line",
+        "frequency": 71
+      },
+      {
+        "token": "instead",
+        "frequency": 71
+      },
+      {
+        "token": "already",
+        "frequency": 70
+      },
+      {
+        "token": "please",
+        "frequency": 69
+      },
+      {
+        "token": "value",
+        "frequency": 69
+      },
+      {
+        "token": "code",
+        "frequency": 68
+      },
+      {
+        "token": "fail",
+        "frequency": 68
+      },
+      {
+        "token": "without",
+        "frequency": 68
+      },
+      {
+        "token": "pod",
+        "frequency": 66
+      },
+      {
+        "token": "build",
+        "frequency": 64
+      },
+      {
+        "token": "function",
+        "frequency": 64
+      },
+      {
+        "token": "since",
+        "frequency": 62
+      },
+      {
+        "token": "exist",
+        "frequency": 61
+      },
+      {
+        "token": "two",
+        "frequency": 60
+      },
+      {
+        "token": "move",
+        "frequency": 60
+      },
+      {
+        "token": "like",
+        "frequency": 59
+      },
+      {
+        "token": "node",
+        "frequency": 57
+      },
+      {
+        "token": "thank",
+        "frequency": 57
+      },
+      {
+        "token": "branch",
+        "frequency": 56
+      },
+      {
+        "token": "handle",
+        "frequency": 54
+      }
+    ]
+  },
+  "per_repository_diagnostics": {
+    "apache/spark": {
+      "repository": "apache/spark",
+      "raw_comments_count": 27,
+      "processed_comments_count": 27,
+      "empty_after_preprocessing": 0,
+      "empty_ratio": 0.0,
+      "comments_with_code": 24,
+      "comments_with_url": 1,
+      "comments_with_mention": 13,
+      "comments_with_issue_ref": 2,
+      "unique_reviewers": 4,
+      "vocabulary_size": 594,
+      "total_tokens": 1737,
+      "mean_token_count": 64.33,
+      "median_token_count": 47.0,
+      "mean_raw_char_len": 815.33,
+      "mean_proc_char_len": 518.41
+    },
+    "elastic/elasticsearch": {
+      "repository": "elastic/elasticsearch",
+      "raw_comments_count": 218,
+      "processed_comments_count": 218,
+      "empty_after_preprocessing": 2,
+      "empty_ratio": 0.0092,
+      "comments_with_code": 138,
+      "comments_with_url": 6,
+      "comments_with_mention": 5,
+      "comments_with_issue_ref": 6,
+      "unique_reviewers": 27,
+      "vocabulary_size": 1516,
+      "total_tokens": 4730,
+      "mean_token_count": 21.7,
+      "median_token_count": 13.5,
+      "mean_raw_char_len": 274.42,
+      "mean_proc_char_len": 164.96
+    },
+    "scikit-learn/scikit-learn": {
+      "repository": "scikit-learn/scikit-learn",
+      "raw_comments_count": 157,
+      "processed_comments_count": 157,
+      "empty_after_preprocessing": 38,
+      "empty_ratio": 0.242,
+      "comments_with_code": 92,
+      "comments_with_url": 9,
+      "comments_with_mention": 4,
+      "comments_with_issue_ref": 4,
+      "unique_reviewers": 16,
+      "vocabulary_size": 747,
+      "total_tokens": 1678,
+      "mean_token_count": 10.69,
+      "median_token_count": 6.0,
+      "mean_raw_char_len": 178.97,
+      "mean_proc_char_len": 77.83
+    },
+    "kubernetes/kubernetes": {
+      "repository": "kubernetes/kubernetes",
+      "raw_comments_count": 281,
+      "processed_comments_count": 281,
+      "empty_after_preprocessing": 9,
+      "empty_ratio": 0.032,
+      "comments_with_code": 86,
+      "comments_with_url": 34,
+      "comments_with_mention": 16,
+      "comments_with_issue_ref": 8,
+      "unique_reviewers": 44,
+      "vocabulary_size": 1407,
+      "total_tokens": 4995,
+      "mean_token_count": 17.78,
+      "median_token_count": 12.0,
+      "mean_raw_char_len": 242.86,
+      "mean_proc_char_len": 132.57
+    },
+    "flutter/flutter": {
+      "repository": "flutter/flutter",
+      "raw_comments_count": 340,
+      "processed_comments_count": 340,
+      "empty_after_preprocessing": 8,
+      "empty_ratio": 0.0235,
+      "comments_with_code": 187,
+      "comments_with_url": 87,
+      "comments_with_mention": 15,
+      "comments_with_issue_ref": 1,
+      "unique_reviewers": 30,
+      "vocabulary_size": 1647,
+      "total_tokens": 6180,
+      "mean_token_count": 18.18,
+      "median_token_count": 11.5,
+      "mean_raw_char_len": 295.43,
+      "mean_proc_char_len": 144.3
+    },
+    "rails/rails": {
+      "repository": "rails/rails",
+      "raw_comments_count": 75,
+      "processed_comments_count": 75,
+      "empty_after_preprocessing": 7,
+      "empty_ratio": 0.0933,
+      "comments_with_code": 45,
+      "comments_with_url": 11,
+      "comments_with_mention": 5,
+      "comments_with_issue_ref": 0,
+      "unique_reviewers": 16,
+      "vocabulary_size": 624,
+      "total_tokens": 1255,
+      "mean_token_count": 16.73,
+      "median_token_count": 10.0,
+      "mean_raw_char_len": 260.01,
+      "mean_proc_char_len": 117.93
+    },
+    "microsoft/vscode": {
+      "repository": "microsoft/vscode",
+      "raw_comments_count": 117,
+      "processed_comments_count": 117,
+      "empty_after_preprocessing": 0,
+      "empty_ratio": 0.0,
+      "comments_with_code": 93,
+      "comments_with_url": 2,
+      "comments_with_mention": 0,
+      "comments_with_issue_ref": 0,
+      "unique_reviewers": 11,
+      "vocabulary_size": 1427,
+      "total_tokens": 4290,
+      "mean_token_count": 36.67,
+      "median_token_count": 36.0,
+      "mean_raw_char_len": 407.56,
+      "mean_proc_char_len": 291.97
+    },
+    "nodejs/node": {
+      "repository": "nodejs/node",
+      "raw_comments_count": 0,
+      "processed_comments_count": 0,
+      "empty_after_preprocessing": 0,
+      "empty_ratio": 0.0,
+      "comments_with_code": 0,
+      "comments_with_url": 0,
+      "comments_with_mention": 0,
+      "comments_with_issue_ref": 0,
+      "unique_reviewers": 0,
+      "vocabulary_size": 0,
+      "total_tokens": 0,
+      "mean_token_count": 0.0,
+      "median_token_count": 0.0,
+      "mean_raw_char_len": 0.0,
+      "mean_proc_char_len": 0.0
+    },
+    "facebook/react": {
+      "repository": "facebook/react",
+      "raw_comments_count": 10,
+      "processed_comments_count": 10,
+      "empty_after_preprocessing": 1,
+      "empty_ratio": 0.1,
+      "comments_with_code": 6,
+      "comments_with_url": 3,
+      "comments_with_mention": 1,
+      "comments_with_issue_ref": 1,
+      "unique_reviewers": 5,
+      "vocabulary_size": 226,
+      "total_tokens": 364,
+      "mean_token_count": 36.4,
+      "median_token_count": 13.5,
+      "mean_raw_char_len": 462.7,
+      "mean_proc_char_len": 266.3
+    },
+    "tensorflow/tensorflow": {
+      "repository": "tensorflow/tensorflow",
+      "raw_comments_count": 0,
+      "processed_comments_count": 0,
+      "empty_after_preprocessing": 0,
+      "empty_ratio": 0.0,
+      "comments_with_code": 0,
+      "comments_with_url": 0,
+      "comments_with_mention": 0,
+      "comments_with_issue_ref": 0,
+      "unique_reviewers": 0,
+      "vocabulary_size": 0,
+      "total_tokens": 0,
+      "mean_token_count": 0.0,
+      "median_token_count": 0.0,
+      "mean_raw_char_len": 0.0,
+      "mean_proc_char_len": 0.0
+    }
+  },
+  "reviewer_summary": {
+    "unique_reviewer_count": 151,
+    "mean_comments_per_reviewer": 8.11,
+    "reviewers": {
+      "6democratickim9": {
+        "comment_count": 4,
+        "total_tokens": 127,
+        "mean_tokens_per_comment": 31.75,
+        "median_tokens_per_comment": 32.5
+      },
+      "AP1493": {
+        "comment_count": 1,
+        "total_tokens": 2,
+        "mean_tokens_per_comment": 2.0,
+        "median_tokens_per_comment": 2.0
+      },
+      "AnneBeyer": {
+        "comment_count": 6,
+        "total_tokens": 24,
+        "mean_tokens_per_comment": 4.0,
+        "median_tokens_per_comment": 3.0
+      },
+      "Argh4k": {
+        "comment_count": 1,
+        "total_tokens": 2,
+        "mean_tokens_per_comment": 2.0,
+        "median_tokens_per_comment": 2.0
+      },
+      "AutuSnow": {
+        "comment_count": 3,
+        "total_tokens": 87,
+        "mean_tokens_per_comment": 29.0,
+        "median_tokens_per_comment": 32.0
+      },
+      "BhargaviGudi": {
+        "comment_count": 15,
+        "total_tokens": 343,
+        "mean_tokens_per_comment": 22.87,
+        "median_tokens_per_comment": 17.0
+      },
+      "ChakshuGupta13": {
+        "comment_count": 2,
+        "total_tokens": 54,
+        "mean_tokens_per_comment": 27.0,
+        "median_tokens_per_comment": 27.0
+      },
+      "ChrisHegarty": {
+        "comment_count": 4,
+        "total_tokens": 84,
+        "mean_tokens_per_comment": 21.0,
+        "median_tokens_per_comment": 15.0
+      },
+      "Chunxia202410": {
+        "comment_count": 8,
+        "total_tokens": 44,
+        "mean_tokens_per_comment": 5.5,
+        "median_tokens_per_comment": 4.0
+      },
+      "Copilot": {
+        "comment_count": 103,
+        "total_tokens": 3555,
+        "mean_tokens_per_comment": 34.51,
+        "median_tokens_per_comment": 34.0
+      },
+      "GalLalouche": {
+        "comment_count": 23,
+        "total_tokens": 300,
+        "mean_tokens_per_comment": 13.04,
+        "median_tokens_per_comment": 10.0
+      },
+      "HirazawaUi": {
+        "comment_count": 11,
+        "total_tokens": 204,
+        "mean_tokens_per_comment": 18.55,
+        "median_tokens_per_comment": 13.0
+      },
+      "Jefftree": {
+        "comment_count": 5,
+        "total_tokens": 25,
+        "mean_tokens_per_comment": 5.0,
+        "median_tokens_per_comment": 3.0
+      },
+      "KevinCorcoran": {
+        "comment_count": 1,
+        "total_tokens": 3,
+        "mean_tokens_per_comment": 3.0,
+        "median_tokens_per_comment": 3.0
+      },
+      "LongCatIsLooong": {
+        "comment_count": 3,
+        "total_tokens": 87,
+        "mean_tokens_per_comment": 29.0,
+        "median_tokens_per_comment": 31.0
+      },
+      "LouisKottmann": {
+        "comment_count": 1,
+        "total_tokens": 2,
+        "mean_tokens_per_comment": 2.0,
+        "median_tokens_per_comment": 2.0
+      },
+      "MTtankkeo": {
+        "comment_count": 5,
+        "total_tokens": 160,
+        "mean_tokens_per_comment": 32.0,
+        "median_tokens_per_comment": 23.0
+      },
+      "MaxwellCohen": {
+        "comment_count": 1,
+        "total_tokens": 11,
+        "mean_tokens_per_comment": 11.0,
+        "median_tokens_per_comment": 11.0
+      },
+      "OchukoWH": {
+        "comment_count": 10,
+        "total_tokens": 254,
+        "mean_tokens_per_comment": 25.4,
+        "median_tokens_per_comment": 27.0
+      },
+      "OmarManzoor": {
+        "comment_count": 12,
+        "total_tokens": 26,
+        "mean_tokens_per_comment": 2.17,
+        "median_tokens_per_comment": 0.0
+      },
+      "Rajalakshmi-Girish": {
+        "comment_count": 1,
+        "total_tokens": 24,
+        "mean_tokens_per_comment": 24.0,
+        "median_tokens_per_comment": 24.0
+      },
+      "Renzo-Olivares": {
+        "comment_count": 42,
+        "total_tokens": 887,
+        "mean_tokens_per_comment": 21.12,
+        "median_tokens_per_comment": 10.5
+      },
+      "RohithPariki": {
+        "comment_count": 1,
+        "total_tokens": 29,
+        "mean_tokens_per_comment": 29.0,
+        "median_tokens_per_comment": 29.0
+      },
+      "SergeyKanzhelev": {
+        "comment_count": 12,
+        "total_tokens": 166,
+        "mean_tokens_per_comment": 13.83,
+        "median_tokens_per_comment": 10.5
+      },
+      "StefanieSenger": {
+        "comment_count": 2,
+        "total_tokens": 35,
+        "mean_tokens_per_comment": 17.5,
+        "median_tokens_per_comment": 17.5
+      },
+      "TonyBagnall": {
+        "comment_count": 2,
+        "total_tokens": 26,
+        "mean_tokens_per_comment": 13.0,
+        "median_tokens_per_comment": 13.0
+      },
+      "adam2392": {
+        "comment_count": 11,
+        "total_tokens": 147,
+        "mean_tokens_per_comment": 13.36,
+        "median_tokens_per_comment": 8.0
+      },
+      "adrinjalali": {
+        "comment_count": 3,
+        "total_tokens": 42,
+        "mean_tokens_per_comment": 14.0,
+        "median_tokens_per_comment": 15.0
+      },
+      "akostadinov": {
+        "comment_count": 1,
+        "total_tokens": 6,
+        "mean_tokens_per_comment": 6.0,
+        "median_tokens_per_comment": 6.0
+      },
+      "andywolff": {
+        "comment_count": 12,
+        "total_tokens": 295,
+        "mean_tokens_per_comment": 24.58,
+        "median_tokens_per_comment": 28.0
+      },
+      "antcybersec": {
+        "comment_count": 1,
+        "total_tokens": 8,
+        "mean_tokens_per_comment": 8.0,
+        "median_tokens_per_comment": 8.0
+      },
+      "antoinebaker": {
+        "comment_count": 18,
+        "total_tokens": 136,
+        "mean_tokens_per_comment": 7.56,
+        "median_tokens_per_comment": 6.5
+      },
+      "aojea": {
+        "comment_count": 1,
+        "total_tokens": 9,
+        "mean_tokens_per_comment": 9.0,
+        "median_tokens_per_comment": 9.0
+      },
+      "apinilabs-pascal": {
+        "comment_count": 1,
+        "total_tokens": 31,
+        "mean_tokens_per_comment": 31.0,
+        "median_tokens_per_comment": 31.0
+      },
+      "arianf": {
+        "comment_count": 3,
+        "total_tokens": 28,
+        "mean_tokens_per_comment": 9.33,
+        "median_tokens_per_comment": 8.0
+      },
+      "astefan": {
+        "comment_count": 27,
+        "total_tokens": 287,
+        "mean_tokens_per_comment": 10.63,
+        "median_tokens_per_comment": 6.0
+      },
+      "augustocbx": {
+        "comment_count": 1,
+        "total_tokens": 34,
+        "mean_tokens_per_comment": 34.0,
+        "median_tokens_per_comment": 34.0
+      },
+      "ayushn21": {
+        "comment_count": 20,
+        "total_tokens": 372,
+        "mean_tokens_per_comment": 18.6,
+        "median_tokens_per_comment": 17.5
+      },
+      "b-luk": {
+        "comment_count": 11,
+        "total_tokens": 129,
+        "mean_tokens_per_comment": 11.73,
+        "median_tokens_per_comment": 7.0
+      },
+      "betatim": {
+        "comment_count": 2,
+        "total_tokens": 31,
+        "mean_tokens_per_comment": 15.5,
+        "median_tokens_per_comment": 15.5
+      },
+      "bhavyaus": {
+        "comment_count": 6,
+        "total_tokens": 115,
+        "mean_tokens_per_comment": 19.17,
+        "median_tokens_per_comment": 12.5
+      },
+      "brejman": {
+        "comment_count": 3,
+        "total_tokens": 34,
+        "mean_tokens_per_comment": 11.33,
+        "median_tokens_per_comment": 9.0
+      },
+      "byroot": {
+        "comment_count": 2,
+        "total_tokens": 25,
+        "mean_tokens_per_comment": 12.5,
+        "median_tokens_per_comment": 12.5
+      },
+      "cakedev0": {
+        "comment_count": 16,
+        "total_tokens": 476,
+        "mean_tokens_per_comment": 29.75,
+        "median_tokens_per_comment": 16.5
+      },
+      "chryw": {
+        "comment_count": 2,
+        "total_tokens": 100,
+        "mean_tokens_per_comment": 50.0,
+        "median_tokens_per_comment": 50.0
+      },
+      "chunhtai": {
+        "comment_count": 6,
+        "total_tokens": 104,
+        "mean_tokens_per_comment": 17.33,
+        "median_tokens_per_comment": 15.5
+      },
+      "cloud-fan": {
+        "comment_count": 8,
+        "total_tokens": 477,
+        "mean_tokens_per_comment": 59.62,
+        "median_tokens_per_comment": 46.5
+      },
+      "cmozaiq-saas": {
+        "comment_count": 1,
+        "total_tokens": 10,
+        "mean_tokens_per_comment": 10.0,
+        "median_tokens_per_comment": 10.0
+      },
+      "danwinship": {
+        "comment_count": 3,
+        "total_tokens": 28,
+        "mean_tokens_per_comment": 9.33,
+        "median_tokens_per_comment": 10.0
+      },
+      "davidcanington18-ctrl": {
+        "comment_count": 2,
+        "total_tokens": 2,
+        "mean_tokens_per_comment": 1.0,
+        "median_tokens_per_comment": 1.0
+      },
+      "dcharkes": {
+        "comment_count": 7,
+        "total_tokens": 96,
+        "mean_tokens_per_comment": 13.71,
+        "median_tokens_per_comment": 13.0
+      },
+      "dkobak": {
+        "comment_count": 4,
+        "total_tokens": 67,
+        "mean_tokens_per_comment": 16.75,
+        "median_tokens_per_comment": 4.5
+      },
+      "dkwingsmt": {
+        "comment_count": 20,
+        "total_tokens": 230,
+        "mean_tokens_per_comment": 11.5,
+        "median_tokens_per_comment": 6.0
+      },
+      "dmitrivMS": {
+        "comment_count": 7,
+        "total_tokens": 409,
+        "mean_tokens_per_comment": 58.43,
+        "median_tokens_per_comment": 56.0
+      },
+      "dnhatn": {
+        "comment_count": 5,
+        "total_tokens": 23,
+        "mean_tokens_per_comment": 4.6,
+        "median_tokens_per_comment": 4.0
+      },
+      "dom4ha": {
+        "comment_count": 1,
+        "total_tokens": 0,
+        "mean_tokens_per_comment": 0.0,
+        "median_tokens_per_comment": 0.0
+      },
+      "ebarlas": {
+        "comment_count": 2,
+        "total_tokens": 49,
+        "mean_tokens_per_comment": 24.5,
+        "median_tokens_per_comment": 24.5
+      },
+      "edsavage": {
+        "comment_count": 5,
+        "total_tokens": 254,
+        "mean_tokens_per_comment": 50.8,
+        "median_tokens_per_comment": 54.0
+      },
+      "eliotsykes": {
+        "comment_count": 11,
+        "total_tokens": 222,
+        "mean_tokens_per_comment": 20.18,
+        "median_tokens_per_comment": 22.0
+      },
+      "eps1lon": {
+        "comment_count": 3,
+        "total_tokens": 48,
+        "mean_tokens_per_comment": 16.0,
+        "median_tokens_per_comment": 16.0
+      },
+      "esotsal": {
+        "comment_count": 14,
+        "total_tokens": 28,
+        "mean_tokens_per_comment": 2.0,
+        "median_tokens_per_comment": 1.0
+      },
+      "everettraven": {
+        "comment_count": 4,
+        "total_tokens": 69,
+        "mean_tokens_per_comment": 17.25,
+        "median_tokens_per_comment": 17.5
+      },
+      "fagnerpereira": {
+        "comment_count": 8,
+        "total_tokens": 76,
+        "mean_tokens_per_comment": 9.5,
+        "median_tokens_per_comment": 3.5
+      },
+      "fariadepaula": {
+        "comment_count": 2,
+        "total_tokens": 11,
+        "mean_tokens_per_comment": 5.5,
+        "median_tokens_per_comment": 5.5
+      },
+      "ffromani": {
+        "comment_count": 1,
+        "total_tokens": 46,
+        "mean_tokens_per_comment": 46.0,
+        "median_tokens_per_comment": 46.0
+      },
+      "flar": {
+        "comment_count": 1,
+        "total_tokens": 53,
+        "mean_tokens_per_comment": 53.0,
+        "median_tokens_per_comment": 53.0
+      },
+      "gaaclarke": {
+        "comment_count": 12,
+        "total_tokens": 73,
+        "mean_tokens_per_comment": 6.08,
+        "median_tokens_per_comment": 4.5
+      },
+      "gemini-code-assist[bot]": {
+        "comment_count": 53,
+        "total_tokens": 2019,
+        "mean_tokens_per_comment": 38.09,
+        "median_tokens_per_comment": 35.0
+      },
+      "gxolivei": {
+        "comment_count": 7,
+        "total_tokens": 301,
+        "mean_tokens_per_comment": 43.0,
+        "median_tokens_per_comment": 42.0
+      },
+      "haashem": {
+        "comment_count": 1,
+        "total_tokens": 10,
+        "mean_tokens_per_comment": 10.0,
+        "median_tokens_per_comment": 10.0
+      },
+      "haircommander": {
+        "comment_count": 4,
+        "total_tokens": 17,
+        "mean_tokens_per_comment": 4.25,
+        "median_tokens_per_comment": 3.5
+      },
+      "harche": {
+        "comment_count": 12,
+        "total_tokens": 467,
+        "mean_tokens_per_comment": 38.92,
+        "median_tokens_per_comment": 35.0
+      },
+      "harryterkelsen": {
+        "comment_count": 4,
+        "total_tokens": 85,
+        "mean_tokens_per_comment": 21.25,
+        "median_tokens_per_comment": 20.5
+      },
+      "insumity": {
+        "comment_count": 6,
+        "total_tokens": 101,
+        "mean_tokens_per_comment": 16.83,
+        "median_tokens_per_comment": 14.0
+      },
+      "iomarsayed": {
+        "comment_count": 11,
+        "total_tokens": 99,
+        "mean_tokens_per_comment": 9.0,
+        "median_tokens_per_comment": 9.0
+      },
+      "jeremiedbb": {
+        "comment_count": 10,
+        "total_tokens": 135,
+        "mean_tokens_per_comment": 13.5,
+        "median_tokens_per_comment": 9.5
+      },
+      "jfreden": {
+        "comment_count": 9,
+        "total_tokens": 100,
+        "mean_tokens_per_comment": 11.11,
+        "median_tokens_per_comment": 6.0
+      },
+      "jimczi": {
+        "comment_count": 18,
+        "total_tokens": 300,
+        "mean_tokens_per_comment": 16.67,
+        "median_tokens_per_comment": 9.0
+      },
+      "jmc-9304": {
+        "comment_count": 6,
+        "total_tokens": 252,
+        "mean_tokens_per_comment": 42.0,
+        "median_tokens_per_comment": 10.0
+      },
+      "joelhawksley": {
+        "comment_count": 4,
+        "total_tokens": 65,
+        "mean_tokens_per_comment": 16.25,
+        "median_tokens_per_comment": 14.0
+      },
+      "jordan-powers": {
+        "comment_count": 5,
+        "total_tokens": 102,
+        "mean_tokens_per_comment": 20.4,
+        "median_tokens_per_comment": 20.0
+      },
+      "joshua-adams-1": {
+        "comment_count": 8,
+        "total_tokens": 125,
+        "mean_tokens_per_comment": 15.62,
+        "median_tokens_per_comment": 11.5
+      },
+      "jruales": {
+        "comment_count": 5,
+        "total_tokens": 246,
+        "mean_tokens_per_comment": 49.2,
+        "median_tokens_per_comment": 43.0
+      },
+      "jtmcdole": {
+        "comment_count": 2,
+        "total_tokens": 14,
+        "mean_tokens_per_comment": 7.0,
+        "median_tokens_per_comment": 7.0
+      },
+      "junnncct1106": {
+        "comment_count": 1,
+        "total_tokens": 59,
+        "mean_tokens_per_comment": 59.0,
+        "median_tokens_per_comment": 59.0
+      },
+      "justinmc": {
+        "comment_count": 13,
+        "total_tokens": 122,
+        "mean_tokens_per_comment": 9.38,
+        "median_tokens_per_comment": 8.0
+      },
+      "justschen": {
+        "comment_count": 4,
+        "total_tokens": 118,
+        "mean_tokens_per_comment": 29.5,
+        "median_tokens_per_comment": 29.0
+      },
+      "kannon92": {
+        "comment_count": 2,
+        "total_tokens": 36,
+        "mean_tokens_per_comment": 18.0,
+        "median_tokens_per_comment": 18.0
+      },
+      "kevmoo": {
+        "comment_count": 15,
+        "total_tokens": 245,
+        "mean_tokens_per_comment": 16.33,
+        "median_tokens_per_comment": 13.0
+      },
+      "kingherc": {
+        "comment_count": 1,
+        "total_tokens": 25,
+        "mean_tokens_per_comment": 25.0,
+        "median_tokens_per_comment": 25.0
+      },
+      "kirs": {
+        "comment_count": 1,
+        "total_tokens": 15,
+        "mean_tokens_per_comment": 15.0,
+        "median_tokens_per_comment": 15.0
+      },
+      "knopp": {
+        "comment_count": 7,
+        "total_tokens": 57,
+        "mean_tokens_per_comment": 8.14,
+        "median_tokens_per_comment": 8.0
+      },
+      "larsoner": {
+        "comment_count": 4,
+        "total_tokens": 36,
+        "mean_tokens_per_comment": 9.0,
+        "median_tokens_per_comment": 6.5
+      },
+      "ldematte": {
+        "comment_count": 5,
+        "total_tokens": 408,
+        "mean_tokens_per_comment": 81.6,
+        "median_tokens_per_comment": 36.0
+      },
+      "liggitt": {
+        "comment_count": 4,
+        "total_tokens": 58,
+        "mean_tokens_per_comment": 14.5,
+        "median_tokens_per_comment": 17.0
+      },
+      "littleGnAl": {
+        "comment_count": 16,
+        "total_tokens": 361,
+        "mean_tokens_per_comment": 22.56,
+        "median_tokens_per_comment": 21.0
+      },
+      "lkts": {
+        "comment_count": 1,
+        "total_tokens": 37,
+        "mean_tokens_per_comment": 37.0,
+        "median_tokens_per_comment": 37.0
+      },
+      "loic-sharma": {
+        "comment_count": 4,
+        "total_tokens": 98,
+        "mean_tokens_per_comment": 24.5,
+        "median_tokens_per_comment": 21.0
+      },
+      "lorentzenchr": {
+        "comment_count": 44,
+        "total_tokens": 209,
+        "mean_tokens_per_comment": 4.75,
+        "median_tokens_per_comment": 3.0
+      },
+      "luigidellaquila": {
+        "comment_count": 19,
+        "total_tokens": 82,
+        "mean_tokens_per_comment": 4.32,
+        "median_tokens_per_comment": 3.0
+      },
+      "lukaszwojciechowski": {
+        "comment_count": 3,
+        "total_tokens": 47,
+        "mean_tokens_per_comment": 15.67,
+        "median_tokens_per_comment": 15.0
+      },
+      "macsko": {
+        "comment_count": 1,
+        "total_tokens": 11,
+        "mean_tokens_per_comment": 11.0,
+        "median_tokens_per_comment": 11.0
+      },
+      "marcoroth": {
+        "comment_count": 7,
+        "total_tokens": 72,
+        "mean_tokens_per_comment": 10.29,
+        "median_tokens_per_comment": 7.0
+      },
+      "martijnvg": {
+        "comment_count": 6,
+        "total_tokens": 64,
+        "mean_tokens_per_comment": 10.67,
+        "median_tokens_per_comment": 10.5
+      },
+      "mattkae": {
+        "comment_count": 1,
+        "total_tokens": 25,
+        "mean_tokens_per_comment": 25.0,
+        "median_tokens_per_comment": 25.0
+      },
+      "mhl-b": {
+        "comment_count": 2,
+        "total_tokens": 14,
+        "mean_tokens_per_comment": 7.0,
+        "median_tokens_per_comment": 7.0
+      },
+      "mimowo": {
+        "comment_count": 3,
+        "total_tokens": 128,
+        "mean_tokens_per_comment": 42.67,
+        "median_tokens_per_comment": 53.0
+      },
+      "mm4tt": {
+        "comment_count": 3,
+        "total_tokens": 172,
+        "mean_tokens_per_comment": 57.33,
+        "median_tokens_per_comment": 48.0
+      },
+      "nandan2003": {
+        "comment_count": 4,
+        "total_tokens": 72,
+        "mean_tokens_per_comment": 18.0,
+        "median_tokens_per_comment": 10.0
+      },
+      "neolit123": {
+        "comment_count": 8,
+        "total_tokens": 85,
+        "mean_tokens_per_comment": 10.62,
+        "median_tokens_per_comment": 10.5
+      },
+      "ngopalak-redhat": {
+        "comment_count": 1,
+        "total_tokens": 3,
+        "mean_tokens_per_comment": 3.0,
+        "median_tokens_per_comment": 3.0
+      },
+      "nicktindall": {
+        "comment_count": 8,
+        "total_tokens": 171,
+        "mean_tokens_per_comment": 21.38,
+        "median_tokens_per_comment": 19.0
+      },
+      "nicolinx": {
+        "comment_count": 22,
+        "total_tokens": 251,
+        "mean_tokens_per_comment": 11.41,
+        "median_tokens_per_comment": 8.0
+      },
+      "ogrisel": {
+        "comment_count": 16,
+        "total_tokens": 145,
+        "mean_tokens_per_comment": 9.06,
+        "median_tokens_per_comment": 2.5
+      },
+      "p0lyn0mial": {
+        "comment_count": 3,
+        "total_tokens": 37,
+        "mean_tokens_per_comment": 12.33,
+        "median_tokens_per_comment": 16.0
+      },
+      "p8": {
+        "comment_count": 1,
+        "total_tokens": 1,
+        "mean_tokens_per_comment": 1.0,
+        "median_tokens_per_comment": 1.0
+      },
+      "pacoxu": {
+        "comment_count": 2,
+        "total_tokens": 10,
+        "mean_tokens_per_comment": 5.0,
+        "median_tokens_per_comment": 5.0
+      },
+      "parkertimmins": {
+        "comment_count": 1,
+        "total_tokens": 9,
+        "mean_tokens_per_comment": 9.0,
+        "median_tokens_per_comment": 9.0
+      },
+      "peter-toth": {
+        "comment_count": 5,
+        "total_tokens": 648,
+        "mean_tokens_per_comment": 129.6,
+        "median_tokens_per_comment": 114.0
+      },
+      "pohly": {
+        "comment_count": 22,
+        "total_tokens": 481,
+        "mean_tokens_per_comment": 21.86,
+        "median_tokens_per_comment": 22.5
+      },
+      "ponharu": {
+        "comment_count": 1,
+        "total_tokens": 15,
+        "mean_tokens_per_comment": 15.0,
+        "median_tokens_per_comment": 15.0
+      },
+      "rjernst": {
+        "comment_count": 6,
+        "total_tokens": 113,
+        "mean_tokens_per_comment": 18.83,
+        "median_tokens_per_comment": 14.0
+      },
+      "roblourens": {
+        "comment_count": 4,
+        "total_tokens": 225,
+        "mean_tokens_per_comment": 56.25,
+        "median_tokens_per_comment": 69.5
+      },
+      "s-urbaniak": {
+        "comment_count": 1,
+        "total_tokens": 6,
+        "mean_tokens_per_comment": 6.0,
+        "median_tokens_per_comment": 6.0
+      },
+      "salvatore-campagna": {
+        "comment_count": 11,
+        "total_tokens": 332,
+        "mean_tokens_per_comment": 30.18,
+        "median_tokens_per_comment": 22.0
+      },
+      "samubenu": {
+        "comment_count": 25,
+        "total_tokens": 449,
+        "mean_tokens_per_comment": 17.96,
+        "median_tokens_per_comment": 10.0
+      },
+      "santhoshsathish94": {
+        "comment_count": 3,
+        "total_tokens": 288,
+        "mean_tokens_per_comment": 96.0,
+        "median_tokens_per_comment": 122.0
+      },
+      "saurabh-mirajkar": {
+        "comment_count": 22,
+        "total_tokens": 252,
+        "mean_tokens_per_comment": 11.45,
+        "median_tokens_per_comment": 10.0
+      },
+      "seanzatzdev": {
+        "comment_count": 1,
+        "total_tokens": 7,
+        "mean_tokens_per_comment": 7.0,
+        "median_tokens_per_comment": 7.0
+      },
+      "serathius": {
+        "comment_count": 12,
+        "total_tokens": 146,
+        "mean_tokens_per_comment": 12.17,
+        "median_tokens_per_comment": 9.5
+      },
+      "shainaraskas": {
+        "comment_count": 1,
+        "total_tokens": 22,
+        "mean_tokens_per_comment": 22.0,
+        "median_tokens_per_comment": 22.0
+      },
+      "shikharish": {
+        "comment_count": 5,
+        "total_tokens": 35,
+        "mean_tokens_per_comment": 7.0,
+        "median_tokens_per_comment": 6.0
+      },
+      "spacexm406-web": {
+        "comment_count": 1,
+        "total_tokens": 61,
+        "mean_tokens_per_comment": 61.0,
+        "median_tokens_per_comment": 61.0
+      },
+      "suojae": {
+        "comment_count": 2,
+        "total_tokens": 27,
+        "mean_tokens_per_comment": 13.5,
+        "median_tokens_per_comment": 13.5
+      },
+      "swallez": {
+        "comment_count": 22,
+        "total_tokens": 1091,
+        "mean_tokens_per_comment": 49.59,
+        "median_tokens_per_comment": 48.0
+      },
+      "tallclair": {
+        "comment_count": 6,
+        "total_tokens": 90,
+        "mean_tokens_per_comment": 15.0,
+        "median_tokens_per_comment": 10.5
+      },
+      "tdcmeehan": {
+        "comment_count": 1,
+        "total_tokens": 5,
+        "mean_tokens_per_comment": 5.0,
+        "median_tokens_per_comment": 5.0
+      },
+      "tenzen-y": {
+        "comment_count": 1,
+        "total_tokens": 12,
+        "mean_tokens_per_comment": 12.0,
+        "median_tokens_per_comment": 12.0
+      },
+      "tguerin": {
+        "comment_count": 3,
+        "total_tokens": 191,
+        "mean_tokens_per_comment": 63.67,
+        "median_tokens_per_comment": 61.0
+      },
+      "tosi3k": {
+        "comment_count": 9,
+        "total_tokens": 132,
+        "mean_tokens_per_comment": 14.67,
+        "median_tokens_per_comment": 15.0
+      },
+      "ulysses-you": {
+        "comment_count": 13,
+        "total_tokens": 607,
+        "mean_tokens_per_comment": 46.69,
+        "median_tokens_per_comment": 42.0
+      },
+      "vashworth": {
+        "comment_count": 10,
+        "total_tokens": 81,
+        "mean_tokens_per_comment": 8.1,
+        "median_tokens_per_comment": 4.5
+      },
+      "victorsanni": {
+        "comment_count": 17,
+        "total_tokens": 76,
+        "mean_tokens_per_comment": 4.47,
+        "median_tokens_per_comment": 1.0
+      },
+      "virchan": {
+        "comment_count": 3,
+        "total_tokens": 71,
+        "mean_tokens_per_comment": 23.67,
+        "median_tokens_per_comment": 30.0
+      },
+      "vshkrabkov": {
+        "comment_count": 35,
+        "total_tokens": 544,
+        "mean_tokens_per_comment": 15.54,
+        "median_tokens_per_comment": 9.0
+      },
+      "walley892": {
+        "comment_count": 5,
+        "total_tokens": 55,
+        "mean_tokens_per_comment": 11.0,
+        "median_tokens_per_comment": 10.0
+      },
+      "wojtek-t": {
+        "comment_count": 3,
+        "total_tokens": 50,
+        "mean_tokens_per_comment": 16.67,
+        "median_tokens_per_comment": 19.0
+      },
+      "xiaowei-guan": {
+        "comment_count": 18,
+        "total_tokens": 31,
+        "mean_tokens_per_comment": 1.72,
+        "median_tokens_per_comment": 1.0
+      },
+      "yong-jie-gong": {
+        "comment_count": 4,
+        "total_tokens": 82,
+        "mean_tokens_per_comment": 20.5,
+        "median_tokens_per_comment": 17.5
+      },
+      "ywangd": {
+        "comment_count": 3,
+        "total_tokens": 27,
+        "mean_tokens_per_comment": 9.0,
+        "median_tokens_per_comment": 6.0
+      },
+      "zzak": {
+        "comment_count": 5,
+        "total_tokens": 15,
+        "mean_tokens_per_comment": 3.0,
+        "median_tokens_per_comment": 4.0
+      }
+    }
+  },
+  "raw_file_verification": {
+    "apache/spark": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\apache__spark.jsonl",
+      "sha256": "14ab701f427f294d76fc06ea779f02f34b4c9dd5e19976c3b7a39ae4a3533c66"
+    },
+    "elastic/elasticsearch": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\elastic__elasticsearch.jsonl",
+      "sha256": "afe662f4e7425ce6a63ec36681723b2cf3f0702f387e82c619001a131fa3844a"
+    },
+    "scikit-learn/scikit-learn": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\scikit-learn__scikit-learn.jsonl",
+      "sha256": "6f4b674b12b3ea4465d258b14ddc89a76df63a656ade3296e8201f5b3822e474"
+    },
+    "kubernetes/kubernetes": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\kubernetes__kubernetes.jsonl",
+      "sha256": "0aa2b0e851ae97f8c5928227f7589e8e2960f3eceef3ab4e123dad1b6694ab61"
+    },
+    "flutter/flutter": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\flutter__flutter.jsonl",
+      "sha256": "aece30f609f0acbb2069da3c835835c12e4235d372ce8e75548e0706545a164b"
+    },
+    "rails/rails": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\rails__rails.jsonl",
+      "sha256": "0fa761658f2b0ee968d4f7b12e6880b7c06a83727b7b72523b3faf4ad3abd135"
+    },
+    "microsoft/vscode": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\microsoft__vscode.jsonl",
+      "sha256": "5d4ca3e7066e9d62a79ad6115db63b5cfb0f42f522cf8adea2c5dd5baf77bc9d"
+    },
+    "nodejs/node": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\nodejs__node.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "facebook/react": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\facebook__react.jsonl",
+      "sha256": "7941e031b1816a704fa3a2a28be9ae2bb43c6c5943ae9de50e864930c17e63e9"
+    },
+    "tensorflow/tensorflow": {
+      "file_path": "D:\\GIT\\Devlens\\data\\gders\\raw_comments\\tensorflow__tensorflow.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}
