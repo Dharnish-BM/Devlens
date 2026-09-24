@@ -1,0 +1,43 @@
+{
+  "phase": "Phase 6B \u2014 Developer Expertise Profiles & Validation",
+  "timestamp": "2026-09-24T10:38:49Z",
+  "profile_summary": {
+    "total_unique_reviewers": 151,
+    "reviewers_with_sufficient_evidence": 71,
+    "reviewers_with_insufficient_evidence": 80,
+    "reviewers_with_single_comment": 33,
+    "sufficient_evidence_rate": 0.4702
+  },
+  "evidence_tier_distribution": {
+    "insufficient_evidence": 1134,
+    "emerging_evidence": 236,
+    "supported_evidence": 107,
+    "strong_evidence": 33
+  },
+  "category_profile_coverage": {
+    "BUG_LOGIC": 83,
+    "DATA_MANAGEMENT": 26,
+    "DOCUMENTATION": 39,
+    "TESTING_QUALITY": 70,
+    "CODE_STYLE": 32,
+    "FRONTEND_UI_UX": 30,
+    "ARCH_DESIGN": 14,
+    "PERF_OPTIMIZATION": 32,
+    "INFRA_DEVOPS": 25,
+    "SECURITY_PRIVACY": 25
+  },
+  "scoring_methodology": {
+    "gold_weight": 1.0,
+    "high_conf_pred_weight": 0.7,
+    "medium_conf_pred_weight": 0.4,
+    "low_conf_pred_weight": 0.1,
+    "pr_diversity_multiplier": "1.0 + 0.1 * (distinct_prs - 1) [max 1.5]",
+    "repo_diversity_multiplier": "1.0 + 0.1 * (distinct_repos - 1) [max 1.2]"
+  },
+  "evidence_tiers": {
+    "strong_evidence": "Score >= 4.0 and >= 2 distinct PRs",
+    "supported_evidence": "Score >= 2.0 and >= 2 comments",
+    "emerging_evidence": "Score >= 0.70",
+    "insufficient_evidence": "Score < 0.70"
+  }
+}

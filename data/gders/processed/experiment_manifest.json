@@ -1,0 +1,19 @@
+{
+  "experiment_name": "GDERS-Phase-5B-Model-Comparison",
+  "timestamp": "2026-09-24T09:25:52Z",
+  "system_environment": {
+    "python_version": "3.11.4",
+    "scikit_learn_version": "1.9.0",
+    "numpy_version": "2.0.2"
+  },
+  "dataset": {
+    "source": "data\\gders\\processed\\annotation_sample.jsonl",
+    "labeled_samples_count": 185,
+    "categories_count": 10
+  },
+  "models": [
+    "tfidf_logistic_regression",
+    "tfidf_linear_svm",
+    "kmeans_clustering"
+  ]
+}

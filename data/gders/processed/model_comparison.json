@@ -1,0 +1,1375 @@
+{
+  "phase": "Phase 5B \u2014 Comment Classification & Model Comparison",
+  "timestamp": "2026-09-24T09:25:52Z",
+  "dataset_summary": {
+    "total_labeled_comments": 185,
+    "evaluation_method": "5-Fold Cross-Validation (Deterministic KFold, random_seed=42)",
+    "multi_label": true
+  },
+  "models_evaluated": {
+    "tfidf_logistic_regression": {
+      "model_description": "TF-IDF (1-2 grams, max_features=1500) + One-vs-Rest Logistic Regression (C=1.0, balanced)",
+      "cv_metrics_mean_std": {
+        "micro_precision": "0.7663 \u00b1 0.0395",
+        "micro_recall": "0.4218 \u00b1 0.0818",
+        "micro_f1": "0.5379 \u00b1 0.0707",
+        "macro_f1": "0.2859 \u00b1 0.0623",
+        "weighted_f1": "0.4928 \u00b1 0.0814",
+        "hamming_loss": "0.0951 \u00b1 0.0127",
+        "subset_accuracy": "0.3460 \u00b1 0.0958"
+      },
+      "per_category_metrics": {
+        "ARCH_DESIGN": {
+          "f1_mean": 0.0,
+          "f1_std": 0.0,
+          "precision_mean": 0.0,
+          "recall_mean": 0.0,
+          "total_support": 3
+        },
+        "BUG_LOGIC": {
+          "f1_mean": 0.6064,
+          "f1_std": 0.096,
+          "precision_mean": 0.6667,
+          "recall_mean": 0.5644,
+          "total_support": 74
+        },
+        "CODE_STYLE": {
+          "f1_mean": 0.492,
+          "f1_std": 0.1154,
+          "precision_mean": 0.9,
+          "recall_mean": 0.3571,
+          "total_support": 28
+        },
+        "DATA_MANAGEMENT": {
+          "f1_mean": 0.0,
+          "f1_std": 0.0,
+          "precision_mean": 0.0,
+          "recall_mean": 0.0,
+          "total_support": 8
+        },
+        "DOCUMENTATION": {
+          "f1_mean": 0.4067,
+          "f1_std": 0.2585,
+          "precision_mean": 0.8,
+          "recall_mean": 0.29,
+          "total_support": 22
+        },
+        "FRONTEND_UI_UX": {
+          "f1_mean": 0.0667,
+          "f1_std": 0.1333,
+          "precision_mean": 0.0667,
+          "recall_mean": 0.0667,
+          "total_support": 20
+        },
+        "INFRA_DEVOPS": {
+          "f1_mean": 0.5048,
+          "f1_std": 0.2916,
+          "precision_mean": 0.8,
+          "recall_mean": 0.3857,
+          "total_support": 21
+        },
+        "PERF_OPTIMIZATION": {
+          "f1_mean": 0.0,
+          "f1_std": 0.0,
+          "precision_mean": 0.0,
+          "recall_mean": 0.0,
+          "total_support": 12
+        },
+        "SECURITY_PRIVACY": {
+          "f1_mean": 0.0,
+          "f1_std": 0.0,
+          "precision_mean": 0.0,
+          "recall_mean": 0.0,
+          "total_support": 8
+        },
+        "TESTING_QUALITY": {
+          "f1_mean": 0.7822,
+          "f1_std": 0.1632,
+          "precision_mean": 0.9818,
+          "recall_mean": 0.6824,
+          "total_support": 51
+        }
+      },
+      "top_features": {
+        "ARCH_DESIGN": [
+          [
+            "pattern",
+            2.7698
+          ],
+          [
+            "do",
+            1.737
+          ],
+          [
+            "argument",
+            1.6537
+          ],
+          [
+            "add",
+            1.4882
+          ],
+          [
+            "follow",
+            1.4375
+          ],
+          [
+            "struct",
+            1.2116
+          ],
+          [
+            "callback",
+            1.1753
+          ],
+          [
+            "input",
+            1.143
+          ]
+        ],
+        "BUG_LOGIC": [
+          [
+            "need",
+            1.3503
+          ],
+          [
+            "fix",
+            1.1712
+          ],
+          [
+            "nil",
+            0.6325
+          ],
+          [
+            "break",
+            0.5593
+          ],
+          [
+            "call",
+            0.544
+          ],
+          [
+            "handler",
+            0.5268
+          ],
+          [
+            "error",
+            0.5212
+          ],
+          [
+            "canallocate",
+            0.5037
+          ]
+        ],
+        "CODE_STYLE": [
+          [
+            "nit",
+            1.9517
+          ],
+          [
+            "unused",
+            1.3817
+          ],
+          [
+            "rename",
+            1.119
+          ],
+          [
+            "style",
+            1.0641
+          ],
+          [
+            "line",
+            0.9408
+          ],
+          [
+            "html",
+            0.8731
+          ],
+          [
+            "texture",
+            0.828
+          ],
+          [
+            "unit",
+            0.7892
+          ]
+        ],
+        "DATA_MANAGEMENT": [
+          [
+            "query",
+            2.6106
+          ],
+          [
+            "entity",
+            1.5511
+          ],
+          [
+            "clear",
+            1.2429
+          ],
+          [
+            "ignore",
+            1.2124
+          ],
+          [
+            "clear last",
+            1.1005
+          ],
+          [
+            "pop",
+            1.1005
+          ],
+          [
+            "last pop",
+            1.1005
+          ],
+          [
+            "match",
+            1.0741
+          ]
+        ],
+        "DOCUMENTATION": [
+          [
+            "comment",
+            3.0581
+          ],
+          [
+            "javadoc",
+            1.586
+          ],
+          [
+            "doc",
+            1.4195
+          ],
+          [
+            "accept",
+            0.8788
+          ],
+          [
+            "explain",
+            0.8471
+          ],
+          [
+            "capacity",
+            0.8068
+          ],
+          [
+            "request",
+            0.8011
+          ],
+          [
+            "see",
+            0.7013
+          ]
+        ],
+        "FRONTEND_UI_UX": [
+          [
+            "state",
+            1.6209
+          ],
+          [
+            "render",
+            1.2455
+          ],
+          [
+            "term",
+            1.2328
+          ],
+          [
+            "widget",
+            0.9838
+          ],
+          [
+            "method",
+            0.9582
+          ],
+          [
+            "no",
+            0.8669
+          ],
+          [
+            "ui",
+            0.8033
+          ],
+          [
+            "always",
+            0.7617
+          ]
+        ],
+        "INFRA_DEVOPS": [
+          [
+            "build",
+            2.8132
+          ],
+          [
+            "pipeline",
+            1.4077
+          ],
+          [
+            "native",
+            0.9107
+          ],
+          [
+            "ci",
+            0.8865
+          ],
+          [
+            "however",
+            0.7735
+          ],
+          [
+            "like",
+            0.7562
+          ],
+          [
+            "propose",
+            0.7315
+          ],
+          [
+            "example",
+            0.6981
+          ]
+        ],
+        "PERF_OPTIMIZATION": [
+          [
+            "leak",
+            1.4108
+          ],
+          [
+            "stack",
+            1.2832
+          ],
+          [
+            "dra",
+            1.0874
+          ],
+          [
+            "order",
+            1.0734
+          ],
+          [
+            "memory",
+            1.0354
+          ],
+          [
+            "reason",
+            1.0212
+          ],
+          [
+            "lookup",
+            0.9951
+          ],
+          [
+            "fit",
+            0.9401
+          ]
+        ],
+        "SECURITY_PRIVACY": [
+          [
+            "security",
+            1.9981
+          ],
+          [
+            "token",
+            1.7498
+          ],
+          [
+            "key",
+            1.0714
+          ],
+          [
+            "available even",
+            1.0542
+          ],
+          [
+            "note",
+            1.0433
+          ],
+          [
+            "guide",
+            0.9416
+          ],
+          [
+            "rail",
+            0.9364
+          ],
+          [
+            "available",
+            0.9114
+          ]
+        ],
+        "TESTING_QUALITY": [
+          [
+            "test",
+            3.7943
+          ],
+          [
+            "regression",
+            0.7956
+          ],
+          [
+            "verify",
+            0.749
+          ],
+          [
+            "fail",
+            0.6445
+          ],
+          [
+            "pod",
+            0.6001
+          ],
+          [
+            "run",
+            0.5518
+          ],
+          [
+            "spec",
+            0.5411
+          ],
+          [
+            "path",
+            0.5178
+          ]
+        ]
+      },
+      "total_misclassifications": 121
+    },
+    "tfidf_linear_svm": {
+      "model_description": "TF-IDF (1-2 grams, max_features=1500) + One-vs-Rest Linear SVM (C=1.0, balanced)",
+      "cv_metrics_mean_std": {
+        "micro_precision": "0.7567 \u00b1 0.0297",
+        "micro_recall": "0.4100 \u00b1 0.0785",
+        "micro_f1": "0.5276 \u00b1 0.0710",
+        "macro_f1": "0.2766 \u00b1 0.0625",
+        "weighted_f1": "0.4791 \u00b1 0.0829",
+        "hamming_loss": "0.0968 \u00b1 0.0144",
+        "subset_accuracy": "0.3406 \u00b1 0.0930"
+      },
+      "per_category_metrics": {
+        "ARCH_DESIGN": {
+          "f1_mean": 0.0,
+          "f1_std": 0.0,
+          "precision_mean": 0.0,
+          "recall_mean": 0.0,
+          "total_support": 3
+        },
+        "BUG_LOGIC": {
+          "f1_mean": 0.6185,
+          "f1_std": 0.0465,
+          "precision_mean": 0.6849,
+          "recall_mean": 0.5869,
+          "total_support": 74
+        },
+        "CODE_STYLE": {
+          "f1_mean": 0.4198,
+          "f1_std": 0.1152,
+          "precision_mean": 0.9,
+          "recall_mean": 0.2952,
+          "total_support": 28
+        },
+        "DATA_MANAGEMENT": {
+          "f1_mean": 0.0,
+          "f1_std": 0.0,
+          "precision_mean": 0.0,
+          "recall_mean": 0.0,
+          "total_support": 8
+        },
+        "DOCUMENTATION": {
+          "f1_mean": 0.4067,
+          "f1_std": 0.2585,
+          "precision_mean": 0.8,
+          "recall_mean": 0.29,
+          "total_support": 22
+        },
+        "FRONTEND_UI_UX": {
+          "f1_mean": 0.0667,
+          "f1_std": 0.1333,
+          "precision_mean": 0.0667,
+          "recall_mean": 0.0667,
+          "total_support": 20
+        },
+        "INFRA_DEVOPS": {
+          "f1_mean": 0.5048,
+          "f1_std": 0.2916,
+          "precision_mean": 0.8,
+          "recall_mean": 0.3857,
+          "total_support": 21
+        },
+        "PERF_OPTIMIZATION": {
+          "f1_mean": 0.0,
+          "f1_std": 0.0,
+          "precision_mean": 0.0,
+          "recall_mean": 0.0,
+          "total_support": 12
+        },
+        "SECURITY_PRIVACY": {
+          "f1_mean": 0.0,
+          "f1_std": 0.0,
+          "precision_mean": 0.0,
+          "recall_mean": 0.0,
+          "total_support": 8
+        },
+        "TESTING_QUALITY": {
+          "f1_mean": 0.7501,
+          "f1_std": 0.1391,
+          "precision_mean": 0.96,
+          "recall_mean": 0.6436,
+          "total_support": 51
+        }
+      },
+      "top_features": {
+        "ARCH_DESIGN": [
+          [
+            "pattern",
+            1.4234
+          ],
+          [
+            "do",
+            0.877
+          ],
+          [
+            "argument",
+            0.7802
+          ],
+          [
+            "follow",
+            0.6511
+          ],
+          [
+            "add",
+            0.6408
+          ],
+          [
+            "struct",
+            0.616
+          ],
+          [
+            "input",
+            0.6116
+          ],
+          [
+            "info",
+            0.5471
+          ]
+        ],
+        "BUG_LOGIC": [
+          [
+            "need",
+            1.2475
+          ],
+          [
+            "fix",
+            1.1119
+          ],
+          [
+            "canallocate",
+            0.9496
+          ],
+          [
+            "break",
+            0.8785
+          ],
+          [
+            "nil",
+            0.8505
+          ],
+          [
+            "handler",
+            0.7577
+          ],
+          [
+            "error",
+            0.7323
+          ],
+          [
+            "set",
+            0.6875
+          ]
+        ],
+        "CODE_STYLE": [
+          [
+            "nit",
+            1.4623
+          ],
+          [
+            "unused",
+            1.361
+          ],
+          [
+            "style",
+            1.1677
+          ],
+          [
+            "rename",
+            1.1413
+          ],
+          [
+            "please remove",
+            0.8905
+          ],
+          [
+            "line",
+            0.8839
+          ],
+          [
+            "unit",
+            0.8801
+          ],
+          [
+            "html",
+            0.8752
+          ]
+        ],
+        "DATA_MANAGEMENT": [
+          [
+            "query",
+            1.8368
+          ],
+          [
+            "entity",
+            1.0187
+          ],
+          [
+            "location",
+            0.7712
+          ],
+          [
+            "clear",
+            0.7424
+          ],
+          [
+            "last pop",
+            0.7252
+          ],
+          [
+            "clear last",
+            0.7252
+          ],
+          [
+            "pop",
+            0.7252
+          ],
+          [
+            "ignore",
+            0.7181
+          ]
+        ],
+        "DOCUMENTATION": [
+          [
+            "comment",
+            2.6567
+          ],
+          [
+            "javadoc",
+            1.4799
+          ],
+          [
+            "doc",
+            1.4014
+          ],
+          [
+            "accept",
+            0.8874
+          ],
+          [
+            "explain",
+            0.7691
+          ],
+          [
+            "see",
+            0.7111
+          ],
+          [
+            "capacity",
+            0.7086
+          ],
+          [
+            "request",
+            0.663
+          ]
+        ],
+        "FRONTEND_UI_UX": [
+          [
+            "state",
+            1.605
+          ],
+          [
+            "render",
+            1.3503
+          ],
+          [
+            "term",
+            1.2209
+          ],
+          [
+            "widget",
+            1.1102
+          ],
+          [
+            "method",
+            0.9254
+          ],
+          [
+            "no",
+            0.8744
+          ],
+          [
+            "ui",
+            0.8682
+          ],
+          [
+            "always",
+            0.8679
+          ]
+        ],
+        "INFRA_DEVOPS": [
+          [
+            "build",
+            2.7266
+          ],
+          [
+            "pipeline",
+            1.4274
+          ],
+          [
+            "ci",
+            0.8581
+          ],
+          [
+            "propose",
+            0.8266
+          ],
+          [
+            "window",
+            0.7389
+          ],
+          [
+            "go",
+            0.7021
+          ],
+          [
+            "however",
+            0.7015
+          ],
+          [
+            "debug",
+            0.6937
+          ]
+        ],
+        "PERF_OPTIMIZATION": [
+          [
+            "leak",
+            1.0387
+          ],
+          [
+            "stack",
+            1.0135
+          ],
+          [
+            "dra",
+            1.0062
+          ],
+          [
+            "lookup",
+            0.95
+          ],
+          [
+            "order",
+            0.8704
+          ],
+          [
+            "memory",
+            0.8271
+          ],
+          [
+            "reason",
+            0.8023
+          ],
+          [
+            "post",
+            0.7304
+          ]
+        ],
+        "SECURITY_PRIVACY": [
+          [
+            "security",
+            1.5615
+          ],
+          [
+            "token",
+            1.3072
+          ],
+          [
+            "available even",
+            0.8063
+          ],
+          [
+            "note",
+            0.7279
+          ],
+          [
+            "permission",
+            0.7031
+          ],
+          [
+            "guide",
+            0.6885
+          ],
+          [
+            "available",
+            0.6787
+          ],
+          [
+            "key",
+            0.6504
+          ]
+        ],
+        "TESTING_QUALITY": [
+          [
+            "test",
+            3.9296
+          ],
+          [
+            "verify",
+            0.9849
+          ],
+          [
+            "spec",
+            0.856
+          ],
+          [
+            "regression",
+            0.8409
+          ],
+          [
+            "pod",
+            0.6857
+          ],
+          [
+            "path",
+            0.6499
+          ],
+          [
+            "decision",
+            0.6078
+          ],
+          [
+            "add regression",
+            0.5781
+          ]
+        ]
+      },
+      "total_misclassifications": 122
+    },
+    "transformer_classifier": {
+      "model_name": "Lightweight Transformer (BERT-mini / RoBERTa)",
+      "status": "environment_dependency_deferred",
+      "reason": "PyTorch / HuggingFace Transformers not pre-installed in default lightweight runtime environment. Supervised baseline established via classical TF-IDF models."
+    },
+    "kmeans_exploratory_clustering": {
+      "exploratory_note": "K-Means cluster IDs are arbitrary unsupervised partitions and do not constitute ground truth expertise.",
+      "k_evaluations": {
+        "k_5": {
+          "k": 5,
+          "inertia": 172.71,
+          "silhouette_score": 0.0044,
+          "adjusted_rand_index_vs_reference": 0.0372,
+          "normalized_mutual_info_vs_reference": 0.0709,
+          "clusters": {
+            "cluster_0": {
+              "size": 34,
+              "top_terms": [
+                "line",
+                "false",
+                "new",
+                "return",
+                "result",
+                "would",
+                "pass",
+                "single"
+              ]
+            },
+            "cluster_1": {
+              "size": 26,
+              "top_terms": [
+                "need",
+                "check",
+                "think need",
+                "example",
+                "log",
+                "define",
+                "admission",
+                "test"
+              ]
+            },
+            "cluster_2": {
+              "size": 65,
+              "top_terms": [
+                "test",
+                "one",
+                "case",
+                "add",
+                "could",
+                "call",
+                "think",
+                "part"
+              ]
+            },
+            "cluster_3": {
+              "size": 15,
+              "top_terms": [
+                "remove",
+                "change",
+                "want",
+                "add",
+                "file",
+                "need",
+                "please",
+                "failure"
+              ]
+            },
+            "cluster_4": {
+              "size": 45,
+              "top_terms": [
+                "nit",
+                "fix",
+                "use",
+                "comment",
+                "handle",
+                "request",
+                "unused",
+                "think"
+              ]
+            }
+          }
+        },
+        "k_8": {
+          "k": 8,
+          "inertia": 168.94,
+          "silhouette_score": 0.0048,
+          "adjusted_rand_index_vs_reference": 0.0607,
+          "normalized_mutual_info_vs_reference": 0.1849,
+          "clusters": {
+            "cluster_0": {
+              "size": 23,
+              "top_terms": [
+                "case",
+                "unused",
+                "part",
+                "may",
+                "child",
+                "pipeline",
+                "javadoc",
+                "example"
+              ]
+            },
+            "cluster_1": {
+              "size": 22,
+              "top_terms": [
+                "need",
+                "remove",
+                "check",
+                "define",
+                "want",
+                "think need",
+                "log",
+                "nil check"
+              ]
+            },
+            "cluster_2": {
+              "size": 19,
+              "top_terms": [
+                "like",
+                "handle",
+                "error",
+                "look",
+                "android",
+                "update",
+                "io",
+                "look like"
+              ]
+            },
+            "cluster_3": {
+              "size": 20,
+              "top_terms": [
+                "test",
+                "register",
+                "name",
+                "run",
+                "otherwise",
+                "make",
+                "mark",
+                "one"
+              ]
+            },
+            "cluster_4": {
+              "size": 21,
+              "top_terms": [
+                "comment",
+                "test",
+                "update",
+                "regression",
+                "property",
+                "add",
+                "do",
+                "regression test"
+              ]
+            },
+            "cluster_5": {
+              "size": 45,
+              "top_terms": [
+                "fix",
+                "build",
+                "call",
+                "fail",
+                "would",
+                "one",
+                "test",
+                "return"
+              ]
+            },
+            "cluster_6": {
+              "size": 26,
+              "top_terms": [
+                "nit",
+                "method",
+                "line",
+                "change",
+                "order",
+                "version",
+                "think",
+                "use"
+              ]
+            },
+            "cluster_7": {
+              "size": 9,
+              "top_terms": [
+                "could",
+                "scenario",
+                "entity",
+                "might",
+                "clear",
+                "last",
+                "bucket",
+                "row"
+              ]
+            }
+          }
+        },
+        "k_10": {
+          "k": 10,
+          "inertia": 165.75,
+          "silhouette_score": 0.0062,
+          "adjusted_rand_index_vs_reference": 0.0082,
+          "normalized_mutual_info_vs_reference": 0.1353,
+          "clusters": {
+            "cluster_0": {
+              "size": 23,
+              "top_terms": [
+                "need",
+                "remove",
+                "failure",
+                "behavior",
+                "change",
+                "check",
+                "actually",
+                "think need"
+              ]
+            },
+            "cluster_1": {
+              "size": 43,
+              "top_terms": [
+                "error",
+                "call",
+                "update",
+                "test",
+                "say",
+                "also",
+                "one",
+                "add"
+              ]
+            },
+            "cluster_2": {
+              "size": 11,
+              "top_terms": [
+                "fix",
+                "define",
+                "note",
+                "filling",
+                "null",
+                "register",
+                "retry",
+                "rationale"
+              ]
+            },
+            "cluster_3": {
+              "size": 14,
+              "top_terms": [
+                "case",
+                "part",
+                "blob",
+                "change",
+                "set",
+                "multi",
+                "add",
+                "child"
+              ]
+            },
+            "cluster_4": {
+              "size": 11,
+              "top_terms": [
+                "property",
+                "add",
+                "medium",
+                "directly",
+                "widget",
+                "debug",
+                "method",
+                "include"
+              ]
+            },
+            "cluster_5": {
+              "size": 18,
+              "top_terms": [
+                "test",
+                "might",
+                "sure",
+                "loop",
+                "also",
+                "order",
+                "name",
+                "load_all"
+              ]
+            },
+            "cluster_6": {
+              "size": 7,
+              "top_terms": [
+                "nit",
+                "use",
+                "static",
+                "title",
+                "canallocate",
+                "nit think",
+                "user",
+                "texture"
+              ]
+            },
+            "cluster_7": {
+              "size": 16,
+              "top_terms": [
+                "rail",
+                "guide",
+                "application",
+                "value",
+                "document",
+                "obvious",
+                "call",
+                "use"
+              ]
+            },
+            "cluster_8": {
+              "size": 17,
+              "top_terms": [
+                "javadoc",
+                "move",
+                "comment",
+                "result",
+                "unused",
+                "new",
+                "think",
+                "line"
+              ]
+            },
+            "cluster_9": {
+              "size": 25,
+              "top_terms": [
+                "could",
+                "think",
+                "use",
+                "tree",
+                "native",
+                "build",
+                "case",
+                "pr"
+              ]
+            }
+          }
+        },
+        "k_12": {
+          "k": 12,
+          "inertia": 163.03,
+          "silhouette_score": 0.0073,
+          "adjusted_rand_index_vs_reference": 0.024,
+          "normalized_mutual_info_vs_reference": 0.1646,
+          "clusters": {
+            "cluster_0": {
+              "size": 8,
+              "top_terms": [
+                "consider",
+                "template",
+                "doc",
+                "think",
+                "reuse",
+                "make",
+                "rout",
+                "specify"
+              ]
+            },
+            "cluster_1": {
+              "size": 25,
+              "top_terms": [
+                "test",
+                "one",
+                "case",
+                "true",
+                "name",
+                "bucket",
+                "could",
+                "maybe"
+              ]
+            },
+            "cluster_2": {
+              "size": 17,
+              "top_terms": [
+                "pod",
+                "admission",
+                "query",
+                "pid",
+                "move",
+                "number",
+                "look",
+                "check"
+              ]
+            },
+            "cluster_3": {
+              "size": 13,
+              "top_terms": [
+                "handle",
+                "io",
+                "android",
+                "show",
+                "pr",
+                "sense",
+                "make sense",
+                "change"
+              ]
+            },
+            "cluster_4": {
+              "size": 22,
+              "top_terms": [
+                "test",
+                "line",
+                "also",
+                "regression",
+                "run",
+                "stack",
+                "still",
+                "two"
+              ]
+            },
+            "cluster_5": {
+              "size": 11,
+              "top_terms": [
+                "change",
+                "tree",
+                "break",
+                "none",
+                "encode",
+                "category",
+                "warn",
+                "without"
+              ]
+            },
+            "cluster_6": {
+              "size": 12,
+              "top_terms": [
+                "fix",
+                "drop",
+                "note",
+                "define",
+                "set",
+                "need",
+                "us",
+                "filling"
+              ]
+            },
+            "cluster_7": {
+              "size": 8,
+              "top_terms": [
+                "nit",
+                "nit think",
+                "static",
+                "canallocate",
+                "use",
+                "texture",
+                "think",
+                "setup"
+              ]
+            },
+            "cluster_8": {
+              "size": 12,
+              "top_terms": [
+                "property",
+                "use",
+                "style",
+                "update",
+                "expose",
+                "selection",
+                "user",
+                "test"
+              ]
+            },
+            "cluster_9": {
+              "size": 19,
+              "top_terms": [
+                "need",
+                "check",
+                "nil",
+                "please",
+                "test",
+                "remove",
+                "think need",
+                "nil check"
+              ]
+            },
+            "cluster_10": {
+              "size": 23,
+              "top_terms": [
+                "native",
+                "build",
+                "add",
+                "place",
+                "think",
+                "unused",
+                "javadoc",
+                "correct"
+              ]
+            },
+            "cluster_11": {
+              "size": 15,
+              "top_terms": [
+                "need",
+                "remove",
+                "call",
+                "code",
+                "log",
+                "return",
+                "value",
+                "implement"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "error_analysis_summary": {
+    "total_svm_misclassifications": 122,
+    "error_file": "data\\gders\\processed\\error_analysis.jsonl",
+    "primary_error_drivers": [
+      "Class imbalance in low-support categories (ARCH_DESIGN support=3, DATA_MANAGEMENT support=8)",
+      "Multi-label threshold ambiguity when comments blend design rationale with code style suggestions",
+      "Domain-specific vocabulary variations across diverse programming languages (Scala vs Go vs TypeScript)"
+    ]
+  }
+}

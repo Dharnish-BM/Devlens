@@ -1,0 +1,4 @@
+2026-09-24 14:25:34,732 [INFO] [GDERS_ANNOTATION] Creating stratified annotation sample (target=275, seed=42)
+2026-09-24 14:25:34,808 [INFO] [GDERS_ANNOTATION] Sampled 277 comments across 8 repositories.
+2026-09-24 14:25:34,852 [INFO] [GDERS_ANNOTATION] Gold annotation sample written to data\gders\processed\annotation_sample.jsonl
+2026-09-24 14:25:34,855 [INFO] [GDERS_ANNOTATION] Annotation report written to data\gders\processed\annotation_report.json

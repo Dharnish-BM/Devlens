@@ -1,0 +1,69 @@
+{
+  "phase": "Phase 5C - Targeted Annotation Expansion & Classifier Stabilization",
+  "timestamp": "2026-09-24T09:56:44Z",
+  "configuration": {
+    "random_seed": 42,
+    "target_per_category": 40,
+    "targeted_categories": [
+      "ARCH_DESIGN",
+      "DATA_MANAGEMENT",
+      "PERF_OPTIMIZATION",
+      "SECURITY_PRIVACY"
+    ]
+  },
+  "candidates_inspected": 160,
+  "curation_summary": {
+    "newly_labeled_count": 156,
+    "rejected_non_technical": 0,
+    "ambiguous_count": 4,
+    "insufficient_context_count": 0
+  },
+  "newly_annotated_category_support": {
+    "ARCH_DESIGN": 27,
+    "TESTING_QUALITY": 37,
+    "SECURITY_PRIVACY": 45,
+    "DATA_MANAGEMENT": 36,
+    "BUG_LOGIC": 21,
+    "PERF_OPTIMIZATION": 48,
+    "FRONTEND_UI_UX": 20,
+    "CODE_STYLE": 5,
+    "DOCUMENTATION": 6,
+    "INFRA_DEVOPS": 8
+  },
+  "expanded_dataset_summary": {
+    "total_expanded_labeled_comments": 341,
+    "phase_5a_labeled_count": 185,
+    "phase_5c_labeled_count": 156,
+    "unique_reviewers": 102,
+    "repositories_covered": 8,
+    "category_support": {
+      "CODE_STYLE": 33,
+      "BUG_LOGIC": 95,
+      "SECURITY_PRIVACY": 53,
+      "INFRA_DEVOPS": 29,
+      "TESTING_QUALITY": 88,
+      "FRONTEND_UI_UX": 40,
+      "PERF_OPTIMIZATION": 60,
+      "DOCUMENTATION": 28,
+      "DATA_MANAGEMENT": 44,
+      "ARCH_DESIGN": 30
+    }
+  },
+  "provenance_breakdown": {
+    "phase_5a_labeled_comments": 185,
+    "phase_5c_labeled_comments": 156,
+    "total_expanded_labeled_comments": 341
+  },
+  "final_category_support": {
+    "CODE_STYLE": 33,
+    "BUG_LOGIC": 95,
+    "SECURITY_PRIVACY": 53,
+    "INFRA_DEVOPS": 29,
+    "TESTING_QUALITY": 88,
+    "FRONTEND_UI_UX": 40,
+    "PERF_OPTIMIZATION": 60,
+    "DOCUMENTATION": 28,
+    "DATA_MANAGEMENT": 44,
+    "ARCH_DESIGN": 30
+  }
+}

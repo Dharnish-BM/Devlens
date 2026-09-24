@@ -1,0 +1,339 @@
+{
+  "phase": "Phase 5A - Taxonomy Validation & Gold Dataset",
+  "timestamp": "2026-09-24T08:55:34Z",
+  "annotation_protocol": {
+    "annotator_mode": "single-annotator gold set (curator_lead)",
+    "inter_annotator_agreement_note": "Single-annotator gold set; agreement metric not fabricated.",
+    "multi_label_supported": true,
+    "random_seed": 42,
+    "sampling_method": "Stratified random sampling across repository, code presence, and comment length"
+  },
+  "sample_summary": {
+    "total_sampled_comments": 277,
+    "labeled_count": 185,
+    "labeled_ratio": 0.6679,
+    "non_technical_count": 14,
+    "ambiguous_count": 75,
+    "insufficient_context_count": 3,
+    "comments_with_multiple_labels": 62,
+    "multi_label_ratio": 0.3351,
+    "average_labels_per_labeled_comment": 1.335
+  },
+  "category_distribution": {
+    "ARCH_DESIGN": {
+      "category_id": "ARCH_DESIGN",
+      "label_count": 3,
+      "percentage_of_labeled": 0.0162,
+      "repositories_represented": 3,
+      "reviewers_represented": 3,
+      "min_comment_length": 153,
+      "max_comment_length": 576,
+      "mean_comment_length": 431.3,
+      "support_level": "low",
+      "recommendation": "low_support_combine_or_evaluate_in_phase_5b",
+      "representative_examples": [
+        {
+          "comment_id": 4076983691,
+          "repository": "flutter/flutter",
+          "text": "Is there any risk that we might need to add additional arguments to this callback? If yes, consider switching to the \"info struct\" pattern where we move the cal..."
+        },
+        {
+          "comment_id": 3551062853,
+          "repository": "kubernetes/kubernetes",
+          "text": "Done. Added `AllowPodPIDLimit` to `PodValidationOptions`, following the same pattern as `AllowSidecarResizePolicy` and `AllowContainerRestartPolicyRules`"
+        },
+        {
+          "comment_id": 4087311063,
+          "repository": "microsoft/vscode",
+          "text": "The cmd.exe branch cannot uphold the documented \u201csingle, literal argument\u201d contract: it silently deletes valid double quotes, and `%NAME%` (plus `!NAME!` when d..."
+        }
+      ]
+    },
+    "BUG_LOGIC": {
+      "category_id": "BUG_LOGIC",
+      "label_count": 74,
+      "percentage_of_labeled": 0.4,
+      "repositories_represented": 7,
+      "reviewers_represented": 46,
+      "min_comment_length": 16,
+      "max_comment_length": 1868,
+      "mean_comment_length": 365.6,
+      "support_level": "adequate",
+      "recommendation": "sufficient_support",
+      "representative_examples": [
+        {
+          "comment_id": 4071637615,
+          "repository": "apache/spark",
+          "text": "Thanks @peter-toth! Direction agreed, and it wants its own ticket rather than this PR: `KeyLayout` is master and branch-4.x only, while the repair here should r..."
+        },
+        {
+          "comment_id": 4040188726,
+          "repository": "elastic/elasticsearch",
+          "text": "The scorer is run after the whole `WHERE` filter, and compound conditions score both branches for every row that survived the combined condition. Thus `WHERE KN..."
+        },
+        {
+          "comment_id": 4040188823,
+          "repository": "elastic/elasticsearch",
+          "text": "`isRuntimeSearch()` is not equivalent to \u201cthe first argument is a non-index-mapped expression\u201d: `fieldAsFieldAttribute` unwraps `AbstractConvertFunction`, so an..."
+        }
+      ]
+    },
+    "CODE_STYLE": {
+      "category_id": "CODE_STYLE",
+      "label_count": 28,
+      "percentage_of_labeled": 0.1514,
+      "repositories_represented": 7,
+      "reviewers_represented": 20,
+      "min_comment_length": 16,
+      "max_comment_length": 1868,
+      "mean_comment_length": 395.5,
+      "support_level": "adequate",
+      "recommendation": "sufficient_support",
+      "representative_examples": [
+        {
+          "comment_id": 3906087693,
+          "repository": "apache/spark",
+          "text": "Please remove the unnecessary whitespace only change."
+        },
+        {
+          "comment_id": 4085063382,
+          "repository": "apache/spark",
+          "text": "**Nit (P3):** This is not quite the same question as `compatibleAsIs`. Here, `reportedSpecOf` may relabel a grouped `[a, b]` member for an `[a]` distribution wh..."
+        },
+        {
+          "comment_id": 4040188726,
+          "repository": "elastic/elasticsearch",
+          "text": "The scorer is run after the whole `WHERE` filter, and compound conditions score both branches for every row that survived the combined condition. Thus `WHERE KN..."
+        }
+      ]
+    },
+    "DATA_MANAGEMENT": {
+      "category_id": "DATA_MANAGEMENT",
+      "label_count": 8,
+      "percentage_of_labeled": 0.0432,
+      "repositories_represented": 3,
+      "reviewers_represented": 7,
+      "min_comment_length": 92,
+      "max_comment_length": 759,
+      "mean_comment_length": 385.8,
+      "support_level": "low",
+      "recommendation": "low_support_combine_or_evaluate_in_phase_5b",
+      "representative_examples": [
+        {
+          "comment_id": 4027733567,
+          "repository": "elastic/elasticsearch",
+          "text": "Gal's Minion \ud83e\udd16: Switched to this query. `_source` makes the missing `txt` on `nonexistent-1` visible in the table; the sibling-with-a-value failure stays in `29..."
+        },
+        {
+          "comment_id": 4046378053,
+          "repository": "elastic/elasticsearch",
+          "text": "all the queries are a match all? If fields don't get ignored then we can query it. For example prefix_query with this* should match here now that ignore above h..."
+        },
+        {
+          "comment_id": 4080675318,
+          "repository": "elastic/elasticsearch",
+          "text": "The `mapper` parameter is now entirely bypassed for `sourcePath`. Before this patch, `mapper.opaque(sourcePath)` ensured that `AnonymizationContext.location()` ..."
+        }
+      ]
+    },
+    "DOCUMENTATION": {
+      "category_id": "DOCUMENTATION",
+      "label_count": 22,
+      "percentage_of_labeled": 0.1189,
+      "repositories_represented": 6,
+      "reviewers_represented": 19,
+      "min_comment_length": 16,
+      "max_comment_length": 683,
+      "mean_comment_length": 275.7,
+      "support_level": "adequate",
+      "recommendation": "sufficient_support",
+      "representative_examples": [
+        {
+          "comment_id": 4016402874,
+          "repository": "elastic/elasticsearch",
+          "text": "Why is this relevant?\nTesting this the other way around `FROM (FROM partial_mapping_sample_data), (FROM no_mapping_sample_data | KEEP event_duration)` has the s..."
+        },
+        {
+          "comment_id": 4079421055,
+          "repository": "elastic/elasticsearch",
+          "text": "This might be overkill, as far as I know we don't have any deciders that return `NOT_PREFERRED` from `AllocationDecider#canForceAllocateDuringReplace`, but ther..."
+        },
+        {
+          "comment_id": 4082477697,
+          "repository": "elastic/elasticsearch",
+          "text": "I think the new Javadoc should result in the old comment above being moved back to `columnarCodec`, which it documents."
+        }
+      ]
+    },
+    "FRONTEND_UI_UX": {
+      "category_id": "FRONTEND_UI_UX",
+      "label_count": 20,
+      "percentage_of_labeled": 0.1081,
+      "repositories_represented": 6,
+      "reviewers_represented": 16,
+      "min_comment_length": 129,
+      "max_comment_length": 3209,
+      "mean_comment_length": 642.7,
+      "support_level": "adequate",
+      "recommendation": "sufficient_support",
+      "representative_examples": [
+        {
+          "comment_id": 4081501195,
+          "repository": "apache/spark",
+          "text": "Thanks @cloud-fan! Restored in f95e44a9f42. The pairing is asked of every multi-child clustered operator again, which is what the base did, and only the ungroup..."
+        },
+        {
+          "comment_id": 4081501527,
+          "repository": "apache/spark",
+          "text": "Thanks @cloud-fan! Reworded in f95e44a9f42: the failure is stated against the base now, \"on the base a storage-partitioned join whose sides are aligned but not ..."
+        },
+        {
+          "comment_id": 4064124922,
+          "repository": "elastic/elasticsearch",
+          "text": "**[Security] `user == null` fails open (returns `true`) \u2014 contradicts fail-closed contract**\n\n`securityContext.getUser()` can return `null` when `reinstateLocat..."
+        }
+      ]
+    },
+    "INFRA_DEVOPS": {
+      "category_id": "INFRA_DEVOPS",
+      "label_count": 21,
+      "percentage_of_labeled": 0.1135,
+      "repositories_represented": 7,
+      "reviewers_represented": 18,
+      "min_comment_length": 126,
+      "max_comment_length": 3209,
+      "mean_comment_length": 708.7,
+      "support_level": "adequate",
+      "recommendation": "sufficient_support",
+      "representative_examples": [
+        {
+          "comment_id": 4071637975,
+          "repository": "apache/spark",
+          "text": "Thanks @peter-toth! Both corrected in ce59a03fc24. The helper's doc states the two things the planner does and it deliberately does not, since they build a layo..."
+        },
+        {
+          "comment_id": 3893131437,
+          "repository": "elastic/elasticsearch",
+          "text": "I'm happy to fold this in, or build on top of #157290. However, we do need this for any native lib we ship - parquet-rs, esql."
+        },
+        {
+          "comment_id": 3893442574,
+          "repository": "elastic/elasticsearch",
+          "text": "Yeah, it's kind of a pedantic check, prob best left to the publish step. However, I do find it useful as a post build step locally too. I built the library on o..."
+        }
+      ]
+    },
+    "PERF_OPTIMIZATION": {
+      "category_id": "PERF_OPTIMIZATION",
+      "label_count": 12,
+      "percentage_of_labeled": 0.0649,
+      "repositories_represented": 5,
+      "reviewers_represented": 10,
+      "min_comment_length": 139,
+      "max_comment_length": 1942,
+      "mean_comment_length": 792.2,
+      "support_level": "adequate",
+      "recommendation": "sufficient_support",
+      "representative_examples": [
+        {
+          "comment_id": 3893442574,
+          "repository": "elastic/elasticsearch",
+          "text": "Yeah, it's kind of a pedantic check, prob best left to the publish step. However, I do find it useful as a post build step locally too. I built the library on o..."
+        },
+        {
+          "comment_id": 3893615345,
+          "repository": "elastic/elasticsearch",
+          "text": "Mind you, the \"publish native lib\" plugin is actually the \"get the native library from somewhere, put it in the place the distribution/tests/benchmarks look for..."
+        },
+        {
+          "comment_id": 3913148189,
+          "repository": "facebook/react",
+          "text": "The test makes it impossible to check if the leak is in React because the app code is leaking the signal itself. What is the real-world scenario that reproduces..."
+        }
+      ]
+    },
+    "SECURITY_PRIVACY": {
+      "category_id": "SECURITY_PRIVACY",
+      "label_count": 8,
+      "percentage_of_labeled": 0.0432,
+      "repositories_represented": 5,
+      "reviewers_represented": 8,
+      "min_comment_length": 134,
+      "max_comment_length": 844,
+      "mean_comment_length": 481.5,
+      "support_level": "low",
+      "recommendation": "low_support_combine_or_evaluate_in_phase_5b",
+      "representative_examples": [
+        {
+          "comment_id": 4071637975,
+          "repository": "apache/spark",
+          "text": "Thanks @peter-toth! Both corrected in ce59a03fc24. The helper's doc states the two things the planner does and it deliberately does not, since they build a layo..."
+        },
+        {
+          "comment_id": 4064124922,
+          "repository": "elastic/elasticsearch",
+          "text": "**[Security] `user == null` fails open (returns `true`) \u2014 contradicts fail-closed contract**\n\n`securityContext.getUser()` can return `null` when `reinstateLocat..."
+        },
+        {
+          "comment_id": 4068245521,
+          "repository": "elastic/elasticsearch",
+          "text": "(Companion to the `PyTorchBuilder` note.) The isolation decision here adds a third condition - `Strings.isNullOrEmpty(jobId) == false` - that the `--requireSand..."
+        }
+      ]
+    },
+    "TESTING_QUALITY": {
+      "category_id": "TESTING_QUALITY",
+      "label_count": 51,
+      "percentage_of_labeled": 0.2757,
+      "repositories_represented": 7,
+      "reviewers_represented": 36,
+      "min_comment_length": 38,
+      "max_comment_length": 2053,
+      "mean_comment_length": 512.7,
+      "support_level": "adequate",
+      "recommendation": "sufficient_support",
+      "representative_examples": [
+        {
+          "comment_id": 4081501195,
+          "repository": "apache/spark",
+          "text": "Thanks @cloud-fan! Restored in f95e44a9f42. The pairing is asked of every multi-child clustered operator again, which is what the base did, and only the ungroup..."
+        },
+        {
+          "comment_id": 4085063382,
+          "repository": "apache/spark",
+          "text": "**Nit (P3):** This is not quite the same question as `compatibleAsIs`. Here, `reportedSpecOf` may relabel a grouped `[a, b]` member for an `[a]` distribution wh..."
+        },
+        {
+          "comment_id": 3893615345,
+          "repository": "elastic/elasticsearch",
+          "text": "Mind you, the \"publish native lib\" plugin is actually the \"get the native library from somewhere, put it in the place the distribution/tests/benchmarks look for..."
+        }
+      ]
+    }
+  },
+  "repository_sample_counts": {
+    "apache/spark": 6,
+    "elastic/elasticsearch": 49,
+    "facebook/react": 5,
+    "flutter/flutter": 76,
+    "kubernetes/kubernetes": 63,
+    "microsoft/vscode": 26,
+    "rails/rails": 17,
+    "scikit-learn/scikit-learn": 35
+  },
+  "reviewer_sample_counts": {
+    "unique_reviewers_sampled": 101,
+    "top_reviewers_in_sample": {
+      "Copilot": 21,
+      "vshkrabkov": 10,
+      "dkwingsmt": 9,
+      "gemini-code-assist[bot]": 8,
+      "cakedev0": 7,
+      "dcharkes": 6,
+      "BhargaviGudi": 6,
+      "pohly": 6,
+      "lorentzenchr": 6,
+      "astefan": 5
+    }
+  }
+}

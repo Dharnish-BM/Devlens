@@ -1,0 +1,186 @@
+{
+  "taxonomy_name": "GDERS Code Review Expertise Taxonomy",
+  "version": "1.0.0",
+  "phase": "Phase 5A - Taxonomy Validation",
+  "multi_label_policy": {
+    "supported": true,
+    "primary_rule": "Comments should primarily receive one primary category. A second category may be assigned only when a comment genuinely and substantially addresses distinct technical domains (e.g., both testing methodology and database concurrency).",
+    "noise_rule": "Non-technical comments, pure acknowledgments, or comments without technical feedback must receive 'non_technical' or 'insufficient_context' status rather than artificial expertise labels."
+  },
+  "categories": [
+    {
+      "id": "ARCH_DESIGN",
+      "name": "Architecture & Software Design",
+      "definition": "Feedback regarding module decoupling, design patterns, interface boundaries, component responsibilities, dependency injection, and overall code structure.",
+      "inclusion_criteria": [
+        "Discussions of interface/class hierarchy design",
+        "Encapsulation, coupling, and modularity suggestions",
+        "Refactoring to design patterns (e.g. factory, adapter, observer)",
+        "API contract structuring and domain model organization"
+      ],
+      "exclusion_criteria": [
+        "Minor syntax or variable renames without structural change (Code Style)",
+        "Database schema migrations without architectural redesign (Data Management)"
+      ],
+      "examples": [
+        "We should decouple this payment provider behind an interface rather than referencing the concrete class.",
+        "Consider splitting this 500-line controller into focused domain service handlers."
+      ]
+    },
+    {
+      "id": "TESTING_QUALITY",
+      "name": "Testing & Quality Assurance",
+      "definition": "Feedback concerning automated unit tests, integration tests, mock fixtures, edge cases, regression coverage, CI test assertions, and test harness setup.",
+      "inclusion_criteria": [
+        "Requests to add unit, integration, or regression tests",
+        "Feedback on assertions, test fixtures, mock objects, or test flakiness",
+        "Boundary condition and edge-case testing coverage"
+      ],
+      "exclusion_criteria": [
+        "CI/CD pipeline workflow YAML config without test logic (Infrastructure & DevOps)",
+        "General bug analysis without test verification guidance"
+      ],
+      "examples": [
+        "Please add a parameterized test verifying that negative IDs throw an InvalidArgumentException.",
+        "This mock returns null by default; make sure we assert the timeout behavior."
+      ]
+    },
+    {
+      "id": "PERF_OPTIMIZATION",
+      "name": "Performance & Optimization",
+      "definition": "Feedback targeting execution latency, algorithmic time/space complexity, memory allocation, caching strategies, resource leaks, and async concurrency throughput.",
+      "inclusion_criteria": [
+        "O(N) to O(1) lookup optimizations and data structure efficiency",
+        "Memory leak avoidance, heap allocation reductions, buffer reuse",
+        "Caching mechanisms, batch processing, and async execution efficiency"
+      ],
+      "exclusion_criteria": [
+        "Code readability improvements that do not affect runtime efficiency",
+        "Database indexing discussions specifically categorized under Data Management"
+      ],
+      "examples": [
+        "Using a HashSet here will reduce this lookup from O(N^2) to O(N).",
+        "Avoid allocating a new byte buffer on every incoming packet to prevent GC pressure."
+      ]
+    },
+    {
+      "id": "SECURITY_PRIVACY",
+      "name": "Security & Privacy",
+      "definition": "Feedback identifying vulnerabilities, injection attacks, improper authentication/authorization, cryptographic issues, token leaks, and input sanitization.",
+      "inclusion_criteria": [
+        "Input sanitization, XSS, SQL injection, and buffer overflow prevention",
+        "Authentication, authorization, JWT tokens, and credential management",
+        "Cryptographic best practices, secure random generation, CSRF protection"
+      ],
+      "exclusion_criteria": [
+        "General null check validation not tied to a security vector (Bug Fixing / Logic)"
+      ],
+      "examples": [
+        "This raw SQL query concatenates user input; use parameterized binding to prevent SQL injection.",
+        "Ensure the session token is marked HttpOnly and Secure."
+      ]
+    },
+    {
+      "id": "DATA_MANAGEMENT",
+      "name": "Data Management & Storage",
+      "definition": "Feedback concerning databases, SQL queries, ORM mapping, schema migrations, indexing, serialization/deserialization (JSON/protobuf), and transactional consistency.",
+      "inclusion_criteria": [
+        "Database queries, indexing, N+1 query prevention, ORM usage",
+        "Data schema migrations, column constraints, and foreign keys",
+        "Data serialization, schema validation, and persistence lifecycle"
+      ],
+      "exclusion_criteria": [
+        "In-memory caching without persistence layer interaction (Performance & Optimization)"
+      ],
+      "examples": [
+        "This query causes an N+1 select; please use `includes(:author)` to eager load records.",
+        "Add a unique index constraint on the `user_email` column in this migration."
+      ]
+    },
+    {
+      "id": "INFRA_DEVOPS",
+      "name": "Infrastructure & DevOps",
+      "definition": "Feedback regarding containerization (Docker), orchestration (Kubernetes), build systems, CI/CD workflows, deployment automation, monitoring, and environment configuration.",
+      "inclusion_criteria": [
+        "Kubernetes manifests, Helm charts, Dockerfiles, and container configs",
+        "GitHub Actions workflows, build scripts (Gradle/CMake/Bazel), and CI matrix",
+        "Logging, metrics, tracing, and telemetry setup"
+      ],
+      "exclusion_criteria": [
+        "Individual application unit test assertions (Testing & Quality Assurance)"
+      ],
+      "examples": [
+        "Update the Dockerfile multi-stage build to strip build dependencies from the final image.",
+        "Add a health check liveness probe to this Kubernetes deployment YAML."
+      ]
+    },
+    {
+      "id": "FRONTEND_UI_UX",
+      "name": "Frontend, UI & Client-Side",
+      "definition": "Feedback focused on user interface components, client-side rendering (React/Flutter/DOM), CSS styling, state management, animations, and accessibility.",
+      "inclusion_criteria": [
+        "Widget hierarchy, React hooks, component lifecycle, and DOM manipulation",
+        "Responsive styling, layout constraints, CSS/theme definitions",
+        "Accessibility (a11y), internationalization, and user input validation"
+      ],
+      "exclusion_criteria": [
+        "Backend API endpoints serving UI data (Backend / Server-Side)"
+      ],
+      "examples": [
+        "Wrap this heavy component in `React.memo` and use `useCallback` on the onClick handler.",
+        "Ensure this button has an `aria-label` attribute for screen reader accessibility."
+      ]
+    },
+    {
+      "id": "DOCUMENTATION",
+      "name": "Documentation & Readability",
+      "definition": "Feedback requesting docstrings, API reference documentation, README clarifications, comment explanations of complex algorithms, or error message clarity.",
+      "inclusion_criteria": [
+        "Docstrings, Javadoc, godoc, and parameter description improvements",
+        "README, migration guides, and developer documentation updates",
+        "Clarifying comments on obscure algorithmic logic or edge cases"
+      ],
+      "exclusion_criteria": [
+        "Formatting changes like line breaks or indentation (Code Style & Formatting)"
+      ],
+      "examples": [
+        "Please document what exception this method throws when the network times out in the docstring.",
+        "Add a brief comment explaining why we bitwise shift by 4 here."
+      ]
+    },
+    {
+      "id": "CODE_STYLE",
+      "name": "Code Style & Formatting",
+      "definition": "Feedback on code conventions, naming rules, formatting, idiomatic language idioms, linter warnings, dead code removal, and stylistic consistency.",
+      "inclusion_criteria": [
+        "Variable/function naming conventions and casing (camelCase vs snake_case)",
+        "Indentation, line length, import ordering, and formatting compliance",
+        "Dead/unreachable code cleanup and trivial syntactic sugar"
+      ],
+      "exclusion_criteria": [
+        "Substantive algorithmic refactoring (Architecture & Software Design)"
+      ],
+      "examples": [
+        "Nit: rename `usr_mgr` to `userManager` to follow repository naming guidelines.",
+        "Sort these imports alphabetically and remove the unused `os` import."
+      ]
+    },
+    {
+      "id": "BUG_LOGIC",
+      "name": "Bug Fixing & Algorithmic Logic",
+      "definition": "Feedback detecting logical flaws, off-by-one errors, unhandled null/nil pointers, incorrect return values, race conditions, or faulty control flow.",
+      "inclusion_criteria": [
+        "Null/nil dereference warnings and unhandled edge case branches",
+        "Off-by-one errors, infinite loops, and broken conditionals",
+        "Incorrect error propagation and unhandled exceptions"
+      ],
+      "exclusion_criteria": [
+        "Broad architectural restructuring without explicit bug resolution"
+      ],
+      "examples": [
+        "If `user` is nil here, this line will panic. Please add a nil check before accessing `.ID`.",
+        "The loop index should be `<=` rather than `<` to include the final buffer chunk."
+      ]
+    }
+  ]
+}

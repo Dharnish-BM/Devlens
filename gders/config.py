@@ -69,6 +69,30 @@ class GDERSConfig:
     preprocessing_report_file: Optional[Path] = None
     preprocessing_log_file: Optional[Path] = None
 
+    # Phase 5A Taxonomy & Annotation Paths
+    taxonomy_file: Optional[Path] = None
+    annotation_guidelines_file: Optional[Path] = None
+    annotation_sample_file: Optional[Path] = None
+    annotation_report_file: Optional[Path] = None
+    annotation_log_file: Optional[Path] = None
+
+    # Phase 5B Modeling & Experiment Paths
+    model_comparison_json_file: Optional[Path] = None
+    model_comparison_md_file: Optional[Path] = None
+    error_analysis_file: Optional[Path] = None
+    experiment_manifest_file: Optional[Path] = None
+
+    # Phase 5C Targeted Annotation & Expansion Paths
+    targeted_annotation_sample_file: Optional[Path] = None
+    expanded_gold_dataset_file: Optional[Path] = None
+    annotation_expansion_report_file: Optional[Path] = None
+    phase5_comparison_file: Optional[Path] = None
+
+    # Phase 6 Inference & Developer Expertise Profiles Paths
+    comment_predictions_file: Optional[Path] = None
+    developer_expertise_profiles_file: Optional[Path] = None
+    expertise_profile_report_file: Optional[Path] = None
+
     def __post_init__(self):
         if self.raw_comments_dir is None:
             self.raw_comments_dir = self.base_data_dir / "raw_comments"
@@ -96,6 +120,38 @@ class GDERSConfig:
             self.preprocessing_report_file = self.processed_dir / "preprocessing_report.json"
         if self.preprocessing_log_file is None:
             self.preprocessing_log_file = self.processed_dir / "preprocessing.log"
+        if self.taxonomy_file is None:
+            self.taxonomy_file = self.processed_dir / "taxonomy.json"
+        if self.annotation_guidelines_file is None:
+            self.annotation_guidelines_file = self.processed_dir / "annotation_guidelines.md"
+        if self.annotation_sample_file is None:
+            self.annotation_sample_file = self.processed_dir / "annotation_sample.jsonl"
+        if self.annotation_report_file is None:
+            self.annotation_report_file = self.processed_dir / "annotation_report.json"
+        if self.annotation_log_file is None:
+            self.annotation_log_file = self.processed_dir / "annotation.log"
+        if self.model_comparison_json_file is None:
+            self.model_comparison_json_file = self.processed_dir / "model_comparison.json"
+        if self.model_comparison_md_file is None:
+            self.model_comparison_md_file = self.processed_dir / "model_comparison.md"
+        if self.error_analysis_file is None:
+            self.error_analysis_file = self.processed_dir / "error_analysis.jsonl"
+        if self.experiment_manifest_file is None:
+            self.experiment_manifest_file = self.processed_dir / "experiment_manifest.json"
+        if self.targeted_annotation_sample_file is None:
+            self.targeted_annotation_sample_file = self.processed_dir / "targeted_annotation_sample.jsonl"
+        if self.expanded_gold_dataset_file is None:
+            self.expanded_gold_dataset_file = self.processed_dir / "expanded_gold_dataset.jsonl"
+        if self.annotation_expansion_report_file is None:
+            self.annotation_expansion_report_file = self.processed_dir / "annotation_expansion_report.json"
+        if self.phase5_comparison_file is None:
+            self.phase5_comparison_file = self.processed_dir / "phase5_comparison.json"
+        if self.comment_predictions_file is None:
+            self.comment_predictions_file = self.processed_dir / "comment_predictions.jsonl"
+        if self.developer_expertise_profiles_file is None:
+            self.developer_expertise_profiles_file = self.processed_dir / "developer_expertise_profiles.jsonl"
+        if self.expertise_profile_report_file is None:
+            self.expertise_profile_report_file = self.processed_dir / "expertise_profile_report.json"
 
     # Target repository list
     target_repositories: List[TargetRepository] = field(

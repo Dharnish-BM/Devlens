@@ -33,7 +33,17 @@ def build_parser() -> argparse.ArgumentParser:
     preprocess_parser = subparsers.add_parser("preprocess", help="Run NLP text normalization on collected raw comments")
     preprocess_parser.add_argument("--input-file", type=str, default=None, help="Specific JSONL comment file")
 
-    # 4. train
+    # 4. annotate
+    annotate_parser = subparsers.add_parser("annotate", help="Generate stratified gold annotation sample and validation report")
+    annotate_parser.add_argument("--sample-size", type=int, default=275, help="Target sample size")
+    annotate_parser.add_argument("--seed", type=int, default=42, help="Random seed for deterministic sampling")
+
+    # 4b. expand-annotation (Phase 5C)
+    expand_parser = subparsers.add_parser("expand-annotation", help="Run Phase 5C targeted annotation expansion and comparative evaluation")
+    expand_parser.add_argument("--target-per-category", type=int, default=40, help="Target comments per low-support category")
+    expand_parser.add_argument("--seed", type=int, default=42, help="Random seed for deterministic candidate selection")
+
+    # 5. train
     train_parser = subparsers.add_parser("train", help="Train comment classifier on categorized review dataset")
 
     # 5. build-profiles
@@ -103,8 +113,61 @@ def main(args: Optional[List[str]] = None) -> int:
         print(f"[GDERS CLI] Preprocessing report saved to {DEFAULT_CONFIG.preprocessing_report_file}")
         return 0
 
-    elif parsed_args.command in ("train", "build-profiles", "recommend"):
-        print(f"[GDERS CLI] Command '{parsed_args.command}' interface ready (execution deferred to subsequent phases).")
+    elif parsed_args.command == "annotate":
+        from gders.data.annotation_manager import GDERSAnnotationManager
+        manager = GDERSAnnotationManager()
+        print("[GDERS CLI] Running Phase 5A Stratified Gold Annotation Pipeline...")
+        gold_records, report = manager.run_gold_dataset_pipeline()
+        print(f"[GDERS CLI] Annotation sample generated with {len(gold_records)} comments.")
+        print(f"[GDERS CLI] Report saved to {DEFAULT_CONFIG.annotation_report_file}")
+        return 0
+
+    elif parsed_args.command == "expand-annotation":
+        from gders.data.targeted_annotator import GDERSTargetedAnnotator
+        from gders.evaluation.experiment_runner import GDERSExperimentRunner
+        annotator = GDERSTargetedAnnotator()
+        print("[GDERS CLI] Running Phase 5C Targeted Annotation Expansion Pipeline...")
+        exp_report = annotator.run_annotation_expansion_pipeline(
+            target_per_category=parsed_args.target_per_category,
+            random_seed=parsed_args.seed,
+        )
+        print(f"[GDERS CLI] Expanded dataset created with {exp_report['expanded_dataset_summary']['total_expanded_labeled_comments']} labeled comments.")
+        print(f"[GDERS CLI] Expansion report saved to {DEFAULT_CONFIG.annotation_expansion_report_file}")
+
+        print("[GDERS CLI] Running Phase 5C Comparative Evaluation...")
+        runner = GDERSExperimentRunner()
+        comp = runner.run_phase5c_comparative_experiment()
+        print(f"[GDERS CLI] Phase 5B vs 5C Comparison saved to {DEFAULT_CONFIG.phase5_comparison_file}")
+        return 0
+
+    elif parsed_args.command == "train":
+        from gders.evaluation.experiment_runner import GDERSExperimentRunner
+        runner = GDERSExperimentRunner()
+        print("[GDERS CLI] Running Phase 5B Multi-Label Classification & Model Comparison Experiments...")
+        results = runner.run_all_experiments()
+        print(f"[GDERS CLI] Experiments completed across {results['dataset_summary']['total_labeled_comments']} labeled comments.")
+        print(f"[GDERS CLI] Comparison JSON saved to {DEFAULT_CONFIG.model_comparison_json_file}")
+        print(f"[GDERS CLI] Comparison Markdown saved to {DEFAULT_CONFIG.model_comparison_md_file}")
+        return 0
+
+    elif parsed_args.command == "build-profiles":
+        from gders.models.inference_engine import GDERSInferenceEngine
+        from gders.models.profile_builder import ProfileBuilder
+        print("[GDERS CLI] Running Phase 6A Full-Corpus Comment Expertise Inference...")
+        engine = GDERSInferenceEngine()
+        predictions, inf_summary = engine.run_full_corpus_inference()
+        print(f"[GDERS CLI] Inference complete across {len(predictions)} comments. Predictions saved to {DEFAULT_CONFIG.comment_predictions_file}")
+
+        print("[GDERS CLI] Running Phase 6B Developer Expertise Profile Builder...")
+        builder = ProfileBuilder()
+        profiles, prof_report = builder.build_all_developer_profiles()
+        print(f"[GDERS CLI] Generated {len(profiles)} developer expertise profiles ({prof_report['profile_summary']['reviewers_with_sufficient_evidence']} with sufficient evidence).")
+        print(f"[GDERS CLI] Profiles saved to {DEFAULT_CONFIG.developer_expertise_profiles_file}")
+        print(f"[GDERS CLI] Profile validation report saved to {DEFAULT_CONFIG.expertise_profile_report_file}")
+        return 0
+
+    elif parsed_args.command == "recommend":
+        print(f"[GDERS CLI] Command 'recommend' interface ready (execution deferred to Phase 7).")
         return 0
 
     return 0
