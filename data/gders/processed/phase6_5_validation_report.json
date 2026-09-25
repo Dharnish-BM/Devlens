@@ -1,0 +1,75 @@
+{
+  "phase": "Phase 6.5 \u2014 Final Validation Gate Before Recommendation Engine",
+  "timestamp": "2026-09-25T16:12:09Z",
+  "status": "PHASE 7 CLEARED",
+  "confidence_terminology_audit": {
+    "classifier_type": "LinearSVC (One-vs-Rest)",
+    "score_type": "Decision function signed distance to margin (NOT calibrated probabilities)",
+    "thresholds": {
+      "high_confidence": "max(score) >= 0.25",
+      "medium_confidence": "0.00 <= max(score) < 0.25",
+      "low_confidence": "-0.30 <= max(score) < 0.00",
+      "abstained": "max(score) < -0.30"
+    },
+    "methodological_note": "Thresholds represent decision-margin geometric boundaries chosen via validation margin inspection. They are not probabilistic calibrations."
+  },
+  "data_leakage_verification": {
+    "total_corpus_comments": 1225,
+    "gold_comments_count": 341,
+    "inferred_comments_count": 884,
+    "overlap_count": 0,
+    "is_disjoint": true,
+    "is_exact_corpus_cover": true,
+    "status": "PASSED"
+  },
+  "comment_traceability_verification": {
+    "total_profile_comment_references": 1323,
+    "missing_comment_references": 0,
+    "reviewer_identity_mismatches": 0,
+    "status": "PASSED"
+  },
+  "evidence_scoring_sensitivity_analysis": {
+    "scheme_a_full_profile_view": {
+      "description": "Includes all evidence (Gold=1.0, High=0.7, Med=0.4, Low=0.1)",
+      "eligible_reviewers": 71,
+      "eligible_category_profiles": 140,
+      "tier_distribution": {
+        "insufficient_evidence": 1134,
+        "emerging_evidence": 236,
+        "supported_evidence": 107,
+        "strong_evidence": 33
+      }
+    },
+    "scheme_b_recommendation_eligible": {
+      "description": "Excludes low-confidence (Gold=1.0, High=0.7, Med=0.4, Low=0.0)",
+      "eligible_reviewers": 69,
+      "eligible_category_profiles": 136,
+      "tier_distribution": {
+        "insufficient_evidence": 1135,
+        "emerging_evidence": 239,
+        "supported_evidence": 105,
+        "strong_evidence": 31
+      }
+    },
+    "scheme_c_strict_gold_high_only": {
+      "description": "Strict high certainty only (Gold=1.0, High=0.7, Med=0.0, Low=0.0)",
+      "eligible_reviewers": 61,
+      "eligible_category_profiles": 121,
+      "tier_distribution": {
+        "insufficient_evidence": 1140,
+        "emerging_evidence": 249,
+        "supported_evidence": 93,
+        "strong_evidence": 28
+      }
+    },
+    "low_confidence_materiality_finding": "Low-confidence predictions shift only 2 reviewers (71 -> 69) and 4 category profiles (140 -> 136). No sparse reviewer becomes strongly supported primarily through low-confidence noise."
+  },
+  "recommendation_eligibility_contract": {
+    "gold_evidence": "Eligible (weight=1.0)",
+    "high_confidence_pred": "Eligible (weight=0.70)",
+    "medium_confidence_pred": "Eligible with reduced weight (weight=0.40)",
+    "low_confidence_pred": "Audit-only (weight=0.0 for recommendation eligibility)",
+    "abstained_pred": "Audit-only (weight=0.0)"
+  },
+  "gate_decision": "PHASE 7 CLEARED"
+}

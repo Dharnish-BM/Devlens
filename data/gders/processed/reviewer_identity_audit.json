@@ -1,0 +1,1827 @@
+{
+  "phase": "Phase 7A.5 \u2014 Reviewer Identity Audit",
+  "timestamp": "2026-09-25T16:12:15Z",
+  "total_reviewer_identities": 151,
+  "identity_class_breakdown": {
+    "human_candidate": 149,
+    "bot_or_service_account": 2,
+    "uncertain": 0
+  },
+  "recommendation_identity_eligible_count": 149,
+  "reviewers": [
+    {
+      "github_login": "6democratickim9",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "AP1493",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "AnneBeyer",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 6,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "Argh4k",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "AutuSnow",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "BhargaviGudi",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 15,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "ChakshuGupta13",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "ChrisHegarty",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "Chunxia202410",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 8,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "Copilot",
+      "identity_class": "bot_or_service_account",
+      "evidence_signals": [
+        "GitHub login 'Copilot' matches known automated service/AI account"
+      ],
+      "recommendation_candidate_eligible": false,
+      "total_comments_in_corpus": 103,
+      "distinct_repositories": [
+        "elastic/elasticsearch",
+        "kubernetes/kubernetes",
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "GalLalouche",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 23,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "HirazawaUi",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 11,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "Jefftree",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "KevinCorcoran",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "LongCatIsLooong",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "LouisKottmann",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "MTtankkeo",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "MaxwellCohen",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "facebook/react"
+      ]
+    },
+    {
+      "github_login": "OchukoWH",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 10,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "OmarManzoor",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 12,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "Rajalakshmi-Girish",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "Renzo-Olivares",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 42,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "RohithPariki",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "SergeyKanzhelev",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 12,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "StefanieSenger",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "TonyBagnall",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "adam2392",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 11,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "adrinjalali",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "akostadinov",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "andywolff",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 12,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "antcybersec",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "antoinebaker",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 18,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "aojea",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "apinilabs-pascal",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "arianf",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "astefan",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 27,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "augustocbx",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "ayushn21",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 20,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "b-luk",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 11,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "betatim",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "bhavyaus",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 6,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "brejman",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "byroot",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "cakedev0",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 16,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "chryw",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "chunhtai",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 6,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "cloud-fan",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 8,
+      "distinct_repositories": [
+        "apache/spark"
+      ]
+    },
+    {
+      "github_login": "cmozaiq-saas",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "danwinship",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "davidcanington18-ctrl",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "facebook/react"
+      ]
+    },
+    {
+      "github_login": "dcharkes",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 7,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "dkobak",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "dkwingsmt",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 20,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "dmitrivMS",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 7,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "dnhatn",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "dom4ha",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "ebarlas",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "edsavage",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "eliotsykes",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 11,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "eps1lon",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "facebook/react"
+      ]
+    },
+    {
+      "github_login": "esotsal",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 14,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "everettraven",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "fagnerpereira",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 8,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "fariadepaula",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "ffromani",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "flar",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "gaaclarke",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 12,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "gemini-code-assist[bot]",
+      "identity_class": "bot_or_service_account",
+      "evidence_signals": [
+        "GitHub login ends with explicit '[bot]' suffix"
+      ],
+      "recommendation_candidate_eligible": false,
+      "total_comments_in_corpus": 53,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "gxolivei",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 7,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "haashem",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "haircommander",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "harche",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 12,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "harryterkelsen",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "insumity",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 6,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "iomarsayed",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 11,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "jeremiedbb",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 10,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "jfreden",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 9,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "jimczi",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 18,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "jmc-9304",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 6,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "joelhawksley",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "jordan-powers",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "joshua-adams-1",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 8,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "jruales",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "jtmcdole",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "junnncct1106",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "justinmc",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 13,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "justschen",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "kannon92",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "kevmoo",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 15,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "kingherc",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "kirs",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "knopp",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 7,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "larsoner",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "ldematte",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "liggitt",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "littleGnAl",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 16,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "lkts",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "loic-sharma",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "lorentzenchr",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 44,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "luigidellaquila",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 19,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "lukaszwojciechowski",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "macsko",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "marcoroth",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 7,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "martijnvg",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 6,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "mattkae",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "mhl-b",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "mimowo",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "mm4tt",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "nandan2003",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "neolit123",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 8,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "ngopalak-redhat",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "nicktindall",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 8,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "nicolinx",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 22,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "ogrisel",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 16,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "p0lyn0mial",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "p8",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    },
+    {
+      "github_login": "pacoxu",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "parkertimmins",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "peter-toth",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "apache/spark"
+      ]
+    },
+    {
+      "github_login": "pohly",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 22,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "ponharu",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "facebook/react"
+      ]
+    },
+    {
+      "github_login": "rjernst",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 6,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "roblourens",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "s-urbaniak",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "salvatore-campagna",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 11,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "samubenu",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 25,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "santhoshsathish94",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "facebook/react"
+      ]
+    },
+    {
+      "github_login": "saurabh-mirajkar",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 22,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "seanzatzdev",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "serathius",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 12,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "shainaraskas",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "shikharish",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "spacexm406-web",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "microsoft/vscode"
+      ]
+    },
+    {
+      "github_login": "suojae",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 2,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "swallez",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 22,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "tallclair",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 6,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "tdcmeehan",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "apache/spark"
+      ]
+    },
+    {
+      "github_login": "tenzen-y",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 1,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "tguerin",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "tosi3k",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 9,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "ulysses-you",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 13,
+      "distinct_repositories": [
+        "apache/spark"
+      ]
+    },
+    {
+      "github_login": "vashworth",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 10,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "victorsanni",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 17,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "virchan",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "scikit-learn/scikit-learn"
+      ]
+    },
+    {
+      "github_login": "vshkrabkov",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 35,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "walley892",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "wojtek-t",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "xiaowei-guan",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 18,
+      "distinct_repositories": [
+        "flutter/flutter"
+      ]
+    },
+    {
+      "github_login": "yong-jie-gong",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 4,
+      "distinct_repositories": [
+        "kubernetes/kubernetes"
+      ]
+    },
+    {
+      "github_login": "ywangd",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 3,
+      "distinct_repositories": [
+        "elastic/elasticsearch"
+      ]
+    },
+    {
+      "github_login": "zzak",
+      "identity_class": "human_candidate",
+      "evidence_signals": [
+        "Deterministic login syntax conforms to human developer profile without bot markers"
+      ],
+      "recommendation_candidate_eligible": true,
+      "total_comments_in_corpus": 5,
+      "distinct_repositories": [
+        "rails/rails"
+      ]
+    }
+  ]
+}

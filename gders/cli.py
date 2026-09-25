@@ -49,10 +49,21 @@ def build_parser() -> argparse.ArgumentParser:
     # 5. build-profiles
     profile_parser = subparsers.add_parser("build-profiles", help="Generate developer expertise profiles")
 
-    # 6. recommend
+    # 5b. validate-gate (Phase 6.5)
+    validate_parser = subparsers.add_parser("validate-gate", help="Run Phase 6.5 validation gate and methodological audit")
+
+    # 5c. validate-identity (Phase 7A.5)
+    identity_parser = subparsers.add_parser("validate-identity", help="Run Phase 7A.5 candidate identity audit and validation gate")
+
+    # 5d. evaluate-benchmark (Phase 7B)
+    eval_parser = subparsers.add_parser("evaluate-benchmark", help="Run Phase 7B recommendation benchmark evaluation suite")
+
+    # 6. recommend (Phase 7A)
     recommend_parser = subparsers.add_parser("recommend", help="Generate developer recommendations for a requirement")
+    recommend_parser.add_argument("--query", "-q", type=str, required=False, help="Target expertise query (category or natural language)")
     recommend_parser.add_argument("--category", type=str, required=False, help="Target expertise category")
     recommend_parser.add_argument("--top-k", type=int, default=5, help="Number of developers to recommend")
+    recommend_parser.add_argument("--report", action="store_true", help="Generate full recommendation engine audit report")
 
     return parser
 
@@ -166,8 +177,92 @@ def main(args: Optional[List[str]] = None) -> int:
         print(f"[GDERS CLI] Profile validation report saved to {DEFAULT_CONFIG.expertise_profile_report_file}")
         return 0
 
+    elif parsed_args.command == "validate-gate":
+        from gders.evaluation.validation_gate import Phase65ValidationGate
+        gate = Phase65ValidationGate()
+        print("[GDERS CLI] Running Phase 6.5 Methodological Validation Gate...")
+        report = gate.generate_phase6_5_report()
+        print(f"[GDERS CLI] Gate Status: {report['gate_decision']}")
+        print(f"[GDERS CLI] JSON Report saved to {DEFAULT_CONFIG.phase6_5_validation_report_file}")
+        print(f"[GDERS CLI] Markdown Report saved to {DEFAULT_CONFIG.phase6_5_validation_report_md_file}")
+        return 0
+
+    elif parsed_args.command == "validate-identity":
+        from gders.evaluation.identity_auditor import IdentityAuditor
+        print("[GDERS CLI] Executing Phase 7A.5 Candidate Identity & Recommendation Validation Gate...")
+        auditor = IdentityAuditor()
+        report, verdict = auditor.run_validation_gate()
+        print(f"\n[GDERS CLI] Phase 7A.5 Validation Gate Verdict: {verdict}")
+        print(f"[GDERS CLI] Reviewer Identity Audit saved to {DEFAULT_CONFIG.reviewer_identity_audit_file}")
+        print(f"[GDERS CLI] JSON Validation Report saved to {DEFAULT_CONFIG.phase7a5_validation_report_file}")
+        print(f"[GDERS CLI] Markdown Validation Report saved to {DEFAULT_CONFIG.phase7a5_validation_report_md_file}")
+        return 0 if "CLEARED" in verdict else 1
+
+    elif parsed_args.command == "evaluate-benchmark":
+        from gders.evaluation.benchmark import GDERSBenchmark
+        print("[GDERS CLI] Running Phase 7B Recommendation Benchmark Evaluation Suite...")
+        bench = GDERSBenchmark()
+        results = bench.run_full_benchmark_suite()
+        overall = results["gders_full_system"]["overall"]
+        print("\n" + "=" * 70)
+        print(" GDERS Phase 7B Recommendation Benchmark Results")
+        print("=" * 70)
+        print(f" Total Evaluated Queries : {overall['query_count']}")
+        print(f" Precision@1             : {overall['Precision@1']['mean']:.4f} (±{overall['Precision@1']['std']:.4f})")
+        print(f" Precision@3             : {overall['Precision@3']['mean']:.4f} (±{overall['Precision@3']['std']:.4f})")
+        print(f" Precision@5             : {overall['Precision@5']['mean']:.4f} (±{overall['Precision@5']['std']:.4f})")
+        print(f" Recall@1                : {overall['Recall@1']['mean']:.4f} (±{overall['Recall@1']['std']:.4f})")
+        print(f" Recall@3                : {overall['Recall@3']['mean']:.4f} (±{overall['Recall@3']['std']:.4f})")
+        print(f" Recall@5                : {overall['Recall@5']['mean']:.4f} (±{overall['Recall@5']['std']:.4f})")
+        print(f" MRR                     : {overall['MRR']['mean']:.4f} (±{overall['MRR']['std']:.4f})")
+        print(f" nDCG@5                  : {overall['nDCG@5']['mean']:.4f} (±{overall['nDCG@5']['std']:.4f})")
+        print("-" * 70)
+        print(f"[GDERS CLI] Benchmark dataset saved to {DEFAULT_CONFIG.benchmark_dataset_file}")
+        print(f"[GDERS CLI] Benchmark results saved to {DEFAULT_CONFIG.benchmark_results_file}")
+        print(f"[GDERS CLI] Benchmark Markdown report saved to {DEFAULT_CONFIG.benchmark_report_md_file}")
+        print(f"[GDERS CLI] Benchmark leakage audit saved to {DEFAULT_CONFIG.benchmark_leakage_audit_file}")
+        print("=" * 70)
+        return 0
+
     elif parsed_args.command == "recommend":
-        print(f"[GDERS CLI] Command 'recommend' interface ready (execution deferred to Phase 7).")
+        from gders.models.recommender import GDERSRecommender
+        recommender = GDERSRecommender()
+
+        if parsed_args.report:
+            print("[GDERS CLI] Generating Recommendation Engine Audit Report...")
+            report = recommender.generate_recommendation_engine_report()
+            print(f"[GDERS CLI] Recommendation report saved to {DEFAULT_CONFIG.recommendation_engine_report_file}")
+            return 0
+
+        target_query = parsed_args.query or parsed_args.category
+        if not target_query:
+            print("[GDERS CLI] Please specify an expertise query via --query or --category (or run with --report).")
+            return 1
+
+        top_k = parsed_args.top_k or 5
+        print(f"[GDERS CLI] Matching candidates for expertise requirement: '{target_query}' (top_k={top_k})...")
+        resp = recommender.recommend(target_query, top_k=top_k)
+
+        print("\n" + "=" * 70)
+        print(f" GDERS Candidate Recommendations (Status: {resp.status})")
+        print("=" * 70)
+        print(f" Query               : {resp.query}")
+        print(f" Matched Categories  : {', '.join(resp.matched_categories) if resp.matched_categories else 'None'}")
+        print(f" Total Eligible Found: {resp.total_candidates_found}")
+        print("-" * 70)
+
+        if not resp.candidates:
+            print(" No recommendation-eligible candidates found matching the query criteria.")
+        else:
+            for rank, cand in enumerate(resp.candidates, start=1):
+                print(f" #{rank} Developer: @{cand.username} (Score: {cand.recommendation_score:.3f}, Tier: {cand.evidence_tier})")
+                print(f"    Categories: {', '.join(cand.matched_categories)}")
+                print(f"    Evidence  : {cand.gold_count} gold, {cand.high_confidence_count} high-conf, {cand.medium_confidence_count} med-conf comments")
+                print(f"    Coverage  : {cand.distinct_prs} PRs across {cand.distinct_repositories} repos: {', '.join(cand.repositories)}")
+                print(f"    Explanation: {cand.explanation}")
+                print(f"    Comment IDs: {cand.supporting_comment_ids[:6]}")
+                print()
+        print("=" * 70)
         return 0
 
     return 0

@@ -1,0 +1,271 @@
+{
+  "phase": "Phase 7A.5 \u2014 Candidate Identity & Recommendation Validation Gate",
+  "timestamp": "2026-09-25T16:12:15Z",
+  "reviewer_identity_summary": {
+    "total_reviewer_identities": 151,
+    "human_candidates": 149,
+    "bot_or_service_accounts": 2,
+    "uncertain_identities": 0,
+    "bot_accounts_identified": [
+      "Copilot",
+      "gemini-code-assist[bot]"
+    ]
+  },
+  "candidate_pool_audit": {
+    "recommendation_candidates_before_identity_filtering": 69,
+    "recommendation_candidates_after_identity_filtering": 67,
+    "excluded_bot_candidates_with_expertise_evidence": 2
+  },
+  "identity_classification_methodology": {
+    "human_candidate_criteria": "Deterministic GitHub login without bot markers or automated service names.",
+    "bot_or_service_account_criteria": "Logins ending in [bot] or matching verified automated AI/service accounts (Copilot, etc.).",
+    "uncertain_criteria": "Accounts with ambiguous automation substrings, excluded by default from human developer recommendations.",
+    "bot_evidence_retention_policy": "All bot comments and predictions are fully preserved in corpus statistics, NLP, and audit files. Only human developer recommendations filter them out."
+  },
+  "query_mapping_audit": {
+    "all_mappings_passed": true,
+    "test_cases_evaluated": [
+      {
+        "query": "database schema",
+        "expected_categories": [
+          "DATA_MANAGEMENT"
+        ],
+        "actual_categories": [
+          "DATA_MANAGEMENT"
+        ],
+        "rationales": {
+          "DATA_MANAGEMENT": "Matched natural-language keywords: database, schema"
+        },
+        "status": "ok",
+        "passed": true
+      },
+      {
+        "query": "SQL optimization",
+        "expected_categories": [
+          "DATA_MANAGEMENT",
+          "PERF_OPTIMIZATION"
+        ],
+        "actual_categories": [
+          "DATA_MANAGEMENT",
+          "PERF_OPTIMIZATION"
+        ],
+        "rationales": {
+          "PERF_OPTIMIZATION": "Matched natural-language keywords: optimization",
+          "DATA_MANAGEMENT": "Matched natural-language keywords: sql"
+        },
+        "status": "ok",
+        "passed": true
+      },
+      {
+        "query": "backend testing",
+        "expected_categories": [
+          "TESTING_QUALITY"
+        ],
+        "actual_categories": [
+          "TESTING_QUALITY"
+        ],
+        "rationales": {
+          "TESTING_QUALITY": "Matched natural-language keywords: testing"
+        },
+        "status": "ok",
+        "passed": true
+      },
+      {
+        "query": "security authentication",
+        "expected_categories": [
+          "SECURITY_PRIVACY"
+        ],
+        "actual_categories": [
+          "SECURITY_PRIVACY"
+        ],
+        "rationales": {
+          "SECURITY_PRIVACY": "Matched natural-language keywords: authentication, security"
+        },
+        "status": "ok",
+        "passed": true
+      },
+      {
+        "query": "frontend React",
+        "expected_categories": [
+          "FRONTEND_UI_UX"
+        ],
+        "actual_categories": [
+          "FRONTEND_UI_UX"
+        ],
+        "rationales": {
+          "FRONTEND_UI_UX": "Matched natural-language keywords: frontend, react"
+        },
+        "status": "ok",
+        "passed": true
+      },
+      {
+        "query": "architecture design",
+        "expected_categories": [
+          "ARCH_DESIGN"
+        ],
+        "actual_categories": [
+          "ARCH_DESIGN"
+        ],
+        "rationales": {
+          "ARCH_DESIGN": "Matched natural-language keywords: architecture, design"
+        },
+        "status": "ok",
+        "passed": true
+      },
+      {
+        "query": "ambiguous/multi-domain: database schema design and SQL optimization",
+        "expected_categories": [
+          "ARCH_DESIGN",
+          "DATA_MANAGEMENT",
+          "PERF_OPTIMIZATION"
+        ],
+        "actual_categories": [
+          "ARCH_DESIGN",
+          "DATA_MANAGEMENT",
+          "PERF_OPTIMIZATION"
+        ],
+        "rationales": {
+          "ARCH_DESIGN": "Matched natural-language keywords: design",
+          "PERF_OPTIMIZATION": "Matched natural-language keywords: optimization",
+          "DATA_MANAGEMENT": "Matched natural-language keywords: database, schema, sql"
+        },
+        "status": "ok",
+        "passed": true
+      },
+      {
+        "query": "unmatched requirement: xyz123RandomTerm",
+        "expected_categories": [],
+        "actual_categories": [],
+        "rationales": {},
+        "status": "Unable to map natural-language query 'unmatched requirement: xyz123RandomTerm' to validated GDERS taxonomy.",
+        "passed": true
+      }
+    ]
+  },
+  "example_recommendation_audits": {
+    "query_1": {
+      "query": [
+        "BUG_LOGIC",
+        "TESTING_QUALITY"
+      ],
+      "matched_categories": [
+        "BUG_LOGIC",
+        "TESTING_QUALITY"
+      ],
+      "candidates_count": 5,
+      "bots_detected": [],
+      "top_candidates": [
+        {
+          "username": "vshkrabkov",
+          "score": 21.0,
+          "tier": "supported_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 8,
+          "high_med_preds": "12/1",
+          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (supported_evidence) supported by 8 gold and 13 validated high/medium predictions across 2 PRs in 1 repos."
+        },
+        {
+          "username": "astefan",
+          "score": 17.25,
+          "tier": "supported_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 6,
+          "high_med_preds": "10/2",
+          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (supported_evidence) supported by 6 gold and 12 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "samubenu",
+          "score": 14.138,
+          "tier": "strong_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 5,
+          "high_med_preds": "6/4",
+          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (strong_evidence) supported by 5 gold and 10 validated high/medium predictions across 2 PRs in 1 repos."
+        },
+        {
+          "username": "lorentzenchr",
+          "score": 12.9,
+          "tier": "strong_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 1,
+          "high_med_preds": "9/6",
+          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (strong_evidence) supported by 1 gold and 15 validated high/medium predictions across 3 PRs in 1 repos."
+        },
+        {
+          "username": "Renzo-Olivares",
+          "score": 12.85,
+          "tier": "strong_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 2,
+          "high_med_preds": "7/7",
+          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (strong_evidence) supported by 2 gold and 14 validated high/medium predictions across 2 PRs in 1 repos."
+        }
+      ]
+    },
+    "query_2": {
+      "query": "Need a developer skilled in database schema design and SQL optimization",
+      "matched_categories": [
+        "ARCH_DESIGN",
+        "DATA_MANAGEMENT",
+        "PERF_OPTIMIZATION"
+      ],
+      "candidates_count": 5,
+      "bots_detected": [],
+      "top_candidates": [
+        {
+          "username": "swallez",
+          "score": 11.7,
+          "tier": "supported_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 7,
+          "high_med_preds": "0/2",
+          "explanation": "Matched ARCH_DESIGN & DATA_MANAGEMENT & PERF_OPTIMIZATION (supported_evidence) supported by 7 gold and 2 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "astefan",
+          "score": 7.5,
+          "tier": "supported_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 5,
+          "high_med_preds": "3/1",
+          "explanation": "Matched DATA_MANAGEMENT (supported_evidence) supported by 5 gold and 4 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "GalLalouche",
+          "score": 7.1,
+          "tier": "supported_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 5,
+          "high_med_preds": "3/0",
+          "explanation": "Matched DATA_MANAGEMENT (supported_evidence) supported by 5 gold and 3 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "littleGnAl",
+          "score": 6.25,
+          "tier": "supported_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 5,
+          "high_med_preds": "0/0",
+          "explanation": "Matched ARCH_DESIGN & PERF_OPTIMIZATION (supported_evidence) supported by 5 gold and 0 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "salvatore-campagna",
+          "score": 6.25,
+          "tier": "supported_evidence",
+          "identity_class": "human_candidate",
+          "gold_count": 5,
+          "high_med_preds": "0/0",
+          "explanation": "Matched DATA_MANAGEMENT & PERF_OPTIMIZATION (supported_evidence) supported by 5 gold and 0 validated high/medium predictions across 1 PRs in 1 repos."
+        }
+      ]
+    }
+  },
+  "devlens_protection_verification": {
+    "devlens_core_modified": false,
+    "devlens_db_modified": false,
+    "devlens_ml_modified": false,
+    "raw_corpus_unmodified": true,
+    "phase5_gold_dataset_unmodified": true
+  },
+  "gate_verdict": "PHASE 7B CLEARED"
+}

@@ -41,7 +41,9 @@ class CategoryExpertiseProfile:
     """Fine-grained category-level expertise profile with full traceability."""
     category_id: str
     evidence_score: float = 0.0
+    recommendation_eligible_score: float = 0.0
     evidence_tier: str = "insufficient_evidence"  # insufficient_evidence, emerging_evidence, supported_evidence, strong_evidence
+    recommendation_eligible: bool = False
     gold_comment_count: int = 0
     predicted_comment_count: int = 0
     high_confidence_count: int = 0
@@ -50,6 +52,7 @@ class CategoryExpertiseProfile:
     distinct_pr_count: int = 0
     distinct_repository_count: int = 0
     supporting_comment_ids: List[int] = field(default_factory=list)
+    recommendation_eligible_comment_ids: List[int] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -65,6 +68,8 @@ class DeveloperExpertiseProfile:
     top_expertise_categories: List[str] = field(default_factory=list)
     category_profiles: Dict[str, Dict[str, Any]] = field(default_factory=dict)
     has_sufficient_evidence: bool = False
+    identity_class: str = "human_candidate"  # 'human_candidate', 'bot_or_service_account', 'uncertain'
+    developer_recommendation_eligible: bool = False
     generated_timestamp: str = field(default_factory=lambda: datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -114,6 +119,8 @@ class ProfileBuilder:
         category: str,
         gold_comments: List[Dict[str, Any]],
         predicted_comments: List[Dict[str, Any]],
+        excluded_comment_ids: Optional[Set[int]] = None,
+        allowed_evidence_types: Optional[Set[str]] = None,
     ) -> CategoryExpertiseProfile:
         """
         Compute transparent evidence score and assign evidence tier for a specific category.
@@ -123,50 +130,83 @@ class ProfileBuilder:
             Repo_Diversity_Factor = min(1.2, 1.0 + 0.1 * (distinct_repos - 1)) if distinct_repos >= 1 else 1.0
             Evidence_Score = round(Base_Evidence * PR_Diversity_Factor * Repo_Diversity_Factor, 3)
         """
+        excluded = excluded_comment_ids or set()
+        allowed_types = allowed_evidence_types or {"gold", "high_confidence_pred", "medium_confidence_pred", "low_confidence_pred"}
+
         supporting_cids: List[int] = []
+        eligible_cids: List[int] = []
         distinct_prs: Set[int] = set()
         distinct_repos: Set[str] = set()
+        eligible_prs: Set[int] = set()
+        eligible_repos: Set[str] = set()
 
         gold_count = 0
         high_conf_count = 0
         med_conf_count = 0
         low_conf_count = 0
         base_evidence = 0.0
+        eligible_base_evidence = 0.0
 
-        # 1. Process gold comments
-        for gc in gold_comments:
-            labels = gc.get("category_labels", gc.get("gold_labels", []))
-            if category in labels:
+        # 1. Process gold comments (Always recommendation-eligible if allowed)
+        if "gold" in allowed_types:
+            for gc in gold_comments:
                 cid = gc.get("comment_id", 0)
-                supporting_cids.append(cid)
-                if gc.get("pull_request_number"):
-                    distinct_prs.add(gc.get("pull_request_number"))
-                if gc.get("repository"):
-                    distinct_repos.add(gc.get("repository"))
-                gold_count += 1
-                base_evidence += COMMENT_TYPE_WEIGHTS["gold"]
+                if cid in excluded:
+                    continue
+                labels = gc.get("category_labels", gc.get("gold_labels", []))
+                if category in labels:
+                    supporting_cids.append(cid)
+                    eligible_cids.append(cid)
+                    pr_num = gc.get("pull_request_number")
+                    repo_name = gc.get("repository")
+                    if pr_num:
+                        distinct_prs.add(pr_num)
+                        eligible_prs.add(pr_num)
+                    if repo_name:
+                        distinct_repos.add(repo_name)
+                        eligible_repos.add(repo_name)
+                    gold_count += 1
+                    base_evidence += COMMENT_TYPE_WEIGHTS["gold"]
+                    eligible_base_evidence += COMMENT_TYPE_WEIGHTS["gold"]
 
         # 2. Process predicted comments
         for pc in predicted_comments:
+            cid = pc.get("comment_id", 0)
+            if cid in excluded:
+                continue
             pred_cats = pc.get("predicted_categories", [])
             status = pc.get("prediction_status", "abstained")
             if category in pred_cats and status != "abstained":
-                cid = pc.get("comment_id", 0)
-                supporting_cids.append(cid)
-                if pc.get("pull_request_number"):
-                    distinct_prs.add(pc.get("pull_request_number"))
-                if pc.get("repository"):
-                    distinct_repos.add(pc.get("repository"))
+                pr_num = pc.get("pull_request_number")
+                repo_name = pc.get("repository")
 
-                if status == "high_confidence":
+                if status == "high_confidence" and "high_confidence_pred" in allowed_types:
+                    supporting_cids.append(cid)
+                    if pr_num: distinct_prs.add(pr_num)
+                    if repo_name: distinct_repos.add(repo_name)
                     high_conf_count += 1
                     base_evidence += COMMENT_TYPE_WEIGHTS["high_confidence_pred"]
-                elif status == "medium_confidence":
+                    eligible_base_evidence += COMMENT_TYPE_WEIGHTS["high_confidence_pred"]
+                    eligible_cids.append(cid)
+                    if pr_num: eligible_prs.add(pr_num)
+                    if repo_name: eligible_repos.add(repo_name)
+                elif status == "medium_confidence" and "medium_confidence_pred" in allowed_types:
+                    supporting_cids.append(cid)
+                    if pr_num: distinct_prs.add(pr_num)
+                    if repo_name: distinct_repos.add(repo_name)
                     med_conf_count += 1
                     base_evidence += COMMENT_TYPE_WEIGHTS["medium_confidence_pred"]
-                elif status == "low_confidence":
+                    eligible_base_evidence += COMMENT_TYPE_WEIGHTS["medium_confidence_pred"]
+                    eligible_cids.append(cid)
+                    if pr_num: eligible_prs.add(pr_num)
+                    if repo_name: eligible_repos.add(repo_name)
+                elif status == "low_confidence" and "low_confidence_pred" in allowed_types:
+                    supporting_cids.append(cid)
+                    if pr_num: distinct_prs.add(pr_num)
+                    if repo_name: distinct_repos.add(repo_name)
                     low_conf_count += 1
                     base_evidence += COMMENT_TYPE_WEIGHTS["low_confidence_pred"]
+                    # Low-confidence is audit-only; excluded from eligible_base_evidence
 
         total_predicted = high_conf_count + med_conf_count + low_conf_count
 
@@ -175,24 +215,35 @@ class ProfileBuilder:
         repo_mult = min(1.2, 1.0 + 0.1 * max(0, len(distinct_repos) - 1)) if distinct_repos else 1.0
         final_score = round(base_evidence * pr_mult * repo_mult, 3)
 
-        # Evidence tier determination
-        # strong_evidence: score >= 4.0 and >= 2 distinct PRs
-        # supported_evidence: score >= 2.0 and >= 2 comments
-        # emerging_evidence: score >= 0.70 (at least 1 gold or high-conf comment)
-        # insufficient_evidence: score < 0.70
-        if final_score >= 4.0 and len(distinct_prs) >= 2:
+        # Recommendation-eligible score (excludes low-confidence predictions)
+        el_pr_mult = min(1.5, 1.0 + 0.1 * max(0, len(eligible_prs) - 1)) if eligible_prs else 1.0
+        el_repo_mult = min(1.2, 1.0 + 0.1 * max(0, len(eligible_repos) - 1)) if eligible_repos else 1.0
+        final_eligible_score = round(eligible_base_evidence * el_pr_mult * el_repo_mult, 3)
+
+        # Evidence tier determination (based on eligible high-quality evidence)
+        # strong_evidence: eligible_score >= 4.0 and >= 2 distinct PRs
+        # supported_evidence: eligible_score >= 2.0 and >= 2 high-quality comments
+        # emerging_evidence: eligible_score >= 0.70
+        # insufficient_evidence: eligible_score < 0.70
+        if final_eligible_score >= 4.0 and len(eligible_prs) >= 2:
             tier = "strong_evidence"
-        elif final_score >= 2.0 and (gold_count + high_conf_count + med_conf_count) >= 2:
+            is_eligible = True
+        elif final_eligible_score >= 2.0 and (gold_count + high_conf_count + med_conf_count) >= 2:
             tier = "supported_evidence"
-        elif final_score >= 0.70:
+            is_eligible = True
+        elif final_eligible_score >= 0.70:
             tier = "emerging_evidence"
+            is_eligible = False
         else:
             tier = "insufficient_evidence"
+            is_eligible = False
 
         return CategoryExpertiseProfile(
             category_id=category,
             evidence_score=final_score,
+            recommendation_eligible_score=final_eligible_score,
             evidence_tier=tier,
+            recommendation_eligible=is_eligible,
             gold_comment_count=gold_count,
             predicted_comment_count=total_predicted,
             high_confidence_count=high_conf_count,
@@ -201,18 +252,26 @@ class ProfileBuilder:
             distinct_pr_count=len(distinct_prs),
             distinct_repository_count=len(distinct_repos),
             supporting_comment_ids=supporting_cids,
+            recommendation_eligible_comment_ids=eligible_cids,
         )
 
-    def build_all_developer_profiles(self) -> Tuple[List[DeveloperExpertiseProfile], Dict[str, Any]]:
+    def build_all_developer_profiles(
+        self,
+        excluded_comment_ids: Optional[Set[int]] = None,
+        allowed_evidence_types: Optional[Set[str]] = None,
+        persist: bool = True,
+    ) -> Tuple[List[DeveloperExpertiseProfile], Dict[str, Any]]:
         """
         Build expertise profiles for all reviewers in the frozen GDERS corpus.
-        Saves profiles to data/gders/processed/developer_expertise_profiles.jsonl.
+        Optionally excludes specific comment IDs (for held-out evaluation) and restricts evidence types.
+        Saves profiles to data/gders/processed/developer_expertise_profiles.jsonl when persist=True.
         """
         gold_by_reviewer = self.load_gold_comments_by_reviewer()
         pred_by_reviewer = self.load_predictions_by_reviewer()
 
         all_reviewers = sorted(set(gold_by_reviewer.keys()).union(set(pred_by_reviewer.keys())))
-        logger.info(f"Building expertise profiles for {len(all_reviewers)} unique reviewers...")
+        if persist:
+            logger.info(f"Building expertise profiles for {len(all_reviewers)} unique reviewers...")
 
         profiles: List[DeveloperExpertiseProfile] = []
         categories = sorted(VALID_TAXONOMY_CATEGORIES)
@@ -242,6 +301,8 @@ class ProfileBuilder:
                     category=cat,
                     gold_comments=g_comments,
                     predicted_comments=p_comments,
+                    excluded_comment_ids=excluded_comment_ids,
+                    allowed_evidence_types=allowed_evidence_types,
                 )
                 cat_profiles[cat] = cp.to_dict()
                 tier_counts[cp.evidence_tier] += 1
@@ -260,6 +321,17 @@ class ProfileBuilder:
             if has_sufficient:
                 sufficient_evidence_reviewers += 1
 
+            # Classify identity: 'human_candidate', 'bot_or_service_account', 'uncertain'
+            login_lower = login.lower().strip()
+            if login_lower.endswith("[bot]") or login_lower in ("copilot", "github-actions", "dependabot", "codecov"):
+                identity_cls = "bot_or_service_account"
+            elif any(marker in login_lower for marker in ("-bot", "_bot", "service-account", "automation-bot")):
+                identity_cls = "uncertain"
+            else:
+                identity_cls = "human_candidate"
+
+            is_dev_eligible = (identity_cls == "human_candidate") and has_sufficient
+
             profile = DeveloperExpertiseProfile(
                 developer_login=login,
                 total_review_comments=total_comments,
@@ -268,12 +340,14 @@ class ProfileBuilder:
                 top_expertise_categories=top_cats,
                 category_profiles=cat_profiles,
                 has_sufficient_evidence=has_sufficient,
+                identity_class=identity_cls,
+                developer_recommendation_eligible=is_dev_eligible,
             )
             profiles.append(profile)
 
         # Persist profiles
         prof_file = self.config.developer_expertise_profiles_file
-        if prof_file:
+        if persist and prof_file:
             prof_file.parent.mkdir(parents=True, exist_ok=True)
             with open(prof_file, "w", encoding="utf-8") as f:
                 for p in profiles:
@@ -310,7 +384,7 @@ class ProfileBuilder:
         }
 
         report_file = self.config.expertise_profile_report_file
-        if report_file:
+        if persist and report_file:
             report_file.parent.mkdir(parents=True, exist_ok=True)
             with open(report_file, "w", encoding="utf-8") as f:
                 json.dump(report, f, indent=2)

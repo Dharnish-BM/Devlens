@@ -92,6 +92,18 @@ class GDERSConfig:
     comment_predictions_file: Optional[Path] = None
     developer_expertise_profiles_file: Optional[Path] = None
     expertise_profile_report_file: Optional[Path] = None
+    phase6_5_validation_report_file: Optional[Path] = None
+    phase6_5_validation_report_md_file: Optional[Path] = None
+
+    # Phase 7 Recommendation Engine & Benchmark Paths
+    recommendation_engine_report_file: Optional[Path] = None
+    reviewer_identity_audit_file: Optional[Path] = None
+    phase7a5_validation_report_file: Optional[Path] = None
+    phase7a5_validation_report_md_file: Optional[Path] = None
+    benchmark_dataset_file: Optional[Path] = None
+    benchmark_results_file: Optional[Path] = None
+    benchmark_report_md_file: Optional[Path] = None
+    benchmark_leakage_audit_file: Optional[Path] = None
 
     def __post_init__(self):
         if self.raw_comments_dir is None:
@@ -152,6 +164,26 @@ class GDERSConfig:
             self.developer_expertise_profiles_file = self.processed_dir / "developer_expertise_profiles.jsonl"
         if self.expertise_profile_report_file is None:
             self.expertise_profile_report_file = self.processed_dir / "expertise_profile_report.json"
+        if self.phase6_5_validation_report_file is None:
+            self.phase6_5_validation_report_file = self.processed_dir / "phase6_5_validation_report.json"
+        if self.phase6_5_validation_report_md_file is None:
+            self.phase6_5_validation_report_md_file = self.processed_dir / "phase6_5_validation_report.md"
+        if self.recommendation_engine_report_file is None:
+            self.recommendation_engine_report_file = self.processed_dir / "recommendation_engine_report.json"
+        if self.reviewer_identity_audit_file is None:
+            self.reviewer_identity_audit_file = self.processed_dir / "reviewer_identity_audit.json"
+        if self.phase7a5_validation_report_file is None:
+            self.phase7a5_validation_report_file = self.processed_dir / "phase7a5_validation_report.json"
+        if self.phase7a5_validation_report_md_file is None:
+            self.phase7a5_validation_report_md_file = self.processed_dir / "phase7a5_validation_report.md"
+        if self.benchmark_dataset_file is None:
+            self.benchmark_dataset_file = self.processed_dir / "benchmark_dataset.jsonl"
+        if self.benchmark_results_file is None:
+            self.benchmark_results_file = self.processed_dir / "benchmark_results.json"
+        if self.benchmark_report_md_file is None:
+            self.benchmark_report_md_file = self.processed_dir / "benchmark_report.md"
+        if self.benchmark_leakage_audit_file is None:
+            self.benchmark_leakage_audit_file = self.processed_dir / "benchmark_leakage_audit.json"
 
     # Target repository list
     target_repositories: List[TargetRepository] = field(

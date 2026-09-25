@@ -1,0 +1,242 @@
+{
+  "phase": "Phase 7A \u2014 GDERS Expert Developer Recommendation Engine",
+  "timestamp": "2026-09-25T16:12:15Z",
+  "candidate_pool_summary": {
+    "total_reviewers_in_corpus": 151,
+    "human_candidates": 149,
+    "bots_or_service_accounts": 2,
+    "uncertain_identities": 0,
+    "expertise_eligible_reviewers_all": 69,
+    "human_developer_recommendation_eligible": 67
+  },
+  "eligibility_contract": {
+    "identity_gate": "identity_class == 'human_candidate' (bots and uncertain accounts strictly excluded)",
+    "expertise_gate": "recommendation_eligible == True (at least one target category in 'supported_evidence' or 'strong_evidence')",
+    "low_confidence_policy": "Excluded from recommendation score and eligibility computation",
+    "abstained_policy": "Excluded from recommendation score"
+  },
+  "scoring_formula": {
+    "category_score": "recommendation_eligible_score (Gold * 1.0 + High * 0.7 + Med * 0.4) * PR_Multiplier * Repo_Multiplier",
+    "multi_category_coverage_multiplier": "1.0 + 0.25 * (matched_categories - 1)",
+    "tie_breakers": [
+      "recommendation_score DESC",
+      "matched_categories_count DESC",
+      "gold_count DESC",
+      "username ASC"
+    ]
+  },
+  "category_candidate_availability": {
+    "ARCH_DESIGN": 5,
+    "BUG_LOGIC": 34,
+    "CODE_STYLE": 9,
+    "DATA_MANAGEMENT": 6,
+    "DOCUMENTATION": 7,
+    "FRONTEND_UI_UX": 9,
+    "INFRA_DEVOPS": 4,
+    "PERF_OPTIMIZATION": 8,
+    "SECURITY_PRIVACY": 8,
+    "TESTING_QUALITY": 27
+  },
+  "sample_recommendation_evaluations": [
+    {
+      "query": "TESTING_QUALITY",
+      "status": "ok",
+      "matched_categories": [
+        "TESTING_QUALITY"
+      ],
+      "candidates_returned": 3,
+      "top_candidates": [
+        {
+          "username": "astefan",
+          "score": 10.0,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "TESTING_QUALITY"
+          ],
+          "explanation": "Matched TESTING_QUALITY (supported_evidence) supported by 4 gold and 9 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "nicolinx",
+          "score": 6.5,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "TESTING_QUALITY"
+          ],
+          "explanation": "Matched TESTING_QUALITY (supported_evidence) supported by 4 gold and 4 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "samubenu",
+          "score": 5.61,
+          "tier": "strong_evidence",
+          "matched_categories": [
+            "TESTING_QUALITY"
+          ],
+          "explanation": "Matched TESTING_QUALITY (strong_evidence) supported by 3 gold and 3 validated high/medium predictions across 2 PRs in 1 repos."
+        }
+      ]
+    },
+    {
+      "query": "['BUG_LOGIC', 'TESTING_QUALITY']",
+      "status": "ok",
+      "matched_categories": [
+        "BUG_LOGIC",
+        "TESTING_QUALITY"
+      ],
+      "candidates_returned": 3,
+      "top_candidates": [
+        {
+          "username": "vshkrabkov",
+          "score": 21.0,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "BUG_LOGIC",
+            "TESTING_QUALITY"
+          ],
+          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (supported_evidence) supported by 8 gold and 13 validated high/medium predictions across 2 PRs in 1 repos."
+        },
+        {
+          "username": "astefan",
+          "score": 17.25,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "BUG_LOGIC",
+            "TESTING_QUALITY"
+          ],
+          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (supported_evidence) supported by 6 gold and 12 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "samubenu",
+          "score": 14.138,
+          "tier": "strong_evidence",
+          "matched_categories": [
+            "BUG_LOGIC",
+            "TESTING_QUALITY"
+          ],
+          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (strong_evidence) supported by 5 gold and 10 validated high/medium predictions across 2 PRs in 1 repos."
+        }
+      ]
+    },
+    {
+      "query": "Need a developer skilled in database schema design and SQL optimization",
+      "status": "ok",
+      "matched_categories": [
+        "ARCH_DESIGN",
+        "DATA_MANAGEMENT",
+        "PERF_OPTIMIZATION"
+      ],
+      "candidates_returned": 3,
+      "top_candidates": [
+        {
+          "username": "swallez",
+          "score": 11.7,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "ARCH_DESIGN",
+            "DATA_MANAGEMENT",
+            "PERF_OPTIMIZATION"
+          ],
+          "explanation": "Matched ARCH_DESIGN & DATA_MANAGEMENT & PERF_OPTIMIZATION (supported_evidence) supported by 7 gold and 2 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "astefan",
+          "score": 7.5,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "DATA_MANAGEMENT"
+          ],
+          "explanation": "Matched DATA_MANAGEMENT (supported_evidence) supported by 5 gold and 4 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "GalLalouche",
+          "score": 7.1,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "DATA_MANAGEMENT"
+          ],
+          "explanation": "Matched DATA_MANAGEMENT (supported_evidence) supported by 5 gold and 3 validated high/medium predictions across 1 PRs in 1 repos."
+        }
+      ]
+    },
+    {
+      "query": "Looking for security engineer to sanitize input tokens and audit auth vulnerabilities",
+      "status": "ok",
+      "matched_categories": [
+        "SECURITY_PRIVACY"
+      ],
+      "candidates_returned": 3,
+      "top_candidates": [
+        {
+          "username": "ulysses-you",
+          "score": 4.4,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "SECURITY_PRIVACY"
+          ],
+          "explanation": "Matched SECURITY_PRIVACY (supported_evidence) supported by 4 gold and 1 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "eliotsykes",
+          "score": 4.0,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "SECURITY_PRIVACY"
+          ],
+          "explanation": "Matched SECURITY_PRIVACY (supported_evidence) supported by 4 gold and 0 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "ayushn21",
+          "score": 3.0,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "SECURITY_PRIVACY"
+          ],
+          "explanation": "Matched SECURITY_PRIVACY (supported_evidence) supported by 3 gold and 0 validated high/medium predictions across 2 PRs in 1 repos."
+        }
+      ]
+    },
+    {
+      "query": "Frontend UI widget rendering and accessibility in Flutter React",
+      "status": "ok",
+      "matched_categories": [
+        "FRONTEND_UI_UX"
+      ],
+      "candidates_returned": 3,
+      "top_candidates": [
+        {
+          "username": "Renzo-Olivares",
+          "score": 6.82,
+          "tier": "strong_evidence",
+          "matched_categories": [
+            "FRONTEND_UI_UX"
+          ],
+          "explanation": "Matched FRONTEND_UI_UX (strong_evidence) supported by 2 gold and 6 validated high/medium predictions across 2 PRs in 1 repos."
+        },
+        {
+          "username": "ulysses-you",
+          "score": 2.7,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "FRONTEND_UI_UX"
+          ],
+          "explanation": "Matched FRONTEND_UI_UX (supported_evidence) supported by 2 gold and 1 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
+          "username": "lorentzenchr",
+          "score": 2.64,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "FRONTEND_UI_UX"
+          ],
+          "explanation": "Matched FRONTEND_UI_UX (supported_evidence) supported by 2 gold and 1 validated high/medium predictions across 3 PRs in 1 repos."
+        }
+      ]
+    },
+    {
+      "query": "UnknownNonExistentCategoryQuery",
+      "status": "unmatched_query",
+      "matched_categories": [],
+      "candidates_returned": 0,
+      "top_candidates": []
+    }
+  ]
+}

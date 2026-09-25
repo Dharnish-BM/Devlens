@@ -1,0 +1,685 @@
+{
+  "timestamp": "2026-09-25T16:13:01Z",
+  "leakage_audit_summary": {
+    "total_queries_audited": 142,
+    "leakage_violations": 0
+  },
+  "leakage_checks": [
+    {
+      "query_id": "Q-SINGLE-001",
+      "query_type": "single_category",
+      "target_categories": [
+        "ARCH_DESIGN"
+      ],
+      "held_out_developer": "BhargaviGudi",
+      "recommended_candidates": [
+        "swallez",
+        "BhargaviGudi",
+        "OchukoWH",
+        "littleGnAl",
+        "tosi3k"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "BhargaviGudi"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "reciprocal_rank": 0.5,
+      "ndcg_at_5": 0.6309,
+      "eligible_candidate_count": 5,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-002",
+      "query_type": "single_category",
+      "target_categories": [
+        "ARCH_DESIGN"
+      ],
+      "held_out_developer": "OchukoWH",
+      "recommended_candidates": [
+        "BhargaviGudi",
+        "swallez",
+        "littleGnAl",
+        "tosi3k"
+      ],
+      "is_held_out_developer_eligible": false,
+      "relevant_developers": [
+        "OchukoWH"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 4,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-003",
+      "query_type": "single_category",
+      "target_categories": [
+        "ARCH_DESIGN"
+      ],
+      "held_out_developer": "littleGnAl",
+      "recommended_candidates": [
+        "BhargaviGudi",
+        "swallez",
+        "OchukoWH",
+        "tosi3k"
+      ],
+      "is_held_out_developer_eligible": false,
+      "relevant_developers": [
+        "littleGnAl"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 4,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-004",
+      "query_type": "single_category",
+      "target_categories": [
+        "ARCH_DESIGN"
+      ],
+      "held_out_developer": "swallez",
+      "recommended_candidates": [
+        "BhargaviGudi",
+        "OchukoWH",
+        "littleGnAl",
+        "tosi3k"
+      ],
+      "is_held_out_developer_eligible": false,
+      "relevant_developers": [
+        "swallez"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 4,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-005",
+      "query_type": "single_category",
+      "target_categories": [
+        "ARCH_DESIGN"
+      ],
+      "held_out_developer": "tosi3k",
+      "recommended_candidates": [
+        "BhargaviGudi",
+        "swallez",
+        "OchukoWH",
+        "littleGnAl"
+      ],
+      "is_held_out_developer_eligible": false,
+      "relevant_developers": [
+        "tosi3k"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 4,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-006",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "GalLalouche",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "GalLalouche"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-007",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "astefan",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "astefan"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-008",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "bhavyaus",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "bhavyaus"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-009",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "cakedev0",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "cakedev0"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0
+      },
+      "reciprocal_rank": 0.5,
+      "ndcg_at_5": 0.6309,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-010",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "chunhtai",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "chunhtai"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-011",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "eliotsykes",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "eliotsykes"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-012",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "esotsal",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "esotsal"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-013",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "fagnerpereira",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": false,
+      "relevant_developers": [
+        "fagnerpereira"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 33,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-014",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "harche",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "harche"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-015",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "joelhawksley",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": false,
+      "relevant_developers": [
+        "joelhawksley"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 33,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-016",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "joshua-adams-1",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": false,
+      "relevant_developers": [
+        "joshua-adams-1"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 33,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-017",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "knopp",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": false,
+      "relevant_developers": [
+        "knopp"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 33,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-018",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "larsoner",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": false,
+      "relevant_developers": [
+        "larsoner"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 33,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-019",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "pohly",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "swallez",
+        "lorentzenchr",
+        "luigidellaquila"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "pohly"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    },
+    {
+      "query_id": "Q-SINGLE-020",
+      "query_type": "single_category",
+      "target_categories": [
+        "BUG_LOGIC"
+      ],
+      "held_out_developer": "samubenu",
+      "recommended_candidates": [
+        "vshkrabkov",
+        "cakedev0",
+        "pohly",
+        "swallez",
+        "lorentzenchr"
+      ],
+      "is_held_out_developer_eligible": true,
+      "relevant_developers": [
+        "samubenu"
+      ],
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      },
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0,
+      "eligible_candidate_count": 34,
+      "exact_multi_category_match": null,
+      "partial_category_match": null
+    }
+  ]
+}

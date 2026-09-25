@@ -1,0 +1,1284 @@
+{
+  "phase": "Phase 7B \u2014 GDERS Recommendation Benchmark Evaluation",
+  "timestamp": "2026-09-25T16:13:01Z",
+  "reproducibility": {
+    "dataset_version": "GDERS-1225-v1.0",
+    "taxonomy_version": "GDERS-10-Category-v1.0",
+    "classifier_version": "LinearSVC-CalibratedMargins-v1.0",
+    "recommender_version": "GDERS-MultiTierRecommender-v1.0",
+    "benchmark_version": "GDERS-HeldOut-DeveloperGrouped-v1.0",
+    "random_seed": 42
+  },
+  "gders_full_system": {
+    "overall": {
+      "query_count": 142,
+      "eligible_candidate_count": {
+        "mean": 19.4437,
+        "min": 3,
+        "max": 51
+      },
+      "Precision@1": {
+        "mean": 0.0563,
+        "std": 0.2306
+      },
+      "Precision@3": {
+        "mean": 0.0446,
+        "std": 0.1135
+      },
+      "Precision@5": {
+        "mean": 0.0352,
+        "std": 0.0762
+      },
+      "Recall@1": {
+        "mean": 0.0563,
+        "std": 0.2306
+      },
+      "Recall@3": {
+        "mean": 0.1338,
+        "std": 0.3404
+      },
+      "Recall@5": {
+        "mean": 0.1761,
+        "std": 0.3809
+      },
+      "MRR": {
+        "mean": 0.1014,
+        "std": 0.2546
+      },
+      "nDCG@5": {
+        "mean": 0.12,
+        "std": 0.2774
+      }
+    },
+    "by_query_type": {
+      "single_category": {
+        "query_count": 80,
+        "Precision@1": {
+          "mean": 0.0625,
+          "std": 0.2421
+        },
+        "Precision@3": {
+          "mean": 0.0458,
+          "std": 0.1148
+        },
+        "Precision@5": {
+          "mean": 0.0375,
+          "std": 0.0781
+        },
+        "Recall@1": {
+          "mean": 0.0625,
+          "std": 0.2421
+        },
+        "Recall@3": {
+          "mean": 0.1375,
+          "std": 0.3444
+        },
+        "Recall@5": {
+          "mean": 0.1875,
+          "std": 0.3903
+        },
+        "MRR": {
+          "mean": 0.1092,
+          "std": 0.2649
+        },
+        "nDCG@5": {
+          "mean": 0.1286,
+          "std": 0.2869
+        }
+      },
+      "multi_category": {
+        "query_count": 6,
+        "Precision@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Precision@3": {
+          "mean": 0.1111,
+          "std": 0.1571
+        },
+        "Precision@5": {
+          "mean": 0.0667,
+          "std": 0.0943
+        },
+        "Recall@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Recall@3": {
+          "mean": 0.3333,
+          "std": 0.4714
+        },
+        "Recall@5": {
+          "mean": 0.3333,
+          "std": 0.4714
+        },
+        "MRR": {
+          "mean": 0.1389,
+          "std": 0.2022
+        },
+        "nDCG@5": {
+          "mean": 0.1885,
+          "std": 0.2692
+        },
+        "exact_multi_category_match_rate": 0.3333,
+        "partial_category_match_rate": 0.3333
+      },
+      "natural_language": {
+        "query_count": 56,
+        "Precision@1": {
+          "mean": 0.0536,
+          "std": 0.2252
+        },
+        "Precision@3": {
+          "mean": 0.0357,
+          "std": 0.1031
+        },
+        "Precision@5": {
+          "mean": 0.0286,
+          "std": 0.07
+        },
+        "Recall@1": {
+          "mean": 0.0536,
+          "std": 0.2252
+        },
+        "Recall@3": {
+          "mean": 0.1071,
+          "std": 0.3093
+        },
+        "Recall@5": {
+          "mean": 0.1429,
+          "std": 0.3499
+        },
+        "MRR": {
+          "mean": 0.0863,
+          "std": 0.2434
+        },
+        "nDCG@5": {
+          "mean": 0.1004,
+          "std": 0.2623
+        }
+      }
+    },
+    "by_category": {
+      "ARCH_DESIGN": {
+        "status": "EVALUATED",
+        "query_count": 5,
+        "Precision@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Precision@3": {
+          "mean": 0.0667,
+          "std": 0.1333
+        },
+        "Precision@5": {
+          "mean": 0.04,
+          "std": 0.08
+        },
+        "Recall@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Recall@3": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "Recall@5": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "MRR": {
+          "mean": 0.1,
+          "std": 0.2
+        },
+        "nDCG@5": {
+          "mean": 0.1262,
+          "std": 0.2524
+        }
+      },
+      "BUG_LOGIC": {
+        "status": "EVALUATED",
+        "query_count": 18,
+        "Precision@1": {
+          "mean": 0.0556,
+          "std": 0.2291
+        },
+        "Precision@3": {
+          "mean": 0.037,
+          "std": 0.1048
+        },
+        "Precision@5": {
+          "mean": 0.0222,
+          "std": 0.0629
+        },
+        "Recall@1": {
+          "mean": 0.0556,
+          "std": 0.2291
+        },
+        "Recall@3": {
+          "mean": 0.1111,
+          "std": 0.3143
+        },
+        "Recall@5": {
+          "mean": 0.1111,
+          "std": 0.3143
+        },
+        "MRR": {
+          "mean": 0.0833,
+          "std": 0.25
+        },
+        "nDCG@5": {
+          "mean": 0.0906,
+          "std": 0.2636
+        }
+      },
+      "CODE_STYLE": {
+        "status": "EVALUATED",
+        "query_count": 5,
+        "Precision@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Precision@3": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Precision@5": {
+          "mean": 0.08,
+          "std": 0.098
+        },
+        "Recall@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Recall@3": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Recall@5": {
+          "mean": 0.4,
+          "std": 0.4899
+        },
+        "MRR": {
+          "mean": 0.08,
+          "std": 0.098
+        },
+        "nDCG@5": {
+          "mean": 0.1548,
+          "std": 0.1895
+        }
+      },
+      "DATA_MANAGEMENT": {
+        "status": "EVALUATED",
+        "query_count": 6,
+        "Precision@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Precision@3": {
+          "mean": 0.1667,
+          "std": 0.1667
+        },
+        "Precision@5": {
+          "mean": 0.1,
+          "std": 0.1
+        },
+        "Recall@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Recall@3": {
+          "mean": 0.5,
+          "std": 0.5
+        },
+        "Recall@5": {
+          "mean": 0.5,
+          "std": 0.5
+        },
+        "MRR": {
+          "mean": 0.2222,
+          "std": 0.2291
+        },
+        "nDCG@5": {
+          "mean": 0.2936,
+          "std": 0.2969
+        }
+      },
+      "DOCUMENTATION": {
+        "status": "EVALUATED",
+        "query_count": 5,
+        "Precision@1": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "Precision@3": {
+          "mean": 0.0667,
+          "std": 0.1333
+        },
+        "Precision@5": {
+          "mean": 0.04,
+          "std": 0.08
+        },
+        "Recall@1": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "Recall@3": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "Recall@5": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "MRR": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "nDCG@5": {
+          "mean": 0.2,
+          "std": 0.4
+        }
+      },
+      "FRONTEND_UI_UX": {
+        "status": "EVALUATED",
+        "query_count": 5,
+        "Precision@1": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "Precision@3": {
+          "mean": 0.0667,
+          "std": 0.1333
+        },
+        "Precision@5": {
+          "mean": 0.04,
+          "std": 0.08
+        },
+        "Recall@1": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "Recall@3": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "Recall@5": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "MRR": {
+          "mean": 0.2,
+          "std": 0.4
+        },
+        "nDCG@5": {
+          "mean": 0.2,
+          "std": 0.4
+        }
+      },
+      "INFRA_DEVOPS": {
+        "status": "EVALUATED",
+        "query_count": 4,
+        "Precision@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Precision@3": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Precision@5": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Recall@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Recall@3": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Recall@5": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "MRR": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "nDCG@5": {
+          "mean": 0.0,
+          "std": 0.0
+        }
+      },
+      "PERF_OPTIMIZATION": {
+        "status": "EVALUATED",
+        "query_count": 8,
+        "Precision@1": {
+          "mean": 0.125,
+          "std": 0.3307
+        },
+        "Precision@3": {
+          "mean": 0.0417,
+          "std": 0.1102
+        },
+        "Precision@5": {
+          "mean": 0.025,
+          "std": 0.0661
+        },
+        "Recall@1": {
+          "mean": 0.125,
+          "std": 0.3307
+        },
+        "Recall@3": {
+          "mean": 0.125,
+          "std": 0.3307
+        },
+        "Recall@5": {
+          "mean": 0.125,
+          "std": 0.3307
+        },
+        "MRR": {
+          "mean": 0.125,
+          "std": 0.3307
+        },
+        "nDCG@5": {
+          "mean": 0.125,
+          "std": 0.3307
+        }
+      },
+      "SECURITY_PRIVACY": {
+        "status": "EVALUATED",
+        "query_count": 8,
+        "Precision@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Precision@3": {
+          "mean": 0.0417,
+          "std": 0.1102
+        },
+        "Precision@5": {
+          "mean": 0.05,
+          "std": 0.0866
+        },
+        "Recall@1": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "Recall@3": {
+          "mean": 0.125,
+          "std": 0.3307
+        },
+        "Recall@5": {
+          "mean": 0.25,
+          "std": 0.433
+        },
+        "MRR": {
+          "mean": 0.0938,
+          "std": 0.174
+        },
+        "nDCG@5": {
+          "mean": 0.1327,
+          "std": 0.2352
+        }
+      },
+      "TESTING_QUALITY": {
+        "status": "EVALUATED",
+        "query_count": 16,
+        "Precision@1": {
+          "mean": 0.0625,
+          "std": 0.2421
+        },
+        "Precision@3": {
+          "mean": 0.0208,
+          "std": 0.0807
+        },
+        "Precision@5": {
+          "mean": 0.025,
+          "std": 0.0661
+        },
+        "Recall@1": {
+          "mean": 0.0625,
+          "std": 0.2421
+        },
+        "Recall@3": {
+          "mean": 0.0625,
+          "std": 0.2421
+        },
+        "Recall@5": {
+          "mean": 0.125,
+          "std": 0.3307
+        },
+        "MRR": {
+          "mean": 0.0781,
+          "std": 0.2456
+        },
+        "nDCG@5": {
+          "mean": 0.0894,
+          "std": 0.2571
+        }
+      }
+    }
+  },
+  "baselines_comparison": {
+    "gders": {
+      "query_count": 142,
+      "eligible_candidate_count": {
+        "mean": 19.4437,
+        "min": 3,
+        "max": 51
+      },
+      "Precision@1": {
+        "mean": 0.0563,
+        "std": 0.2306
+      },
+      "Precision@3": {
+        "mean": 0.0446,
+        "std": 0.1135
+      },
+      "Precision@5": {
+        "mean": 0.0352,
+        "std": 0.0762
+      },
+      "Recall@1": {
+        "mean": 0.0563,
+        "std": 0.2306
+      },
+      "Recall@3": {
+        "mean": 0.1338,
+        "std": 0.3404
+      },
+      "Recall@5": {
+        "mean": 0.1761,
+        "std": 0.3809
+      },
+      "MRR": {
+        "mean": 0.1014,
+        "std": 0.2546
+      },
+      "nDCG@5": {
+        "mean": 0.12,
+        "std": 0.2774
+      }
+    },
+    "baseline_a_evidence_count": {
+      "query_count": 142,
+      "eligible_candidate_count": {
+        "mean": 16.5493,
+        "min": 3,
+        "max": 42
+      },
+      "Precision@1": {
+        "mean": 0.0141,
+        "std": 0.1178
+      },
+      "Precision@3": {
+        "mean": 0.0329,
+        "std": 0.0994
+      },
+      "Precision@5": {
+        "mean": 0.0423,
+        "std": 0.0816
+      },
+      "Recall@1": {
+        "mean": 0.0141,
+        "std": 0.1178
+      },
+      "Recall@3": {
+        "mean": 0.0986,
+        "std": 0.2981
+      },
+      "Recall@5": {
+        "mean": 0.2113,
+        "std": 0.4082
+      },
+      "MRR": {
+        "mean": 0.0768,
+        "std": 0.1776
+      },
+      "nDCG@5": {
+        "mean": 0.1095,
+        "std": 0.2247
+      }
+    },
+    "baseline_b_pr_diversity": {
+      "query_count": 142,
+      "eligible_candidate_count": {
+        "mean": 16.5493,
+        "min": 3,
+        "max": 42
+      },
+      "Precision@1": {
+        "mean": 0.0493,
+        "std": 0.2165
+      },
+      "Precision@3": {
+        "mean": 0.0469,
+        "std": 0.116
+      },
+      "Precision@5": {
+        "mean": 0.0493,
+        "std": 0.0862
+      },
+      "Recall@1": {
+        "mean": 0.0493,
+        "std": 0.2165
+      },
+      "Recall@3": {
+        "mean": 0.1408,
+        "std": 0.3479
+      },
+      "Recall@5": {
+        "mean": 0.2465,
+        "std": 0.431
+      },
+      "MRR": {
+        "mean": 0.1128,
+        "std": 0.2448
+      },
+      "nDCG@5": {
+        "mean": 0.1455,
+        "std": 0.2774
+      }
+    },
+    "baseline_c_repo_diversity": {
+      "query_count": 142,
+      "eligible_candidate_count": {
+        "mean": 16.5493,
+        "min": 3,
+        "max": 42
+      },
+      "Precision@1": {
+        "mean": 0.0634,
+        "std": 0.2436
+      },
+      "Precision@3": {
+        "mean": 0.0469,
+        "std": 0.116
+      },
+      "Precision@5": {
+        "mean": 0.0479,
+        "std": 0.0853
+      },
+      "Recall@1": {
+        "mean": 0.0634,
+        "std": 0.2436
+      },
+      "Recall@3": {
+        "mean": 0.1408,
+        "std": 0.3479
+      },
+      "Recall@5": {
+        "mean": 0.2394,
+        "std": 0.4267
+      },
+      "MRR": {
+        "mean": 0.1176,
+        "std": 0.2613
+      },
+      "nDCG@5": {
+        "mean": 0.1473,
+        "std": 0.2881
+      }
+    }
+  },
+  "evidence_ablations": {
+    "ablation_a_gold_only": {
+      "query_count": 142,
+      "eligible_candidate_count": {
+        "mean": 11.7394,
+        "min": 3,
+        "max": 29
+      },
+      "Precision@1": {
+        "mean": 0.0141,
+        "std": 0.1178
+      },
+      "Precision@3": {
+        "mean": 0.0305,
+        "std": 0.0961
+      },
+      "Precision@5": {
+        "mean": 0.031,
+        "std": 0.0724
+      },
+      "Recall@1": {
+        "mean": 0.0141,
+        "std": 0.1178
+      },
+      "Recall@3": {
+        "mean": 0.0915,
+        "std": 0.2884
+      },
+      "Recall@5": {
+        "mean": 0.1549,
+        "std": 0.3618
+      },
+      "MRR": {
+        "mean": 0.0649,
+        "std": 0.175
+      },
+      "nDCG@5": {
+        "mean": 0.0872,
+        "std": 0.2144
+      }
+    },
+    "ablation_b_gold_plus_high_confidence": {
+      "query_count": 142,
+      "eligible_candidate_count": {
+        "mean": 16.4296,
+        "min": 3,
+        "max": 42
+      },
+      "Precision@1": {
+        "mean": 0.0563,
+        "std": 0.2306
+      },
+      "Precision@3": {
+        "mean": 0.0352,
+        "std": 0.1025
+      },
+      "Precision@5": {
+        "mean": 0.0423,
+        "std": 0.0816
+      },
+      "Recall@1": {
+        "mean": 0.0563,
+        "std": 0.2306
+      },
+      "Recall@3": {
+        "mean": 0.1056,
+        "std": 0.3074
+      },
+      "Recall@5": {
+        "mean": 0.2113,
+        "std": 0.4082
+      },
+      "MRR": {
+        "mean": 0.1041,
+        "std": 0.25
+      },
+      "nDCG@5": {
+        "mean": 0.1302,
+        "std": 0.2758
+      }
+    },
+    "ablation_c_gold_plus_high_plus_medium": {
+      "query_count": 142,
+      "eligible_candidate_count": {
+        "mean": 19.4437,
+        "min": 3,
+        "max": 51
+      },
+      "Precision@1": {
+        "mean": 0.0563,
+        "std": 0.2306
+      },
+      "Precision@3": {
+        "mean": 0.0446,
+        "std": 0.1135
+      },
+      "Precision@5": {
+        "mean": 0.0352,
+        "std": 0.0762
+      },
+      "Recall@1": {
+        "mean": 0.0563,
+        "std": 0.2306
+      },
+      "Recall@3": {
+        "mean": 0.1338,
+        "std": 0.3404
+      },
+      "Recall@5": {
+        "mean": 0.1761,
+        "std": 0.3809
+      },
+      "MRR": {
+        "mean": 0.1014,
+        "std": 0.2546
+      },
+      "nDCG@5": {
+        "mean": 0.12,
+        "std": 0.2774
+      }
+    }
+  },
+  "category_level_evaluation": {
+    "ARCH_DESIGN": {
+      "status": "EVALUATED",
+      "query_count": 5,
+      "Precision@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Precision@3": {
+        "mean": 0.0667,
+        "std": 0.1333
+      },
+      "Precision@5": {
+        "mean": 0.04,
+        "std": 0.08
+      },
+      "Recall@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Recall@3": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "Recall@5": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "MRR": {
+        "mean": 0.1,
+        "std": 0.2
+      },
+      "nDCG@5": {
+        "mean": 0.1262,
+        "std": 0.2524
+      }
+    },
+    "BUG_LOGIC": {
+      "status": "EVALUATED",
+      "query_count": 18,
+      "Precision@1": {
+        "mean": 0.0556,
+        "std": 0.2291
+      },
+      "Precision@3": {
+        "mean": 0.037,
+        "std": 0.1048
+      },
+      "Precision@5": {
+        "mean": 0.0222,
+        "std": 0.0629
+      },
+      "Recall@1": {
+        "mean": 0.0556,
+        "std": 0.2291
+      },
+      "Recall@3": {
+        "mean": 0.1111,
+        "std": 0.3143
+      },
+      "Recall@5": {
+        "mean": 0.1111,
+        "std": 0.3143
+      },
+      "MRR": {
+        "mean": 0.0833,
+        "std": 0.25
+      },
+      "nDCG@5": {
+        "mean": 0.0906,
+        "std": 0.2636
+      }
+    },
+    "CODE_STYLE": {
+      "status": "EVALUATED",
+      "query_count": 5,
+      "Precision@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Precision@3": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Precision@5": {
+        "mean": 0.08,
+        "std": 0.098
+      },
+      "Recall@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Recall@3": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Recall@5": {
+        "mean": 0.4,
+        "std": 0.4899
+      },
+      "MRR": {
+        "mean": 0.08,
+        "std": 0.098
+      },
+      "nDCG@5": {
+        "mean": 0.1548,
+        "std": 0.1895
+      }
+    },
+    "DATA_MANAGEMENT": {
+      "status": "EVALUATED",
+      "query_count": 6,
+      "Precision@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Precision@3": {
+        "mean": 0.1667,
+        "std": 0.1667
+      },
+      "Precision@5": {
+        "mean": 0.1,
+        "std": 0.1
+      },
+      "Recall@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Recall@3": {
+        "mean": 0.5,
+        "std": 0.5
+      },
+      "Recall@5": {
+        "mean": 0.5,
+        "std": 0.5
+      },
+      "MRR": {
+        "mean": 0.2222,
+        "std": 0.2291
+      },
+      "nDCG@5": {
+        "mean": 0.2936,
+        "std": 0.2969
+      }
+    },
+    "DOCUMENTATION": {
+      "status": "EVALUATED",
+      "query_count": 5,
+      "Precision@1": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "Precision@3": {
+        "mean": 0.0667,
+        "std": 0.1333
+      },
+      "Precision@5": {
+        "mean": 0.04,
+        "std": 0.08
+      },
+      "Recall@1": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "Recall@3": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "Recall@5": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "MRR": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "nDCG@5": {
+        "mean": 0.2,
+        "std": 0.4
+      }
+    },
+    "FRONTEND_UI_UX": {
+      "status": "EVALUATED",
+      "query_count": 5,
+      "Precision@1": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "Precision@3": {
+        "mean": 0.0667,
+        "std": 0.1333
+      },
+      "Precision@5": {
+        "mean": 0.04,
+        "std": 0.08
+      },
+      "Recall@1": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "Recall@3": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "Recall@5": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "MRR": {
+        "mean": 0.2,
+        "std": 0.4
+      },
+      "nDCG@5": {
+        "mean": 0.2,
+        "std": 0.4
+      }
+    },
+    "INFRA_DEVOPS": {
+      "status": "EVALUATED",
+      "query_count": 4,
+      "Precision@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Precision@3": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Precision@5": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Recall@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Recall@3": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Recall@5": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "MRR": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "nDCG@5": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "PERF_OPTIMIZATION": {
+      "status": "EVALUATED",
+      "query_count": 8,
+      "Precision@1": {
+        "mean": 0.125,
+        "std": 0.3307
+      },
+      "Precision@3": {
+        "mean": 0.0417,
+        "std": 0.1102
+      },
+      "Precision@5": {
+        "mean": 0.025,
+        "std": 0.0661
+      },
+      "Recall@1": {
+        "mean": 0.125,
+        "std": 0.3307
+      },
+      "Recall@3": {
+        "mean": 0.125,
+        "std": 0.3307
+      },
+      "Recall@5": {
+        "mean": 0.125,
+        "std": 0.3307
+      },
+      "MRR": {
+        "mean": 0.125,
+        "std": 0.3307
+      },
+      "nDCG@5": {
+        "mean": 0.125,
+        "std": 0.3307
+      }
+    },
+    "SECURITY_PRIVACY": {
+      "status": "EVALUATED",
+      "query_count": 8,
+      "Precision@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Precision@3": {
+        "mean": 0.0417,
+        "std": 0.1102
+      },
+      "Precision@5": {
+        "mean": 0.05,
+        "std": 0.0866
+      },
+      "Recall@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Recall@3": {
+        "mean": 0.125,
+        "std": 0.3307
+      },
+      "Recall@5": {
+        "mean": 0.25,
+        "std": 0.433
+      },
+      "MRR": {
+        "mean": 0.0938,
+        "std": 0.174
+      },
+      "nDCG@5": {
+        "mean": 0.1327,
+        "std": 0.2352
+      }
+    },
+    "TESTING_QUALITY": {
+      "status": "EVALUATED",
+      "query_count": 16,
+      "Precision@1": {
+        "mean": 0.0625,
+        "std": 0.2421
+      },
+      "Precision@3": {
+        "mean": 0.0208,
+        "std": 0.0807
+      },
+      "Precision@5": {
+        "mean": 0.025,
+        "std": 0.0661
+      },
+      "Recall@1": {
+        "mean": 0.0625,
+        "std": 0.2421
+      },
+      "Recall@3": {
+        "mean": 0.0625,
+        "std": 0.2421
+      },
+      "Recall@5": {
+        "mean": 0.125,
+        "std": 0.3307
+      },
+      "MRR": {
+        "mean": 0.0781,
+        "std": 0.2456
+      },
+      "nDCG@5": {
+        "mean": 0.0894,
+        "std": 0.2571
+      }
+    }
+  },
+  "query_type_evaluation": {
+    "single_category": {
+      "query_count": 80,
+      "Precision@1": {
+        "mean": 0.0625,
+        "std": 0.2421
+      },
+      "Precision@3": {
+        "mean": 0.0458,
+        "std": 0.1148
+      },
+      "Precision@5": {
+        "mean": 0.0375,
+        "std": 0.0781
+      },
+      "Recall@1": {
+        "mean": 0.0625,
+        "std": 0.2421
+      },
+      "Recall@3": {
+        "mean": 0.1375,
+        "std": 0.3444
+      },
+      "Recall@5": {
+        "mean": 0.1875,
+        "std": 0.3903
+      },
+      "MRR": {
+        "mean": 0.1092,
+        "std": 0.2649
+      },
+      "nDCG@5": {
+        "mean": 0.1286,
+        "std": 0.2869
+      }
+    },
+    "multi_category": {
+      "query_count": 6,
+      "Precision@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Precision@3": {
+        "mean": 0.1111,
+        "std": 0.1571
+      },
+      "Precision@5": {
+        "mean": 0.0667,
+        "std": 0.0943
+      },
+      "Recall@1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "Recall@3": {
+        "mean": 0.3333,
+        "std": 0.4714
+      },
+      "Recall@5": {
+        "mean": 0.3333,
+        "std": 0.4714
+      },
+      "MRR": {
+        "mean": 0.1389,
+        "std": 0.2022
+      },
+      "nDCG@5": {
+        "mean": 0.1885,
+        "std": 0.2692
+      },
+      "exact_multi_category_match_rate": 0.3333,
+      "partial_category_match_rate": 0.3333
+    },
+    "natural_language": {
+      "query_count": 56,
+      "Precision@1": {
+        "mean": 0.0536,
+        "std": 0.2252
+      },
+      "Precision@3": {
+        "mean": 0.0357,
+        "std": 0.1031
+      },
+      "Precision@5": {
+        "mean": 0.0286,
+        "std": 0.07
+      },
+      "Recall@1": {
+        "mean": 0.0536,
+        "std": 0.2252
+      },
+      "Recall@3": {
+        "mean": 0.1071,
+        "std": 0.3093
+      },
+      "Recall@5": {
+        "mean": 0.1429,
+        "std": 0.3499
+      },
+      "MRR": {
+        "mean": 0.0863,
+        "std": 0.2434
+      },
+      "nDCG@5": {
+        "mean": 0.1004,
+        "std": 0.2623
+      }
+    }
+  },
+  "leakage_audit": {
+    "total_queries_audited": 142,
+    "leakage_violations": 0
+  }
+}

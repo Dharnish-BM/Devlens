@@ -1,0 +1,146 @@
+{
+  "report": {
+    "phase": "Phase 7B",
+    "status": "COMPLETE",
+    "phase7c_implemented": false,
+    "purpose": "Measure retrieval of developers associated with held-out expertise evidence.",
+    "interpretation_boundary": "The benchmark does not prove universal developer expertise, identify the best developer, or establish universal recommender superiority."
+  },
+  "dataset_statistics": {
+    "total_gders_comments": 1225,
+    "gold_reference_comments": 341,
+    "inferred_comments": 884,
+    "gold_inferred_overlap": 0,
+    "reviewer_identities": 151,
+    "taxonomy_categories": 10,
+    "repositories": 10,
+    "pull_requests": 333,
+    "sources": [
+      "data/gders/processed/phase6_5_validation_report.json",
+      "data/gders/processed/dataset_manifest.json"
+    ]
+  },
+  "candidate_statistics": {
+    "human_candidates": 149,
+    "bot_or_service_accounts": 2,
+    "uncertain_identities": 0,
+    "recommendation_eligible_reviewers": 69,
+    "benchmark_candidate_population": {
+      "mean_candidates_per_query": 19.4437,
+      "minimum_candidates_per_query": 3,
+      "maximum_candidates_per_query": 51,
+      "definition": "identity_class == human_candidate and developer_recommendation_eligible == true"
+    },
+    "sources": [
+      "data/gders/processed/reviewer_identity_audit.json",
+      "data/gders/processed/expertise_profile_report.json",
+      "data/gders/processed/benchmark_results.json"
+    ]
+  },
+  "benchmark_statistics": {
+    "total_queries": 142,
+    "single_category_queries": 80,
+    "multi_category_queries": 6,
+    "natural_language_queries": 56,
+    "benchmark_protocol": "GDERS-HeldOut-DeveloperGrouped-v1.0",
+    "held_out_selection": "Deterministically highest comment ID among supported reviewer-category evidence.",
+    "random_seed": 42
+  },
+  "overall_metrics": {
+    "query_count": 142,
+    "Precision@1": {"mean": 0.0563, "std": 0.2306},
+    "Precision@3": {"mean": 0.0446, "std": 0.1135},
+    "Precision@5": {"mean": 0.0352, "std": 0.0762},
+    "Recall@1": {"mean": 0.0563, "std": 0.2306},
+    "Recall@3": {"mean": 0.1338, "std": 0.3404},
+    "Recall@5": {"mean": 0.1761, "std": 0.3809},
+    "MRR": {"mean": 0.1014, "std": 0.2546},
+    "nDCG@5": {"mean": 0.12, "std": 0.2774}
+  },
+  "category_metrics": {
+    "ARCH_DESIGN": {"status":"EVALUATED","queries":5,"P@1":0.0,"P@3":0.0667,"P@5":0.04,"R@1":0.0,"R@3":0.2,"R@5":0.2,"MRR":0.1,"nDCG@5":0.1262},
+    "BUG_LOGIC": {"status":"EVALUATED","queries":18,"P@1":0.0556,"P@3":0.037,"P@5":0.0222,"R@1":0.0556,"R@3":0.1111,"R@5":0.1111,"MRR":0.0833,"nDCG@5":0.0906},
+    "CODE_STYLE": {"status":"EVALUATED","queries":5,"P@1":0.0,"P@3":0.0,"P@5":0.08,"R@1":0.0,"R@3":0.0,"R@5":0.4,"MRR":0.08,"nDCG@5":0.1548},
+    "DATA_MANAGEMENT": {"status":"EVALUATED","queries":6,"P@1":0.0,"P@3":0.1667,"P@5":0.1,"R@1":0.0,"R@3":0.5,"R@5":0.5,"MRR":0.2222,"nDCG@5":0.2936},
+    "DOCUMENTATION": {"status":"EVALUATED","queries":5,"P@1":0.2,"P@3":0.0667,"P@5":0.04,"R@1":0.2,"R@3":0.2,"R@5":0.2,"MRR":0.2,"nDCG@5":0.2},
+    "FRONTEND_UI_UX": {"status":"EVALUATED","queries":5,"P@1":0.2,"P@3":0.0667,"P@5":0.04,"R@1":0.2,"R@3":0.2,"R@5":0.2,"MRR":0.2,"nDCG@5":0.2},
+    "INFRA_DEVOPS": {"status":"EVALUATED","queries":4,"P@1":0.0,"P@3":0.0,"P@5":0.0,"R@1":0.0,"R@3":0.0,"R@5":0.0,"MRR":0.0,"nDCG@5":0.0},
+    "PERF_OPTIMIZATION": {"status":"EVALUATED","queries":8,"P@1":0.125,"P@3":0.0417,"P@5":0.025,"R@1":0.125,"R@3":0.125,"R@5":0.125,"MRR":0.125,"nDCG@5":0.125},
+    "SECURITY_PRIVACY": {"status":"EVALUATED","queries":8,"P@1":0.0,"P@3":0.0417,"P@5":0.05,"R@1":0.0,"R@3":0.125,"R@5":0.25,"MRR":0.0938,"nDCG@5":0.1327},
+    "TESTING_QUALITY": {"status":"EVALUATED","queries":16,"P@1":0.0625,"P@3":0.0208,"P@5":0.025,"R@1":0.0625,"R@3":0.0625,"R@5":0.125,"MRR":0.0781,"nDCG@5":0.0894}
+  },
+  "multi_category_metrics": {
+    "query_count": 6,
+    "exact_match_rate": 0.3333,
+    "partial_match_rate": 0.3333,
+    "Precision@1": {"mean":0.0,"std":0.0},
+    "Precision@3": {"mean":0.1111,"std":0.1571},
+    "Precision@5": {"mean":0.0667,"std":0.0943},
+    "Recall@1": {"mean":0.0,"std":0.0},
+    "Recall@3": {"mean":0.3333,"std":0.4714},
+    "Recall@5": {"mean":0.3333,"std":0.4714},
+    "MRR": {"mean":0.1389,"std":0.2022},
+    "nDCG@5": {"mean":0.1885,"std":0.2692},
+    "exact_definition": "Retrieved held-out developer has every requested category in held-out labels.",
+    "partial_definition": "Retrieved held-out developer has at least one requested category in held-out labels."
+  },
+  "baseline_metrics": {
+    "GDERS": {"P@1":0.0563,"P@3":0.0446,"P@5":0.0352,"R@1":0.0563,"R@3":0.1338,"R@5":0.1761,"MRR":0.1014,"nDCG@5":0.12},
+    "Evidence Count": {"P@1":0.0141,"P@3":0.0329,"P@5":0.0423,"R@1":0.0141,"R@3":0.0986,"R@5":0.2113,"MRR":0.0768,"nDCG@5":0.1095},
+    "PR Diversity": {"P@1":0.0493,"P@3":0.0469,"P@5":0.0493,"R@1":0.0493,"R@3":0.1408,"R@5":0.2465,"MRR":0.1128,"nDCG@5":0.1455},
+    "Repository Diversity": {"P@1":0.0634,"P@3":0.0469,"P@5":0.0479,"R@1":0.0634,"R@3":0.1408,"R@5":0.2394,"MRR":0.1176,"nDCG@5":0.1473}
+  },
+  "ablation_metrics": {
+    "Gold-only": {"eligible_candidates_mean":11.7394,"P@1":0.0141,"P@3":0.0305,"P@5":0.031,"Recall@5":0.1549,"MRR":0.0649,"nDCG@5":0.0872},
+    "Gold + high-confidence": {"eligible_candidates_mean":16.4296,"P@1":0.0563,"P@3":0.0352,"P@5":0.0423,"Recall@5":0.2113,"MRR":0.1041,"nDCG@5":0.1302},
+    "Gold + high + medium-confidence": {"eligible_candidates_mean":19.4437,"P@1":0.0563,"P@3":0.0446,"P@5":0.0352,"Recall@5":0.1761,"MRR":0.1014,"nDCG@5":0.12}
+  },
+  "leakage_audit": {
+    "queries_audited":142,
+    "leakage_violations":0,
+    "held_out_overlap":0,
+    "checks": ["held-out IDs excluded from profile supporting evidence", "profile evidence exclusion recorded per query", "human candidate identity gate", "relevance labels independent of recommendation output", "deterministic future-free split and ranking"]
+  },
+  "reproducibility": {
+    "random_seed":42,
+    "dataset_version":"GDERS-1225-v1.0",
+    "taxonomy_version":"GDERS-10-Category-v1.0",
+    "classifier_version":"LinearSVC-CalibratedMargins-v1.0",
+    "recommendation_engine_version":"GDERS-MultiTierRecommender-v1.0",
+    "benchmark_version":"GDERS-HeldOut-DeveloperGrouped-v1.0",
+    "tie_breaking":"recommendation score descending, matched-category count descending, gold count descending, username ascending",
+    "software_environment":"Python 3.11 executable used for validation; pytest 9.1.1 installed during the prior validation session"
+  },
+  "test_results": {
+    "phase7b_specific_tests": {"passed":9,"failed":0,"errors":0},
+    "remaining_gders_tests": {"passed":61,"failed":0,"errors":0},
+    "aggregate_reported_test_count":70,
+    "warnings": [
+      {"source":"sklearn.preprocessing._label.MultiLabelBinarizer","message":"unknown classes TESTING_QUALITY, DATA_MANAGEMENT, and/or PERF_OPTIMIZATION were ignored in cross-validation folds","effect":"test-data fold warning; no benchmark artifact or recommendation result is changed","follow_up":"Review fold construction if cross-validation diagnostics are expanded; not a Phase 7B validity failure."},
+      {"source":"sklearn.cluster.KMeans","message":"Number of distinct clusters (2) found smaller than n_clusters (3)","effect":"exploratory clustering warning caused by duplicate test points; unrelated to benchmark retrieval metrics","follow_up":"Use a less duplicated fixture or adjust exploratory test cluster count if that test is maintained."}
+    ]
+  },
+  "limitations": [
+    "142 held-out queries are sufficient for descriptive reporting but small for multi-category and some category-level slices.",
+    "Category support is uneven: single-category support ranges from 4 to 18 queries.",
+    "The corpus covers 10 selected repositories and 1,225 review comments, not all developer activity.",
+    "Relevance represents held-out labeled review evidence, not complete or universal capability.",
+    "Natural-language evaluation uses deterministic taxonomy mapping and separately audits mapping behavior.",
+    "Bot/service identities are excluded from human recommendation evaluation, so results describe the human candidate population only.",
+    "Classifier predictions are confidence-tiered decision-margin outputs, not calibrated probabilities.",
+    "Only six multi-category queries were supported by the held-out evidence protocol."
+  ],
+  "artifact_inventory": [
+    {"path":"gders/evaluation/benchmark.py","type":"implementation","purpose":"Phase 7B split, evaluation, metrics, baselines, ablations, audits, and report generation."},
+    {"path":"tests/gders/test_gders_benchmark.py","type":"test artifact","purpose":"Phase 7B deterministic split, leakage, metric, baseline, ablation, aggregation, ranking, and empty-case tests."},
+    {"path":"data/gders/processed/benchmark_dataset.jsonl","type":"output","purpose":"142 benchmark query units with held-out IDs, labels, exclusions, and candidate populations."},
+    {"path":"data/gders/processed/benchmark_results.json","type":"output","purpose":"Machine-readable benchmark, baseline, ablation, category, and reproducibility results."},
+    {"path":"data/gders/processed/benchmark_report.md","type":"output","purpose":"Generated Phase 7B benchmark report."},
+    {"path":"data/gders/processed/benchmark_leakage_audit.json","type":"output","purpose":"Per-query leakage audit records and summary."},
+    {"path":"data/gders/processed/phase7b_final_report.md","type":"output","purpose":"Comprehensive academic/review-ready final report."},
+    {"path":"data/gders/processed/phase7b_final_report.json","type":"output","purpose":"Structured final report data."},
+    {"path":"data/gders/processed/reviewer_identity_audit.json","type":"supporting input","purpose":"Phase 7A.5 identity classification and human candidate counts."},
+    {"path":"data/gders/processed/phase6_5_validation_report.json","type":"supporting input","purpose":"Corpus, gold/inferred disjointness, confidence terminology, and profile validation counts."},
+    {"path":"data/gders/processed/expertise_profile_report.json","type":"supporting input","purpose":"Profile population, evidence tiers, and scoring methodology."}
+  ]
+}
