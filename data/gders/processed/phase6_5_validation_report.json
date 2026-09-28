@@ -1,6 +1,6 @@
 {
   "phase": "Phase 6.5 \u2014 Final Validation Gate Before Recommendation Engine",
-  "timestamp": "2026-09-25T16:12:09Z",
+  "timestamp": "2026-09-26T05:47:22Z",
   "status": "PHASE 7 CLEARED",
   "confidence_terminology_audit": {
     "classifier_type": "LinearSVC (One-vs-Rest)",
@@ -23,7 +23,7 @@
     "status": "PASSED"
   },
   "comment_traceability_verification": {
-    "total_profile_comment_references": 1323,
+    "total_profile_comment_references": 1327,
     "missing_comment_references": 0,
     "reviewer_identity_mismatches": 0,
     "status": "PASSED"
@@ -31,33 +31,33 @@
   "evidence_scoring_sensitivity_analysis": {
     "scheme_a_full_profile_view": {
       "description": "Includes all evidence (Gold=1.0, High=0.7, Med=0.4, Low=0.1)",
-      "eligible_reviewers": 71,
-      "eligible_category_profiles": 140,
+      "eligible_reviewers": 72,
+      "eligible_category_profiles": 139,
       "tier_distribution": {
-        "insufficient_evidence": 1134,
-        "emerging_evidence": 236,
+        "insufficient_evidence": 1136,
+        "emerging_evidence": 235,
         "supported_evidence": 107,
-        "strong_evidence": 33
+        "strong_evidence": 32
       }
     },
     "scheme_b_recommendation_eligible": {
       "description": "Excludes low-confidence (Gold=1.0, High=0.7, Med=0.4, Low=0.0)",
-      "eligible_reviewers": 69,
-      "eligible_category_profiles": 136,
+      "eligible_reviewers": 70,
+      "eligible_category_profiles": 135,
       "tier_distribution": {
-        "insufficient_evidence": 1135,
-        "emerging_evidence": 239,
-        "supported_evidence": 105,
+        "insufficient_evidence": 1137,
+        "emerging_evidence": 238,
+        "supported_evidence": 104,
         "strong_evidence": 31
       }
     },
     "scheme_c_strict_gold_high_only": {
       "description": "Strict high certainty only (Gold=1.0, High=0.7, Med=0.0, Low=0.0)",
-      "eligible_reviewers": 61,
+      "eligible_reviewers": 60,
       "eligible_category_profiles": 121,
       "tier_distribution": {
-        "insufficient_evidence": 1140,
-        "emerging_evidence": 249,
+        "insufficient_evidence": 1142,
+        "emerging_evidence": 247,
         "supported_evidence": 93,
         "strong_evidence": 28
       }

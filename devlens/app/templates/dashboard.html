@@ -89,6 +89,110 @@
   {% endif %}
 </div>
 
+<!-- Read-only GDERS PR expertise evidence -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">GDERS PR Expertise</div>
+    <span class="badge badge-slate">Review Evidence Only</span>
+  </div>
+
+  {% if not dev.gders.has_gders_evidence %}
+    <div style="padding: 14px; border-left: 3px solid var(--color-text-dim); color: var(--color-text-muted);">
+      PR Expertise Evidence: Insufficient
+    </div>
+  {% else %}
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.8rem;">
+      <div>
+        <div style="color: var(--color-text-dim);">STATUS</div>
+        <strong style="color: var(--color-signal-green);">Evidence Available</strong>
+      </div>
+      <div>
+        <div style="color: var(--color-text-dim);">ELIGIBILITY</div>
+        <strong>{{ "Recommendation Eligible" if dev.gders.recommendation_eligible else "Evidence Not Eligible" }}</strong>
+      </div>
+      <div>
+        <div style="color: var(--color-text-dim);">REVIEW COMMENTS</div>
+        <strong>{{ dev.gders.evidence_summary.total_review_comments }}</strong>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      {% for expertise in dev.gders.expertise_profiles if expertise.recommendation_eligible %}
+        <div style="background: #0d1117; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 14px;">
+          <div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <strong style="color: #ffffff;">{{ expertise.category_id }}</strong>
+            <span class="badge badge-green">{{ expertise.evidence_tier }}</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-text-muted);">
+            <span>Score: <strong style="color: #ffffff;">{{ expertise.recommendation_eligible_score }}</strong></span>
+            <span>Comments: <strong style="color: #ffffff;">{{ expertise.supporting_comment_ids|length }}</strong></span>
+            <span>PRs: <strong style="color: #ffffff;">{{ expertise.distinct_pr_count }}</strong></span>
+            <span>Repos: <strong style="color: #ffffff;">{{ expertise.distinct_repository_count }}</strong></span>
+          </div>
+          <div style="margin-top: 8px; font-size: 0.78rem; color: var(--color-text-dim);">
+            Evidence composition: {{ expertise.gold_comment_count }} gold,
+            {{ expertise.high_confidence_count }} high-confidence,
+            {{ expertise.medium_confidence_count }} medium-confidence comments.
+          </div>
+          <details style="margin-top: 8px;">
+            <summary style="cursor: pointer; color: var(--color-blue); font-size: 0.78rem;">View supporting evidence</summary>
+            <div style="margin-top: 6px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted);">
+              {% for evidence in expertise.supporting_evidence %}
+                <article style="padding: 8px 0; border-top: 1px solid var(--color-border-subtle);">
+                  <div>
+                    <a href="{{ evidence.pr_url or '#' }}" target="_blank" style="color: var(--color-blue);">
+                      {{ evidence.repository }}{% if evidence.pull_request_number %}#{{ evidence.pull_request_number }}{% endif %}
+                    </a>
+                    · {{ evidence.provenance }} · {{ evidence.confidence_status }} · comment {{ evidence.comment_id }}
+                  </div>
+                  {% if evidence.comment_text %}
+                    <div style="margin-top: 4px; color: var(--color-text-main); white-space: pre-wrap;">{{ evidence.comment_text }}</div>
+                  {% endif %}
+                </article>
+              {% else %}
+                Comment IDs: {{ expertise.recommendation_eligible_comment_ids|join(", ") }}
+              {% endfor %}
+            </div>
+          </details>
+        </div>
+      {% else %}
+        <div style="padding: 14px; color: var(--color-text-muted);">PR Expertise Evidence: Insufficient</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">GDERS Expertise-Based Recommendations</div>
+    <span class="badge badge-slate">Separate from Project Fit</span>
+  </div>
+  <form method="get" action="{{ url_for('dashboard', username=dev.username) }}" style="display: flex; gap: 10px; margin-bottom: 14px;">
+    <input class="form-control" type="text" name="gders_query" value="{{ dev.gders.recommendation_query }}" placeholder="e.g. database schema testing" aria-label="GDERS expertise query">
+    <button class="btn btn-secondary" type="submit">Recommend</button>
+  </form>
+  {% if dev.gders.recommendation_query %}
+    {% if dev.gders.recommendations %}
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        {% for candidate in dev.gders.recommendations %}
+          <div style="padding: 10px 12px; background: #0d1117; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+            <strong>{{ candidate.username }}</strong>
+            <span class="badge badge-green">{{ candidate.evidence_tier }}</span>
+            <div style="margin-top: 5px; font-size: 0.78rem; color: var(--color-text-muted);">
+              Categories: {{ candidate.matched_categories|join(", ") }} · Score: {{ candidate.recommendation_score }} ·
+              Evidence: {{ candidate.supporting_evidence_count }} comments · {{ candidate.supporting_prs }} PRs · {{ candidate.supporting_repositories }} repositories
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div style="color: var(--color-text-muted);">No human recommendation-eligible GDERS candidates matched this expertise query.</div>
+    {% endif %}
+  {% else %}
+    <div style="color: var(--color-text-muted);">Enter a taxonomy category or natural-language expertise requirement.</div>
+  {% endif %}
+</div>
+
 <!-- Dual Classification Dimensions (Archetype vs Engagement Tier) -->
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
   

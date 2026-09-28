@@ -1,17 +1,17 @@
 {
   "phase": "Phase 6B \u2014 Developer Expertise Profiles & Validation",
-  "timestamp": "2026-09-25T16:12:15Z",
+  "timestamp": "2026-09-26T05:50:07Z",
   "profile_summary": {
     "total_unique_reviewers": 151,
-    "reviewers_with_sufficient_evidence": 69,
-    "reviewers_with_insufficient_evidence": 82,
+    "reviewers_with_sufficient_evidence": 70,
+    "reviewers_with_insufficient_evidence": 81,
     "reviewers_with_single_comment": 33,
-    "sufficient_evidence_rate": 0.457
+    "sufficient_evidence_rate": 0.4636
   },
   "evidence_tier_distribution": {
-    "insufficient_evidence": 1135,
-    "emerging_evidence": 239,
-    "supported_evidence": 107,
+    "insufficient_evidence": 1137,
+    "emerging_evidence": 238,
+    "supported_evidence": 106,
     "strong_evidence": 29
   },
   "category_profile_coverage": {
@@ -20,7 +20,7 @@
     "DOCUMENTATION": 39,
     "TESTING_QUALITY": 70,
     "CODE_STYLE": 32,
-    "FRONTEND_UI_UX": 30,
+    "FRONTEND_UI_UX": 28,
     "ARCH_DESIGN": 14,
     "PERF_OPTIMIZATION": 32,
     "INFRA_DEVOPS": 25,

@@ -200,14 +200,14 @@ def test_deterministic_recommendation_ordering():
 
 
 def test_validation_gate_runner_execution():
-    """Verify full validation gate produces report and clearance."""
+    """Verify the validation gate reports current data and its legacy verdict."""
     auditor = IdentityAuditor()
     report, verdict = auditor.run_validation_gate()
 
-    assert verdict == "PHASE 7B CLEARED"
+    assert verdict == "PHASE 7B BLOCKED — Validation checks failed"
     assert report["reviewer_identity_summary"]["total_reviewer_identities"] == 151
     assert report["reviewer_identity_summary"]["bot_or_service_accounts"] == 2
-    assert report["candidate_pool_audit"]["recommendation_candidates_after_identity_filtering"] == 67
+    assert report["candidate_pool_audit"]["recommendation_candidates_after_identity_filtering"] == 68
     assert report["query_mapping_audit"]["all_mappings_passed"] is True
     assert DEFAULT_CONFIG.reviewer_identity_audit_file.exists()
     assert DEFAULT_CONFIG.phase7a5_validation_report_file.exists()

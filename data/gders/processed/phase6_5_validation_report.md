@@ -1,6 +1,6 @@
 # GDERS Phase 6.5 — Final Validation Gate & Audit Report
 
-**Execution Date:** 2026-09-25T16:12:09Z  
+**Execution Date:** 2026-09-26T05:47:22Z  
 **Validation Gate Status:** **PHASE 7 CLEARED**  
 
 ---
@@ -27,7 +27,7 @@
 ---
 
 ## 3. Comment Traceability Audit
-- **Total Profile Comment References Checked:** `1323`
+- **Total Profile Comment References Checked:** `1327`
 - **Missing Comment References:** `0`
 - **Reviewer Identity Mismatches:** `0`
 - **Traceability Status:** **PASSED**
@@ -37,9 +37,9 @@
 ## 4. Evidence Scoring Sensitivity Analysis
 | Scheme | Low-Conf Weight | Med-Conf Weight | High-Conf Weight | Gold Weight | Eligible Reviewers | Eligible Category Profiles |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Scheme A (Display View)** | 0.10 | 0.40 | 0.70 | 1.00 | `71` | `140` |
-| **Scheme B (Recommendation-Eligible)** | **0.00** | 0.40 | 0.70 | 1.00 | `69` | `136` |
-| **Scheme C (Strict Gold+High)** | 0.00 | 0.00 | 0.70 | 1.00 | `61` | `121` |
+| **Scheme A (Display View)** | 0.10 | 0.40 | 0.70 | 1.00 | `72` | `139` |
+| **Scheme B (Recommendation-Eligible)** | **0.00** | 0.40 | 0.70 | 1.00 | `70` | `135` |
+| **Scheme C (Strict Gold+High)** | 0.00 | 0.00 | 0.70 | 1.00 | `60` | `121` |
 
 > [!NOTE]
 > Low-confidence predictions shift only 2 reviewers (71 -> 69) and 4 category profiles (140 -> 136). No sparse reviewer becomes strongly supported primarily through low-confidence noise.

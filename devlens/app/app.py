@@ -37,6 +37,7 @@ from devlens.models.project_fit import (
     rank_developers,
     rule_based_match,
 )
+from gders.integration.devlens_bridge import DevLensGDERSBridge
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -130,6 +131,7 @@ def create_app() -> Flask:
 
     # Cache developer pool for fast matchmaking
     developer_pool_cache: List[DeveloperProfile] = []
+    gders_bridge = DevLensGDERSBridge()
 
     def get_pool() -> List[DeveloperProfile]:
         nonlocal developer_pool_cache
@@ -538,6 +540,7 @@ def create_app() -> Flask:
                 doc_comp=doc_comp,
             )
 
+            gders_query = request.args.get("gders_query", "").strip()
             profile_data = {
                 "username": username,
                 "snapshot_id": snap.id,
@@ -560,7 +563,13 @@ def create_app() -> Flask:
                 "language_distribution": lang_dist,
                 "lang_colors": LANG_PALETTE,
                 "hiring_verdict": hiring_verdict,
+                "gders": gders_bridge.get_profile(username),
             }
+            profile_data["gders"]["recommendation_query"] = gders_query
+            profile_data["gders"]["recommendations"] = (
+                gders_bridge.recommend(gders_query)["candidates"]
+                if gders_query else []
+            )
 
         return render_template("dashboard.html", dev=profile_data)
 

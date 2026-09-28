@@ -1,0 +1,67 @@
+{
+  "project": "DevLens + GDERS",
+  "finalization_date": "2026-09-26",
+  "state": "Phase 7C integration frozen; Phase 7D documentation finalization",
+  "repository_revision": "c601a6b8648ce64b033805342634b0f54fea69af",
+  "python": "3.11.4",
+  "dependencies": {
+    "Flask": "3.1.3",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "pdfplumber": "0.11.10",
+    "pytest": "9.1.1",
+    "python-docx": "1.2.0",
+    "python-dotenv": "1.2.2",
+    "requests": "2.34.2",
+    "scikit-learn": "1.9.0",
+    "shap": "0.51.0",
+    "SQLAlchemy": "2.0.51",
+    "xgboost": "3.2.0"
+  },
+  "devlens": {
+    "state": "Existing ML pipeline and artifacts frozen",
+    "feature_count": 41,
+    "match_route": "Existing /match implementation preserved",
+    "models": ["K-Means", "XGBoost", "SHAP"]
+  },
+  "gders": {
+    "dataset_identifier": "GDERS-1225-v1.0",
+    "taxonomy_version": "GDERS-10-Category-v1.0",
+    "classifier_version": "LinearSVC-CalibratedMargins-v1.0",
+    "recommender_version": "GDERS-MultiTierRecommender-v1.0",
+    "benchmark_protocol_version": "GDERS-HeldOut-DeveloperGrouped-v1.0",
+    "random_seed": 42,
+    "repositories": 10,
+    "pull_requests": 333,
+    "comments": 1225,
+    "gold_comments": 341,
+    "inferred_comments": 884,
+    "reviewer_identities": 151,
+    "human_candidates": 149,
+    "bots_or_service_accounts": 2,
+    "uncertain_identities": 0,
+    "current_recommendation_eligible_humans": 68,
+    "benchmark_queries": 142,
+    "benchmark_query_types": {
+      "single_category": 80,
+      "multi_category": 6,
+      "natural_language": 56
+    }
+  },
+  "historical_vs_current": {
+    "historical_phase7b_report_recommendation_eligible_reviewers": 69,
+    "current_phase7c_profile_artifact_recommendation_eligible_humans": 68,
+    "current_phase7c_integration": "Read-only username bridge from DevLens dashboard to GDERS artifacts"
+  },
+  "artifact_roots": {
+    "gders_processed": "data/gders/processed",
+    "gders_raw_comments": "data/gders/raw_comments",
+    "devlens_artifacts": "models/artifacts"
+  },
+  "validation_state": {
+    "phase7c_focused_tests": "20 passed in 1.55s",
+    "devlens_tests": "31 collected; 30 passed; 1 pre-existing unrelated failure",
+    "full_gders_tests": "Attempted; no trustworthy completion summary produced",
+    "held_out_leakage_violations": 0
+  }
+}

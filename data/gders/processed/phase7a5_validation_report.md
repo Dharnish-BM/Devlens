@@ -1,7 +1,7 @@
 # GDERS Phase 7A.5 — Candidate Identity & Recommendation Validation Gate Report
 
-**Timestamp**: `2026-09-25T16:12:15Z`  
-**Final Gate Verdict**: **`PHASE 7B CLEARED`**
+**Timestamp**: `2026-09-26T05:50:07Z`  
+**Final Gate Verdict**: **`PHASE 7B BLOCKED — Validation checks failed`**
 
 ---
 
@@ -13,8 +13,8 @@
 - **Uncertain Identities**: `0`
 
 ### Candidate Pool Comparison
-- **Recommendation Candidates Before Identity Filtering**: `69`
-- **Recommendation Candidates After Identity Filtering**: `67`
+- **Recommendation Candidates Before Identity Filtering**: `70`
+- **Recommendation Candidates After Identity Filtering**: `68`
 - **Excluded Bot Candidates (with expertise evidence)**: `2`
 
 ---
@@ -56,9 +56,9 @@
 |---|---|---|---|---|---|
 | 1 | `@vshkrabkov` | `21.0` | `supported_evidence` | `human_candidate` | Gold: 8 / Preds: 12/1 |
 | 2 | `@astefan` | `17.25` | `supported_evidence` | `human_candidate` | Gold: 6 / Preds: 10/2 |
-| 3 | `@samubenu` | `14.138` | `strong_evidence` | `human_candidate` | Gold: 5 / Preds: 6/4 |
-| 4 | `@lorentzenchr` | `12.9` | `strong_evidence` | `human_candidate` | Gold: 1 / Preds: 9/6 |
-| 5 | `@Renzo-Olivares` | `12.85` | `strong_evidence` | `human_candidate` | Gold: 2 / Preds: 7/7 |
+| 3 | `@lorentzenchr` | `14.963` | `strong_evidence` | `human_candidate` | Gold: 1 / Preds: 10/8 |
+| 4 | `@samubenu` | `14.138` | `strong_evidence` | `human_candidate` | Gold: 5 / Preds: 6/4 |
+| 5 | `@Renzo-Olivares` | `13.262` | `strong_evidence` | `human_candidate` | Gold: 2 / Preds: 8/6 |
 
 ### Example 2: 'Need a developer skilled in database schema design and SQL optimization'
 - **Matched Categories**: `ARCH_DESIGN, DATA_MANAGEMENT, PERF_OPTIMIZATION`
@@ -66,7 +66,7 @@
 
 | Rank | Developer | Recommendation Score | Evidence Tier | Identity Class | Gold / Preds (H/M) |
 |---|---|---|---|---|---|
-| 1 | `@swallez` | `11.7` | `supported_evidence` | `human_candidate` | Gold: 7 / Preds: 0/2 |
+| 1 | `@swallez` | `11.1` | `supported_evidence` | `human_candidate` | Gold: 7 / Preds: 0/1 |
 | 2 | `@astefan` | `7.5` | `supported_evidence` | `human_candidate` | Gold: 5 / Preds: 3/1 |
 | 3 | `@GalLalouche` | `7.1` | `supported_evidence` | `human_candidate` | Gold: 5 / Preds: 3/0 |
 | 4 | `@littleGnAl` | `6.25` | `supported_evidence` | `human_candidate` | Gold: 5 / Preds: 0/0 |
@@ -83,4 +83,4 @@
 
 ---
 
-**PHASE 7B CLEARED**
+**PHASE 7B BLOCKED — Validation checks failed**

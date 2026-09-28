@@ -1,13 +1,13 @@
 {
   "phase": "Phase 7A \u2014 GDERS Expert Developer Recommendation Engine",
-  "timestamp": "2026-09-25T16:12:15Z",
+  "timestamp": "2026-09-26T05:50:07Z",
   "candidate_pool_summary": {
     "total_reviewers_in_corpus": 151,
     "human_candidates": 149,
     "bots_or_service_accounts": 2,
     "uncertain_identities": 0,
-    "expertise_eligible_reviewers_all": 69,
-    "human_developer_recommendation_eligible": 67
+    "expertise_eligible_reviewers_all": 70,
+    "human_developer_recommendation_eligible": 68
   },
   "eligibility_contract": {
     "identity_gate": "identity_class == 'human_candidate' (bots and uncertain accounts strictly excluded)",
@@ -27,7 +27,7 @@
   },
   "category_candidate_availability": {
     "ARCH_DESIGN": 5,
-    "BUG_LOGIC": 34,
+    "BUG_LOGIC": 33,
     "CODE_STYLE": 9,
     "DATA_MANAGEMENT": 6,
     "DOCUMENTATION": 7,
@@ -65,13 +65,13 @@
           "explanation": "Matched TESTING_QUALITY (supported_evidence) supported by 4 gold and 4 validated high/medium predictions across 1 PRs in 1 repos."
         },
         {
-          "username": "samubenu",
-          "score": 5.61,
-          "tier": "strong_evidence",
+          "username": "ulysses-you",
+          "score": 6.5,
+          "tier": "supported_evidence",
           "matched_categories": [
             "TESTING_QUALITY"
           ],
-          "explanation": "Matched TESTING_QUALITY (strong_evidence) supported by 3 gold and 3 validated high/medium predictions across 2 PRs in 1 repos."
+          "explanation": "Matched TESTING_QUALITY (supported_evidence) supported by 4 gold and 4 validated high/medium predictions across 1 PRs in 1 repos."
         }
       ]
     },
@@ -105,14 +105,14 @@
           "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (supported_evidence) supported by 6 gold and 12 validated high/medium predictions across 1 PRs in 1 repos."
         },
         {
-          "username": "samubenu",
-          "score": 14.138,
+          "username": "lorentzenchr",
+          "score": 14.963,
           "tier": "strong_evidence",
           "matched_categories": [
             "BUG_LOGIC",
             "TESTING_QUALITY"
           ],
-          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (strong_evidence) supported by 5 gold and 10 validated high/medium predictions across 2 PRs in 1 repos."
+          "explanation": "Matched BUG_LOGIC & TESTING_QUALITY (strong_evidence) supported by 1 gold and 18 validated high/medium predictions across 3 PRs in 1 repos."
         }
       ]
     },
@@ -128,14 +128,14 @@
       "top_candidates": [
         {
           "username": "swallez",
-          "score": 11.7,
+          "score": 11.1,
           "tier": "supported_evidence",
           "matched_categories": [
             "ARCH_DESIGN",
             "DATA_MANAGEMENT",
             "PERF_OPTIMIZATION"
           ],
-          "explanation": "Matched ARCH_DESIGN & DATA_MANAGEMENT & PERF_OPTIMIZATION (supported_evidence) supported by 7 gold and 2 validated high/medium predictions across 1 PRs in 1 repos."
+          "explanation": "Matched ARCH_DESIGN & DATA_MANAGEMENT & PERF_OPTIMIZATION (supported_evidence) supported by 7 gold and 1 validated high/medium predictions across 1 PRs in 1 repos."
         },
         {
           "username": "astefan",
@@ -167,7 +167,7 @@
       "top_candidates": [
         {
           "username": "ulysses-you",
-          "score": 4.4,
+          "score": 4.7,
           "tier": "supported_evidence",
           "matched_categories": [
             "SECURITY_PRIVACY"
@@ -176,12 +176,12 @@
         },
         {
           "username": "eliotsykes",
-          "score": 4.0,
+          "score": 4.4,
           "tier": "supported_evidence",
           "matched_categories": [
             "SECURITY_PRIVACY"
           ],
-          "explanation": "Matched SECURITY_PRIVACY (supported_evidence) supported by 4 gold and 0 validated high/medium predictions across 1 PRs in 1 repos."
+          "explanation": "Matched SECURITY_PRIVACY (supported_evidence) supported by 4 gold and 1 validated high/medium predictions across 1 PRs in 1 repos."
         },
         {
           "username": "ayushn21",
@@ -212,6 +212,15 @@
           "explanation": "Matched FRONTEND_UI_UX (strong_evidence) supported by 2 gold and 6 validated high/medium predictions across 2 PRs in 1 repos."
         },
         {
+          "username": "andywolff",
+          "score": 2.8,
+          "tier": "supported_evidence",
+          "matched_categories": [
+            "FRONTEND_UI_UX"
+          ],
+          "explanation": "Matched FRONTEND_UI_UX (supported_evidence) supported by 1 gold and 3 validated high/medium predictions across 1 PRs in 1 repos."
+        },
+        {
           "username": "ulysses-you",
           "score": 2.7,
           "tier": "supported_evidence",
@@ -219,15 +228,6 @@
             "FRONTEND_UI_UX"
           ],
           "explanation": "Matched FRONTEND_UI_UX (supported_evidence) supported by 2 gold and 1 validated high/medium predictions across 1 PRs in 1 repos."
-        },
-        {
-          "username": "lorentzenchr",
-          "score": 2.64,
-          "tier": "supported_evidence",
-          "matched_categories": [
-            "FRONTEND_UI_UX"
-          ],
-          "explanation": "Matched FRONTEND_UI_UX (supported_evidence) supported by 2 gold and 1 validated high/medium predictions across 3 PRs in 1 repos."
         }
       ]
     },

@@ -1,6 +1,6 @@
 # GDERS Phase 7B — Recommendation Benchmark Evaluation Report
 
-**Timestamp**: `2026-09-25T16:13:01Z`  
+**Timestamp**: `2026-09-26T05:47:14Z`  
 **Dataset Version**: `GDERS-1225-v1.0`  
 **Benchmark Protocol**: `GDERS-HeldOut-DeveloperGrouped-v1.0`  
 **Random Seed**: `42`  
@@ -37,14 +37,14 @@ Total Held-Out Benchmark Queries Evaluated: `142`
 
 | Metric | Mean | Standard Deviation |
 |---|---|---|
-| **Precision@1** | `0.0563` | `±0.2306` |
-| **Precision@3** | `0.0446` | `±0.1135` |
-| **Precision@5** | `0.0352` | `±0.0762` |
-| **Recall@1** | `0.0563` | `±0.2306` |
-| **Recall@3** | `0.1338` | `±0.3404` |
-| **Recall@5** | `0.1761` | `±0.3809` |
-| **MRR** | `0.1014` | `±0.2546` |
-| **nDCG@5** | `0.1200` | `±0.2774` |
+| **Precision@1** | `0.0704` | `±0.2559` |
+| **Precision@3** | `0.0469` | `±0.1160` |
+| **Precision@5** | `0.0394` | `±0.0796` |
+| **Recall@1** | `0.0704` | `±0.2559` |
+| **Recall@3** | `0.1408` | `±0.3479` |
+| **Recall@5** | `0.1972` | `±0.3979` |
+| **MRR** | `0.1167` | `±0.2751` |
+| **nDCG@5** | `0.1367` | `±0.2960` |
 
 ---
 
@@ -52,9 +52,9 @@ Total Held-Out Benchmark Queries Evaluated: `142`
 
 | Query Type | Queries Evaluated | Precision@5 | Recall@5 | MRR | nDCG@5 |
 |---|---|---|---|---|---|
-| `single_category` | `80` | `0.0375` | `0.1875` | `0.1092` | `0.1286` |
-| `multi_category` | `6` | `0.0667` | `0.3333` | `0.1389` | `0.1885` |
-| `natural_language` | `56` | `0.0286` | `0.1429` | `0.0863` | `0.1004` |
+| `single_category` | `80` | `0.0425` | `0.2125` | `0.1254` | `0.1471` |
+| `multi_category` | `6` | `0.0667` | `0.3333` | `0.2222` | `0.2500` |
+| `natural_language` | `56` | `0.0321` | `0.1607` | `0.0929` | `0.1097` |
 
 ---
 
@@ -62,16 +62,16 @@ Total Held-Out Benchmark Queries Evaluated: `142`
 
 | Category | Status | Queries | Precision@1 | Precision@3 | Precision@5 | Recall@1 | Recall@3 | Recall@5 | MRR | nDCG@5 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `ARCH_DESIGN` | `EVALUATED` | `5` | `0.0000` | `0.0667` | `0.0400` | `0.0000` | `0.2000` | `0.2000` | `0.1000` | `0.1262` |
+| `ARCH_DESIGN` | `EVALUATED` | `5` | `0.2000` | `0.0667` | `0.0400` | `0.2000` | `0.2000` | `0.2000` | `0.2000` | `0.2000` |
 | `BUG_LOGIC` | `EVALUATED` | `18` | `0.0556` | `0.0370` | `0.0222` | `0.0556` | `0.1111` | `0.1111` | `0.0833` | `0.0906` |
-| `CODE_STYLE` | `EVALUATED` | `5` | `0.0000` | `0.0000` | `0.0800` | `0.0000` | `0.0000` | `0.4000` | `0.0800` | `0.1548` |
-| `DATA_MANAGEMENT` | `EVALUATED` | `6` | `0.0000` | `0.1667` | `0.1000` | `0.0000` | `0.5000` | `0.5000` | `0.2222` | `0.2936` |
+| `CODE_STYLE` | `EVALUATED` | `5` | `0.0000` | `0.0000` | `0.0800` | `0.0000` | `0.0000` | `0.4000` | `0.1000` | `0.1723` |
+| `DATA_MANAGEMENT` | `EVALUATED` | `6` | `0.0000` | `0.1667` | `0.1333` | `0.0000` | `0.5000` | `0.6667` | `0.2556` | `0.3581` |
 | `DOCUMENTATION` | `EVALUATED` | `5` | `0.2000` | `0.0667` | `0.0400` | `0.2000` | `0.2000` | `0.2000` | `0.2000` | `0.2000` |
 | `FRONTEND_UI_UX` | `EVALUATED` | `5` | `0.2000` | `0.0667` | `0.0400` | `0.2000` | `0.2000` | `0.2000` | `0.2000` | `0.2000` |
 | `INFRA_DEVOPS` | `EVALUATED` | `4` | `0.0000` | `0.0000` | `0.0000` | `0.0000` | `0.0000` | `0.0000` | `0.0000` | `0.0000` |
 | `PERF_OPTIMIZATION` | `EVALUATED` | `8` | `0.1250` | `0.0417` | `0.0250` | `0.1250` | `0.1250` | `0.1250` | `0.1250` | `0.1250` |
-| `SECURITY_PRIVACY` | `EVALUATED` | `8` | `0.0000` | `0.0417` | `0.0500` | `0.0000` | `0.1250` | `0.2500` | `0.0938` | `0.1327` |
-| `TESTING_QUALITY` | `EVALUATED` | `16` | `0.0625` | `0.0208` | `0.0250` | `0.0625` | `0.0625` | `0.1250` | `0.0781` | `0.0894` |
+| `SECURITY_PRIVACY` | `EVALUATED` | `8` | `0.0000` | `0.0833` | `0.0500` | `0.0000` | `0.2500` | `0.2500` | `0.1250` | `0.1577` |
+| `TESTING_QUALITY` | `EVALUATED` | `16` | `0.0625` | `0.0208` | `0.0375` | `0.0625` | `0.0625` | `0.1875` | `0.0938` | `0.1163` |
 
 ---
 
@@ -79,7 +79,7 @@ Total Held-Out Benchmark Queries Evaluated: `142`
 
 | Query Type | Queries | Exact-Match Relevance | Partial-Match Relevance | Precision@5 | Recall@5 | MRR | nDCG@5 |
 |---|---|---|---|---|---|---|---|
-| `multi_category` | `6` | `0.3333` | `0.3333` | `0.0667` | `0.3333` | `0.1389` | `0.1885` |
+| `multi_category` | `6` | `0.3333` | `0.3333` | `0.0667` | `0.3333` | `0.2222` | `0.2500` |
 
 ---
 
@@ -87,7 +87,7 @@ Total Held-Out Benchmark Queries Evaluated: `142`
 
 | System / Strategy | Precision@1 | Precision@3 | Precision@5 | Recall@5 | MRR | nDCG@5 |
 |---|---|---|---|---|---|---|
-| `gders` | `0.0563` | `0.0446` | `0.0352` | `0.1761` | `0.1014` | `0.1200` |
+| `gders` | `0.0704` | `0.0469` | `0.0394` | `0.1972` | `0.1167` | `0.1367` |
 | `baseline_a_evidence_count` | `0.0141` | `0.0329` | `0.0423` | `0.2113` | `0.0768` | `0.1095` |
 | `baseline_b_pr_diversity` | `0.0493` | `0.0469` | `0.0493` | `0.2465` | `0.1128` | `0.1455` |
 | `baseline_c_repo_diversity` | `0.0634` | `0.0469` | `0.0479` | `0.2394` | `0.1176` | `0.1473` |
@@ -99,8 +99,8 @@ Total Held-Out Benchmark Queries Evaluated: `142`
 | Evidence Configuration | Eligible Candidates (mean) | Precision@1 | Precision@5 | Recall@5 | MRR | nDCG@5 |
 |---|---|---|---|---|---|---|
 | `ablation_a_gold_only` | `11.74` | `0.0141` | `0.0310` | `0.1549` | `0.0649` | `0.0872` |
-| `ablation_b_gold_plus_high_confidence` | `16.43` | `0.0563` | `0.0423` | `0.2113` | `0.1041` | `0.1302` |
-| `ablation_c_gold_plus_high_plus_medium` | `19.44` | `0.0563` | `0.0352` | `0.1761` | `0.1014` | `0.1200` |
+| `ablation_b_gold_plus_high_confidence` | `16.46` | `0.0634` | `0.0451` | `0.2254` | `0.1146` | `0.1415` |
+| `ablation_c_gold_plus_high_plus_medium` | `19.16` | `0.0704` | `0.0394` | `0.1972` | `0.1167` | `0.1367` |
 
 ---
 

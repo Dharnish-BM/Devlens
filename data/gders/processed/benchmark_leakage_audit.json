@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-25T16:13:01Z",
+  "timestamp": "2026-09-26T05:47:14Z",
   "leakage_audit_summary": {
     "total_queries_audited": 142,
     "leakage_violations": 0
@@ -13,8 +13,8 @@
       ],
       "held_out_developer": "BhargaviGudi",
       "recommended_candidates": [
-        "swallez",
         "BhargaviGudi",
+        "swallez",
         "OchukoWH",
         "littleGnAl",
         "tosi3k"
@@ -24,17 +24,17 @@
         "BhargaviGudi"
       ],
       "precision_at_k": {
-        "1": 0.0,
+        "1": 1.0,
         "3": 0.3333333333333333,
         "5": 0.2
       },
       "recall_at_k": {
-        "1": 0.0,
+        "1": 1.0,
         "3": 1.0,
         "5": 1.0
       },
-      "reciprocal_rank": 0.5,
-      "ndcg_at_5": 0.6309,
+      "reciprocal_rank": 1.0,
+      "ndcg_at_5": 1.0,
       "eligible_candidate_count": 5,
       "exact_multi_category_match": null,
       "partial_category_match": null
@@ -181,9 +181,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": true,
       "relevant_developers": [
@@ -201,7 +201,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 33,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -215,9 +215,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": true,
       "relevant_developers": [
@@ -235,7 +235,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 33,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -249,9 +249,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": true,
       "relevant_developers": [
@@ -269,7 +269,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 33,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -283,9 +283,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": true,
       "relevant_developers": [
@@ -303,7 +303,7 @@
       },
       "reciprocal_rank": 0.5,
       "ndcg_at_5": 0.6309,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 33,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -317,9 +317,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": true,
       "relevant_developers": [
@@ -337,7 +337,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 33,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -351,11 +351,11 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
-      "is_held_out_developer_eligible": true,
+      "is_held_out_developer_eligible": false,
       "relevant_developers": [
         "eliotsykes"
       ],
@@ -371,7 +371,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 32,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -385,9 +385,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": true,
       "relevant_developers": [
@@ -405,7 +405,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 33,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -419,9 +419,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": false,
       "relevant_developers": [
@@ -439,7 +439,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 33,
+      "eligible_candidate_count": 32,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -453,9 +453,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": true,
       "relevant_developers": [
@@ -473,7 +473,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 33,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -487,9 +487,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": false,
       "relevant_developers": [
@@ -507,7 +507,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 33,
+      "eligible_candidate_count": 32,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -521,9 +521,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": false,
       "relevant_developers": [
@@ -541,7 +541,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 33,
+      "eligible_candidate_count": 32,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -555,9 +555,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": false,
       "relevant_developers": [
@@ -575,7 +575,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 33,
+      "eligible_candidate_count": 32,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -589,9 +589,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": false,
       "relevant_developers": [
@@ -609,7 +609,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 33,
+      "eligible_candidate_count": 32,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -623,9 +623,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
-        "swallez",
         "lorentzenchr",
-        "luigidellaquila"
+        "swallez",
+        "Renzo-Olivares"
       ],
       "is_held_out_developer_eligible": true,
       "relevant_developers": [
@@ -643,7 +643,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 33,
       "exact_multi_category_match": null,
       "partial_category_match": null
     },
@@ -657,9 +657,9 @@
       "recommended_candidates": [
         "vshkrabkov",
         "cakedev0",
+        "lorentzenchr",
         "pohly",
-        "swallez",
-        "lorentzenchr"
+        "swallez"
       ],
       "is_held_out_developer_eligible": true,
       "relevant_developers": [
@@ -677,7 +677,7 @@
       },
       "reciprocal_rank": 0.0,
       "ndcg_at_5": 0.0,
-      "eligible_candidate_count": 34,
+      "eligible_candidate_count": 33,
       "exact_multi_category_match": null,
       "partial_category_match": null
     }

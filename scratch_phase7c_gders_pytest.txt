@@ -1,0 +1,67 @@
+............................F.........F..............................F.. [ 96%]
+...                                                                      [100%]
+================================== FAILURES ===================================
+____________________ test_validation_gate_runner_execution ____________________
+
+    def test_validation_gate_runner_execution():
+        """Verify full validation gate produces report and clearance."""
+        auditor = IdentityAuditor()
+        report, verdict = auditor.run_validation_gate()
+    
+>       assert verdict == "PHASE 7B CLEARED"
+E       AssertionError: assert 'PHASE 7B BLO...checks failed' == 'PHASE 7B CLEARED'
+E         
+E         - PHASE 7B CLEARED
+E         + PHASE 7B BLOCKED — Validation checks failed
+
+tests\gders\test_gders_identity_gate.py:207: AssertionError
+______________________ test_deterministic_lemmatization _______________________
+
+    def test_deterministic_lemmatization():
+        preprocessor = GDERSNLPPreprocessor()
+        assert preprocessor.lemmatize("queries") in ("query", "queries")
+>       assert preprocessor.lemmatize("running") in ("run", "running")
+E       AssertionError: assert 'runn' in ('run', 'running')
+E        +  where 'runn' = lemmatize('running')
+E        +    where lemmatize = <gders.data.nlp_preprocessor.GDERSNLPPreprocessor object at 0x000001C385C5F190>.lemmatize
+
+tests\gders\test_gders_nlp.py:72: AssertionError
+_____________ test_validation_gate_evidence_sensitivity_analysis ______________
+
+    def test_validation_gate_evidence_sensitivity_analysis():
+        gate = Phase65ValidationGate()
+        sens = gate.run_evidence_sensitivity_analysis()
+    
+        assert "scheme_a_full_profile_view" in sens
+        assert "scheme_b_recommendation_eligible" in sens
+        assert "scheme_c_strict_gold_high_only" in sens
+    
+        # Verify that scheme A has >= scheme B >= scheme C eligible reviewers
+        u_a = sens["scheme_a_full_profile_view"]["eligible_reviewers"]
+        u_b = sens["scheme_b_recommendation_eligible"]["eligible_reviewers"]
+        u_c = sens["scheme_c_strict_gold_high_only"]["eligible_reviewers"]
+    
+        assert u_a >= u_b >= u_c
+>       assert u_a == 71
+E       assert 72 == 71
+
+tests\gders\test_gders_validation_gate.py:45: AssertionError
+============================== warnings summary ===============================
+tests/gders/test_gders_models.py::test_cross_validation_experiment_execution
+  D:\GIT\Devlens\venv\Lib\site-packages\sklearn\preprocessing\_label.py:1016: UserWarning: unknown class(es) ['TESTING_QUALITY'] will be ignored
+    warnings.warn(
+
+tests/gders/test_gders_models.py::test_cross_validation_experiment_execution
+  D:\GIT\Devlens\venv\Lib\site-packages\sklearn\preprocessing\_label.py:1016: UserWarning: unknown class(es) ['DATA_MANAGEMENT', 'PERF_OPTIMIZATION'] will be ignored
+    warnings.warn(
+
+tests/gders/test_gders_models.py::test_kmeans_exploratory_clustering
+  D:\GIT\Devlens\venv\Lib\site-packages\sklearn\base.py:1403: ConvergenceWarning: Number of distinct clusters (2) found smaller than n_clusters (3). Possibly due to duplicate points in X.
+    return fit_method(estimator, *args, **kwargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/gders/test_gders_identity_gate.py::test_validation_gate_runner_execution
+FAILED tests/gders/test_gders_nlp.py::test_deterministic_lemmatization - Asse...
+FAILED tests/gders/test_gders_validation_gate.py::test_validation_gate_evidence_sensitivity_analysis
+3 failed, 72 passed, 3 warnings in 276.63s (0:04:36)
